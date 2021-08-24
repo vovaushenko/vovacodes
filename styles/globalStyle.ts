@@ -11,8 +11,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
-    color: ${({ theme }) => theme.primaryWhite};
-    background: ${({ theme }) => theme.primaryBg};
+    color: ${({ theme }) => theme.primary.text};
+    background: ${({ theme }) => theme.primary.backround};
     line-height: 1.4;
     font-size: 1rem;
   }
@@ -47,35 +47,5 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  button {
-    font-family: inherit;
 
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px ${({ theme }) => theme.secondaryBgLighter};
-      border-radius: ${({ theme }) => theme.borderRadius};
-    }
-  }
-
-  button, input, a {
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px ${({ theme }) => theme.secondaryBgLighter};
-      border-radius: ${({ theme }) => theme.borderRadius};
-    }
-  }
-
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0);
-
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.secondaryBgLighter};
-  }
 `;

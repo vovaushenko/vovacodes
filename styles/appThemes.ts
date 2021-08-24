@@ -2,12 +2,9 @@ import { DefaultTheme } from 'styled-components';
 
 export const darkTheme: DefaultTheme = {
   mode: 'dark',
-  primaryBg: '#000000',
-  secondaryBg: '#151515',
-  secondaryBgLighter: '#383838',
-  borderRadius: '1rem',
-  primaryWhite: '#ffffff',
-  secondaryBgLightest: '#444444',
+  primary: { backround: '#000000', text: '#ffffff' },
+  gray: { dark: '#151515', light: '#383838', lightest: '#444444' },
+  borderRadius: '6px',
 
   media: {
     phone: '(max-width: 500px)',
@@ -17,13 +14,10 @@ export const darkTheme: DefaultTheme = {
 };
 
 export const lightTheme: DefaultTheme = {
-  mode: 'dark',
-  primaryBg: '#ffffff',
-  secondaryBg: '#151515',
-  secondaryBgLighter: '#383838',
-  borderRadius: '1rem',
-  primaryWhite: '#000000',
-  secondaryBgLightest: '#444444',
+  mode: 'light',
+  primary: { backround: '#ffffff', text: '#000000' },
+  gray: { dark: '#151515', light: '#383838', lightest: '#444444' },
+  borderRadius: '6px',
 
   media: {
     phone: '(max-width: 500px)',

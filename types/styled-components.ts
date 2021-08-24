@@ -9,11 +9,8 @@ interface media {
 declare module 'styled-components' {
   export interface DefaultTheme {
     mode: 'dark' | 'light';
-    primaryBg: string;
-    secondaryBg: string;
-    secondaryBgLighter: string;
-    secondaryBgLightest: string;
-    primaryWhite: string;
+    primary: { backround: string; text: string };
+    gray: { dark: string; light: string; lightest: string };
     borderRadius: string;
     media: media;
   }
