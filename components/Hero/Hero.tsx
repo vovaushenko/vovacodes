@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './Hero.styles';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
+import DesktopButton from '../DesktopButton/DesktopButton';
 
 /**
  *Renders main hero screen
@@ -19,7 +20,12 @@ const Hero = (): JSX.Element => {
 
   return (
     <Styled.Container bgWallpaper={backgroundWallpaper}>
-      <button onClick={() => changeTheme()}>hero</button>
+      <DesktopButton
+        onClick={() => changeTheme()}
+        iconSrc={'/assets/icons/Desktop/this_pc.webp'}
+        iconSize={{ width: 40, height: 40 }}
+        text={'This PC'}
+      />
     </Styled.Container>
   );
 };
