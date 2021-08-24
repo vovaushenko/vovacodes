@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Segoe UI Variable';
+  src: url('../public/assets/fonts/SegoeUIVariable.woff2') format('woff2'),
+    url('../public/assets/fonts/SegoeUIVariable.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI Variable';
+}
+
+input {
+  font-family: 'Segoe UI Variable', sans-serif;
+}
+
+::placeholder {
+  font-family: 'Segoe UI Variable', sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}

@@ -5,6 +5,7 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 import { wrapper } from '../store';
 import { darkTheme, lightTheme } from '../styles/appThemes';
 import { GlobalStyles } from '../styles/globalStyle';
+import '../styles/index.css';
 
 const WrappedApp: FC<AppProps> = ({
   Component,
