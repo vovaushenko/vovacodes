@@ -2,9 +2,10 @@ import { DefaultTheme } from 'styled-components';
 
 export const darkTheme: DefaultTheme = {
   mode: 'dark',
-  primary: { backround: '#000000', text: '#ffffff' },
+  primary: { background: '#000000', text: '#ffffff' },
   gray: { dark: '#151515', light: '#383838', lightest: '#444444' },
   borderRadius: '6px',
+  fontSize: { large: '18px', medium: '16px', small: '14px' },
 
   media: {
     phone: '(max-width: 500px)',
@@ -15,9 +16,10 @@ export const darkTheme: DefaultTheme = {
 
 export const lightTheme: DefaultTheme = {
   mode: 'light',
-  primary: { backround: '#ffffff', text: '#000000' },
+  primary: { background: '#ffffff', text: '#000000' },
   gray: { dark: '#151515', light: '#383838', lightest: '#444444' },
   borderRadius: '6px',
+  fontSize: { large: '18px', medium: '16px', small: '14px' },
 
   media: {
     phone: '(max-width: 500px)',
