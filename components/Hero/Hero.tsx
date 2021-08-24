@@ -3,6 +3,7 @@ import * as Styled from './Hero.styles';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
 import DesktopButton from '../DesktopButton/DesktopButton';
+import SystemTray from '../SystemTray/SystemTray';
 
 /**
  *Renders main hero screen
@@ -21,11 +22,14 @@ const Hero = (): JSX.Element => {
   return (
     <Styled.Container bgWallpaper={backgroundWallpaper}>
       <DesktopButton
+        variant={'desktop'}
         onClick={() => changeTheme()}
         iconSrc={'/assets/icons/Desktop/this_pc.webp'}
         iconSize={{ width: 40, height: 40 }}
         text={'This PC'}
       />
+
+      <SystemTray />
     </Styled.Container>
   );
 };

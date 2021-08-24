@@ -1,12 +1,12 @@
 import { Story } from '@storybook/react';
-import Button, { DummyProps } from './DummyComponent';
+import DummyComponent, { DummyProps } from './DummyComponent';
 
 export default {
-	title: 'Button',
-	component: Button,
+  title: 'DummyComponent',
+  component: DummyComponent,
 };
 
-const Template: Story<DummyProps> = (args) => <Button {...args} />;
+const Template: Story<DummyProps> = (args) => <DummyComponent {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = { dummyText: 'DELETE THIS COMPONENT THIS IS A TEST 😃' };
