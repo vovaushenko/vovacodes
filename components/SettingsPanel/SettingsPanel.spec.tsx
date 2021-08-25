@@ -1,14 +1,15 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import SettingsPanel from './SettingsPanel';
 import * as Styled from './SettingsPanel.styles';
+import { withReduxAndStyledProviders } from '../../test/testUtils';
 
 /**
  * Setup function for the component
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return shallow(<SettingsPanel />);
+  return mount(withReduxAndStyledProviders(<SettingsPanel />));
 };
 
 describe('SettingsPanel', () => {

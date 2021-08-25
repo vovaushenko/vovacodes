@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as Styled from './SystemTray.styles';
 import { useSystemTrayConfig } from './SystemTray.config';
 import DesktopButton from '../DesktopButton/DesktopButton';
 import Taskbar from '../Taskbar/Taskbar';
+import SlidingModal from '../SlidingModal/SlidingModal';
 
 /**
  *Renders system tray with control buttons
@@ -10,11 +11,20 @@ import Taskbar from '../Taskbar/Taskbar';
  *@returns {JSX.Element} - Rendered SystemTray component
  */
 const SystemTray = (): JSX.Element => {
+  const containerRef = useRef<HTMLUListElement>(null);
+  const [rightCoordinate, setRightCoordinate] = useState(0);
   const { systemTrayButtons } = useSystemTrayConfig();
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const offsets = containerRef.current.getBoundingClientRect();
+      setRightCoordinate(offsets.right);
+    }
+  }, []);
 
   return (
     <Styled.Container>
-      <Styled.ButtonList>
+      <Styled.ButtonList ref={containerRef}>
         {systemTrayButtons.map((button) => (
           <DesktopButton
             variant={'systemTray'}
@@ -28,6 +38,11 @@ const SystemTray = (): JSX.Element => {
       </Styled.ButtonList>
 
       <Taskbar />
+      <SlidingModal
+        variant={'systemTrayModal'}
+        width={'600px'}
+        position={{ bottom: '0', right: `${rightCoordinate - 300}px` }}
+      />
     </Styled.Container>
   );
 };

@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import { withReduxAndStyledProviders } from '../../test/testUtils';
 import TimePanel from './TimePanel';
@@ -10,7 +10,7 @@ import CurrentDate from '../CurrentDate/CurrentDate';
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return shallow(withReduxAndStyledProviders(<TimePanel />));
+  return mount(withReduxAndStyledProviders(<TimePanel />));
 };
 
 describe('Time Panel', () => {

@@ -5,7 +5,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 export const useSystemTrayConfig = (): {
   systemTrayButtons: ISystemTrayButton[];
 } => {
-  const { changeTheme } = useActions();
+  const { changeTheme, toggleWidgetsModal, toggleSearchModal } = useActions();
   const { theme } = useTypedSelector((state) => state.ui);
 
   const themeToggleIcon =
@@ -23,22 +23,22 @@ export const useSystemTrayConfig = (): {
       id: 1,
       src: '/assets/icons/taskbar/Windows.png',
       size: { width: 30, height: 30 },
-      action: () => changeTheme(),
+      action: () => toggleSearchModal(),
       alt: 'Windows icon',
     },
     {
       id: 2,
       src: searchIcon,
       size: { width: 30, height: 30 },
-      action: () => changeTheme(),
+      action: () => toggleSearchModal(),
       alt: 'Search more',
     },
     {
       id: 3,
       src: '/assets/icons/taskbar/Widgets.png',
       size: { width: 30, height: 30 },
-      action: () => changeTheme(),
-      alt: 'Search more',
+      action: () => toggleWidgetsModal(),
+      alt: 'Open widgets',
     },
     {
       id: 4,

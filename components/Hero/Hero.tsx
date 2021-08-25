@@ -4,6 +4,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
 import DesktopButton from '../DesktopButton/DesktopButton';
 import SystemTray from '../SystemTray/SystemTray';
+import SlidingModal from '../SlidingModal/SlidingModal';
 
 /**
  *Renders main hero screen
@@ -28,8 +29,12 @@ const Hero = (): JSX.Element => {
         iconSize={{ width: 40, height: 40 }}
         text={'This PC'}
       />
-
       <SystemTray />
+      <SlidingModal
+        width={'600px'}
+        variant={'widgetsModal'}
+        position={{ top: '1rem', bottom: '0', left: '0', right: '0' }}
+      />
     </Styled.Container>
   );
 };
