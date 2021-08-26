@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './SettingsModalContent.styles';
 import { settingsIcons } from './SettingsModalContent.config';
 import SettingsButton from '../SettingsButton/SettingsButton';
+import SliderControl from '../SliderControl/SliderControl';
 
 /**
  *Renders settings panel content for sliding modal
@@ -23,6 +24,10 @@ const SettingsModalContent = (): JSX.Element => {
           </SettingsButton>
         ))}
       </Styled.ButtonWrapper>
+      <Styled.SlidersWrapper>
+        <SliderControl variant={'voiceControl'} withChevron={false} />
+        <SliderControl variant={'brightnessControl'} withChevron={false} />
+      </Styled.SlidersWrapper>
     </Styled.Container>
   );
 };
