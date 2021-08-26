@@ -23,27 +23,29 @@ const SystemTray = (): JSX.Element => {
   }, []);
 
   return (
-    <Styled.Container>
-      <Styled.ButtonList ref={containerRef}>
-        {systemTrayButtons.map((button) => (
-          <DesktopButton
-            variant={'systemTray'}
-            key={button.id}
-            iconSrc={button.src}
-            iconSize={button.size}
-            text={button.alt}
-            onClick={button.action}
-          />
-        ))}
-      </Styled.ButtonList>
+    <>
+      <Styled.Container>
+        <Styled.ButtonList ref={containerRef}>
+          {systemTrayButtons.map((button) => (
+            <DesktopButton
+              variant={'systemTray'}
+              key={button.id}
+              iconSrc={button.src}
+              iconSize={button.size}
+              text={button.alt}
+              onClick={button.action}
+            />
+          ))}
+        </Styled.ButtonList>
 
-      <Taskbar />
+        <Taskbar />
+      </Styled.Container>
       <SlidingModal
         variant={'systemTrayModal'}
         width={'600px'}
         position={{ bottom: '0', right: `${rightCoordinate - 300}px` }}
       />
-    </Styled.Container>
+    </>
   );
 };
 export default SystemTray;
