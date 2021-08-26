@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const ButtonContainer = styled.button`
+interface Props {
+  variant: 'desktop' | 'systemTray';
+}
+
+export const ButtonContainer = styled.button<Props>`
   /*  display  */
   display: flex;
   justify-content: center;
@@ -10,13 +14,21 @@ export const ButtonContainer = styled.button`
   /*  styling  */
   background: transparent;
   border: 0;
-  padding: 0.5rem 1.5rem;
+
+  padding: ${({ variant }) =>
+    variant === 'desktop' ? '0.5rem 1.5rem' : '8px'};
   border-radius: ${({ theme }) => theme.borderRadius};
-  transition: 0.3s color ease-in-out;
-  cursor: context-menu;
+
+  cursor: ${({ variant }) =>
+    variant === 'desktop' ? 'context-menu' : 'pointer'};
+
+  transition: 0.3s all ease;
 
   :hover {
-    background: rgba(131, 195, 255, 0.24);
+    background: ${({ theme, variant }) =>
+      variant === 'desktop'
+        ? 'rgba(131, 195, 255, 0.24)'
+        : theme.systemTrayIconHoverBg};
   }
 `;
 

@@ -13,6 +13,10 @@ declare module 'styled-components' {
     fontSize: { large: string; medium: string; small: string };
     gray: { dark: string; light: string; lightest: string };
     borderRadius: string;
+    systemTrayBackground: string;
     media: media;
+    systemTrayIconHoverBg: string;
+    settingsButtonBg: string;
+    settingButtonIsActive: { bg: string; color: string };
   }
 }
