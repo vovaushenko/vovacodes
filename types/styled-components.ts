@@ -16,5 +16,7 @@ declare module 'styled-components' {
     systemTrayBackground: string;
     media: media;
     systemTrayIconHoverBg: string;
+    settingsButtonBg: string;
+    settingButtonIsActive: { bg: string; color: string };
   }
 }

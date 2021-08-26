@@ -5,6 +5,7 @@ import { useActions } from '../../hooks/useActions';
 import DesktopButton from '../DesktopButton/DesktopButton';
 import SystemTray from '../SystemTray/SystemTray';
 import SlidingModal from '../SlidingModal/SlidingModal';
+import SettingsModalContent from '../SettingsModalContent/SettingsModalContent';
 
 /**
  *Renders main hero screen
@@ -34,7 +35,9 @@ const Hero = (): JSX.Element => {
         width={'600px'}
         variant={'widgetsModal'}
         position={{ top: '1rem', bottom: '0', left: '0', right: '0' }}
-      />
+      >
+        <SettingsModalContent />
+      </SlidingModal>
     </Styled.Container>
   );
 };

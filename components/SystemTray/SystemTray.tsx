@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import * as Styled from './SystemTray.styles';
-import { useSystemTrayConfig } from './SystemTray.config';
 import DesktopButton from '../DesktopButton/DesktopButton';
 import Taskbar from '../Taskbar/Taskbar';
+import { useSystemTrayConfig } from './SystemTray.config';
+import * as Styled from './SystemTray.styles';
 import SlidingModal from '../SlidingModal/SlidingModal';
 
 /**
