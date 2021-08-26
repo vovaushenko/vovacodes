@@ -18,13 +18,11 @@ const widgetModalStyles = css<ContainerProps>`
 `;
 
 const systemTrayModalStyles = css<ContainerProps>`
-  padding: 1rem;
   background-color: ${({ theme }) => theme.systemTrayBackground};
   transform: ${({ isSearchOpen, width }) =>
     isSearchOpen ? `translateY(-4rem)` : `translateY(${width})`};
 `;
 const settingsModalStyles = css<ContainerProps>`
-  padding: 1rem;
   background-color: ${({ theme }) => theme.systemTrayBackground};
   transform: ${({ areSettingsOpen, width }) =>
     areSettingsOpen ? `translateY(-4rem)` : `translateY(${width})`};
@@ -45,7 +43,7 @@ export const Container = styled.div<ContainerProps>`
   ${({ variant }) => variant === 'widgetsModal' && widgetModalStyles}
   ${({ variant }) => variant === 'systemTrayModal' && systemTrayModalStyles}
   ${({ variant }) => variant === 'settingsModal' && settingsModalStyles}
-
+  overflow: hidden;
   transition: 0.3s all ease-in-out;
   /* styling */
   width: ${({ width }) => width};

@@ -7,4 +7,8 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.4;
     font-size: 1rem;
   }
+
+  .icon {
+    color: ${({ theme }) => theme.primary.text};
+  }
 `;
