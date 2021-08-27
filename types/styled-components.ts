@@ -18,5 +18,7 @@ declare module 'styled-components' {
     systemTrayIconHoverBg: string;
     settingsButtonBg: string;
     settingButtonIsActive: { bg: string; color: string };
+    buttonBg: string;
+    pinnedAppHoverBg: string;
   }
 }

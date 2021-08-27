@@ -38,6 +38,14 @@ const Hero = (): JSX.Element => {
       >
         <SettingsModalContent />
       </SlidingModal>
+
+      <SlidingModal
+        variant={'settingsModal'}
+        width={'300px'}
+        position={{ bottom: '0', right: `16px` }}
+      >
+        <SettingsModalContent />
+      </SlidingModal>
     </Styled.Container>
   );
 };
