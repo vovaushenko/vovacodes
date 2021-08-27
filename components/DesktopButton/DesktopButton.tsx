@@ -4,7 +4,7 @@ import Paragraph from '../Typography/Paragraph/Paragraph';
 import Image from 'next/image';
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
-  variant: 'desktop' | 'systemTray';
+  variant: 'desktop' | 'systemTray' | 'pinnedApp';
   iconSrc: string;
   iconSize: { height: number; width: number };
   text: string;
@@ -38,7 +38,7 @@ const DesktopButton = ({
           objectFit={'contain'}
           quality={100}
         />
-        {variant === 'desktop' && (
+        {['pinnedApp', 'desktop'].includes(variant) && (
           <Styled.Figcaption>
             <Paragraph margin={'0rem'}>{text}</Paragraph>
           </Styled.Figcaption>

@@ -4,6 +4,7 @@ import Taskbar from '../Taskbar/Taskbar';
 import { useSystemTrayConfig } from './SystemTray.config';
 import * as Styled from './SystemTray.styles';
 import SlidingModal from '../SlidingModal/SlidingModal';
+import AppCenter from '../AppCenter/AppCenter';
 
 /**
  *Renders system tray with control buttons
@@ -42,9 +43,11 @@ const SystemTray = (): JSX.Element => {
       </Styled.Container>
       <SlidingModal
         variant={'systemTrayModal'}
-        width={'600px'}
-        position={{ bottom: '0', right: `${rightCoordinate - 300}px` }}
-      />
+        width={'700px'}
+        position={{ bottom: '0', right: `${rightCoordinate - 350}px` }}
+      >
+        <AppCenter />
+      </SlidingModal>
     </>
   );
 };

@@ -10,6 +10,8 @@ export const darkTheme: DefaultTheme = {
   systemTrayIconHoverBg: 'rgba(3,21,41,.562)',
   settingsButtonBg: 'rgba(255, 255, 255, 0.055)',
   settingButtonIsActive: { bg: '#69d3fa', color: '#000000' },
+  buttonBg: 'rgba(46,61,83,.692)',
+  pinnedAppHoverBg: 'rgba(3,21,41,.562)',
 
   media: {
     phone: '(max-width: 500px)',
@@ -28,6 +30,8 @@ export const lightTheme: DefaultTheme = {
   systemTrayIconHoverBg: 'rgba(243,243,243,.747)',
   settingsButtonBg: 'rgba(255, 255, 255, 0.23)',
   settingButtonIsActive: { bg: '#0652f7', color: '#ffffff' },
+  buttonBg: 'rgba(255, 255, 255, 0.815)',
+  pinnedAppHoverBg: 'rgba(255,255,255,.596)',
 
   media: {
     phone: '(max-width: 500px)',
