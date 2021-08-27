@@ -43,8 +43,8 @@ const SystemTray = (): JSX.Element => {
       </Styled.Container>
       <SlidingModal
         variant={'systemTrayModal'}
-        width={'700px'}
-        position={{ bottom: '0', right: `${rightCoordinate - 350}px` }}
+        width={'600px'}
+        position={{ bottom: '-50px', right: `${rightCoordinate - 300}px` }}
       >
         <AppCenter />
       </SlidingModal>

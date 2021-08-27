@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface Props {
-  variant: 'desktop' | 'systemTray' | 'pinnedApp';
+  variant: 'desktop' | 'systemTray' | 'pinnedApp' | 'recommendedApp';
 }
 
 const desktopButtonStyles = css`
@@ -21,8 +21,22 @@ const systemTrayButtonStyles = css`
   }
 `;
 const pinnedAppButtonStyles = css`
-  padding: 0.25rem;
   cursor: pointer;
+
+  :hover {
+    background: ${({ theme }) => theme.pinnedAppHoverBg};
+  }
+`;
+
+const recommendedAppButtonStyles = css`
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 0.25rem 1.25rem;
+  cursor: pointer;
+
+  figure {
+    display: flex;
+  }
 
   :hover {
     background: ${({ theme }) => theme.pinnedAppHoverBg};
@@ -43,6 +57,8 @@ export const ButtonContainer = styled.button<Props>`
   ${({ variant }) => variant === 'desktop' && desktopButtonStyles};
   ${({ variant }) => variant === 'systemTray' && systemTrayButtonStyles};
   ${({ variant }) => variant === 'pinnedApp' && pinnedAppButtonStyles};
+  ${({ variant }) =>
+    variant === 'recommendedApp' && recommendedAppButtonStyles};
 
   border-radius: ${({ theme }) => theme.borderRadius};
 
@@ -51,3 +67,18 @@ export const ButtonContainer = styled.button<Props>`
 
 export const Figure = styled.figure``;
 export const Figcaption = styled.figcaption``;
+
+export const RecommendedAppDescription = styled.figcaption`
+  text-align: start;
+  margin-left: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+`;
+
+export const FileName = styled.h4`
+  color: ${({ theme }) => theme.primary.text};
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  font-weight: 400;
+`;

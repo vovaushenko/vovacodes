@@ -20,7 +20,7 @@ const widgetModalStyles = css<ContainerProps>`
 const systemTrayModalStyles = css<ContainerProps>`
   background-color: ${({ theme }) => theme.systemTrayBackground};
   transform: ${({ isSearchOpen, width }) =>
-    isSearchOpen ? `translateY(-4rem)` : `translateY(${width})`};
+    isSearchOpen ? `translateY(-7rem)` : `translateY(${width})`};
 `;
 const settingsModalStyles = css<ContainerProps>`
   background-color: ${({ theme }) => theme.systemTrayBackground};
