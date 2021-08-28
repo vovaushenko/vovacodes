@@ -12,4 +12,7 @@ export const mockReduxStore: LocalRootState = {
     isTested: true,
     value: 7,
   },
+  todos: {
+    todos: [],
+  },
 };

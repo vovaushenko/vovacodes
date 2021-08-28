@@ -20,5 +20,6 @@ declare module 'styled-components' {
     settingButtonIsActive: { bg: string; color: string };
     buttonBg: string;
     pinnedAppHoverBg: string;
+    activeColor: string;
   }
 }
