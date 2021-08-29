@@ -15,6 +15,9 @@ const widgetModalStyles = css<ContainerProps>`
   /* show/hide*/
   transform: ${({ width, isSlidingModalOpen }) =>
     isSlidingModalOpen ? `translateX(1rem)` : `translateX(-${width})`};
+
+  overflow: visible;
+  overflow-y: auto;
 `;
 
 const systemTrayModalStyles = css<ContainerProps>`
@@ -39,12 +42,12 @@ export const Container = styled.div<ContainerProps>`
   /* display */
   flex-direction: column;
   flex-wrap: wrap;
+  overflow: hidden;
+  transition: 0.3s all ease-in-out;
   /* show/hide modal*/
   ${({ variant }) => variant === 'widgetsModal' && widgetModalStyles}
   ${({ variant }) => variant === 'systemTrayModal' && systemTrayModalStyles}
   ${({ variant }) => variant === 'settingsModal' && settingsModalStyles}
-  overflow: hidden;
-  transition: 0.3s all ease-in-out;
   /* styling */
   width: ${({ width }) => width};
   border-radius: ${({ theme }) => theme.borderRadius};

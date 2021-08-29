@@ -13,7 +13,6 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-    ["styled-components", { "ssr": true, "displayName": true }],
     "@babel/plugin-transform-runtime",
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-transform-modules-commonjs",
@@ -23,14 +22,18 @@
   ],
   "env": {
     "development": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
     },
     "test": {
       "plugins": [
         "transform-es2015-modules-commonjs",
         "@babel/plugin-proposal-class-properties"
       ],
-      "presets": ["@babel/preset-react"]
+      "presets": [
+        "@babel/preset-react"
+      ]
     }
   }
 }

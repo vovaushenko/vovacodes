@@ -3,15 +3,19 @@ import { AnyAction, combineReducers } from 'redux';
 import { UIstate } from '../../types/redux/ui-reducer-types';
 import { testReducer, TestState } from './testReducer';
 import { uiReducer } from './uiReducer';
+import { todosReducer } from './todosReducer';
+import { TodosState } from '../../types/redux/todos-reducer-types';
 
 const rootReducer = combineReducers({
   test: testReducer,
   ui: uiReducer,
+  todos: todosReducer,
 });
 
 export type State = {
   test: TestState;
   ui: UIstate;
+  todos: TodosState;
 };
 
 // https://stackoverflow.com/questions/64139344/how-to-use-typescript-next-redux-wrapper-getserversideprops

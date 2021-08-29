@@ -12,6 +12,7 @@ export const darkTheme: DefaultTheme = {
   settingButtonIsActive: { bg: '#69d3fa', color: '#000000' },
   buttonBg: 'rgba(46,61,83,.692)',
   pinnedAppHoverBg: 'rgba(3,21,41,.562)',
+  activeColor: '#4489aa',
 
   media: {
     phone: '(max-width: 500px)',
@@ -32,6 +33,7 @@ export const lightTheme: DefaultTheme = {
   settingButtonIsActive: { bg: '#0652f7', color: '#ffffff' },
   buttonBg: 'rgba(255, 255, 255, 0.815)',
   pinnedAppHoverBg: 'rgba(255,255,255,.596)',
+  activeColor: '#0652f7',
 
   media: {
     phone: '(max-width: 500px)',

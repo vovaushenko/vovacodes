@@ -9,7 +9,11 @@ import * as Styled from './Button.styles';
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = (withChevron: boolean) => {
-  return shallow(<Button withChevron={withChevron}>ASPARAGUS</Button>);
+  return shallow(
+    <Button withChevron={withChevron} variant={'standardBtn'}>
+      ASPARAGUS
+    </Button>
+  );
 };
 
 describe('Button', () => {
