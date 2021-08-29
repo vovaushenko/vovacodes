@@ -11,4 +11,10 @@ export const GlobalStyles = createGlobalStyle`
   .icon {
     color: ${({ theme }) => theme.primary.text};
   }
+
+  /* hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
 `;

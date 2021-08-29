@@ -100,6 +100,28 @@ const Hero = (): JSX.Element => {
           >
             <TodoWidget />
           </WidgetCard>
+          <NewsWidget
+            newsHeader={
+              '11 amazing places to visit in Canada for a summer vacation'
+            }
+            newsSource={'Skyscanner'}
+            newsLink={
+              'https://www.skyscanner.ca/tips-and-inspiration/best-summer-vacation-spots-in-canada'
+            }
+            backgroundImg={'/assets/images/news-2.jpg'}
+            cardGradientColor={'rgb(77, 231, 255)'}
+          />
+          <NewsWidget
+            newsHeader={
+              '11 amazing places to visit in Canada for a summer vacation'
+            }
+            newsSource={'Skyscanner'}
+            newsLink={
+              'https://www.skyscanner.ca/tips-and-inspiration/best-summer-vacation-spots-in-canada'
+            }
+            backgroundImg={'/assets/images/news-2.jpg'}
+            cardGradientColor={'rgb(77, 231, 255)'}
+          />
         </TestWrapper>
       </SlidingModal>
 

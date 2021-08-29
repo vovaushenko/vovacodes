@@ -1,7 +1,26 @@
 import styled, { css } from 'styled-components';
 import { slidInCenter } from '../../styles/reusableCss';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  /* make widget scrollable*/
+  max-height: 200px;
+  overflow-y: auto;
+  /* show scrollbar */
+
+  ::-webkit-scrollbar {
+    display: block;
+    width: 2px;
+    height: 1px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.activeColor};
+  }
+`;
 
 export const AddTodo = styled.div``;
 export const MyDay = styled.div`
