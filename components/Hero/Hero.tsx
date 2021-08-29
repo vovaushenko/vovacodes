@@ -10,6 +10,7 @@ import WidgetCard from '../WidgetCard/WidgetCard';
 import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import styled from 'styled-components';
 import TodoWidget from '../TodoWidget/TodoWidget';
+import NewsWidget from '../NewsWidget/NewsWidget';
 
 /**
  *Renders main hero screen
@@ -67,6 +68,30 @@ const Hero = (): JSX.Element => {
               iconSrc={'/assets/icons/widget/sun.svg'}
             />
           </WidgetCard>
+
+          <NewsWidget
+            newsHeader={
+              "Why is Elon Musk's Mars mission considered most ambitious?"
+            }
+            newsSource={'CNBC'}
+            newsLink={
+              'https://www.cnbc.com/2021/04/23/elon-musk-aiming-for-mars-so-humanity-is-not-a-single-planet-species.html'
+            }
+            backgroundImg={'/assets/images/news-1.jpg'}
+            cardGradientColor={'rgb(248, 168, 87)'}
+          />
+
+          <NewsWidget
+            newsHeader={
+              '11 amazing places to visit in Canada for a summer vacation'
+            }
+            newsSource={'Skyscanner'}
+            newsLink={
+              'https://www.skyscanner.ca/tips-and-inspiration/best-summer-vacation-spots-in-canada'
+            }
+            backgroundImg={'/assets/images/news-2.jpg'}
+            cardGradientColor={'rgb(77, 231, 255)'}
+          />
 
           <WidgetCard
             cardHeader={'To Do'}

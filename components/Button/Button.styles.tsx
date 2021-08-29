@@ -1,6 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Props } from './Button';
 
-export const GenericButton = styled.button`
+type ButtonStyledProps = Pick<Props, 'variant'>;
+
+const likeButtonStyles = css`
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  gap: 0.5rem;
+`;
+
+export const GenericButton = styled.button<ButtonStyledProps>`
   /* display */
   display: flex;
   align-items: center;
@@ -16,6 +25,9 @@ export const GenericButton = styled.button`
   cursor: pointer;
   /* animation */
   transition: 0.3s transform ease, 0.2s background-color ease, 0.2s color;
+  /*variant specific styles that will override the above styles*/
+
+  ${({ variant }) => variant === 'likeBtn' && likeButtonStyles};
 
   :active {
     transform: scale(0.9);

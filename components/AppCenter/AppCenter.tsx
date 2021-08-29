@@ -35,14 +35,18 @@ const AppCenter = (): JSX.Element => {
         </Styled.SearchBarForm>
         <Styled.SectionHeader margin={'0 0 1rem 0'}>
           <h3>Pinned</h3>
-          <Button withChevron={true}>All Apps</Button>
+          <Button withChevron={true} variant={'standardBtn'}>
+            All Apps
+          </Button>
         </Styled.SectionHeader>
 
         <PinnedApps />
 
         <Styled.SectionHeader margin={'2rem 0 0 0'}>
           <h3>Recommended</h3>
-          <Button withChevron={true}>More</Button>
+          <Button withChevron={true} variant={'standardBtn'}>
+            More
+          </Button>
         </Styled.SectionHeader>
 
         <Recommended />

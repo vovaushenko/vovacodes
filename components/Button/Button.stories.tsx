@@ -9,7 +9,10 @@ export default {
 const Template: Story<Props> = (args) => <Button {...args}>All Apps</Button>;
 
 export const NoChevron = Template.bind({});
-NoChevron.args = { withChevron: false };
+NoChevron.args = { variant: 'standardBtn', withChevron: false };
 
 export const WithChevron = Template.bind({});
-WithChevron.args = { withChevron: true };
+WithChevron.args = { variant: 'standardBtn', withChevron: true };
+
+export const LikeBtn = Template.bind({});
+LikeBtn.args = { variant: 'likeBtn', withChevron: false };
