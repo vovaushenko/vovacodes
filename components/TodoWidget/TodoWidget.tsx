@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import * as Styled from './TodoWidget.styles';
-import TextHeader from '../Typography/Header/TextHeader';
 import { FiCheckCircle, FiCircle, FiEdit, FiPlusCircle } from 'react-icons/fi';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { useActions } from '../../hooks/useActions';
 import { MdStar, MdStarBorder } from 'react-icons/md';
+import { useActions } from '../../hooks/useActions';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import TextHeader from '../Typography/Header/TextHeader';
+import * as Styled from './TodoWidget.styles';
 
 /**
  *Renders Todo widget where user can add and delete todos
@@ -14,9 +14,11 @@ import { MdStar, MdStarBorder } from 'react-icons/md';
 const TodoWidget = (): JSX.Element => {
   const [todoText, setTodoText] = useState('');
   const [isFormShown, setIsFormShown] = useState(false);
-  const { todos } = useTypedSelector((state) => state.todos);
+
   const { addNewTodo, markTodoCompleted, markTodoHighlighted, deleteTodo } =
     useActions();
+
+  const { todos } = useTypedSelector((state) => state.todos);
 
   const handleAddNewTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
