@@ -15,4 +15,7 @@ export const mockReduxStore: LocalRootState = {
   todos: {
     todos: [],
   },
+  windows: {
+    openedWindows: [],
+  },
 };
