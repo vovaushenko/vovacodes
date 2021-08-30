@@ -20,7 +20,7 @@ const Recommended = (): JSX.Element => {
           iconSize={file.iconSize}
           text={file.fileName}
           details={file.details}
-          onClick={file.action}
+          action={file.action}
         />
       ))}
     </Styled.Container>

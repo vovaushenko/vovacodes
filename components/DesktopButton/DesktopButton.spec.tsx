@@ -1,8 +1,9 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import Image from 'next/image';
 
 import DesktopButton, { Props } from './DesktopButton';
+import { withReduxAndStyledProviders } from '../../test/testUtils';
 
 /**
  * Setup function for the component
@@ -12,12 +13,13 @@ import DesktopButton, { Props } from './DesktopButton';
 const mockProps: Props = {
   text: 'This PC',
   iconSize: { width: 50, height: 50 },
-  iconSrc: 'assets/icons/Desktop/this_pc.webp',
+  iconSrc: '/assets/icons/Desktop/this_pc.webp',
   variant: 'desktop',
+  action: null,
 };
 
 const setup = (props: Props) => {
-  return shallow(<DesktopButton {...props} />);
+  return mount(withReduxAndStyledProviders(<DesktopButton {...props} />));
 };
 
 describe('DesktopButton', () => {
@@ -48,7 +50,7 @@ describe('DesktopButton', () => {
 
     it('should render correct icon text', () => {
       const buttonText = wrap.find({ children: mockProps.text });
-      expect(buttonText.length).toBe(1);
+      expect(buttonText.length).toBe(3);
     });
   });
 

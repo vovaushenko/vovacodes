@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import * as Styled from './DesktopButton.styles';
 import Paragraph from '../Typography/Paragraph/Paragraph';
 import Image from 'next/image';
+import { useActions } from '../../hooks/useActions';
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   variant: 'desktop' | 'systemTray' | 'pinnedApp' | 'recommendedApp';
@@ -9,6 +10,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   iconSize: { height: number; width: number };
   text: string;
   details?: string;
+  action: null | (() => void);
 }
 
 /**
@@ -20,6 +22,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
  *@param {string} text - text to be rendered in button
  *@param {string} details - details used in recommendedApp variant
  *@param {rest} rest - default button params and methods
+ *@param {null | function} action - specific onClick action for button, if not specified button will open new window on click
  *@returns {JSX.Element} - Rendered DesktopButton component
  */
 const DesktopButton = ({
@@ -28,10 +31,26 @@ const DesktopButton = ({
   iconSize,
   iconSrc,
   details,
+  action,
   ...rest
 }: Props): JSX.Element => {
+  const { openWindow } = useActions();
+
+  const handleOpenWindow = useCallback(() => {
+    openWindow({
+      windowName: text,
+      isOpen: true,
+      windowIcon: iconSrc,
+      size: { width: 400, height: 400 },
+    });
+  }, [openWindow, iconSrc, text]);
+
   return (
-    <Styled.ButtonContainer variant={variant} {...rest}>
+    <Styled.ButtonContainer
+      onClick={action !== null ? action : handleOpenWindow}
+      variant={variant}
+      {...rest}
+    >
       <Styled.Figure>
         <div>
           <Image

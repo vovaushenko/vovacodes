@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import * as Styled from './DesktopLayout.styles';
 import Head from 'next/head';
 import SystemTray from '../SystemTray/SystemTray';
+import OpenedWindows from '../OpenedWindows/OpenedWindows';
 
 export interface Props {
   title: string;
@@ -28,6 +29,7 @@ const DesktopLayout: FC<Props> = ({ children, title }): JSX.Element => {
       </Head>
       <Styled.Container>
         {children}
+        <OpenedWindows />
         <SystemTray />
       </Styled.Container>
     </>

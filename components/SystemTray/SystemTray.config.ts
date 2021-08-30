@@ -5,7 +5,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 export const useSystemTrayConfig = (): {
   systemTrayButtons: ISystemTrayButton[];
 } => {
-  const { changeTheme, toggleWidgetsModal, toggleSearchModal } = useActions();
+  const { toggleWidgetsModal, toggleSearchModal, changeTheme } = useActions();
   const { theme } = useTypedSelector((state) => state.ui);
 
   const themeToggleIcon =
@@ -44,21 +44,21 @@ export const useSystemTrayConfig = (): {
       id: 4,
       src: '/assets/icons/startmenu/icons8-microsoft-edge.svg',
       size: { width: 30, height: 30 },
-      action: () => changeTheme(),
+      action: null,
       alt: 'Use Edge browser',
     },
     {
       id: 5,
       src: '/assets/icons/taskbar/file_explorer.webp',
       size: { width: 30, height: 30 },
-      action: () => changeTheme(),
+      action: null,
       alt: 'Explore files',
     },
     {
       id: 6,
       src: '/assets/icons/startmenu/icons8-microsoft-store.svg',
       size: { width: 30, height: 30 },
-      action: () => changeTheme(),
+      action: null,
       alt: 'Shop on Microsoft Store',
     },
     {

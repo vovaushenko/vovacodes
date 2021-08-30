@@ -19,6 +19,7 @@ const PinnedApps = (): JSX.Element => {
           iconSrc={app.icon}
           iconSize={app.iconSize}
           text={app.text}
+          action={app.action}
         />
       ))}
     </Styled.Container>

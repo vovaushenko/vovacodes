@@ -34,7 +34,7 @@ const SystemTray = (): JSX.Element => {
               iconSrc={button.src}
               iconSize={button.size}
               text={button.alt}
-              onClick={button.action}
+              action={button.action}
             />
           ))}
         </Styled.ButtonList>
