@@ -12,6 +12,7 @@ declare module 'styled-components' {
     primary: { background: string; text: string };
     fontSize: { large: string; medium: string; small: string };
     gray: { dark: string; light: string; lightest: string };
+    red: { danger: string };
     borderRadius: string;
     systemTrayBackground: string;
     media: media;
@@ -21,5 +22,6 @@ declare module 'styled-components' {
     buttonBg: string;
     pinnedAppHoverBg: string;
     activeColor: string;
+    windowBackground: string;
   }
 }

@@ -3,7 +3,8 @@ import { DefaultTheme } from 'styled-components';
 export const darkTheme: DefaultTheme = {
   mode: 'dark',
   primary: { background: '#000000', text: 'rgba(255, 255, 255, 0.835)' },
-  gray: { dark: '#151515', light: '#383838', lightest: '#444444' },
+  gray: { dark: 'rgba(48,49,51,.774)', light: '#383838', lightest: '#444444' },
+  red: { danger: 'rgba(255,0,0,.562)' },
   borderRadius: '4px',
   fontSize: { large: '16px', medium: '14px', small: '12px' },
   systemTrayBackground: 'rgba(3, 21, 41, 0.35)',
@@ -13,6 +14,7 @@ export const darkTheme: DefaultTheme = {
   buttonBg: 'rgba(46,61,83,.692)',
   pinnedAppHoverBg: 'rgba(3,21,41,.562)',
   activeColor: '#4489aa',
+  windowBackground: 'rgba(28, 33, 39, 0.63)',
 
   media: {
     phone: '(max-width: 500px)',
@@ -24,7 +26,12 @@ export const darkTheme: DefaultTheme = {
 export const lightTheme: DefaultTheme = {
   mode: 'light',
   primary: { background: '#ffffff', text: '#000000' },
-  gray: { dark: '#151515', light: '#383838', lightest: '#444444' },
+  gray: {
+    dark: 'rgba(255,255,255,.658)',
+    light: '#383838',
+    lightest: '#444444',
+  },
+  red: { danger: 'rgba(255,0,0,.562)' },
   borderRadius: '4px',
   fontSize: { large: '16px', medium: '14px', small: '12px' },
   systemTrayBackground: 'rgba(255,255,255,.658)',
@@ -34,6 +41,7 @@ export const lightTheme: DefaultTheme = {
   buttonBg: 'rgba(255, 255, 255, 0.815)',
   pinnedAppHoverBg: 'rgba(255,255,255,.596)',
   activeColor: '#0652f7',
+  windowBackground: 'rgba(255,255,255,.658)',
 
   media: {
     phone: '(max-width: 500px)',
