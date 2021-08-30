@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import * as Styled from './Hero.styles';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { useActions } from '../../hooks/useActions';
 import DesktopButton from '../DesktopButton/DesktopButton';
-import SystemTray from '../SystemTray/SystemTray';
 import SlidingModal from '../SlidingModal/SlidingModal';
 import SettingsModalContent from '../SettingsModalContent/SettingsModalContent';
 import WidgetCard from '../WidgetCard/WidgetCard';
@@ -11,6 +9,7 @@ import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import styled from 'styled-components';
 import TodoWidget from '../TodoWidget/TodoWidget';
 import NewsWidget from '../NewsWidget/NewsWidget';
+import Window from '../Window/Window';
 
 /**
  *Renders main hero screen
@@ -18,8 +17,11 @@ import NewsWidget from '../NewsWidget/NewsWidget';
  *@returns {JSX.Element} - Rendered CardContent component
  */
 const Hero = (): JSX.Element => {
-  const { changeTheme } = useActions();
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
   const { theme } = useTypedSelector((state) => state.ui);
+  const closeWindow = useCallback(() => {
+    setIsWindowOpen(false);
+  }, []);
 
   const backgroundWallpaper =
     theme === 'dark'
@@ -30,12 +32,12 @@ const Hero = (): JSX.Element => {
     <Styled.Container bgWallpaper={backgroundWallpaper}>
       <DesktopButton
         variant={'desktop'}
-        onClick={() => changeTheme()}
+        onClick={() => setIsWindowOpen((p) => !p)}
         iconSrc={'/assets/icons/Desktop/this_pc.webp'}
         iconSize={{ width: 40, height: 40 }}
         text={'This PC'}
       />
-      <SystemTray />
+
       <SlidingModal
         width={'700px'}
         variant={'widgetsModal'}
@@ -132,6 +134,15 @@ const Hero = (): JSX.Element => {
       >
         <SettingsModalContent />
       </SlidingModal>
+      <Window
+        windowName={'test'}
+        size={{ width: 250, height: 250 }}
+        isOpen={isWindowOpen}
+        closeWindow={closeWindow}
+        windowIcon={'/assets/icons/Desktop/this_pc.webp'}
+      >
+        <h1>test</h1>
+      </Window>
     </Styled.Container>
   );
 };
