@@ -32,3 +32,21 @@ export const tiltIn = keyframes`
     opacity: 1;
   }
 `;
+
+/**
+ * @keyframes trackingInExpand
+ * @returns {keyframes} - track animation for headers appearance
+ * @example animation: ${trackingInExpand} 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+ */
+export const trackingInExpand = keyframes`
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+`;

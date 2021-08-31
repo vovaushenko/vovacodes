@@ -16,6 +16,8 @@ export const darkTheme: DefaultTheme = {
   activeColor: '#4489aa',
   windowBackground: 'rgba(28, 33, 39, 0.63)',
 
+  portfolio: { bgColor: '#010606' },
+
   media: {
     phone: '(max-width: 500px)',
     tablet: '(max-width: 768px)',
@@ -42,6 +44,7 @@ export const lightTheme: DefaultTheme = {
   pinnedAppHoverBg: 'rgba(255,255,255,.596)',
   activeColor: '#0652f7',
   windowBackground: 'rgba(255,255,255,.658)',
+  portfolio: { bgColor: '#010606' },
 
   media: {
     phone: '(max-width: 500px)',
