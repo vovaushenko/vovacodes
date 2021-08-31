@@ -16,7 +16,10 @@ export const darkTheme: DefaultTheme = {
   activeColor: '#4489aa',
   windowBackground: 'rgba(28, 33, 39, 0.63)',
 
-  portfolio: { bgColor: '#010606' },
+  portfolio: {
+    bgColor: '#010606',
+    text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
+  },
 
   media: {
     phone: '(max-width: 500px)',
@@ -44,7 +47,10 @@ export const lightTheme: DefaultTheme = {
   pinnedAppHoverBg: 'rgba(255,255,255,.596)',
   activeColor: '#0652f7',
   windowBackground: 'rgba(255,255,255,.658)',
-  portfolio: { bgColor: '#010606' },
+  portfolio: {
+    bgColor: '#010606',
+    text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
+  },
 
   media: {
     phone: '(max-width: 500px)',

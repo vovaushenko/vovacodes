@@ -18,6 +18,7 @@ export const P = styled.p<ParagraphProps>`
     withDarkColor ? theme.portfolio.text.dark : theme.portfolio.text.light};
   font-size: ${({ theme }) => theme.fontSize.small};
   margin: ${({ margin }) => margin};
+  line-height: 1.5;
 
   ${({ variant }) => variant === 'small' && smallVariantStyles};
   ${({ variant }) => variant === 'medium' && mediumVariantStyles};
