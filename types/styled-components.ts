@@ -23,6 +23,10 @@ declare module 'styled-components' {
     pinnedAppHoverBg: string;
     activeColor: string;
     windowBackground: string;
-    portfolio: { bgColor: string; text: { light: string; dark: string } };
+    portfolio: {
+      bgColor: string;
+      primaryColor: { dark: string; light: string };
+      text: { light: string; dark: string };
+    };
   }
 }

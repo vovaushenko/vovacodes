@@ -6,6 +6,7 @@ export interface Props {
   paragraphText: string;
   withDarkColor: boolean;
   variant: 'large' | 'medium' | 'small';
+  withAnimatedPresence: boolean;
 }
 
 /**
@@ -15,6 +16,7 @@ export interface Props {
  *@param {string} margin - margin to be applied
  *@param {string} paragraphText - text content of paragraph
  *@param {boolean} withDarkColor - specifies whether paragraph will be dark or white
+ *@param {boolean} withAnimatedPresence - specifies whether paragraph have default animation
  *@returns {JSX.Element} - Rendered PortfolioParagraph component
  */
 const PortfolioParagraph = ({
@@ -22,9 +24,15 @@ const PortfolioParagraph = ({
   paragraphText,
   withDarkColor,
   variant,
+  withAnimatedPresence,
 }: Props): JSX.Element => {
   return (
-    <Styled.P margin={margin} withDarkColor={withDarkColor} variant={variant}>
+    <Styled.P
+      margin={margin}
+      withDarkColor={withDarkColor}
+      variant={variant}
+      withAnimatedPresence={withAnimatedPresence}
+    >
       {paragraphText}
     </Styled.P>
   );

@@ -18,6 +18,7 @@ export const darkTheme: DefaultTheme = {
 
   portfolio: {
     bgColor: '#010606',
+    primaryColor: { dark: '#01bf71', light: '#2bff88' },
     text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
   },
 
@@ -49,6 +50,7 @@ export const lightTheme: DefaultTheme = {
   windowBackground: 'rgba(255,255,255,.658)',
   portfolio: {
     bgColor: '#010606',
+    primaryColor: { dark: '#01bf71', light: '#2bff88' },
     text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
   },
 

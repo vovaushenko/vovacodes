@@ -15,6 +15,7 @@ const setup = () => {
       paragraphText={'🥦BROCCOLI🥦'}
       withDarkColor={false}
       variant={'small'}
+      withAnimatedPresence={false}
     />
   );
 };

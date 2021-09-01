@@ -16,6 +16,7 @@ Small.args = {
   variant: 'small',
   withDarkColor: false,
   paragraphText: 'Small Paragraph',
+  withAnimatedPresence: false,
 };
 
 export const Medium = Template.bind({});
@@ -24,6 +25,7 @@ Medium.args = {
   variant: 'medium',
   withDarkColor: false,
   paragraphText: 'Medium Paragraph',
+  withAnimatedPresence: true,
 };
 
 export const Large = Template.bind({});
@@ -32,4 +34,5 @@ Large.args = {
   variant: 'large',
   withDarkColor: false,
   paragraphText: 'Large Paragraph',
+  withAnimatedPresence: true,
 };
