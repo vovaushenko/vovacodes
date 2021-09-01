@@ -66,3 +66,74 @@ export const slideTop = keyframes`
     opacity: 1;
   }
 `;
+/**
+ * @keyframes slideBottom
+ * @returns {keyframes} - track animation for skill card appearance
+ * @example animation: ${slideTop} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+ */
+export const slideBottom = keyframes`
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+/**
+ * @keyframes Main animation dis-appearance for modals, popups and hidden components
+ * @function slideOutKeyframes
+ * @returns {keyframes} - keyframes for element's dis-appearance animations
+ * @example animation: ${slideOutKeyframes} 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+ */
+export const slideOutKeyframes = keyframes`
+  0% {
+    transform: translateZ(0) rotateX(0);
+    opacity: 1;
+  }
+  54% {
+    transform: translateZ(-160px) rotateX(87deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(-800px) rotateX(90deg);
+    opacity: 0;
+  }
+`;
+
+/**
+ * @function rollInLeft
+ * @returns {keyframes} - keyframes for element's roll in appearance
+ * @example animation: ${rollInLeft} 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+ */
+export const rollInLeft = keyframes`
+  0% {
+    transform: translateX(-400px) rotate(-360deg);
+    filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0);
+    opacity: 1;
+  }
+`;
+/**
+ * @function rollInRight
+ * @returns {keyframes} - keyframes for element's roll in appearance
+ * @example animation: ${rollInRight} 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+ */
+export const rollInRight = keyframes`
+  0% {
+    transform: translateX(400px) rotate(360deg);
+    filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    filter: blur(0);
+    opacity: 1;
+  }
+`;

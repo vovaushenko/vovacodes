@@ -22,6 +22,7 @@ const paragraphAnimation = css`
 `;
 
 export const P = styled.p<ParagraphProps>`
+  z-index: 5;
   color: ${({ theme, withDarkColor }) =>
     withDarkColor ? theme.portfolio.text.dark : theme.portfolio.text.light};
   font-size: ${({ theme }) => theme.fontSize.small};

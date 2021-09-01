@@ -4,6 +4,9 @@ import { trackingInExpand } from '../../../../styles/reusableCss';
 
 type HeaderProps = Pick<Props, 'margin' | 'color' | 'variant'>;
 
+const extraSmallVariantStyles = css`
+  font-size: 2.5rem;
+`;
 const smallVariantStyles = css`
   font-size: 4rem;
 `;
@@ -18,10 +21,12 @@ const largeVariantStyles = css`
 `;
 
 export const H1 = styled.h1<HeaderProps>`
+  z-index: 5;
   font-size: 4rem;
   margin: ${({ margin }) => margin};
   color: ${({ color }) => color};
   line-height: 1.6;
+  ${({ variant }) => variant === 'extraSmall' && extraSmallVariantStyles};
   ${({ variant }) => variant === 'small' && smallVariantStyles};
   ${({ variant }) => variant === 'medium' && mediumVariantStyles};
   ${({ variant }) => variant === 'large' && largeVariantStyles};

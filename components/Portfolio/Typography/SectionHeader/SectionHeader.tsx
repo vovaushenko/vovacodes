@@ -2,7 +2,7 @@ import React from 'react';
 import * as Styled from './SectionHeader.styles';
 
 export interface Props {
-  variant: 'large' | 'medium' | 'small';
+  variant: 'large' | 'medium' | 'small' | 'extraSmall';
   headerText: string;
   margin: string;
   color: string;
