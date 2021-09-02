@@ -3,13 +3,11 @@ import { rollInLeft, rollInRight, slideTop } from '../../../styles/reusableCss';
 
 //https://stackoverflow.com/questions/53416348/css-scroll-snapping-vertical-not-working
 //scrollbar snap
+
 export const Container = styled.div`
-  overflow: scroll;
   height: 100vh;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh);
   scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  overflow-y: scroll;
 `;
 
 export const FirstSlide = styled.div`
@@ -159,5 +157,41 @@ export const MilestoneHeader = styled.div`
   time {
     font-size: 1.25rem;
     margin-right: 2rem;
+  }
+`;
+
+export const SixthSlide = styled.div`
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+
+  h1 {
+    line-height: 1;
+  }
+
+  .left-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .right-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #4831d4;
+    width: 50%;
+  }
+
+  .content-wrapper {
+    width: 55%;
+  }
+
+  button {
+    align-self: flex-start;
   }
 `;

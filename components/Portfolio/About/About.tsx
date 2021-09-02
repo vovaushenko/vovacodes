@@ -7,11 +7,13 @@ import WaveDivider from '../WaveDivider/WaveDivider';
 import { useAboutConfig } from './About.config';
 import SkillIcon from '../SkillIcon/SkillIcon';
 import SkillListItem from '../SkillListItem/SkillListItem';
+import ActionButton from '../ActionButton/ActionButton';
+import { FiBookOpen, FiChevronsRight } from 'react-icons/fi';
+import ScrollHint from '../ScrollHint/ScrollHint';
 
 /**
  *Renders About section in resume
  *@function About
- *@param {number} prop -
  *@returns {JSX.Element} - Rendered CardContent component
  */
 const About = (): JSX.Element => {
@@ -21,11 +23,12 @@ const About = (): JSX.Element => {
     backendSkills,
     backendTechSkills,
   } = useAboutConfig();
+
   return (
     <Styled.Container>
       {/*   FIRST SLIDE   */}
-      <Slide bgColor={'#010606'} height={`100vh`}>
-        <Styled.FirstSlide>
+      <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>
+        <Styled.FirstSlide id={'first-slide'} className="page first-page">
           <SectionHeader
             variant={'large'}
             headerText={'Full-stack Developer'}
@@ -41,6 +44,7 @@ const About = (): JSX.Element => {
             variant={'large'}
             withAnimatedPresence={true}
           />
+          <ScrollHint />
         </Styled.FirstSlide>
       </Slide>
       <WaveDivider
@@ -48,8 +52,8 @@ const About = (): JSX.Element => {
         dividerHeight={'150px'}
       />
       {/*   SECOND SLIDE   */}
-      <Slide bgColor={'#4831d4'} height={'100vh'}>
-        <Styled.SecondSlide>
+      <Slide bgColor={'#4831d4'} height={'100vh'} anchorID={''}>
+        <Styled.SecondSlide className="page second-page">
           <div className="left-column">
             <SectionHeader
               variant={'medium'}
@@ -88,13 +92,14 @@ const About = (): JSX.Element => {
           </div>
         </Styled.SecondSlide>
       </Slide>
+
       <WaveDivider
         waveImg={'/assets/portfolio/blob-2.svg'}
         dividerHeight={'200px'}
       />
       {/*   THIRD SLIDE   */}
-      <Slide bgColor={'#010606'} height={'100vh'}>
-        <Styled.ThirdSlide>
+      <Slide bgColor={'#010606'} height={'100vh'} anchorID={'third-slide'}>
+        <Styled.ThirdSlide id={'third-slide'}>
           <div className="skills-wrapper">
             <SectionHeader
               variant={'small'}
@@ -178,7 +183,7 @@ const About = (): JSX.Element => {
         dividerHeight={'200px'}
       />
       {/*   FOURTH SLIDE   */}
-      <Slide bgColor={'#4831d4'} height={'100vh'}>
+      <Slide bgColor={'#4831d4'} height={'100vh'} anchorID={'fourth-slide'}>
         <Styled.FourthSlide>
           <div className="left-column">
             <SectionHeader
@@ -224,7 +229,7 @@ const About = (): JSX.Element => {
         dividerHeight={'200px'}
       />
       {/*   FIFTH SLIDE   */}
-      <Slide bgColor={'#010606'} height={'100vh'}>
+      <Slide bgColor={'#010606'} height={'100vh'} anchorID={'fifth-slide'}>
         <Styled.FifthSlide>
           <SectionHeader
             variant={'medium'}
@@ -302,6 +307,55 @@ const About = (): JSX.Element => {
             />
           </Styled.Milestone>
         </Styled.FifthSlide>
+      </Slide>
+      {/*   SIXTH SLIDE   */}
+      <Slide bgColor={'#010606'} height={'100vh'} anchorID={'sixth-slide'}>
+        <Styled.SixthSlide>
+          <div className="left-column">
+            <div className="content-wrapper">
+              <SectionHeader
+                variant={'small'}
+                headerText={'I build & design stuff'}
+                margin={'0'}
+                color={'#2bff88'}
+              />
+              <PortfolioParagraph
+                margin={'2rem 0 4rem 0'}
+                paragraphText={
+                  'Open source projects, web apps and experimentals.'
+                }
+                withDarkColor={false}
+                variant={'large'}
+                withAnimatedPresence={true}
+              />
+              <ActionButton
+                buttonText={'See my projects'}
+                icon={<FiChevronsRight className="action-icon" />}
+              />
+            </div>
+          </div>
+          <div className="right-column">
+            <div className="content-wrapper">
+              <SectionHeader
+                variant={'small'}
+                headerText={'I write, sometimes'}
+                margin={'0'}
+                color={'#2bff88'}
+              />
+              <PortfolioParagraph
+                margin={'2rem 0 4rem 0'}
+                paragraphText={'About design, frontend dev, learning and life'}
+                withDarkColor={false}
+                variant={'large'}
+                withAnimatedPresence={true}
+              />
+              <ActionButton
+                buttonText={'Read my articles'}
+                icon={<FiBookOpen className="action-icon" />}
+              />
+            </div>
+          </div>
+        </Styled.SixthSlide>
       </Slide>
     </Styled.Container>
   );

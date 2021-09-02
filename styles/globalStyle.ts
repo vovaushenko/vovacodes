@@ -8,11 +8,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
   }
 
-  body, html {
-    scroll-snap-type: proximity;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y proximity;
-  }
 
   .icon {
     color: ${({ theme }) => theme.primary.text};

@@ -1,8 +1,12 @@
+import React, { ReactNode } from 'react';
+import { FiGithub } from 'react-icons/fi';
+
 export const useAboutConfig = (): {
   frontendSkills: ISkill[];
   backendSkills: ISkill[];
   frontendTechSkills: ITechSkill[];
   backendTechSkills: ITechSkill[];
+  sideNavigationData: IScrollNavLink[];
 } => {
   const frontendSkills: ISkill[] = [
     {
@@ -150,11 +154,44 @@ export const useAboutConfig = (): {
     },
   ];
 
+  const sideNavigationData: IScrollNavLink[] = [
+    {
+      id: 1,
+      icon: <FiGithub className={'scroll-nav-icon'} />,
+      hiddenText: 'Second Slide',
+      anchorID: 'first-slide',
+    },
+    {
+      id: 2,
+      icon: <FiGithub className={'scroll-nav-icon'} />,
+      hiddenText: 'Second Slide',
+      anchorID: 'second-slide',
+    },
+    {
+      id: 3,
+      icon: <FiGithub className={'scroll-nav-icon'} />,
+      hiddenText: 'Second Slide',
+      anchorID: 'third-slide',
+    },
+    {
+      id: 4,
+      icon: <FiGithub className={'scroll-nav-icon'} />,
+      hiddenText: 'Second Slide',
+      anchorID: 'fourth-slide',
+    },
+    {
+      id: 5,
+      icon: <FiGithub className={'scroll-nav-icon'} />,
+      hiddenText: 'Second Slide',
+      anchorID: 'fifth-slide',
+    },
+  ];
   return {
     frontendSkills,
     backendSkills,
     frontendTechSkills,
     backendTechSkills,
+    sideNavigationData,
   };
 };
 
@@ -169,4 +206,11 @@ export interface ITechSkill {
   id: number;
   skillSection: string;
   skillValue: string;
+}
+
+export interface IScrollNavLink {
+  id: number;
+  icon: ReactNode;
+  hiddenText: string;
+  anchorID: string;
 }
