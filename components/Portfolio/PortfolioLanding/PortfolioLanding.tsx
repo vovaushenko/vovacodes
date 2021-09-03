@@ -27,8 +27,8 @@ const PortfolioLanding = (): JSX.Element => {
           <AnimatedRouterLink
             variant={'highlight'}
             text={'Vova'}
-            href={'/hello'}
-            hoverText={'Contact.tsx'}
+            href={'/portfolio/contact'}
+            hoverText={'Contact'}
           />
         </Styled.LinkWrapper>
       </Styled.Navigation>

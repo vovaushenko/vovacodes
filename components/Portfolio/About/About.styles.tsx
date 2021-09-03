@@ -26,14 +26,18 @@ export const SecondSlide = styled.div`
   .left-column {
     width: 50%;
     height: 100%;
-    padding: 6rem 10rem;
+    padding: 10rem 7rem;
+    display: flex;
+
+    h1 {
+      writing-mode: vertical-lr;
+    }
   }
 
   .right-column {
     width: 50%;
     height: 100%;
     padding: 10rem;
-    padding-top: 13rem;
   }
 `;
 
@@ -110,22 +114,25 @@ export const ThirdSlide = styled.div`
 `;
 
 export const FourthSlide = styled.div`
+  display: flex;
+
   .left-column {
+    width: 50%;
+    height: 100%;
+    padding: 3rem 2rem 3rem 10rem;
+
     h1 {
       line-height: 1;
       margin-bottom: 2rem;
     }
-
-    width: 50%;
-    height: 100%;
-    padding: 3rem 7rem;
   }
 
   .right-column {
     width: 50%;
     height: 100%;
-    padding: 10rem;
-    padding-top: 13rem;
+    padding: 2rem;
+    padding-top: 10rem;
+    animation: ${slideTop} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 `;
 
@@ -133,10 +140,45 @@ export const FifthSlide = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0 3rem;
+  padding: 0 1rem;
+
+  :before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 900px;
+    height: 900px;
+    background: #383838;
+    background: linear-gradient(40deg, #000000 33%, #383838 69%);
+    border-radius: 50%;
+    animation: ${rollInRight} 2s cubic-bezier(0.23, 1, 0.32, 1) both;
+
+    animation-name: spin;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 `;
 
-export const Milestone = styled.article``;
+export const Milestone = styled.article`
+  z-index: 5;
+  flex-direction: column;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(22px);
+  animation: ${slideTop} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+`;
 
 export const MilestoneHeader = styled.div`
   display: flex;

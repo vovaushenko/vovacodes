@@ -10,6 +10,7 @@ import SkillListItem from '../SkillListItem/SkillListItem';
 import ActionButton from '../ActionButton/ActionButton';
 import { FiBookOpen, FiChevronsRight } from 'react-icons/fi';
 import ScrollHint from '../ScrollHint/ScrollHint';
+import Image from 'next/image';
 
 /**
  *Renders About section in resume
@@ -74,12 +75,6 @@ const About = (): JSX.Element => {
             />
           </div>
           <div className="right-column">
-            <SectionHeader
-              variant={'medium'}
-              headerText={'Engineering'}
-              margin={'0'}
-              color={'#2bff88'}
-            />
             <PortfolioParagraph
               margin={'0'}
               paragraphText={
@@ -88,6 +83,12 @@ const About = (): JSX.Element => {
               withDarkColor={false}
               variant={'large'}
               withAnimatedPresence={true}
+            />
+            <SectionHeader
+              variant={'medium'}
+              headerText={'Engineering'}
+              margin={'0'}
+              color={'#2bff88'}
             />
           </div>
         </Styled.SecondSlide>
@@ -221,7 +222,15 @@ const About = (): JSX.Element => {
             />
           </div>
 
-          <div className="right-column"></div>
+          <div className="right-column">
+            <Image
+              src={'/assets/portfolio/work-from-home.svg'}
+              alt={'Vova is working from home'}
+              height={500}
+              width={500}
+              objectFit={'contain'}
+            />
+          </div>
         </Styled.FourthSlide>
       </Slide>
       <WaveDivider
@@ -232,8 +241,8 @@ const About = (): JSX.Element => {
       <Slide bgColor={'#010606'} height={'100vh'} anchorID={'fifth-slide'}>
         <Styled.FifthSlide>
           <SectionHeader
-            variant={'medium'}
-            headerText={'Milestones'}
+            variant={'small'}
+            headerText={'Highlighted milestones'}
             margin={'0'}
             color={'#2bff88'}
           />
@@ -271,25 +280,6 @@ const About = (): JSX.Element => {
             />
           </Styled.Milestone>
 
-          <Styled.Milestone>
-            <Styled.MilestoneHeader>
-              <h3>POSTDOC RESEARCH ASSISTANT</h3>
-              <time>2016-2017</time>
-            </Styled.MilestoneHeader>
-            <h4>
-              Laboratory of Physics of Interfaces and Thin Films (CNRS, Ecole
-              Polytechnique, France)
-            </h4>
-            <PortfolioParagraph
-              margin={'1rem 0'}
-              paragraphText={
-                '. The project was centered on the development of non-invasive cancer-detection algorithms. During the project, I expanded my horizons and learned various image processing algorithms and methods.'
-              }
-              withDarkColor={false}
-              variant={'medium'}
-              withAnimatedPresence={true}
-            />
-          </Styled.Milestone>
           <Styled.Milestone>
             <Styled.MilestoneHeader>
               <h3>LECTURER/ASSISTANT PROFESSOR</h3>
