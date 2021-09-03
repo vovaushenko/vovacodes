@@ -12,7 +12,7 @@ declare module 'styled-components' {
     primary: { background: string; text: string };
     fontSize: { large: string; medium: string; small: string };
     gray: { dark: string; light: string; lightest: string };
-    red: { danger: string };
+    red: { danger: string; lightDanger: string };
     borderRadius: string;
     systemTrayBackground: string;
     media: media;
@@ -25,6 +25,7 @@ declare module 'styled-components' {
     windowBackground: string;
     portfolio: {
       bgColor: string;
+      secondaryBg: { purple: string };
       primaryColor: { dark: string; light: string };
       text: { light: string; dark: string };
     };

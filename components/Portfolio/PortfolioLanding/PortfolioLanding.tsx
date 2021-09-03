@@ -28,7 +28,7 @@ const PortfolioLanding = (): JSX.Element => {
             variant={'highlight'}
             text={'Vova'}
             href={'/hello'}
-            hoverText={'Contact'}
+            hoverText={'Contact.tsx'}
           />
         </Styled.LinkWrapper>
       </Styled.Navigation>

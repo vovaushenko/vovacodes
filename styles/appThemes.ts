@@ -4,7 +4,7 @@ export const darkTheme: DefaultTheme = {
   mode: 'dark',
   primary: { background: '#000000', text: 'rgba(255, 255, 255, 0.835)' },
   gray: { dark: 'rgba(48,49,51,.774)', light: '#383838', lightest: '#444444' },
-  red: { danger: 'rgba(255,0,0,.562)' },
+  red: { danger: 'rgba(255,0,0,.562)', lightDanger: '#e83535' },
   borderRadius: '4px',
   fontSize: { large: '16px', medium: '14px', small: '12px' },
   systemTrayBackground: 'rgba(3, 21, 41, 0.35)',
@@ -18,6 +18,7 @@ export const darkTheme: DefaultTheme = {
 
   portfolio: {
     bgColor: '#010606',
+    secondaryBg: { purple: '#4831d4' },
     primaryColor: { dark: '#01bf71', light: '#2bff88' },
     text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
   },
@@ -37,7 +38,7 @@ export const lightTheme: DefaultTheme = {
     light: '#383838',
     lightest: '#444444',
   },
-  red: { danger: 'rgba(255,0,0,.562)' },
+  red: { danger: 'rgba(255,0,0,.562)', lightDanger: '#e83535' },
   borderRadius: '4px',
   fontSize: { large: '16px', medium: '14px', small: '12px' },
   systemTrayBackground: 'rgba(255,255,255,.658)',
@@ -50,6 +51,7 @@ export const lightTheme: DefaultTheme = {
   windowBackground: 'rgba(255,255,255,.658)',
   portfolio: {
     bgColor: '#010606',
+    secondaryBg: { purple: '#4831d4' },
     primaryColor: { dark: '#01bf71', light: '#2bff88' },
     text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
   },

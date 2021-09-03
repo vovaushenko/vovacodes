@@ -7,7 +7,7 @@ import Slide from './Slide';
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return shallow(<Slide height={'777px'} bgColor={'TOMATO'} />);
+  return shallow(<Slide height={'777px'} bgColor={'TOMATO'} anchorID={'1'} />);
 };
 
 describe('Slide', () => {
