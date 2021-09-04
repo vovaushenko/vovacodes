@@ -15,6 +15,12 @@ export const darkTheme: DefaultTheme = {
   pinnedAppHoverBg: 'rgba(3,21,41,.562)',
   activeColor: '#4489aa',
   windowBackground: 'rgba(28, 33, 39, 0.63)',
+  zIndex: {
+    highestPriority: 777,
+    navigation: 78,
+    modal: 77,
+    lowPriority: 7,
+  },
 
   portfolio: {
     bgColor: '#010606',
@@ -49,6 +55,12 @@ export const lightTheme: DefaultTheme = {
   pinnedAppHoverBg: 'rgba(255,255,255,.596)',
   activeColor: '#0652f7',
   windowBackground: 'rgba(255,255,255,.658)',
+  zIndex: {
+    highestPriority: 777,
+    navigation: 78,
+    modal: 77,
+    lowPriority: 7,
+  },
   portfolio: {
     bgColor: '#010606',
     secondaryBg: { purple: '#4831d4' },

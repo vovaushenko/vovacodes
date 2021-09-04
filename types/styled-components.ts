@@ -23,6 +23,12 @@ declare module 'styled-components' {
     pinnedAppHoverBg: string;
     activeColor: string;
     windowBackground: string;
+    zIndex: {
+      highestPriority: number;
+      modal: number;
+      navigation: number;
+      lowPriority: number;
+    };
     portfolio: {
       bgColor: string;
       secondaryBg: { purple: string };

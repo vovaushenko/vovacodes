@@ -11,6 +11,7 @@ import ActionButton from '../ActionButton/ActionButton';
 import { FiBookOpen, FiChevronsRight } from 'react-icons/fi';
 import ScrollHint from '../ScrollHint/ScrollHint';
 import Image from 'next/image';
+import NavigationMenu from '../NavigationMenu/NavigationMenu';
 
 /**
  *Renders About section in resume
@@ -27,6 +28,7 @@ const About = (): JSX.Element => {
 
   return (
     <Styled.Container>
+      <NavigationMenu />
       {/*   FIRST SLIDE   */}
       <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>
         <Styled.FirstSlide id={'first-slide'} className="page first-page">

@@ -7,6 +7,7 @@ import ScrollHint from '../ScrollHint/ScrollHint';
 import { useContactConfig } from './Contact.config';
 import SocialMediaContact from '../SocialMediaContact/SocialMediaContact';
 import ContactForm from '../ContactForm/ContactForm';
+import NavigationMenu from '../NavigationMenu/NavigationMenu';
 
 /**
  *Renders contact screen @ portfolio/contact
@@ -18,6 +19,10 @@ const Contact = (): JSX.Element => {
 
   return (
     <Styled.Container>
+      {/* Navigation - positioned absolutely */}
+      <NavigationMenu />
+
+      {/* Slide # 1*/}
       <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>
         <Styled.FirstSlide>
           <SectionHeader
@@ -30,6 +35,7 @@ const Contact = (): JSX.Element => {
         </Styled.FirstSlide>
       </Slide>
 
+      {/* Slide # 2*/}
       <Slide bgColor={'#4831d4'} height={`100vh`} anchorID={'first-slide'}>
         <Styled.SecondSlide>
           <Styled.ColumnWrapper>
