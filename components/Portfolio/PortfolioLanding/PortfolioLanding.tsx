@@ -21,7 +21,7 @@ const PortfolioLanding = (): JSX.Element => {
           <AnimatedRouterLink
             variant={'standard'}
             text={'I am'}
-            href={'/hello'}
+            href={'/portfolio/projects'}
             hoverText={'Work'}
           />
           <AnimatedRouterLink

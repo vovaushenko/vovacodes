@@ -6,6 +6,7 @@ export interface Props {
   headerText: string;
   margin: string;
   color: string;
+  withGradient?: boolean;
 }
 
 /**
@@ -15,6 +16,7 @@ export interface Props {
  *@param {string} margin - margin to be applied
  *@param {string} headerText - text content of header
  *@param {string} color - text color
+ *@param {boolean} withGradient - specifies whether gradient color should be applied
  *@returns {JSX.Element} - Rendered TextHeader component
  */
 const TextHeader = ({
@@ -22,9 +24,15 @@ const TextHeader = ({
   headerText,
   color,
   variant,
+  withGradient,
 }: Props): JSX.Element => {
   return (
-    <Styled.H1 variant={variant} margin={margin} color={color}>
+    <Styled.H1
+      variant={variant}
+      margin={margin}
+      color={color}
+      withGradient={withGradient}
+    >
       {headerText}
     </Styled.H1>
   );

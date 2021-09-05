@@ -56,6 +56,7 @@ const TextCarousel = ({ quotes }: Props): JSX.Element => {
           headerText={title}
           margin={'0'}
           color={'#01bf71'}
+          withGradient
         />
         <PortfolioParagraph
           key={quoteID + 1}

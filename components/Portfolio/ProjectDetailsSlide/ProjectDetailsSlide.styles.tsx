@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { slidInCenter } from '../../../styles/reusableCss';
 
 interface Props {
   slideHeight: string;
@@ -18,6 +19,8 @@ export const LeftColumn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${slidInCenter} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 500ms;
 `;
 
 export const LevitatingWrapper = styled.div`

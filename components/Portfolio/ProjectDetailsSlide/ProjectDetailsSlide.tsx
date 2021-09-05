@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as Styled from './ProjectDetailsSlide.styles';
 import { projectDetailsQuotes } from './ProjectDetailsSlide.config';
 import TextCarousel from '../TextCarousel/TextCarousel';
+import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 
 export interface Props {
   slideHeight: string;
@@ -23,21 +24,41 @@ const ProjectDetailsSlide = ({
   projectName,
   projectMobileImg,
 }: Props): JSX.Element => {
-  return (
-    <Styled.Container slideHeight={slideHeight} slideBgColor={slideBgColor}>
-      <Styled.RightColumn>
-        <TextCarousel quotes={projectDetailsQuotes} />
-      </Styled.RightColumn>
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isElementVisible] = useIntersectionObserver(containerRef, {
+    threshold: 0.95,
+  });
+  const [isOnScreen, setIsOnScreen] = useState(false);
+  useEffect(() => {
+    if (isElementVisible && !isOnScreen) setIsOnScreen(true);
+  }, [isElementVisible, isOnScreen]);
 
-      <Styled.LeftColumn>
-        <Styled.LevitatingWrapper>
-          <Styled.Figure>
-            {[1, 2, 3, 4].map((id) => (
-              <img key={id} src={projectMobileImg} alt={projectName} />
-            ))}
-          </Styled.Figure>
-        </Styled.LevitatingWrapper>
-      </Styled.LeftColumn>
+  const randomKey = `${~~Math.random() * 10000}${isOnScreen}`;
+
+  return (
+    <Styled.Container
+      ref={containerRef}
+      key={randomKey}
+      slideHeight={slideHeight}
+      slideBgColor={slideBgColor}
+    >
+      {isOnScreen && (
+        <>
+          <Styled.RightColumn>
+            <TextCarousel quotes={projectDetailsQuotes} />
+          </Styled.RightColumn>
+
+          <Styled.LeftColumn>
+            <Styled.LevitatingWrapper>
+              <Styled.Figure>
+                {[1, 2, 3, 4].map((id) => (
+                  <img key={id} src={projectMobileImg} alt={projectName} />
+                ))}
+              </Styled.Figure>
+            </Styled.LevitatingWrapper>
+          </Styled.LeftColumn>
+        </>
+      )}
     </Styled.Container>
   );
 };
