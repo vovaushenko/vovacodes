@@ -142,6 +142,7 @@ export const FifthSlide = styled.div`
   gap: 1rem;
   padding: 0 1rem;
 
+
   :before {
     content: '';
     position: absolute;
@@ -152,10 +153,9 @@ export const FifthSlide = styled.div`
     background: #383838;
     background: linear-gradient(40deg, #000000 33%, #383838 69%);
     border-radius: 50%;
-    animation: ${rollInRight} 2s cubic-bezier(0.23, 1, 0.32, 1) both;
 
     animation-name: spin;
-    animation-duration: 35s;
+    animation-duration: 25s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 

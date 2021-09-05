@@ -4,6 +4,7 @@ import { useHighlightedProjectsData } from './HighlightedProjects.config';
 import ProjectDesktopSlide from '../ProjectDesktopSlide/ProjectDesktopSlide';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import ProjectDetailsSlide from '../ProjectDetailsSlide/ProjectDetailsSlide';
+import WaveDivider from '../WaveDivider/WaveDivider';
 
 /**
  *Renders sections with some of my projects
@@ -14,6 +15,7 @@ import ProjectDetailsSlide from '../ProjectDetailsSlide/ProjectDetailsSlide';
 const HighlightedProjects = (): JSX.Element => {
   const { highlightedProjects } = useHighlightedProjectsData();
   const projectOne = highlightedProjects[0];
+  const projectTwo = highlightedProjects[1];
 
   return (
     <Styled.Container>
@@ -25,10 +27,17 @@ const HighlightedProjects = (): JSX.Element => {
         projectName={projectOne.projectTitle}
         projectMobileImg={projectOne.projectMobileImg}
       />
-
-      <ProjectDesktopSlide {...projectOne} />
-      <ProjectDesktopSlide {...projectOne} />
-      <ProjectDesktopSlide {...projectOne} />
+      <WaveDivider
+        waveImg={'/assets/portfolio/blob-1.svg'}
+        dividerHeight={'150px'}
+      />
+      <ProjectDesktopSlide {...projectTwo} />
+      <ProjectDetailsSlide
+        slideHeight={'100vh'}
+        slideBgColor={'#4831d4'}
+        projectName={projectTwo.projectTitle}
+        projectMobileImg={projectTwo.projectMobileImg}
+      />
     </Styled.Container>
   );
 };

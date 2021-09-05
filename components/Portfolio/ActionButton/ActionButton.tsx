@@ -15,6 +15,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
  *@param {string} href - href of the above link
  *@param {string} buttonText - text content of button
  *@param {ReactNode} icon - icon react element, should have "action-icon" class to be styled and positioned properly
+ *@param {rest} rest - standard button props
  *@returns {JSX.Element} - Rendered ActionButton component
  */
 const ActionButton = ({
@@ -22,6 +23,7 @@ const ActionButton = ({
   icon,
   renderAsLink,
   href,
+  ...rest
 }: Props): JSX.Element => {
   if (renderAsLink && href) {
     return (
@@ -33,7 +35,7 @@ const ActionButton = ({
   }
 
   return (
-    <Styled.BTN>
+    <Styled.BTN {...rest}>
       {buttonText}
       <span>{icon}</span>
     </Styled.BTN>

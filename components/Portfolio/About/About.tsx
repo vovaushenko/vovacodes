@@ -12,6 +12,7 @@ import { FiBookOpen, FiChevronsRight } from 'react-icons/fi';
 import ScrollHint from '../ScrollHint/ScrollHint';
 import Image from 'next/image';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
+import { useRouter } from 'next/router';
 
 /**
  *Renders About section in resume
@@ -19,12 +20,17 @@ import NavigationMenu from '../NavigationMenu/NavigationMenu';
  *@returns {JSX.Element} - Rendered CardContent component
  */
 const About = (): JSX.Element => {
+  const router = useRouter();
   const {
     frontendSkills,
     frontendTechSkills,
     backendSkills,
     backendTechSkills,
   } = useAboutConfig();
+
+  const redirectToProjects = () => {
+    router.push('/portfolio/projects');
+  };
 
   return (
     <Styled.Container>
@@ -323,6 +329,7 @@ const About = (): JSX.Element => {
               <ActionButton
                 buttonText={'See my projects'}
                 icon={<FiChevronsRight className="action-icon" />}
+                onClick={redirectToProjects}
               />
             </div>
           </div>
@@ -344,6 +351,7 @@ const About = (): JSX.Element => {
               <ActionButton
                 buttonText={'Read my articles'}
                 icon={<FiBookOpen className="action-icon" />}
+                onClick={redirectToProjects}
               />
             </div>
           </div>

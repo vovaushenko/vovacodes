@@ -51,8 +51,8 @@ const ProjectDesktopSlide = ({
               <Styled.SlideNumber>
                 <Image
                   src={slideNumberImg}
-                  height={150}
-                  width={150}
+                  height={200}
+                  width={200}
                   quality={90}
                   objectFit={'contain'}
                   alt={`This image indicates the number of current slide`}
@@ -77,7 +77,7 @@ const ProjectDesktopSlide = ({
           <Styled.RightColumn>
             <SectionHeader
               variant={'small'}
-              headerText={'Sneaker Maniacs'}
+              headerText={projectTitle}
               margin={'0'}
               color={'#2bff88'}
               withGradient

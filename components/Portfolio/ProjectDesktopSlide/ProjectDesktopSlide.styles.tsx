@@ -16,7 +16,7 @@ export const Container = styled.section<ContainerProps>`
  * LEFT COLUMN
  */
 export const LeftColumn = styled.div`
-  width: 45%;
+  width: 50%;
   padding: 6rem 0 3rem 5rem;
   display: flex;
   align-items: center;
@@ -65,12 +65,17 @@ export const Figcaption = styled.figcaption`
  * RIGHT COLUMN
  */
 export const RightColumn = styled.div`
-  width: 55%;
+  width: 50%;
   padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
-  text-align: center;
   justify-content: center;
+
+  h1 {
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const IconWrapper = styled.ul`
@@ -91,6 +96,7 @@ export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 2rem;
+  margin-top: 1rem;
 
   a {
     width: 280px;

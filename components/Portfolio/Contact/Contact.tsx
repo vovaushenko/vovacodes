@@ -8,6 +8,7 @@ import { useContactConfig } from './Contact.config';
 import SocialMediaContact from '../SocialMediaContact/SocialMediaContact';
 import ContactForm from '../ContactForm/ContactForm';
 import NavigationMenu from '../NavigationMenu/NavigationMenu';
+import WaveDivider from '../WaveDivider/WaveDivider';
 
 /**
  *Renders contact screen @ portfolio/contact
@@ -34,7 +35,10 @@ const Contact = (): JSX.Element => {
           <ScrollHint />
         </Styled.FirstSlide>
       </Slide>
-
+      <WaveDivider
+        waveImg={'/assets/portfolio/blob-1.svg'}
+        dividerHeight={'150px'}
+      />
       {/* Slide # 2*/}
       <Slide bgColor={'#4831d4'} height={`100vh`} anchorID={'first-slide'}>
         <Styled.SecondSlide>
