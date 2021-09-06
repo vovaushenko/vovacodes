@@ -12,11 +12,37 @@ export const WithHeader = Template.bind({});
 WithHeader.args = {
   variant: 'withHeader',
   headerText: 'Skills',
-  textBulletPoints: ['css', 'js', 'typescript', 'javascript', 'react'],
+  textBulletPoints: [
+    {
+      text: 'Test',
+      iconUrl: '/assets/portfolio/skills/check.svg',
+    },
+    {
+      text: 'Test',
+      iconUrl: '/assets/portfolio/skills/check.svg',
+    },
+    {
+      text: 'Test',
+      iconUrl: '/assets/portfolio/skills/check.svg',
+    },
+  ],
 };
 
 export const NoHeader = Template.bind({});
 NoHeader.args = {
   variant: 'simple',
-  textBulletPoints: ['css', 'js', 'typescript', 'javascript', 'react'],
+  textBulletPoints: [
+    {
+      text: 'Test',
+      iconUrl: '/assets/portfolio/skills/check.svg',
+    },
+    {
+      text: 'Test',
+      iconUrl: '/assets/portfolio/skills/check.svg',
+    },
+    {
+      text: 'Test',
+      iconUrl: '/assets/portfolio/skills/check.svg',
+    },
+  ],
 };

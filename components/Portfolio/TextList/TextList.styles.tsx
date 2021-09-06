@@ -4,20 +4,26 @@ export const UL = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
+  margin: 1rem 0;
 `;
-export const LI = styled.li`
+
+interface Props {
+  iconUrl: string;
+}
+
+export const LI = styled.li<Props>`
   display: flex;
   align-items: center;
   text-transform: capitalize;
+  font-size: 1rem;
 
   &:before {
     content: '';
     display: inline-block;
     height: 1em;
-    width: 1em;
-    background-image: url(http://placehold.it/32?text=fallback); // Fallback PNG
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/93/Tango-bullet.svg);
+    width: 1em; // Fallback PNG
+    background-image: ${({ iconUrl }) => `url(${iconUrl})`};
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 0.25rem;
@@ -25,6 +31,9 @@ export const LI = styled.li`
 `;
 
 export const ListHeader = styled.h3`
-  color: ${({ theme }) => theme.portfolio.primaryColor.light};
+  color: ${({ theme }) => theme.portfolio.primaryColor.dark};
   margin: 0;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
 `;

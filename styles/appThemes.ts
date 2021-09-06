@@ -27,6 +27,12 @@ export const darkTheme: DefaultTheme = {
     secondaryBg: { purple: '#4831d4' },
     primaryColor: { dark: '#01bf71', light: '#2bff88' },
     text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
+    resumeColors: {
+      accentColor: 'rgb(40,103,178)',
+      darkText: '#010606',
+      bgColor: 'rgb(245, 244, 252)',
+      lightText: 'rgba(48,49,51,.774)',
+    },
   },
 
   media: {
@@ -66,6 +72,12 @@ export const lightTheme: DefaultTheme = {
     secondaryBg: { purple: '#4831d4' },
     primaryColor: { dark: '#01bf71', light: '#2bff88' },
     text: { light: 'rgba(255, 255, 255, 0.95)', dark: '#000000' },
+    resumeColors: {
+      accentColor: 'rgb(40,103,178)',
+      darkText: '#010606',
+      bgColor: 'rgb(245, 244, 252)',
+      lightText: 'rgba(48,49,51,.774)',
+    },
   },
 
   media: {

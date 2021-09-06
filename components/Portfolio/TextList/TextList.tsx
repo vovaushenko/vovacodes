@@ -2,8 +2,12 @@ import React from 'react';
 import * as Styled from './TextList.styles';
 
 export type ListProps =
-  | { variant: 'simple'; textBulletPoints: string[] }
-  | { variant: 'withHeader'; headerText: string; textBulletPoints: string[] };
+  | { variant: 'simple'; textBulletPoints: { text: string; iconUrl: string }[] }
+  | {
+      variant: 'withHeader';
+      headerText: string;
+      textBulletPoints: { text: string; iconUrl: string }[];
+    };
 
 /**
  *Renders re-usable text list to render skills list or responsibilities list in resume
@@ -18,7 +22,9 @@ const TextList = (props: ListProps): JSX.Element => {
         <Styled.ListHeader>{props.headerText}</Styled.ListHeader>
       )}
       {props.textBulletPoints.map((textBulletPoint, id) => (
-        <Styled.LI key={id}>{textBulletPoint}</Styled.LI>
+        <Styled.LI key={id} iconUrl={textBulletPoint.iconUrl}>
+          {textBulletPoint.text}
+        </Styled.LI>
       ))}
     </Styled.UL>
   );

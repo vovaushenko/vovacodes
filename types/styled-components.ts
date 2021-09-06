@@ -34,6 +34,12 @@ declare module 'styled-components' {
       secondaryBg: { purple: string };
       primaryColor: { dark: string; light: string };
       text: { light: string; dark: string };
+      resumeColors: {
+        accentColor: string;
+        darkText: string;
+        bgColor: string;
+        lightText: string;
+      };
     };
   }
 }

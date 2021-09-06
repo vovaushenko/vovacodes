@@ -12,7 +12,20 @@ const setup = (variant: 'simple' | 'withHeader') => {
     <TextList
       variant={variant}
       headerText={'TOMATO'}
-      textBulletPoints={['css', 'js', 'typescript', 'javascript', 'react']}
+      textBulletPoints={[
+        {
+          text: 'Test',
+          iconUrl: '/assets/portfolio/skills/check.svg',
+        },
+        {
+          text: 'Test',
+          iconUrl: '/assets/portfolio/skills/check.svg',
+        },
+        {
+          text: 'Test',
+          iconUrl: '/assets/portfolio/skills/check.svg',
+        },
+      ]}
     />
   );
 };
@@ -30,7 +43,7 @@ describe('TextList', () => {
     });
     it('should render all bullet points', () => {
       const bulletPoints = wrap.find(Styled.LI);
-      expect(bulletPoints.length).toBe(5);
+      expect(bulletPoints.length).toBe(3);
     });
   });
 
@@ -46,7 +59,7 @@ describe('TextList', () => {
     });
     it('should still render all bullet points', () => {
       const bulletPoints = wrap.find(Styled.LI);
-      expect(bulletPoints.length).toBe(5);
+      expect(bulletPoints.length).toBe(3);
     });
   });
 });
