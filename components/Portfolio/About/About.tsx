@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as Styled from './About.styles';
 import Slide from '../Slide/Slide';
 import SectionHeader from '../Typography/SectionHeader/SectionHeader';
@@ -11,8 +11,9 @@ import ActionButton from '../ActionButton/ActionButton';
 import { FiBookOpen, FiChevronsRight } from 'react-icons/fi';
 import ScrollHint from '../ScrollHint/ScrollHint';
 import Image from 'next/image';
-import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import { useRouter } from 'next/router';
+import Navbar from '../Navbar/Navbar';
+import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 
 /**
  *Renders About section in resume
@@ -21,6 +22,14 @@ import { useRouter } from 'next/router';
  */
 const About = (): JSX.Element => {
   const router = useRouter();
+  const ref = useRef<HTMLDivElement>(null);
+  const [isLogoExpanded, setIsLogoExpanded] = useState(true);
+  const [isWaveVisible] = useIntersectionObserver(ref, { threshold: 0.5 });
+
+  useEffect(() => {
+    if (isWaveVisible) setIsLogoExpanded((p) => !p);
+  }, [isWaveVisible]);
+
   const {
     frontendSkills,
     frontendTechSkills,
@@ -34,7 +43,8 @@ const About = (): JSX.Element => {
 
   return (
     <Styled.Container>
-      <NavigationMenu />
+      {/*NAVIGATION*/}
+      <Navbar isLogoExpanded={isLogoExpanded} />
       {/*   FIRST SLIDE   */}
       <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>
         <Styled.FirstSlide id={'first-slide'} className="page first-page">
@@ -60,6 +70,8 @@ const About = (): JSX.Element => {
         waveImg={'/assets/portfolio/blob-1.svg'}
         dividerHeight={'150px'}
       />
+      {/*THIS EMPTY DIV IS USED TO TOGGLE COLLAPSE EFFECT OF LOGO*/}
+      <div ref={ref} />
       {/*   SECOND SLIDE   */}
       <Slide bgColor={'#4831d4'} height={'100vh'} anchorID={''}>
         <Styled.SecondSlide className="page second-page">
@@ -106,6 +118,7 @@ const About = (): JSX.Element => {
         waveImg={'/assets/portfolio/blob-2.svg'}
         dividerHeight={'200px'}
       />
+
       {/*   THIRD SLIDE   */}
       <Slide bgColor={'#010606'} height={'100vh'} anchorID={'third-slide'}>
         <Styled.ThirdSlide id={'third-slide'}>

@@ -7,8 +7,8 @@ import ScrollHint from '../ScrollHint/ScrollHint';
 import { useContactConfig } from './Contact.config';
 import SocialMediaContact from '../SocialMediaContact/SocialMediaContact';
 import ContactForm from '../ContactForm/ContactForm';
-import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import WaveDivider from '../WaveDivider/WaveDivider';
+import Navbar from '../Navbar/Navbar';
 
 /**
  *Renders contact screen @ portfolio/contact
@@ -21,7 +21,7 @@ const Contact = (): JSX.Element => {
   return (
     <Styled.Container>
       {/* Navigation - positioned absolutely */}
-      <NavigationMenu />
+      <Navbar isLogoExpanded={true} />
 
       {/* Slide # 1*/}
       <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>

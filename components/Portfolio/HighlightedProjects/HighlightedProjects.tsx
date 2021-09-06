@@ -2,14 +2,13 @@ import React from 'react';
 import * as Styled from './HighlightedProjects.styles';
 import { useHighlightedProjectsData } from './HighlightedProjects.config';
 import ProjectDesktopSlide from '../ProjectDesktopSlide/ProjectDesktopSlide';
-import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import ProjectDetailsSlide from '../ProjectDetailsSlide/ProjectDetailsSlide';
 import WaveDivider from '../WaveDivider/WaveDivider';
+import Navbar from '../Navbar/Navbar';
 
 /**
  *Renders sections with some of my projects
  *@function HighlightedProjects
- *@param {number} prop -
  *@returns {JSX.Element} - Rendered HighlightedProjects component
  */
 const HighlightedProjects = (): JSX.Element => {
@@ -19,7 +18,9 @@ const HighlightedProjects = (): JSX.Element => {
 
   return (
     <Styled.Container>
-      <NavigationMenu />
+      {/* NAVIGATION */}
+      <Navbar isLogoExpanded={true} />
+      {/* PROJECT1 */}
       <ProjectDesktopSlide {...projectOne} />
       <ProjectDetailsSlide
         slideHeight={'100vh'}
@@ -31,6 +32,7 @@ const HighlightedProjects = (): JSX.Element => {
         waveImg={'/assets/portfolio/blob-1.svg'}
         dividerHeight={'150px'}
       />
+      {/* PROJECT 2*/}
       <ProjectDesktopSlide {...projectTwo} />
       <ProjectDetailsSlide
         slideHeight={'100vh'}

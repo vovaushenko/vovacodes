@@ -2,11 +2,6 @@ import styled, { css } from 'styled-components';
 import { slideTop } from '../../../styles/reusableCss';
 
 export const Container = styled.button`
-  z-index: ${({ theme }) => theme.zIndex.navigation};
-  /* positioning */
-  position: absolute;
-  top: 10%;
-  right: 5%;
   /* styling */
   height: 2rem;
   width: auto;
@@ -14,6 +9,7 @@ export const Container = styled.button`
   border: 0;
   outline: 0;
   cursor: pointer;
+  position: relative;
 
   .hamburger {
     z-index: ${({ theme }) => theme.zIndex.navigation + 1};
@@ -103,8 +99,8 @@ const isClosedStyle = css`
 export const Menu = styled.nav<Props>`
   z-index: ${({ theme }) => theme.zIndex.navigation};
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: -2rem;
+  right: -2rem;
   ${({ isOpen }) => (isOpen ? isOpenStyle : isClosedStyle)};
   display: flex;
   flex-direction: column;
