@@ -135,6 +135,10 @@ export const Menu = styled.nav<Props>`
     animation: ${slideTop} 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 0.3s;
   }
+
+  @media ${({ theme }) => theme.media.phone} {
+    width: 100vw;
+  }
 `;
 
 export const NavLink = styled.a`

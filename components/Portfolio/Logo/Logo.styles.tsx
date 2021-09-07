@@ -55,6 +55,7 @@ export const Container = styled.div<Props>`
   font-weight: 600;
   text-transform: uppercase;
   position: relative;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   .main-letter {
     color: ${({ theme }) => theme.portfolio.primaryColor.light};
@@ -69,7 +70,19 @@ export const Container = styled.div<Props>`
     }
   }
 
-  ${({ isExpanded }) => (isExpanded ? isCollapsedStyles : isExpandedStyles)}
+  ${({ isExpanded }) => (isExpanded ? isCollapsedStyles : isExpandedStyles)};
+
+  @media ${({ theme }) => theme.media.phone} {
+    font-size: 2rem;
+
+    .main-letter {
+      :before {
+        font-size: 1.5rem;
+        top: -10px;
+        left: 6px;
+      }
+    }
+  }
 `;
 
 export const A = styled.a`

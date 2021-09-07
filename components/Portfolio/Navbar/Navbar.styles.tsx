@@ -11,4 +11,8 @@ export const Container = styled.nav`
   height: 5rem;
   background-color: transparent;
   width: 100%;
+
+  @media ${({ theme }) => theme.media.phone} {
+    padding: 2rem;
+  }
 `;

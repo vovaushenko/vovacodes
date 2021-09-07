@@ -44,4 +44,9 @@ export const H1 = styled.h1<HeaderProps>`
   ${({ withGradient }) => withGradient && withGradientStyles};
 
   animation: ${trackingInExpand} 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+
+  @media ${({ theme }) => theme.media.phone} {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
 `;

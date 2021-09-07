@@ -17,6 +17,16 @@ export const Container = styled.fieldset`
   input:-webkit-autofill {
     -webkit-text-fill-color: #fff !important;
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    label {
+      font-size: 1rem;
+    }
+
+    input {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const labelWithValueStyles = css`

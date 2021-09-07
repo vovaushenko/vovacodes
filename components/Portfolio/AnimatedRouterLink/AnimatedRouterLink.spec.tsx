@@ -1,6 +1,7 @@
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import * as Styled from './AnimatedRouterLink.styles';
+import Link from 'next/link';
 
 import AnimatedRouterLink from './AnimatedRouterLink';
 
@@ -9,7 +10,7 @@ import AnimatedRouterLink from './AnimatedRouterLink';
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return mount(
+  return shallow(
     <AnimatedRouterLink
       variant={'standard'}
       text={'TOMATO'}
@@ -28,7 +29,7 @@ describe('AnimatedRouterLink', () => {
   });
 
   it('should render correct href', () => {
-    const link = wrap.find(Styled.A);
+    const link = wrap.find(Link);
     expect(link.prop('href')).toBe('/CUCUMBER');
   });
 

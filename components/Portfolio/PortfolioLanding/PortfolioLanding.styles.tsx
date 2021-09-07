@@ -9,6 +9,10 @@ export const Container = styled.section`
 export const Navigation = styled.nav`
   width: 30%;
   position: relative;
+
+  @media ${({ theme }) => theme.media.phone} {
+    width: 0%;
+  }
 `;
 
 export const LinkWrapper = styled.div`
@@ -22,6 +26,11 @@ export const LinkWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media ${({ theme }) => theme.media.phone} {
+    top: 30%;
+    left: 2rem;
+  }
 `;
 
 interface Props {
@@ -52,4 +61,12 @@ export const Photo = styled.div<Props>`
     }
   }
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    background: ${({
+      photo,
+    }) => `linear-gradient(to top, #010606, transparent 250%),
+    url(${photo}) left/cover`};
+  }
 `;

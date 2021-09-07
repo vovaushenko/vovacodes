@@ -21,9 +21,22 @@ export const Container = styled.section`
       color: #fff;
     }
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    form {
+      width: 100%;
+      margin: 1rem auto;
+      gap: 1.5rem;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   gap: 2rem;
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 `;

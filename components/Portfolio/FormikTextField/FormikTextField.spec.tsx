@@ -1,16 +1,25 @@
 import { mount } from 'enzyme';
-import 'jest-styled-components';
 import React from 'react';
 import FormikTextField from './FormikTextField';
 import { Form, Formik } from 'formik';
+import { withReduxAndStyledProviders } from '../../../test/testUtils';
 
 describe('Formik text control component', () => {
   const wrap = mount(
-    <Formik initialValues={{ email: '' }} onSubmit={() => console.log('boom')}>
-      <Form>
-        <FormikTextField placeholder={'email'} name={'email'} type={'email'} />
-      </Form>
-    </Formik>
+    withReduxAndStyledProviders(
+      <Formik
+        initialValues={{ email: '' }}
+        onSubmit={() => console.log('boom')}
+      >
+        <Form>
+          <FormikTextField
+            placeholder={'email'}
+            name={'email'}
+            type={'email'}
+          />
+        </Form>
+      </Formik>
+    )
   );
   it('should render', () => {
     expect(wrap.length).toBe(1);

@@ -48,4 +48,9 @@ export const A = styled.a<LinkProps>`
     variant === 'highlight' ? highlightStyles : standardStyles};
 
   animation: ${trackingInExpand} 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+
+  @media ${({ theme }) => theme.media.phone} {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
 `;

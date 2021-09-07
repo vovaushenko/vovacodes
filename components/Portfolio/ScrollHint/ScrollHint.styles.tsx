@@ -19,4 +19,8 @@ export const Container = styled.div`
       transform: translateY(0.5rem);
     }
   }
+
+  @media ${({ theme }) => theme.media.phone} {
+    top: 80%;
+  }
 `;

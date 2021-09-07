@@ -28,7 +28,7 @@ describe('Resume', () => {
     });
     it('should render two contact links', () => {
       const contactLinks = wrap.find(Styled.ContactInfo);
-      expect(contactLinks.length).toBe(2);
+      expect(contactLinks.length).toBe(1);
     });
     it('should render contact link icons', () => {
       const globe = wrap.find(FiGlobe);
@@ -58,9 +58,9 @@ describe('Resume', () => {
       expect(title.text()).toEqual('Full-stack Web Developer');
     });
 
-    it('should render all social links(currently 4)', () => {
+    it('should render all social links(currently 5)', () => {
       const socialMediaLink = wrap.find(Styled.SocialMediaLink);
-      expect(socialMediaLink.length).toBe(4);
+      expect(socialMediaLink.length).toBe(5);
     });
 
     it('should render all professionalExperience', () => {
