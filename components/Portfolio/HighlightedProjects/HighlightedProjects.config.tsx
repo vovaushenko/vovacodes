@@ -46,7 +46,7 @@ export const useHighlightedProjectsData = (): {
       slideNumberImg: '/assets/portfolio/2.svg',
       projectTitle: 'Chernivtsi National University',
       projectDescription:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni dolore ad quae, dicta neque consequatur rerum quas minus magnam voluptatibus? Porro praesentium ducimus iusto facere provident deleniti perspiciatis cumque aut, dolore officiis aliquam expedita laboriosam perferendis! Sint, odit natus? Asperiores aliquid eveniet ratione repellendus.',
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. laboriosam perferendis! Sint, odit natus? Asperiores aliquid eveniet ratione repellendus.',
       slideHeight: '100vh',
       projectImg: '/assets/portfolio/projectTwo/vpsFullHd.png',
       projectMobileImg: '/assets/portfolio/projectTwo/vpsMobile.png',

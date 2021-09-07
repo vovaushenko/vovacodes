@@ -28,7 +28,7 @@ const ProjectDesktopSlide = ({
 }: IHighlightedProject): JSX.Element | null => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isElementVisible] = useIntersectionObserver(containerRef, {
-    threshold: 0.95,
+    threshold: 0.5,
   });
   const [isOnScreen, setIsOnScreen] = useState(false);
   useEffect(() => {
@@ -99,7 +99,7 @@ const ProjectDesktopSlide = ({
               <ActionButton
                 renderAsLink
                 href={liveLink}
-                buttonText={'Visit the Website'}
+                buttonText={'Live'}
                 icon={<FiCast className={'action-icon'} />}
               />
               <ActionButton

@@ -2,15 +2,20 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  @media ${({ theme }) => theme.media.desktop} {
+    /**
+    * Scroll snapping will be applied only on desktop screens
+    */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
 `;
 
 export const FirstSlide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
 
   h1 {

@@ -97,4 +97,9 @@ export const BTN = styled.button`
       transition: transform 0.3s;
     }
   }
+
+  @media ${({ theme }) => theme.media.phone} {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 `;

@@ -25,7 +25,7 @@ const Slide: FC<Props> = ({
 }): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isElementVisible] = useIntersectionObserver(containerRef, {
-    threshold: 0.95,
+    threshold: 0.35,
   });
   const [isOnScreen, setIsOnScreen] = useState(false);
   useEffect(() => {

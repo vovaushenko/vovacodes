@@ -10,6 +10,10 @@ export const Container = styled.section<ContainerProps>`
   background-color: ${({ slideBgColor }) => slideBgColor};
   position: relative;
   scroll-snap-align: center;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column;
+  }
 `;
 
 /**
@@ -21,13 +25,33 @@ export const LeftColumn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    padding: 1rem;
+    height: 60%;
+    align-items: flex-end;
+  }
+  @media ${({ theme }) => theme.media.phone} {
+    height: 45%;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 `;
 export const ImageWrapper = styled.div`
   transform: perspective(1500px) rotateY(20deg);
   transition: transform 1s ease 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   :hover {
     transform: perspective(3000px) rotateY(5deg);
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 `;
 
@@ -44,6 +68,13 @@ export const SlideNumber = styled.div`
   right: 0;
   animation: ${slideTop} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation-delay: 250ms;
+
+  @media ${({ theme }) => theme.media.phone} {
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
 `;
 
 export const Figcaption = styled.figcaption`
@@ -58,6 +89,12 @@ export const Figcaption = styled.figcaption`
     writing-mode: vertical-lr;
     color: ${({ theme }) => theme.portfolio.primaryColor.light};
     animation: ${trackingInExpand} 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  @media ${({ theme }) => theme.media.phone} {
+    h3 {
+      font-size: 0.55rem;
+    }
   }
 `;
 
@@ -76,6 +113,23 @@ export const RightColumn = styled.div`
     line-height: 1;
     margin-bottom: 1rem;
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    height: 40%;
+    padding: 1rem;
+    justify-content: flex-start;
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+  }
+  @media ${({ theme }) => theme.media.phone} {
+    height: 55%;
+  }
 `;
 
 export const IconWrapper = styled.ul`
@@ -89,6 +143,12 @@ export const Icon = styled.li`
   .tech-icon {
     font-size: 2rem;
     color: ${({ theme }) => theme.portfolio.primaryColor.light};
+  }
+
+  @media ${({ theme }) => theme.media.phone} {
+    .tech-icon {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -105,5 +165,12 @@ export const ButtonsWrapper = styled.div`
     align-items: center;
     animation: ${slideTop} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 250ms;
+  }
+
+  @media ${({ theme }) => theme.media.phone} {
+    gap: 1rem;
+    a {
+      width: 50%;
+    }
   }
 `;

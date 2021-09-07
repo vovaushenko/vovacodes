@@ -168,6 +168,7 @@ const About = (): JSX.Element => {
                   ))}
                 </ul>
               </div>
+
               <div className="glass-content">
                 <SectionHeader
                   variant={'extraSmall'}

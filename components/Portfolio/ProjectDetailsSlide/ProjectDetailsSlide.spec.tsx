@@ -1,4 +1,4 @@
-import { render } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import '../../__mocks__/intersectionObserverMock';
 import ProjectDetailsSlide from './ProjectDetailsSlide';
@@ -8,7 +8,7 @@ import ProjectDetailsSlide from './ProjectDetailsSlide';
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return render(
+  return shallow(
     <ProjectDetailsSlide
       slideBgColor={'red'}
       slideHeight={'100vh'}

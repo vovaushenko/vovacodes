@@ -17,6 +17,15 @@ export const Container = styled.figure<Props>`
       filter: brightness(130%);
     }
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 2rem;
+    margin: 0 5px;
+    img {
+      height: 3rem;
+      width: auto;
+    }
+  }
 `;
 
 export const SkillText = styled.figcaption`
@@ -45,4 +54,8 @@ export const IconText = styled.p<Props>`
   animation: ${slideBottom} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   ${({ isHovering }) => isHovering === false && slideOutAnimation};
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 0.75rem;
+  }
 `;

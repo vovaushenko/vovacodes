@@ -8,6 +8,11 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
   }
 
+  html,
+  body {
+    height: 100%;
+    overflow: auto;
+  }
 
   .icon {
     color: ${({ theme }) => theme.primary.text};

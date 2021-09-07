@@ -5,14 +5,17 @@ export const Container = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 5rem;
-  position: absolute;
+  padding: 1rem 5rem;
+  position: fixed;
   top: 0;
-  height: 5rem;
+  right: 0;
+  height: 4rem;
   background-color: transparent;
   width: 100%;
+  backdrop-filter: blur(3.5px);
 
   @media ${({ theme }) => theme.media.phone} {
-    padding: 2rem;
+    padding: 1rem 2rem;
+    height: 3rem;
   }
 `;

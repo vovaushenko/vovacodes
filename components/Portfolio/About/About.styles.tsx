@@ -6,8 +6,13 @@ import { rollInLeft, rollInRight, slideTop } from '../../../styles/reusableCss';
 
 export const Container = styled.div`
   height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  @media ${({ theme }) => theme.media.desktop} {
+    /**
+    * Scroll snapping will be applied only on desktop screens
+    */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
 `;
 
 export const FirstSlide = styled.div`
@@ -15,8 +20,9 @@ export const FirstSlide = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  padding: 2rem;
+  height: 100vh;
 `;
 
 export const SecondSlide = styled.div`
@@ -38,6 +44,28 @@ export const SecondSlide = styled.div`
     width: 50%;
     height: 100%;
     padding: 10rem;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    h1 {
+      font-size: 3rem;
+    }
+
+    flex-direction: column;
+    .left-column {
+      width: 100%;
+      height: 50%;
+      padding: 2rem;
+      display: flex;
+
+      align-items: flex-end;
+    }
+
+    .right-column {
+      width: 100%;
+      height: 50%;
+      padding: 2rem;
+    }
   }
 `;
 
@@ -64,7 +92,6 @@ export const ThirdSlide = styled.div`
     display: flex;
     flex-direction: column;
     min-width: 40%;
-    max-width: 95%;
     padding: 2rem;
     border-radius: ${({ theme }) => theme.borderRadius};
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -111,6 +138,46 @@ export const ThirdSlide = styled.div`
     border-radius: 50%;
     animation: ${rollInRight} 2s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    .skills-wrapper {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .glass-wrapper {
+      gap: 1rem;
+      flex-direction: column;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .glass-content {
+      width: 95%;
+      margin: 0 auto;
+      padding: 1rem;
+
+      h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .icon-skills {
+        margin: 0;
+      }
+
+      .tech-skills {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  }
 `;
 
 export const FourthSlide = styled.div`
@@ -134,6 +201,26 @@ export const FourthSlide = styled.div`
     padding-top: 10rem;
     animation: ${slideTop} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column;
+    .left-column {
+      width: 100%;
+
+      padding: 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .right-column {
+      width: 100%;
+      padding: 0;
+    }
+  }
 `;
 
 export const FifthSlide = styled.div`
@@ -141,7 +228,14 @@ export const FifthSlide = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 0 1rem;
+  min-height: 100vh;
 
+  @media ${({ theme }) => theme.media.tablet} {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+  }
 
   :before {
     content: '';
@@ -167,6 +261,7 @@ export const FifthSlide = styled.div`
         transform: rotate(360deg);
       }
     }
+  }
 `;
 
 export const Milestone = styled.article`
@@ -200,12 +295,26 @@ export const MilestoneHeader = styled.div`
     font-size: 1.25rem;
     margin-right: 2rem;
   }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    h4 {
+      font-size: 1rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    time {
+      font-size: 1rem;
+      margin-right: 0;
+    }
+  }
 `;
 
 export const SixthSlide = styled.div`
   display: flex;
-
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 
   h1 {
@@ -217,7 +326,7 @@ export const SixthSlide = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 50%;
+    flex: 0.5;
   }
 
   .right-column {
@@ -226,7 +335,7 @@ export const SixthSlide = styled.div`
     justify-content: center;
     flex-direction: column;
     background-color: #4831d4;
-    width: 50%;
+    flex: 0.5;
   }
 
   .content-wrapper {
@@ -235,5 +344,23 @@ export const SixthSlide = styled.div`
 
   button {
     align-self: flex-start;
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column;
+    margin-top: 2rem;
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .content-wrapper {
+      width: 85%;
+    }
+
+    .left-column {
+    }
+
+    .right-column {
+    }
   }
 `;

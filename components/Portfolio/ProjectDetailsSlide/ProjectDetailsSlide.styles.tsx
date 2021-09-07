@@ -12,6 +12,11 @@ export const Container = styled.section<Props>`
   background-color: ${({ slideBgColor }) => slideBgColor};
   position: relative;
   scroll-snap-align: center;
+  overflow: hidden;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const LeftColumn = styled.div`
@@ -21,6 +26,11 @@ export const LeftColumn = styled.div`
   justify-content: center;
   animation: ${slidInCenter} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation-delay: 500ms;
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    height: 50%;
+    align-items: flex-start;
+  }
 `;
 
 export const LevitatingWrapper = styled.div`
@@ -72,8 +82,22 @@ export const Figure = styled.figure`
     transform: translate(40px, -40px);
     opacity: 0.4;
   }
+
+  @media ${({ theme }) => theme.media.phone} {
+    width: 200px;
+    height: 480px;
+    transform: rotate(-35deg) skew(25deg) scale(0.65);
+    img {
+      left: -10px;
+      top: 50px;
+    }
+  }
 `;
 
 export const RightColumn = styled.div`
   width: 50%;
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    height: 50%;
+  }
 `;
