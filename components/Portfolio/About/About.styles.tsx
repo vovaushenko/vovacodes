@@ -6,6 +6,7 @@ import { rollInLeft, rollInRight, slideTop } from '../../../styles/reusableCss';
 
 export const Container = styled.div`
   height: 100vh;
+
   @media ${({ theme }) => theme.media.desktop} {
     /**
     * Scroll snapping will be applied only on desktop screens
@@ -230,13 +231,6 @@ export const FifthSlide = styled.div`
   padding: 0 1rem;
   min-height: 100vh;
 
-  @media ${({ theme }) => theme.media.tablet} {
-    h1 {
-      font-size: 2.5rem;
-      line-height: 1;
-    }
-  }
-
   :before {
     content: '';
     position: absolute;
@@ -260,6 +254,18 @@ export const FifthSlide = styled.div`
       to {
         transform: rotate(360deg);
       }
+    }
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    :before {
+      width: 400px;
+      height: 400px;
     }
   }
 `;
@@ -316,6 +322,7 @@ export const SixthSlide = styled.div`
   display: flex;
   min-height: 100vh;
   width: 100%;
+  overflow: hidden;
 
   h1 {
     line-height: 1;

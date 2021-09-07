@@ -9,6 +9,10 @@ export const Container = styled.section`
   justify-content: center;
   font-style: initial;
   padding: 5rem 1rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    padding: 0;
+  }
 `;
 
 export const ResumeWrapper = styled.div`
@@ -17,6 +21,11 @@ export const ResumeWrapper = styled.div`
   max-width: 90%;
   display: flex;
   gap: 1rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 /**
@@ -29,6 +38,11 @@ export const LeftColumn = styled.aside`
 
   h3 {
     color: ${({ theme }) => theme.portfolio.resumeColors.accentColor};
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+    padding: 0;
   }
 `;
 
@@ -52,6 +66,10 @@ export const ContactLink = styled.a`
 
 export const RightColumn = styled.section`
   width: 75%;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    width: 100%;
+  }
 `;
 export const SummaryHeader = styled.header``;
 
@@ -61,6 +79,11 @@ export const Name = styled.h1`
 
   span {
     color: ${({ theme }) => theme.portfolio.resumeColors.accentColor};
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    font-size: 2.5rem;
+    line-height: 1.4;
   }
 `;
 export const Title = styled.h2`
@@ -77,6 +100,11 @@ export const SocialLinksWrapper = styled.div`
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
+
+  @media ${({ theme }) => theme.media.tablet} {
+    gap: 0.25rem;
+    flex-direction: column;
+  }
 `;
 export const SocialMediaLink = styled.a`
   display: flex;
