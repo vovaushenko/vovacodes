@@ -30,7 +30,7 @@ export const FirstSlide = styled.div`
 `;
 
 export const SecondSlide = styled.div`
-  height: 100%;
+  height: 100vh;
   padding: 4rem;
 
   @media ${({ theme }) => theme.media.tablet} {

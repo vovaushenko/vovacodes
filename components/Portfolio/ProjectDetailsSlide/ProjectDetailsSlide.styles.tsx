@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { slidInCenter } from '../../../styles/reusableCss';
+import { floatKeyframes, slidInCenter } from '../../../styles/reusableCss';
 
 interface Props {
   slideHeight: string;
@@ -34,18 +34,7 @@ export const LeftColumn = styled.div`
 `;
 
 export const LevitatingWrapper = styled.div`
-  @keyframes float {
-    0% {
-      transform: translatey(0px);
-    }
-    50% {
-      transform: translatey(-20px);
-    }
-    100% {
-      transform: translatey(0px);
-    }
-  }
-  animation: float 6s ease-in-out infinite;
+  animation: ${floatKeyframes} 6s ease-in-out infinite;
 `;
 
 export const Figure = styled.figure`

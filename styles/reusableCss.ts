@@ -84,7 +84,6 @@ export const slideBottom = keyframes`
 
 /**
  * @keyframes Main animation dis-appearance for modals, popups and hidden components
- * @function slideOutKeyframes
  * @returns {keyframes} - keyframes for element's dis-appearance animations
  * @example animation: ${slideOutKeyframes} 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
  */
@@ -104,7 +103,7 @@ export const slideOutKeyframes = keyframes`
 `;
 
 /**
- * @function rollInLeft
+ * @keyframes rollInLeft
  * @returns {keyframes} - keyframes for element's roll in appearance
  * @example animation: ${rollInLeft} 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
  */
@@ -121,7 +120,7 @@ export const rollInLeft = keyframes`
   }
 `;
 /**
- * @function rollInRight
+ * @keyframes rollInRight
  * @returns {keyframes} - keyframes for element's roll in appearance
  * @example animation: ${rollInRight} 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
  */
@@ -135,5 +134,55 @@ export const rollInRight = keyframes`
     transform: translateX(0) rotate(0deg);
     filter: blur(0);
     opacity: 1;
+  }
+`;
+/**
+ * @keyframes floatKeyframes
+ * @returns {keyframes} - keyframes for element's floating effect
+ * @example  animation: ${float} 6s ease-in-out infinite;
+ */
+export const floatKeyframes = keyframes`
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+`;
+/**
+ * @keyframes floatKeyframes
+ * @returns {keyframes} - keyframes for element's floating effect
+ * @example  animation: ${float} 6s ease-in-out infinite;
+ */
+export const floatingMobileKeyframes = keyframes`
+  0% {
+    transform: translatey(0px) translateX(0px);
+
+  }
+  50% {
+    transform: translatey(-34px) translateX(10px);
+  }
+  100% {
+    transform: translatey(0px) translateX(0px);
+  }
+`;
+/**
+ * @keyframes floatKeyframes
+ * @returns {keyframes} - keyframes for element's floating effect
+ * @example  animation: ${float} 6s ease-in-out infinite;
+ */
+export const floatingWatchKeyframes = keyframes`
+  0% {
+    transform: translatey(0px) translateX(0px);
+
+  }
+  50% {
+    transform: translatey(-40px) translateX(-5px);
+  }
+  100% {
+    transform: translatey(0px) translateX(0px);
   }
 `;

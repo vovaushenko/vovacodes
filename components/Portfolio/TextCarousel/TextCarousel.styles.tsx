@@ -21,11 +21,15 @@ export const TextWrapper = styled.div`
   }
 
   h1 {
-    font-size: 2rem;
+    letter-spacing: -3px;
   }
 
   @media ${({ theme }) => theme.media.tablet} {
     height: auto;
+    h1 {
+      font-size: 2rem;
+    }
+
     p {
       line-height: 1.4;
     }

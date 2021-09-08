@@ -175,4 +175,5 @@ export const SocialMediaContactsList = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 0.5rem;
 `;
