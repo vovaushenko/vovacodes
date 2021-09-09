@@ -1,7 +1,6 @@
 import React from 'react';
 import * as Styled from './Hero.styles';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import DesktopButton from '../DesktopButton/DesktopButton';
 import SlidingModal from '../SlidingModal/SlidingModal';
 import SettingsModalContent from '../SettingsModalContent/SettingsModalContent';
 import WidgetCard from '../WidgetCard/WidgetCard';
@@ -9,8 +8,7 @@ import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import styled from 'styled-components';
 import TodoWidget from '../TodoWidget/TodoWidget';
 import NewsWidget from '../NewsWidget/NewsWidget';
-import VsCode from '../Apps/VsCode/VsCode';
-import Figma from '../Apps/Figma/Figma';
+import DesktopApps from '../DesktopApps/DesktopApps';
 
 /**
  *Renders main hero screen
@@ -27,22 +25,7 @@ const Hero = (): JSX.Element => {
 
   return (
     <Styled.Container bgWallpaper={backgroundWallpaper}>
-      <DesktopButton
-        variant={'desktop'}
-        iconSrc={'/assets/icons/Desktop/this_pc.webp'}
-        iconSize={{ width: 40, height: 40 }}
-        text={'This PC'}
-        action={null}
-        willOpenWindowWith={<Figma />}
-      />
-      <DesktopButton
-        variant={'desktop'}
-        iconSrc={'/assets/icons/startmenu/vscode.svg'}
-        iconSize={{ width: 40, height: 40 }}
-        text={'VS Code'}
-        action={null}
-        willOpenWindowWith={<VsCode />}
-      />
+      <DesktopApps />
 
       <SlidingModal
         width={'700px'}

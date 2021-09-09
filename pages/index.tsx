@@ -1,16 +1,26 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import Hero from '../components/Hero/Hero';
 import DesktopLayout from '../components/DesktopLayout/DesktopLayout';
 
-const Home: NextPage = () => {
+interface ServerProps {
+  title: string;
+}
+
+const Home: NextPage<ServerProps> = ({ title }) => {
   return (
-    <DesktopLayout
-      title={'Portfolio | Vova Ushenko | Full-Stack Web Developer'}
-    >
+    <DesktopLayout title={title}>
       <Hero />
     </DesktopLayout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      title: 'Vova Ushenko | Portfolio',
+    },
+  };
 };
 
 export default Home;
