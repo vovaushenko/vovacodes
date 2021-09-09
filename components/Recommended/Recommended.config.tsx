@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Resume from '../Portfolio/Resume/Resume';
+import { useRouter } from 'next/router';
 
 /**
  * Custom hook that returns prepared recommended apps config
@@ -9,13 +10,16 @@ import Resume from '../Portfolio/Resume/Resume';
 export const useRecommendedConfig = (): {
   recommendedFiles: IRecommendedFile[];
 } => {
+  const router = useRouter();
   const recommendedFiles: IRecommendedFile[] = [
     {
       id: 1,
       fileName: 'LinkedIn',
       details: 'Connect on Linkedin',
       icon: '/assets/icons/recommended/linkedin.svg',
-      action: () => console.log('click'),
+      action: () => {
+        window.location.href = 'https://www.linkedin.com/in/vovau/';
+      },
       iconSize: { height: 44, width: 44 },
       willOpenWindowWith: null,
     },
@@ -30,10 +34,10 @@ export const useRecommendedConfig = (): {
     },
     {
       id: 3,
-      fileName: 'Cover Letter',
+      fileName: 'My Portfolio',
       details: 'August 26',
-      icon: '/assets/icons/recommended/word.png',
-      action: () => console.log('click'),
+      icon: '/assets/portfolio/skills/react-original.svg',
+      action: () => router.push('/portfolio'),
       iconSize: { height: 40, width: 40 },
       willOpenWindowWith: null,
     },
@@ -42,7 +46,7 @@ export const useRecommendedConfig = (): {
       fileName: 'Recent Projects',
       details: 'August 25',
       icon: '/assets/icons/recommended/power-point.png',
-      action: () => console.log('click'),
+      action: () => router.push('/portfolio/projects'),
       iconSize: { height: 40, width: 40 },
       willOpenWindowWith: null,
     },
@@ -51,7 +55,9 @@ export const useRecommendedConfig = (): {
       fileName: 'Twitter',
       details: 'Connect on Twitter',
       icon: '/assets/icons/recommended/twitter.svg',
-      action: () => console.log('click'),
+      action: () => {
+        window.location.href = 'https://twitter.com/vova_ush';
+      },
       iconSize: { height: 40, width: 40 },
       willOpenWindowWith: null,
     },
