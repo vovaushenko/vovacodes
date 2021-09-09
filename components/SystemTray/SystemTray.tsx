@@ -35,6 +35,7 @@ const SystemTray = (): JSX.Element => {
               iconSize={button.size}
               text={button.alt}
               action={button.action}
+              willOpenWindowWith={button.willOpenWindowWith}
             />
           ))}
         </Styled.ButtonList>

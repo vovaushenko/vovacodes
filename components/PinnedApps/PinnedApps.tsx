@@ -20,6 +20,7 @@ const PinnedApps = (): JSX.Element => {
           iconSize={app.iconSize}
           text={app.text}
           action={app.action}
+          willOpenWindowWith={app.willOpenWindowWith}
         />
       ))}
     </Styled.Container>

@@ -9,6 +9,8 @@ import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import styled from 'styled-components';
 import TodoWidget from '../TodoWidget/TodoWidget';
 import NewsWidget from '../NewsWidget/NewsWidget';
+import VsCode from '../Apps/VsCode/VsCode';
+import Figma from '../Apps/Figma/Figma';
 
 /**
  *Renders main hero screen
@@ -31,6 +33,15 @@ const Hero = (): JSX.Element => {
         iconSize={{ width: 40, height: 40 }}
         text={'This PC'}
         action={null}
+        willOpenWindowWith={<Figma />}
+      />
+      <DesktopButton
+        variant={'desktop'}
+        iconSrc={'/assets/icons/startmenu/vscode.svg'}
+        iconSize={{ width: 40, height: 40 }}
+        text={'VS Code'}
+        action={null}
+        willOpenWindowWith={<VsCode />}
       />
 
       <SlidingModal

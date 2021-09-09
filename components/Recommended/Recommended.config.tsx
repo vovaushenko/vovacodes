@@ -1,3 +1,6 @@
+import React, { ReactNode } from 'react';
+import Resume from '../Portfolio/Resume/Resume';
+
 /**
  * Custom hook that returns prepared recommended apps config
  *@function useRecommendedConfig
@@ -14,14 +17,16 @@ export const useRecommendedConfig = (): {
       icon: '/assets/icons/recommended/linkedin.svg',
       action: () => console.log('click'),
       iconSize: { height: 44, width: 44 },
+      willOpenWindowWith: null,
     },
     {
       id: 2,
       fileName: 'CurrentResume',
       details: 'Sunday at 10:14 AM',
       icon: '/assets/icons/recommended/word.png',
-      action: () => console.log('click'),
+      action: null,
       iconSize: { height: 40, width: 40 },
+      willOpenWindowWith: <Resume />,
     },
     {
       id: 3,
@@ -30,6 +35,7 @@ export const useRecommendedConfig = (): {
       icon: '/assets/icons/recommended/word.png',
       action: () => console.log('click'),
       iconSize: { height: 40, width: 40 },
+      willOpenWindowWith: null,
     },
     {
       id: 4,
@@ -38,6 +44,7 @@ export const useRecommendedConfig = (): {
       icon: '/assets/icons/recommended/power-point.png',
       action: () => console.log('click'),
       iconSize: { height: 40, width: 40 },
+      willOpenWindowWith: null,
     },
     {
       id: 5,
@@ -46,6 +53,7 @@ export const useRecommendedConfig = (): {
       icon: '/assets/icons/recommended/twitter.svg',
       action: () => console.log('click'),
       iconSize: { height: 40, width: 40 },
+      willOpenWindowWith: null,
     },
     {
       id: 6,
@@ -54,6 +62,7 @@ export const useRecommendedConfig = (): {
       icon: '/assets/icons/recommended/terminal.png',
       action: () => console.log('click'),
       iconSize: { height: 40, width: 40 },
+      willOpenWindowWith: null,
     },
   ];
 
@@ -67,6 +76,7 @@ interface IRecommendedFile {
   fileName: string;
   details: string;
   icon: string;
-  action: () => void;
+  action: (() => void) | null;
   iconSize: { height: number; width: number };
+  willOpenWindowWith: null | ReactNode;
 }

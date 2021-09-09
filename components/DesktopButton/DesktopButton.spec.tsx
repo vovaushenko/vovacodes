@@ -16,6 +16,7 @@ const mockProps: Props = {
   iconSrc: '/assets/icons/Desktop/this_pc.webp',
   variant: 'desktop',
   action: null,
+  willOpenWindowWith: null,
 };
 
 const setup = (props: Props) => {

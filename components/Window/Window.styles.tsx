@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   backdrop-filter: blur(20.5px);
-  overflow: hidden;
+  overflow-y: auto;
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme }) => theme.systemTrayBackground};
 
@@ -79,4 +79,6 @@ export const NavButton = styled.div<ButtonProps>`
   color: ${({ theme }) => theme.primary.text};
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  height: 100%;
+`;

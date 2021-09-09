@@ -1,6 +1,8 @@
+import React from 'react';
 import { ISystemTrayButton } from '../../types/ui/system-tray';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
 
 export const useSystemTrayConfig = (): {
   systemTrayButtons: ISystemTrayButton[];
@@ -25,6 +27,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: () => toggleSearchModal(),
       alt: 'Windows icon',
+      willOpenWindowWith: null,
     },
     {
       id: 2,
@@ -32,6 +35,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: () => toggleSearchModal(),
       alt: 'Search more',
+      willOpenWindowWith: null,
     },
     {
       id: 3,
@@ -39,6 +43,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: () => toggleWidgetsModal(),
       alt: 'Open widgets',
+      willOpenWindowWith: null,
     },
     {
       id: 4,
@@ -46,6 +51,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: null,
       alt: 'Use Edge browser',
+      willOpenWindowWith: <GoogleSearch />,
     },
     {
       id: 5,
@@ -53,6 +59,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: null,
       alt: 'Explore files',
+      willOpenWindowWith: null,
     },
     {
       id: 6,
@@ -60,6 +67,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: null,
       alt: 'Shop on Microsoft Store',
+      willOpenWindowWith: null,
     },
     {
       id: 7,
@@ -67,6 +75,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: () => changeTheme(),
       alt: 'Toggle theme',
+      willOpenWindowWith: null,
     },
   ];
 

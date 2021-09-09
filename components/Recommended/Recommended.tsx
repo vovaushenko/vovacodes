@@ -21,6 +21,7 @@ const Recommended = (): JSX.Element => {
           text={file.fileName}
           details={file.details}
           action={file.action}
+          willOpenWindowWith={file.willOpenWindowWith}
         />
       ))}
     </Styled.Container>

@@ -5,35 +5,21 @@ import * as Styled from './Window.styles';
 import { NavButton } from './Window.styles';
 import Paragraph from '../Typography/Paragraph/Paragraph';
 import Image from 'next/image';
+import { withReduxAndStyledProviders } from '../../test/testUtils';
 
 /**
  * Setup function for the component
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = (props: Props) => {
-  return mount(<Window {...props} />);
+  return mount(withReduxAndStyledProviders(<Window {...props} />));
 };
 
 describe('Window', () => {
-  describe('CLOSED window', () => {
-    const wrap = setup({
-      size: { height: 100, width: 100 },
-      windowIcon: 'icon.svg',
-      windowName: 'Closed Window',
-      closeWindow: () => console.log('CLOSE'),
-      isOpen: false,
-    });
-
-    it('should NOT render ', () => {
-      expect(wrap);
-      expect(wrap.length).toBe(0);
-    });
-  });
-
   describe('OPEN window', () => {
     const wrap = setup({
       size: { height: 100, width: 100 },
-      windowIcon: 'icon.svg',
+      windowIcon: '/icon.svg',
       windowName: 'Open Window',
       closeWindow: () => console.log('CLOSE'),
       isOpen: true,
@@ -55,7 +41,7 @@ describe('Window', () => {
       expect(icon.prop('height')).toBe(20);
       expect(icon.prop('width')).toBe(20);
       expect(icon.prop('alt')).toBe('Open Window');
-      expect(icon.prop('src')).toBe('icon.svg');
+      expect(icon.prop('src')).toBe('/icon.svg');
     });
 
     it('should render control buttons', () => {

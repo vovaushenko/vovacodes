@@ -1,8 +1,11 @@
+import { ReactNode } from 'react';
+
 export interface IWindow {
   windowName: string;
   windowIcon: string;
   size: { height: number; width: number };
   isOpen: boolean;
+  windowContent: ReactNode | null;
 }
 
 export interface WindowsState {

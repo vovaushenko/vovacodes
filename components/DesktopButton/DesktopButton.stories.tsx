@@ -14,6 +14,7 @@ ThisPC.args = {
   iconSize: { width: 50, height: 50 },
   iconSrc: 'assets/icons/Desktop/this_pc.webp',
   variant: 'desktop',
+  willOpenWindowWith: null,
 };
 export const ControlPanel = Template.bind({});
 ControlPanel.args = {
@@ -21,6 +22,7 @@ ControlPanel.args = {
   iconSize: { width: 50, height: 50 },
   iconSrc: 'assets/icons/Desktop/control_panel.webp',
   variant: 'desktop',
+  willOpenWindowWith: null,
 };
 export const TrashBin = Template.bind({});
 TrashBin.args = {
@@ -28,6 +30,7 @@ TrashBin.args = {
   iconSize: { width: 50, height: 50 },
   iconSrc: 'assets/icons/Desktop/recyclebin.webp',
   variant: 'desktop',
+  willOpenWindowWith: null,
 };
 
 export const ThisPCTray = Template.bind({});
@@ -36,6 +39,7 @@ ThisPCTray.args = {
   iconSize: { width: 50, height: 50 },
   iconSrc: 'assets/icons/Desktop/this_pc.webp',
   variant: 'systemTray',
+  willOpenWindowWith: null,
 };
 export const ControlPanelTray = Template.bind({});
 ControlPanelTray.args = {
@@ -43,6 +47,7 @@ ControlPanelTray.args = {
   iconSize: { width: 50, height: 50 },
   iconSrc: 'assets/icons/Desktop/control_panel.webp',
   variant: 'systemTray',
+  willOpenWindowWith: null,
 };
 export const TrashBinTray = Template.bind({});
 TrashBinTray.args = {
@@ -50,4 +55,5 @@ TrashBinTray.args = {
   iconSize: { width: 50, height: 50 },
   iconSrc: 'assets/icons/Desktop/recyclebin.webp',
   variant: 'systemTray',
+  willOpenWindowWith: null,
 };
