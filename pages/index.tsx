@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import React from 'react';
-import Hero from '../components/Hero/Hero';
+import Desktop from '../components/Desktop/Desktop';
 import DesktopLayout from '../components/DesktopLayout/DesktopLayout';
 
 interface ServerProps {
@@ -10,7 +10,7 @@ interface ServerProps {
 const Home: NextPage<ServerProps> = ({ title }) => {
   return (
     <DesktopLayout title={title}>
-      <Hero />
+      <Desktop />
     </DesktopLayout>
   );
 };

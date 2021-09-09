@@ -1,17 +1,17 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { withReduxAndStyledProviders } from '../../test/testUtils';
-import Hero from './Hero';
+import Desktop from './Desktop';
 
 /**
  * Setup function for the component
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return mount(withReduxAndStyledProviders(<Hero />));
+  return mount(withReduxAndStyledProviders(<Desktop />));
 };
 
-describe('Hero', () => {
+describe('Desktop', () => {
   const wrap = setup();
 
   it('should render without throwing an error', () => {
