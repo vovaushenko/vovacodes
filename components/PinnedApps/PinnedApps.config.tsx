@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import VsCode from '../Apps/VsCode/VsCode';
 import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
+import Figma from '../Apps/Figma/Figma';
 
 export const usePinnedAppsConfig = (): { pinnedApps: IPinnedApp[] } => {
   const pinnedApps: IPinnedApp[] = [
@@ -84,7 +85,7 @@ export const usePinnedAppsConfig = (): { pinnedApps: IPinnedApp[] } => {
       icon: '/assets/icons/startmenu/figma.png',
       action: null,
       iconSize: { height: 38, width: 38 },
-      willOpenWindowWith: null,
+      willOpenWindowWith: <Figma />,
     },
     {
       id: 11,
