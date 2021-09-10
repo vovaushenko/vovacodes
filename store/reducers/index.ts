@@ -7,12 +7,15 @@ import { todosReducer } from './todosReducer';
 import { TodosState } from '../../types/redux/todos-reducer-types';
 import { windowsReducer } from './windowsReducer';
 import { WindowsState } from '../../types/redux/windows-reducer-types';
+import { likesReducer } from './likesReducer';
+import { LikesState } from '../../types/redux/likes-reducer-types';
 
 const rootReducer = combineReducers({
   test: testReducer,
   ui: uiReducer,
   todos: todosReducer,
   windows: windowsReducer,
+  likes: likesReducer,
 });
 
 export type State = {
@@ -20,6 +23,7 @@ export type State = {
   ui: UIstate;
   todos: TodosState;
   windows: WindowsState;
+  likes: LikesState;
 };
 
 // https://stackoverflow.com/questions/64139344/how-to-use-typescript-next-redux-wrapper-getserversideprops

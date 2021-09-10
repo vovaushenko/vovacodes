@@ -18,4 +18,10 @@ export const mockReduxStore: LocalRootState = {
   windows: {
     openedWindows: [],
   },
+  likes: {
+    likesCount: 1,
+    isLikePersisted: false,
+    isLoading: false,
+    error: null,
+  },
 };
