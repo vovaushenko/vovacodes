@@ -37,6 +37,14 @@ export const likesReducer = (
     case LikesActionTypes.LIKE_PERSIST_ERROR:
       return { ...state, isLoading: false, error: action.payload };
 
+    case LikesActionTypes.CLEAR_STATE:
+      return {
+        ...state,
+        isLoading: false,
+        isLikePersisted: false,
+        error: null,
+      };
+
     default:
       return state;
   }

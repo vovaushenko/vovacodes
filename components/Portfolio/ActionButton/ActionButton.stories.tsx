@@ -12,3 +12,8 @@ export const Primary = Template.bind({});
 Primary.args = {
   buttonText: 'Click Me',
 };
+export const Loading = Template.bind({});
+Loading.args = {
+  buttonText: 'Click Me',
+  isLoading: true,
+};

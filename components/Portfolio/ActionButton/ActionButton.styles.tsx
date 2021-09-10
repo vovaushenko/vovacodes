@@ -1,6 +1,68 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-export const BTN = styled.button`
+interface Props {
+  isLoading?: boolean;
+}
+
+const loadingKeyframes = keyframes`
+  0% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+`;
+
+const loadingButton = css`
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: ${({ theme }) => theme.portfolio.primaryColor.light}
+      repeating-linear-gradient(
+        60deg,
+        transparent,
+        transparent 10px,
+        #01bf71 10px,
+        rgba(3, 21, 41, 0.32) 20px
+      );
+    animation: ${loadingKeyframes} 1s infinite linear;
+  }
+
+  & > span {
+    opacity: 0.5;
+  }
+
+  cursor: wait;
+`;
+
+const hoveredButton = css`
+  color: ${({ theme }) => theme.portfolio.bgColor};
+  //  show icon
+  span {
+    visibility: visible;
+
+    .action-icon {
+      transform: translateX(8px);
+    }
+  }
+
+  :before {
+    opacity: 0;
+  }
+
+  :after {
+    opacity: 1;
+    transform-origin: 100px 100px;
+    transform: scale(1) translate(-50px, -70px);
+  }
+`;
+
+export const BTN = styled.button<Props>`
   position: relative;
   z-index: 1;
   display: flex;
@@ -26,18 +88,6 @@ export const BTN = styled.button`
     border-radius: ${({ theme }) => theme.borderRadius};
   }
 
-  &:hover {
-    color: ${({ theme }) => theme.portfolio.bgColor};
-    //  show icon
-    span {
-      visibility: visible;
-
-      .action-icon {
-        transform: translateX(8px);
-      }
-    }
-  }
-
   &:before {
     content: '';
     position: absolute;
@@ -47,10 +97,6 @@ export const BTN = styled.button`
     height: 100%;
     border: 3px solid ${({ theme }) => theme.portfolio.primaryColor.light};
     transition: opacity 0.3s, border 0.3s;
-  }
-
-  &:hover::before {
-    opacity: 0;
   }
 
   &::after {
@@ -75,17 +121,11 @@ export const BTN = styled.button`
     transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
   }
 
-  &:hover::after {
-    opacity: 1;
-    transform-origin: 100px 100px;
-    transform: scale(1) translate(-50px, -70px);
-  }
-
   // Wrapped Icon
   span {
     position: absolute;
-    top: 1.25rem;
     right: 10%;
+    transform: translate(-50%, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,6 +137,12 @@ export const BTN = styled.button`
       transition: transform 0.3s;
     }
   }
+
+  &:hover {
+    ${(p) => !p.disabled && !p.isLoading && hoveredButton};
+  }
+
+  ${(p) => p.isLoading && loadingButton};
 
   @media ${({ theme }) => theme.media.phone} {
     padding: 1rem 2rem;

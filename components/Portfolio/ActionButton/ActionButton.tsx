@@ -6,6 +6,8 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   icon: ReactNode;
   renderAsLink?: boolean;
   href?: string;
+  isLoading?: boolean;
+  disabled?: boolean;
 }
 
 /**
@@ -15,6 +17,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
  *@param {string} href - href of the above link
  *@param {string} buttonText - text content of button
  *@param {ReactNode} icon - icon react element, should have "action-icon" class to be styled and positioned properly
+ *@param {boolean}  isLoading - indicates loading or progress state
  *@param {rest} rest - standard button props
  *@returns {JSX.Element} - Rendered ActionButton component
  */
@@ -22,12 +25,19 @@ const ActionButton = ({
   buttonText,
   icon,
   renderAsLink,
+  isLoading,
   href,
   ...rest
 }: Props): JSX.Element => {
   if (renderAsLink && href) {
     return (
-      <Styled.BTN as={'a'} href={href} target={'_blank'} rel="noopener">
+      <Styled.BTN
+        as={'a'}
+        href={href}
+        isLoading={isLoading}
+        target={'_blank'}
+        rel="noopener"
+      >
         {buttonText}
         <span>{icon}</span>
       </Styled.BTN>
@@ -35,7 +45,7 @@ const ActionButton = ({
   }
 
   return (
-    <Styled.BTN {...rest}>
+    <Styled.BTN isLoading={isLoading} {...rest}>
       {buttonText}
       <span>{icon}</span>
     </Styled.BTN>

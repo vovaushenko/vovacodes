@@ -53,3 +53,13 @@ export const postLike = () => {
     }
   };
 };
+/**
+ *@Action creator, will dispatch action clear likes state
+ *@function loadAllReviews
+ *@returns {function} - Redux thunk function
+ */
+export const clearLikeState = () => {
+  return async (dispatch: Dispatch<LikeAction>): Promise<void> => {
+    dispatch({ type: LikesActionTypes.CLEAR_STATE });
+  };
+};

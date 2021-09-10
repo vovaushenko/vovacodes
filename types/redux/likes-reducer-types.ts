@@ -19,6 +19,7 @@ export enum LikesActionTypes {
   PERSIST_LIKE = 'PERSIST_LIKE',
   LIKE_WAS_PERSISTED = 'LIKE_WAS_PERSISTED',
   LIKE_PERSIST_ERROR = 'LIKE_PERSIST_ERROR',
+  CLEAR_STATE = 'CLEAR_STATE',
 }
 
 /**
@@ -31,4 +32,5 @@ export type LikeAction =
   | { type: LikesActionTypes.LIKES_LOAD_ERROR; payload: string }
   | { type: LikesActionTypes.PERSIST_LIKE }
   | { type: LikesActionTypes.LIKE_WAS_PERSISTED; payload: boolean }
-  | { type: LikesActionTypes.LIKE_PERSIST_ERROR; payload: string };
+  | { type: LikesActionTypes.LIKE_PERSIST_ERROR; payload: string }
+  | { type: LikesActionTypes.CLEAR_STATE };

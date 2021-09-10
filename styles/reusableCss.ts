@@ -186,3 +186,21 @@ export const floatingWatchKeyframes = keyframes`
     transform: translatey(0px) translateX(0px);
   }
 `;
+
+/**
+ * @keyframes likeKeyframe
+ * @returns {keyframes} - keyframes for element's floating effect
+ * @example  animation: ${likeKeyframe} 0.6s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+ */
+export const likeKeyframe = keyframes`
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+`;
