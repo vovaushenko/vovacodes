@@ -24,4 +24,9 @@ export const mockReduxStore: LocalRootState = {
     isLoading: false,
     error: null,
   },
+  contact: {
+    isEmailSending: false,
+    isEmailSent: false,
+    error: null,
+  },
 };

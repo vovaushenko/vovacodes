@@ -15,6 +15,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.6",
     "axios": "^0.21.4",
     "formik": "^2.2.9",
     "http-status-codes": "^2.1.4",
