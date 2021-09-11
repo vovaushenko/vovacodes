@@ -9,9 +9,7 @@ export const usePinnedAppsConfig = (): { pinnedApps: IPinnedApp[] } => {
       id: 1,
       text: 'GitHub',
       icon: '/assets/icons/startmenu/github.svg',
-      action: () => {
-        window.location.href = 'https://github.com/vovaushenko';
-      },
+      action: () => window.open('https://github.com/vovaushenko', '_blank'),
       iconSize: { height: 40, width: 40 },
       willOpenWindowWith: null,
     },

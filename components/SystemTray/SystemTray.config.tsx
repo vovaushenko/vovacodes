@@ -49,7 +49,7 @@ export const useSystemTrayConfig = (): {
     {
       id: 4,
       src: '/assets/icons/startmenu/chrome.svg',
-      size: { width: 30, height: 30 },
+      size: { width: 32, height: 32 },
       action: null,
       alt: 'Chrome',
       willOpenWindowWith: <GoogleSearch />,
@@ -64,10 +64,10 @@ export const useSystemTrayConfig = (): {
     },
     {
       id: 6,
-      src: '/assets/icons/startmenu/icons8-microsoft-store.svg',
-      size: { width: 30, height: 30 },
-      action: null,
-      alt: 'Shop on Microsoft Store',
+      src: '/assets/icons/startmenu/github.svg',
+      size: { width: 34, height: 34 },
+      action: () => window.open('https://github.com/vovaushenko', '_blank'),
+      alt: 'connect on github',
       willOpenWindowWith: null,
     },
     {

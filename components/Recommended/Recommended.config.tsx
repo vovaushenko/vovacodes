@@ -18,9 +18,7 @@ export const useRecommendedConfig = (): {
       fileName: 'LinkedIn',
       details: 'Connect on Linkedin',
       icon: '/assets/icons/recommended/linkedin.svg',
-      action: () => {
-        window.location.href = 'https://www.linkedin.com/in/vovau/';
-      },
+      action: () => window.open('https://www.linkedin.com/in/vovau/', '_blank'),
       iconSize: { height: 44, width: 44 },
       willOpenWindowWith: null,
     },
@@ -56,9 +54,7 @@ export const useRecommendedConfig = (): {
       fileName: 'Twitter',
       details: 'Connect on Twitter',
       icon: '/assets/icons/recommended/twitter.svg',
-      action: () => {
-        window.location.href = 'https://twitter.com/vova_ush';
-      },
+      action: () => window.open('https://twitter.com/vova_ush', '_blank'),
       iconSize: { height: 40, width: 40 },
       willOpenWindowWith: null,
     },

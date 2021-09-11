@@ -3,11 +3,15 @@ import VsCode from '../VsCode/VsCode';
 import React from 'react';
 import GoogleSearch from '../GoogleSearch/GoogleSearch';
 import Resume from '../../Portfolio/Resume/Resume';
+import Desktop from '../../Desktop/Desktop';
+import SystemTray from '../../SystemTray/SystemTray';
+import styled from 'styled-components';
 
 export const useTerminalConfig = (): {
   openVSCode: () => void;
   openGoogle: () => void;
   openResume: () => void;
+  openLanding: () => void;
   greetingMessage: string;
   hack: string;
   sad: string;
@@ -52,6 +56,23 @@ export const useTerminalConfig = (): {
       windowContent: <Resume />,
     });
   };
+  const openLanding = () => {
+    openWindow({
+      windowName: 'Resume',
+      isOpen: true,
+      windowIcon: '/assets/icons/recommended/word.png',
+      size: {
+        width: 0.75 * window.innerWidth,
+        height: 0.7 * window.innerHeight,
+      },
+      windowContent: (
+        <Wrapper>
+          <Desktop />
+          <SystemTray />
+        </Wrapper>
+      ),
+    });
+  };
 
   const greetingMessage = `
               ██╗░░░██╗░█████╗░██╗░░░██╗░█████╗░  ░█████╗░░█████╗░██████╗░███████╗░██████╗
@@ -82,6 +103,8 @@ export const useTerminalConfig = (): {
                                   ▀▀▄▄░░░░░░░░░░░░░░░█
                                       ▀▄▄▄▄▄░░░░░░░░█
                                           ██▄▄▄▄▄▄▄▄▀
+                        WI-FI HAS BEEN SUCCESSFULLY DE-ACTIVATED
+                                          ...                    
   `;
 
   const sad = `
@@ -112,8 +135,16 @@ export const useTerminalConfig = (): {
     openVSCode,
     openGoogle,
     openResume,
+    openLanding,
     greetingMessage,
     hack,
     sad,
   };
 };
+
+const Wrapper = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+`;

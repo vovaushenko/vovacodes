@@ -6,18 +6,29 @@ import { useTerminalConfig } from './Terminal.config';
 
 /**
  *Renders Terminal Component
+ *https://github.com/nitin42/terminal-in-react
  *@function Terminal
  *@returns {JSX.Element} - Rendered CardContent component
  */
-//https://github.com/nitin42/terminal-in-react
+
 const Terminal = (): JSX.Element => {
-  const { openVSCode, openGoogle, openResume, greetingMessage, hack, sad } =
-    useTerminalConfig();
+  const {
+    openVSCode,
+    openGoogle,
+    openResume,
+    openLanding,
+    greetingMessage,
+    hack,
+    sad,
+  } = useTerminalConfig();
 
   const router = useRouter();
 
-  const redirectToProjects = async () => {
+  const redirectToPortfolio = async () => {
     return await router.push('/portfolio');
+  };
+  const redirectToProjects = async () => {
+    return await router.push('/portfolio/projects');
   };
 
   return (
@@ -36,17 +47,24 @@ const Terminal = (): JSX.Element => {
           showmsg: () => greetingMessage,
           hack: () => hack,
           popup: () => alert('hello'),
-          write: () => console.log('HELLO'),
-          portfolio: redirectToProjects,
-          ng: () => sad,
+          portfolio: redirectToPortfolio,
+          projects: redirectToProjects,
+          SECRET_COMMAND: () => {
+            openLanding();
+            return sad;
+          },
         }}
-        description={{
+        descriptions={{
           code: 'opens Visual Studio Code',
+          portfolio: 'open portfolio',
+          projects: 'open recent projects',
           google: 'opens Google search',
           resume: 'opens resume',
           alert: 'alert',
           popup: 'alert',
           showmsg: 'will show greeting message',
+          hack: 'hack wifi of annoying neighbors',
+          SECRET_COMMAND: `💀 DON'T USE THIS COMMAND! OR YOU WILL BE FIRED! 💀`,
         }}
         msg={greetingMessage}
       />
