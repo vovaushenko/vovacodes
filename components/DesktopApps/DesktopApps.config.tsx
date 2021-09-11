@@ -5,6 +5,7 @@ import VsCode from '../Apps/VsCode/VsCode';
 import Likes from '../Likes/Likes';
 import { useRouter } from 'next/router';
 import Resume from '../Portfolio/Resume/Resume';
+import TrashBin from '../Folders/TrashBin/TrashBin';
 
 export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
   const router = useRouter();
@@ -72,6 +73,15 @@ export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
       iconSrc: '/assets/icons/recommended/power-point.png',
       iconSize: { width: 40, height: 40 },
       action: () => router.push('/portfolio/projects'),
+    },
+    {
+      id: 8,
+      text: 'Trash',
+      willOpenWindowWith: <TrashBin />,
+      variant: 'desktop',
+      iconSrc: '/assets/icons/Desktop/recyclebin.webp',
+      iconSize: { width: 40, height: 40 },
+      action: null,
     },
   ];
 

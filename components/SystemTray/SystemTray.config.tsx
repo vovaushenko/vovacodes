@@ -72,6 +72,14 @@ export const useSystemTrayConfig = (): {
     },
     {
       id: 7,
+      src: '/assets/icons/taskbar/bash.png',
+      size: { width: 30, height: 30 },
+      action: null,
+      alt: 'Open Terminal',
+      willOpenWindowWith: <Terminal />,
+    },
+    {
+      id: 8,
       src: themeToggleIcon,
       size: { width: 30, height: 30 },
       action: () => changeTheme(),

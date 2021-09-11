@@ -26,6 +26,6 @@ describe('DesktopApps', () => {
   });
   it('should render correct number of desktop apps', () => {
     const desktopApps = wrap.find(DesktopButton);
-    expect(desktopApps.length).toBe(7);
+    expect(desktopApps.length).toBe(8);
   });
 });

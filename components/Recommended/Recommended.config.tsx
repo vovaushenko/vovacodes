@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Resume from '../Portfolio/Resume/Resume';
 import { useRouter } from 'next/router';
+import Terminal from '../Apps/Terminal/Terminal';
 
 /**
  * Custom hook that returns prepared recommended apps config
@@ -66,9 +67,9 @@ export const useRecommendedConfig = (): {
       fileName: 'Terminal',
       details: 'Recently added',
       icon: '/assets/icons/recommended/terminal.png',
-      action: () => console.log('click'),
-      iconSize: { height: 40, width: 40 },
-      willOpenWindowWith: null,
+      action: null,
+      iconSize: { height: 38, width: 38 },
+      willOpenWindowWith: <Terminal />,
     },
   ];
 
