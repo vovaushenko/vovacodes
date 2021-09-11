@@ -3,6 +3,7 @@ import { ISystemTrayButton } from '../../types/ui/system-tray';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
+import Terminal from '../Apps/Terminal/Terminal';
 
 export const useSystemTrayConfig = (): {
   systemTrayButtons: ISystemTrayButton[];
@@ -47,10 +48,10 @@ export const useSystemTrayConfig = (): {
     },
     {
       id: 4,
-      src: '/assets/icons/startmenu/icons8-microsoft-edge.svg',
+      src: '/assets/icons/startmenu/chrome.svg',
       size: { width: 30, height: 30 },
       action: null,
-      alt: 'Use Edge browser',
+      alt: 'Chrome',
       willOpenWindowWith: <GoogleSearch />,
     },
     {
@@ -59,7 +60,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: null,
       alt: 'Explore files',
-      willOpenWindowWith: null,
+      willOpenWindowWith: <Terminal />,
     },
     {
       id: 6,

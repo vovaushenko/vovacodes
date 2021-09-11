@@ -2,7 +2,6 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import DesktopApps from './DesktopApps';
 import * as Styled from './DesktopApps.styles';
-import { desktopAppsList } from './DesktopApps.config';
 import DesktopButton from '../DesktopButton/DesktopButton';
 
 /**
@@ -27,6 +26,6 @@ describe('DesktopApps', () => {
   });
   it('should render correct number of desktop apps', () => {
     const desktopApps = wrap.find(DesktopButton);
-    expect(desktopApps.length).toBe(desktopAppsList.length);
+    expect(desktopApps.length).toBe(7);
   });
 });

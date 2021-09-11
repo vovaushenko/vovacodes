@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from './DesktopApps.styles';
-import { desktopAppsList } from './DesktopApps.config';
+import { useDesktopApps } from './DesktopApps.config';
 import DesktopButton from '../DesktopButton/DesktopButton';
 
 /**
@@ -9,6 +9,8 @@ import DesktopButton from '../DesktopButton/DesktopButton';
  *@returns {JSX.Element} - Rendered DesktopApps component
  */
 const DesktopApps = (): JSX.Element => {
+  const { desktopAppsList } = useDesktopApps();
+
   return (
     <Styled.UL>
       {desktopAppsList.map((app) => (

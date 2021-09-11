@@ -33,6 +33,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.0",
+    "terminal-in-react": "^4.3.1",
     "yup": "^0.32.9"
   },
   "devDependencies": {
