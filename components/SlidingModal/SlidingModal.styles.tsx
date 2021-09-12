@@ -3,8 +3,9 @@ import { SliderProps } from './SlidingModal';
 
 interface ContainerProps extends SliderProps {
   isSlidingModalOpen: boolean;
-  isSearchOpen: boolean;
+  isAppCenterOpen: boolean;
   areSettingsOpen: boolean;
+  isSearchOpen: boolean;
 }
 
 const widgetModalStyles = css<ContainerProps>`
@@ -22,9 +23,15 @@ const widgetModalStyles = css<ContainerProps>`
 
 const systemTrayModalStyles = css<ContainerProps>`
   background-color: ${({ theme }) => theme.systemTrayBackground};
+  transform: ${({ isAppCenterOpen, width }) =>
+    isAppCenterOpen ? `translateY(-7rem)` : `translateY(${width})`};
+`;
+const searchModalStyles = css<ContainerProps>`
+  background-color: ${({ theme }) => theme.systemTrayBackground};
   transform: ${({ isSearchOpen, width }) =>
     isSearchOpen ? `translateY(-7rem)` : `translateY(${width})`};
 `;
+
 const settingsModalStyles = css<ContainerProps>`
   background-color: ${({ theme }) => theme.systemTrayBackground};
   transform: ${({ areSettingsOpen, width }) =>
@@ -48,6 +55,8 @@ export const Container = styled.div<ContainerProps>`
   ${({ variant }) => variant === 'widgetsModal' && widgetModalStyles}
   ${({ variant }) => variant === 'systemTrayModal' && systemTrayModalStyles}
   ${({ variant }) => variant === 'settingsModal' && settingsModalStyles}
+  ${({ variant }) => variant === 'searchModal' && searchModalStyles}
+
   /* styling */
   width: ${({ width }) => width};
   border-radius: ${({ theme }) => theme.borderRadius};

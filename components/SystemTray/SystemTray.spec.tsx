@@ -23,7 +23,7 @@ describe('SystemTray', () => {
 
   it('should render all specified tray buttons', () => {
     const trayBtn = wrap.find(DesktopButton);
-    expect(trayBtn.length).toBe(32);
+    expect(trayBtn.length).toBe(38);
   });
 
   it('should render Taskbar', () => {

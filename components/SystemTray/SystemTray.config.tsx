@@ -4,11 +4,17 @@ import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
 import Terminal from '../Apps/Terminal/Terminal';
+import Bing from '../Apps/Bing/Bing';
 
 export const useSystemTrayConfig = (): {
   systemTrayButtons: ISystemTrayButton[];
 } => {
-  const { toggleWidgetsModal, toggleSearchModal, changeTheme } = useActions();
+  const {
+    toggleWidgetsModal,
+    toggleAppCenterModal,
+    toggleSearchModal,
+    changeTheme,
+  } = useActions();
   const { theme } = useTypedSelector((state) => state.ui);
 
   const themeToggleIcon =
@@ -26,7 +32,7 @@ export const useSystemTrayConfig = (): {
       id: 1,
       src: '/assets/icons/taskbar/Windows.png',
       size: { width: 30, height: 30 },
-      action: () => toggleSearchModal(),
+      action: () => toggleAppCenterModal(),
       alt: 'Windows icon',
       willOpenWindowWith: null,
     },
@@ -53,6 +59,14 @@ export const useSystemTrayConfig = (): {
       action: null,
       alt: 'Chrome',
       willOpenWindowWith: <GoogleSearch />,
+    },
+    {
+      id: 5,
+      src: '/assets/icons/startmenu/icons8-microsoft-edge.svg',
+      size: { width: 32, height: 32 },
+      action: null,
+      alt: 'Edge',
+      willOpenWindowWith: <Bing searchQuery={''} />,
     },
     {
       id: 5,

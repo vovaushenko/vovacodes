@@ -5,6 +5,7 @@ import { useSystemTrayConfig } from './SystemTray.config';
 import * as Styled from './SystemTray.styles';
 import SlidingModal from '../SlidingModal/SlidingModal';
 import AppCenter from '../AppCenter/AppCenter';
+import SearchModalContent from '../SearchModalContent/SearchModalContent';
 
 /**
  *Renders system tray with control buttons
@@ -15,6 +16,8 @@ const SystemTray = (): JSX.Element => {
   const containerRef = useRef<HTMLUListElement>(null);
   const [rightCoordinate, setRightCoordinate] = useState(0);
   const { systemTrayButtons } = useSystemTrayConfig();
+  const RIGHT_OFFSET = 400;
+  const BOTTOM_OFFSET = -50;
 
   useEffect(() => {
     if (containerRef.current) {
@@ -45,9 +48,19 @@ const SystemTray = (): JSX.Element => {
       <SlidingModal
         variant={'systemTrayModal'}
         width={'600px'}
-        position={{ bottom: '-50px', right: `${rightCoordinate - 300}px` }}
+        position={{
+          bottom: `${BOTTOM_OFFSET}px`,
+          right: `${rightCoordinate - RIGHT_OFFSET}px`,
+        }}
       >
         <AppCenter />
+      </SlidingModal>
+      <SlidingModal
+        variant={'searchModal'}
+        width={'600px'}
+        position={{ bottom: '-50px', right: `${rightCoordinate - 400}px` }}
+      >
+        <SearchModalContent />
       </SlidingModal>
     </>
   );
