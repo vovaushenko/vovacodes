@@ -11,14 +11,17 @@ import { likesReducer } from './likesReducer';
 import { LikesState } from '../../types/redux/likes-reducer-types';
 import { contactReducer } from './contactReducer';
 import { ContactState } from '../../types/redux/contact-reducer-types';
+import { newsReducer } from './newsReducer';
+import { NewsReducerState } from '../../types/redux/news-reducer-types';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   test: testReducer,
   ui: uiReducer,
   todos: todosReducer,
   windows: windowsReducer,
   likes: likesReducer,
   contact: contactReducer,
+  news: newsReducer,
 });
 
 export type State = {
@@ -28,16 +31,18 @@ export type State = {
   windows: WindowsState;
   likes: LikesState;
   contact: ContactState;
+  news: NewsReducerState;
 };
 
 // https://stackoverflow.com/questions/64139344/how-to-use-typescript-next-redux-wrapper-getserversideprops
-
+// https://github.com/vercel/next.js/tree/canary/examples/with-redux-wrapper  example of implementation redux with server-side rendering
 export const reducer = (state: State | undefined, action: AnyAction) => {
   if (action.type === HYDRATE) {
     const nextState = {
       ...state,
       ...action.payload,
     };
+
     return nextState;
   } else {
     return rootReducer(state, action);

@@ -30,4 +30,10 @@ export const mockReduxStore: LocalRootState = {
     isEmailSent: false,
     error: null,
   },
+
+  news: {
+    newsArticles: [],
+    areNewsLoading: false,
+    error: null,
+  },
 };
