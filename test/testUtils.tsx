@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { AnyAction, applyMiddleware, createStore, Store } from 'redux';
 import thunk from 'redux-thunk';
 import { ThemeProvider } from 'styled-components';
-import { LocalRootState, reducer } from '../store/reducers';
+import { LocalRootState, rootReducer } from '../store/reducers';
 import { darkTheme } from '../styles/appThemes';
 import { mockReduxStore } from './mockReduxStore';
 
@@ -17,7 +17,11 @@ export const storeFactory = (
   initialState: LocalRootState
 ): Store<LocalRootState, AnyAction> => {
   const middlewares = [thunk];
-  return createStore(reducer, initialState, applyMiddleware(...middlewares));
+  return createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(...middlewares)
+  );
 };
 
 /**

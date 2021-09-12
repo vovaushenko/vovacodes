@@ -69,7 +69,7 @@ export const useSystemTrayConfig = (): {
       willOpenWindowWith: <Bing searchQuery={''} />,
     },
     {
-      id: 5,
+      id: 6,
       src: '/assets/icons/taskbar/file_explorer.webp',
       size: { width: 30, height: 30 },
       action: null,
@@ -77,7 +77,7 @@ export const useSystemTrayConfig = (): {
       willOpenWindowWith: <Terminal />,
     },
     {
-      id: 6,
+      id: 7,
       src: '/assets/icons/startmenu/github.svg',
       size: { width: 34, height: 34 },
       action: () => window.open('https://github.com/vovaushenko', '_blank'),
@@ -85,7 +85,7 @@ export const useSystemTrayConfig = (): {
       willOpenWindowWith: null,
     },
     {
-      id: 7,
+      id: 8,
       src: '/assets/icons/taskbar/bash.png',
       size: { width: 30, height: 30 },
       action: null,
@@ -93,7 +93,7 @@ export const useSystemTrayConfig = (): {
       willOpenWindowWith: <Terminal />,
     },
     {
-      id: 8,
+      id: 9,
       src: themeToggleIcon,
       size: { width: 30, height: 30 },
       action: () => changeTheme(),

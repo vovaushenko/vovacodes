@@ -34,7 +34,7 @@ export const useSearchModalConfig = (): {
       willOpenWindowWith: null,
     },
     {
-      id: 2,
+      id: 3,
       text: 'VSCode',
       icon: '/assets/icons/startmenu/vscode.svg',
       action: null,
@@ -43,7 +43,7 @@ export const useSearchModalConfig = (): {
     },
 
     {
-      id: 3,
+      id: 4,
       text: 'Figma',
       icon: '/assets/icons/startmenu/figma.png',
       action: null,
@@ -52,7 +52,7 @@ export const useSearchModalConfig = (): {
     },
 
     {
-      id: 4,
+      id: 5,
       text: 'Edge',
       icon: '/assets/icons/startmenu/icons8-microsoft-edge.svg',
       action: null,

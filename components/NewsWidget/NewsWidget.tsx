@@ -33,7 +33,9 @@ const NewsWidget = ({
     >
       <Styled.TextWrapper>
         <Paragraph margin={'0.5rem 0'}>{newsSource}</Paragraph>
-        <Styled.NewsHeader href={newsLink}>{newsHeader}</Styled.NewsHeader>
+        <Styled.NewsHeader href={newsLink} target="_blank" rel="noopener">
+          {newsHeader}
+        </Styled.NewsHeader>
         <Styled.ActionPanel>
           <Button variant={'likeBtn'} withChevron={false}>
             Like

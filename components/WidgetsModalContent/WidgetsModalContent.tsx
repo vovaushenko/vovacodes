@@ -4,13 +4,16 @@ import WidgetCard from '../WidgetCard/WidgetCard';
 import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import NewsWidget from '../NewsWidget/NewsWidget';
 import TodoWidget from '../TodoWidget/TodoWidget';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 /**
- *Renders content for sliding widget modal
+ *Renders content for sliding widget modal, namely weather and to-do widgets. Additionally, renders news widgets that are pre-fetched, pre-generated on server.
  *@function WidgetsModalContent
  *@returns {JSX.Element} - Rendered WidgetsModalContent component
  */
 const WidgetsModalContent = (): JSX.Element => {
+  const { newsArticles } = useTypedSelector((state) => state.news);
+
   return (
     <Styled.Container>
       <WidgetCard
@@ -40,30 +43,6 @@ const WidgetsModalContent = (): JSX.Element => {
         />
       </WidgetCard>
 
-      <NewsWidget
-        newsHeader={
-          "Why is Elon Musk's Mars mission considered most ambitious?"
-        }
-        newsSource={'CNBC'}
-        newsLink={
-          'https://www.cnbc.com/2021/04/23/elon-musk-aiming-for-mars-so-humanity-is-not-a-single-planet-species.html'
-        }
-        backgroundImg={'/assets/images/news-1.jpg'}
-        cardGradientColor={'rgb(248, 168, 87)'}
-      />
-
-      <NewsWidget
-        newsHeader={
-          '11 amazing places to visit in Canada for a summer vacation'
-        }
-        newsSource={'Skyscanner'}
-        newsLink={
-          'https://www.skyscanner.ca/tips-and-inspiration/best-summer-vacation-spots-in-canada'
-        }
-        backgroundImg={'/assets/images/news-2.jpg'}
-        cardGradientColor={'rgb(77, 231, 255)'}
-      />
-
       <WidgetCard
         cardHeader={'To Do'}
         headerIcon={'/assets/icons/widget/todo.png'}
@@ -71,28 +50,21 @@ const WidgetsModalContent = (): JSX.Element => {
       >
         <TodoWidget />
       </WidgetCard>
-      <NewsWidget
-        newsHeader={
-          '11 amazing places to visit in Canada for a summer vacation'
-        }
-        newsSource={'Skyscanner'}
-        newsLink={
-          'https://www.skyscanner.ca/tips-and-inspiration/best-summer-vacation-spots-in-canada'
-        }
-        backgroundImg={'/assets/images/news-2.jpg'}
-        cardGradientColor={'rgb(77, 231, 255)'}
-      />
-      <NewsWidget
-        newsHeader={
-          '11 amazing places to visit in Canada for a summer vacation'
-        }
-        newsSource={'Skyscanner'}
-        newsLink={
-          'https://www.skyscanner.ca/tips-and-inspiration/best-summer-vacation-spots-in-canada'
-        }
-        backgroundImg={'/assets/images/news-2.jpg'}
-        cardGradientColor={'rgb(77, 231, 255)'}
-      />
+
+      {newsArticles
+        .filter(
+          (article) => article.urlToImage !== null && article.title !== null
+        )
+        .map((article) => (
+          <NewsWidget
+            key={`${article.title}${article.publishedAt}`}
+            newsHeader={article.title!}
+            newsSource={article.source.name}
+            newsLink={article.url!}
+            backgroundImg={article.urlToImage!}
+            cardGradientColor={'rgba(3, 21, 41, 1)'}
+          />
+        ))}
     </Styled.Container>
   );
 };
