@@ -54,7 +54,7 @@ const Terminal = (): JSX.Element => {
             return sad;
           },
         }}
-        descriptions={{
+        description={{
           code: 'opens Visual Studio Code',
           portfolio: 'open portfolio',
           projects: 'open recent projects',
