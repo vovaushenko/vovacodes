@@ -1,8 +1,8 @@
-import React from 'react';
-import * as Styled from './Terminal.styles';
-import Trmnl from 'terminal-in-react';
 import { useRouter } from 'next/router';
+import React from 'react';
+import Trmnl from 'terminal-in-react';
 import { useTerminalConfig } from './Terminal.config';
+import * as Styled from './Terminal.styles';
 
 /**
  *Renders Terminal Component
@@ -64,7 +64,7 @@ const Terminal = (): JSX.Element => {
           popup: 'alert',
           showmsg: 'will show greeting message',
           hack: 'hack wifi of annoying neighbors',
-          SECRET_COMMAND: `💀 DON'T USE THIS COMMAND! OR YOU WILL BE FIRED! 💀`,
+          SECRET_COMMAND: `💀  DON'T USE THIS COMMAND! OR YOU WILL BE FIRED!  💀`,
         }}
         msg={greetingMessage}
       />
