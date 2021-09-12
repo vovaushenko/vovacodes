@@ -7,8 +7,9 @@ import {
 const initialUIstate: UIstate = {
   theme: 'dark',
   isWidgetOpen: false,
-  isSearchOpen: false,
+  isAppCenterOpen: false,
   areSettingsOpen: false,
+  isSearchOpen: false,
 };
 
 /**
@@ -31,34 +32,49 @@ export const uiReducer = (
       return {
         ...state,
         isWidgetOpen: true,
-        isSearchOpen: false,
+        isAppCenterOpen: false,
         areSettingsOpen: false,
+        isSearchOpen: false,
       };
 
     case UIactionTypes.CLOSE_WIDGETS_MODAL:
       return { ...state, isWidgetOpen: false };
 
-    case UIactionTypes.OPEN_SEARCH_MODAL:
+    case UIactionTypes.OPEN_APP_CENTER_MODAL:
       return {
         ...state,
-        isSearchOpen: true,
+        isAppCenterOpen: true,
         isWidgetOpen: false,
         areSettingsOpen: false,
+        isSearchOpen: false,
       };
 
-    case UIactionTypes.CLOSE_SEARCH_MODAL:
-      return { ...state, isSearchOpen: false };
+    case UIactionTypes.CLOSE_APP_CENTER_MODAL:
+      return { ...state, isAppCenterOpen: false };
 
     case UIactionTypes.OPEN_SETTINGS_MODAL:
       return {
         ...state,
         areSettingsOpen: true,
-        isSearchOpen: false,
+        isAppCenterOpen: false,
         isWidgetOpen: false,
+        isSearchOpen: false,
       };
 
     case UIactionTypes.CLOSE_SETTINGS_MODAL:
       return { ...state, areSettingsOpen: false };
+
+    case UIactionTypes.OPEN_SEARCH_MODAL:
+      return {
+        ...state,
+        isSearchOpen: true,
+        areSettingsOpen: false,
+        isAppCenterOpen: false,
+        isWidgetOpen: false,
+      };
+
+    case UIactionTypes.CLOSE_SEARCH_MODAL:
+      return { ...state, isSearchOpen: false };
 
     default:
       return state;

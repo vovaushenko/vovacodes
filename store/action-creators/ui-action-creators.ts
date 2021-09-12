@@ -41,20 +41,20 @@ export const toggleWidgetsModal = () => {
 
 /**
  *@UI async action creator, will dispatch action to open/close sliding modal
- *@function toggleSearchModal
+ *@function toggleAppCenterModal
  *@returns {function} - Redux thunk function
  */
-export const toggleSearchModal = () => {
+export const toggleAppCenterModal = () => {
   return async (
     dispatch: Dispatch<UIaction>,
     getState: () => State
   ): Promise<void> => {
-    const { isSearchOpen } = getState().ui;
+    const { isAppCenterOpen } = getState().ui;
 
-    if (isSearchOpen === false) {
-      dispatch({ type: UIactionTypes.OPEN_SEARCH_MODAL });
+    if (isAppCenterOpen === false) {
+      dispatch({ type: UIactionTypes.OPEN_APP_CENTER_MODAL });
     } else {
-      dispatch({ type: UIactionTypes.CLOSE_SEARCH_MODAL });
+      dispatch({ type: UIactionTypes.CLOSE_APP_CENTER_MODAL });
     }
   };
 };
@@ -75,6 +75,26 @@ export const toggleSettingsModal = () => {
       dispatch({ type: UIactionTypes.OPEN_SETTINGS_MODAL });
     } else {
       dispatch({ type: UIactionTypes.CLOSE_SETTINGS_MODAL });
+    }
+  };
+};
+
+/**
+ *@UI async action creator, will dispatch action to open/close sliding modal
+ *@function toggleSearchModal
+ *@returns {function} - Redux thunk function
+ */
+export const toggleSearchModal = () => {
+  return async (
+    dispatch: Dispatch<UIaction>,
+    getState: () => State
+  ): Promise<void> => {
+    const { isSearchOpen } = getState().ui;
+
+    if (isSearchOpen === false) {
+      dispatch({ type: UIactionTypes.OPEN_SEARCH_MODAL });
+    } else {
+      dispatch({ type: UIactionTypes.CLOSE_SEARCH_MODAL });
     }
   };
 };
