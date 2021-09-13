@@ -1,14 +1,18 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import Head from 'next/head';
 
 import React from 'react';
 import DesktopLayout from './DesktopLayout';
 import SystemTray from '../SystemTray/SystemTray';
+import { withReduxAndStyledProviders } from '../../test/testUtils';
 
 describe('DesktopLayout wrapper component', () => {
-  const wrapper = shallow(
-    <DesktopLayout title="Some Title">
-      <h1>🍏Apples are nutritious🍏</h1>
-    </DesktopLayout>
+  const wrapper = mount(
+    withReduxAndStyledProviders(
+      <DesktopLayout title="Some Title">
+        <h1>🍏Apples are nutritious🍏</h1>
+      </DesktopLayout>
+    )
   );
 
   it('should render with no errors', () => {
@@ -17,9 +21,9 @@ describe('DesktopLayout wrapper component', () => {
   });
 
   it('should render correct title', () => {
-    const title = wrapper.find('title');
+    const head = wrapper.find(Head);
 
-    expect(title.text()).toBe('Some Title');
+    expect(head.length).toBe(1);
   });
   it('should render wrapped children', () => {
     const children = wrapper.find('h1');

@@ -11,10 +11,6 @@ export const mockReduxStore: LocalRootState = {
     screenBrightness: '100',
   },
 
-  test: {
-    isTested: true,
-    value: 7,
-  },
   todos: {
     todos: [],
   },

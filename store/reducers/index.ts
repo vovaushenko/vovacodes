@@ -1,7 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper';
 import { AnyAction, combineReducers } from 'redux';
 import { UIstate } from '../../types/redux/ui-reducer-types';
-import { testReducer, TestState } from './testReducer';
 import { uiReducer } from './uiReducer';
 import { todosReducer } from './todosReducer';
 import { TodosState } from '../../types/redux/todos-reducer-types';
@@ -15,7 +14,6 @@ import { newsReducer } from './newsReducer';
 import { NewsReducerState } from '../../types/redux/news-reducer-types';
 
 export const rootReducer = combineReducers({
-  test: testReducer,
   ui: uiReducer,
   todos: todosReducer,
   windows: windowsReducer,
@@ -25,7 +23,6 @@ export const rootReducer = combineReducers({
 });
 
 export type State = {
-  test: TestState;
   ui: UIstate;
   todos: TodosState;
   windows: WindowsState;
