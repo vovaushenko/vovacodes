@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from './SettingsModalContent.styles';
-import { settingsIcons } from './SettingsModalContent.config';
+import { useSettingsModalConfig } from './SettingsModalContent.config';
 import SettingsButton from '../SettingsButton/SettingsButton';
 import SliderControl from '../SliderControl/SliderControl';
 import { FiBattery, FiSettings } from 'react-icons/fi';
@@ -13,19 +13,21 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
  */
 const SettingsModalContent = (): JSX.Element => {
   const { theme } = useTypedSelector((state) => state.ui);
-  //TODO: change dummy battery value with progressively decreasing
+  const { settingsButtons } = useSettingsModalConfig();
+
   return (
     <>
       <Styled.Top themeMode={theme}>
         <Styled.ButtonWrapper>
-          {settingsIcons.map((icon) => (
+          {settingsButtons.map((btn) => (
             <SettingsButton
-              key={icon.id}
-              variant={icon.variant}
+              key={btn.id}
+              variant={btn.variant}
               isTurnedOn={false}
-              text={icon.text}
+              text={btn.text}
+              btnAction={btn.btnAction}
             >
-              {icon.icon}
+              {btn.icon}
             </SettingsButton>
           ))}
         </Styled.ButtonWrapper>

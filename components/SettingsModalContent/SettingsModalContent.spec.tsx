@@ -3,7 +3,6 @@ import React from 'react';
 import { withReduxAndStyledProviders } from '../../test/testUtils';
 import SettingsModalContent from './SettingsModalContent';
 import SettingsButton from '../SettingsButton/SettingsButton';
-import { settingsIcons } from './SettingsModalContent.config';
 import SliderControl from '../SliderControl/SliderControl';
 import { FiBattery, FiSettings } from 'react-icons/fi';
 
@@ -25,7 +24,7 @@ describe('SettingsModalContent', () => {
 
   it('should render all control buttons', () => {
     const settingsButton = wrap.find(SettingsButton);
-    expect(settingsButton.length).toBe(settingsIcons.length);
+    expect(settingsButton.length).toBe(6);
   });
 
   it('should render slider controls', () => {

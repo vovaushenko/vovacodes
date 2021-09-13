@@ -98,3 +98,33 @@ export const toggleSearchModal = () => {
     }
   };
 };
+
+/**
+ *@UI async action creator, will dispatch action to toggle night light mode
+ *@function toggleNightLightMode
+ *@returns {function} - Redux thunk function
+ */
+export const toggleNightLightMode = () => {
+  return async (
+    dispatch: Dispatch<UIaction>,
+    getState: () => State
+  ): Promise<void> => {
+    const { isInNightLightMode } = getState().ui;
+
+    if (isInNightLightMode === false) {
+      dispatch({ type: UIactionTypes.TURN_ON_NIGHT_MODE });
+    } else {
+      dispatch({ type: UIactionTypes.TURN_OFF_NIGHT_MODE });
+    }
+  };
+};
+/**
+ *@UI async action creator, will dispatch action to change screen brightness
+ *@function changeScreenBrightness
+ *@returns {function} - Redux thunk function
+ */
+export const changeScreenBrightness = (brightness: string) => {
+  return async (dispatch: Dispatch<UIaction>): Promise<void> => {
+    dispatch({ type: UIactionTypes.CHANGE_BRIGHTNESS, payload: brightness });
+  };
+};

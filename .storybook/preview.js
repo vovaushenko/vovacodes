@@ -4,9 +4,11 @@ import { Provider } from 'react-redux';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../styles/globalStyle';
-import { darkTheme, lightTheme } from '../styles/appThemes';
+import { useAppThemes } from '../styles/appThemes';
 import { mockReduxStore } from '../test/mockReduxStore';
 import { storeFactory } from '../test/testUtils';
+
+const { lightTheme, darkTheme } = useAppThemes();
 
 Object.defineProperty(nextImage, 'default', {
   configurable: true,

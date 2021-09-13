@@ -7,6 +7,8 @@ export const mockReduxStore: LocalRootState = {
     isSearchOpen: false,
     areSettingsOpen: false,
     isAppCenterOpen: false,
+    isInNightLightMode: false,
+    screenBrightness: '100',
   },
 
   test: {

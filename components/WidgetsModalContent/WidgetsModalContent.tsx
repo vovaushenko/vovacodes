@@ -53,7 +53,10 @@ const WidgetsModalContent = (): JSX.Element => {
 
       {newsArticles
         .filter(
-          (article) => article.urlToImage !== null && article.title !== null
+          (article) =>
+            article.urlToImage !== null &&
+            article.title !== null &&
+            article.urlToImage !== null
         )
         .map((article) => (
           <NewsWidget

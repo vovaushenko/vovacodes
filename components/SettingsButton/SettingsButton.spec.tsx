@@ -15,7 +15,12 @@ const setup = (props: Props) => {
 
 describe('SettingsButton', () => {
   describe('In-active button state', () => {
-    const wrap = setup({ variant: 'icon', text: 'TOMATO', isTurnedOn: false });
+    const wrap = setup({
+      variant: 'icon',
+      text: 'TOMATO',
+      isTurnedOn: false,
+      btnAction: null,
+    });
 
     it('should render without throwing an error', () => {
       expect(wrap);
@@ -39,7 +44,12 @@ describe('SettingsButton', () => {
   });
 
   describe('ACTIVE button state', () => {
-    const wrap = setup({ variant: 'action', text: 'TOMATO', isTurnedOn: true });
+    const wrap = setup({
+      variant: 'action',
+      text: 'TOMATO',
+      isTurnedOn: true,
+      btnAction: null,
+    });
 
     it('should render button content', () => {
       const btn = wrap.find(Styled.Button);

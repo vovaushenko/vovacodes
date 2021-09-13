@@ -4,6 +4,8 @@ export interface UIstate {
   isAppCenterOpen: boolean;
   areSettingsOpen: boolean;
   isSearchOpen: boolean;
+  isInNightLightMode: boolean;
+  screenBrightness: string;
 }
 
 export enum UIactionTypes {
@@ -21,6 +23,11 @@ export enum UIactionTypes {
 
   OPEN_SEARCH_MODAL = 'OPEN_SEARCH_MODAL',
   CLOSE_SEARCH_MODAL = 'CLOSE_SEARCH_MODAL',
+
+  TURN_ON_NIGHT_MODE = 'TURN_ON_NIGHT_MODE',
+  TURN_OFF_NIGHT_MODE = 'TURN_OFF_NIGHT_MODE',
+
+  CHANGE_BRIGHTNESS = 'CHANGE_BRIGHTNESS',
 }
 
 export type UIaction =
@@ -33,4 +40,7 @@ export type UIaction =
   | { type: UIactionTypes.OPEN_SETTINGS_MODAL }
   | { type: UIactionTypes.CLOSE_SETTINGS_MODAL }
   | { type: UIactionTypes.OPEN_SEARCH_MODAL }
-  | { type: UIactionTypes.CLOSE_SEARCH_MODAL };
+  | { type: UIactionTypes.CLOSE_SEARCH_MODAL }
+  | { type: UIactionTypes.TURN_ON_NIGHT_MODE }
+  | { type: UIactionTypes.TURN_OFF_NIGHT_MODE }
+  | { type: UIactionTypes.CHANGE_BRIGHTNESS; payload: string };

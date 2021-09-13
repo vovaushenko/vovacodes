@@ -7,6 +7,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   variant: 'icon' | 'action';
   isTurnedOn: boolean;
   text: string;
+  btnAction: (() => void) | null;
 }
 
 /**
@@ -16,6 +17,7 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
  *@param {boolean} isTurnedOn - is button clicked and turned on
  *@param {string} text - text description under button
  *@param {children} children - button content
+ *@param {function} btnAction - additional action to be added in rendered button's onClick handler
  *@param {rest} rest - standard html button params
  *@returns {JSX.Element} - Rendered SettingsButton component
  */
@@ -24,10 +26,14 @@ const SettingsButton: FC<Props> = ({
   isTurnedOn,
   text,
   children,
+  btnAction,
   ...rest
 }): JSX.Element => {
   const [isActive, setIsActive] = useState(isTurnedOn);
-  const handleClick = () => setIsActive((prev) => !prev);
+  const handleClick = () => {
+    btnAction && btnAction();
+    setIsActive((prev) => !prev);
+  };
 
   return (
     <Styled.ButtonContainer>
