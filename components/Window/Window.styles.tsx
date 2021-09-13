@@ -80,6 +80,5 @@ export const NavButton = styled.div<ButtonProps>`
 `;
 
 export const Content = styled.div`
-  min-height: 100%;
-  min-width: 100%;
+  height: 100%;
 `;
