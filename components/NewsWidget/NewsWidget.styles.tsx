@@ -8,7 +8,7 @@ interface Props {
 export const Container = styled.article<Props>`
   display: flex;
   align-items: flex-end;
-  padding: 1rem;
+  padding: ${({ theme }) => theme.space.sm};
   border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({
     bgImg,
@@ -29,7 +29,7 @@ export const TextWrapper = styled.div`
 
 export const NewsHeader = styled.a`
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: rgba(255, 255, 255, 1);
   text-decoration: none;
 
@@ -41,15 +41,14 @@ export const ActionPanel = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: ${({ theme }) => theme.space.sm};
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: ${({ theme }) => theme.space.xxs};
 
   div {
-    padding: 0.5rem;
-  }
+    padding: ${({ theme }) => theme.space.xxs};
 `;

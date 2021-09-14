@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { slidInCenter } from '../../styles/reusableCss';
+import { slidInCenter } from '../../design-system/reusableCss';
 
 export const Container = styled.div`
   /* make widget scrollable*/
@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.activeColor};
+    background: ${({ theme }) => theme.colors.blue.icon};
   }
 `;
 
@@ -26,12 +26,12 @@ export const AddTodo = styled.div``;
 export const MyDay = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.space.sm};
 
   .icon {
     font-size: 0.75rem;
     color: ${({ theme }) => theme.primary.text};
-    margin-right: 0.25rem;
+    margin-right: ${({ theme }) => theme.space.xxs};
   }
 
   .header-wrapper {
@@ -40,7 +40,7 @@ export const MyDay = styled.div`
   }
 
   .show-form-icon {
-    color: ${({ theme }) => theme.activeColor};
+    color: ${({ theme }) => theme.colors.blue.icon};
     cursor: pointer;
     font-size: 1.25rem;
   }
@@ -60,11 +60,12 @@ export const TodoInput = styled.input`
   display: block;
   padding: 0.75rem 1rem;
   width: 100%;
-  background: rgb(24, 34, 61);
-  border: 0;
-  border-bottom: 2px #4489aa solid;
+
   color: ${({ theme }) => theme.primary.text};
+  background: ${({ theme }) => theme.colors.appCenter.searchBarBg};
   border-radius: ${({ theme }) => theme.borderRadius};
+  border: 0;
+  border-bottom: ${({ theme }) => `2px ${theme.colors.blue.icon} solid`};
   outline: 0;
   /* animation */
   animation: ${slidInCenter} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -75,12 +76,12 @@ export const Todo = styled.article`
   display: flex;
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius};
-  background: ${({ theme }) => theme.pinnedAppHoverBg};
-  padding: 0.75rem 1rem;
-  margin-top: 0.5rem;
+  background: ${({ theme }) => theme.colors.appCenter.searchBarBg};
+  padding: ${({ theme }) => `${theme.space.xs} ${theme.space.sm}`};
+  margin-top: ${({ theme }) => theme.space.xs};
 
   .todo-icon {
-    margin-right: 0.5rem;
+    margin-right: ${({ theme }) => theme.space.xs};
     cursor: pointer;
   }
 

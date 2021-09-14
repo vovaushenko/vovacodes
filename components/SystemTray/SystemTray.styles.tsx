@@ -11,7 +11,7 @@ export const Container = styled.footer`
   width: 100%;
   min-height: 3rem;
   backdrop-filter: blur(20.5px);
-  background: ${({ theme }) => theme.systemTrayBackground};
+  background: ${({ theme }) => theme.colors.systemTray.bg};
 `;
 
 export const ButtonList = styled.ul`
@@ -19,5 +19,5 @@ export const ButtonList = styled.ul`
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.space.xxs};
 `;

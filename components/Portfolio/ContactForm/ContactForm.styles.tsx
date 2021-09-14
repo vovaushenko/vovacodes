@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { slidInCenter } from '../../../styles/reusableCss';
+import { slidInCenter } from '../../../design-system/reusableCss';
 
 export const Container = styled.section`
   width: 100%;

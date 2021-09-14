@@ -6,12 +6,14 @@ interface Props {
 }
 
 const lightStyles = css<Props>`
-  --slider-color: #0652f7;
+  --slider-color: ${({ theme }) =>
+    theme.colors.buttons.settingsButton.activeBg};
   --slider-thumb: #fff;
 `;
 const darkStyles = css<Props>`
-  --slider-color: #69d3fa;
-  --slider-thumb: #4d4d4d;
+  --slider-color: ${({ theme }) =>
+    theme.colors.buttons.settingsButton.activeBg};
+  --slider-thumb: ${({ theme }) => theme.colors.gray.dark};
 `;
 
 export const Container = styled.div`
@@ -33,14 +35,12 @@ export const Input = styled.input<Props>`
   ${({ themeMode }) => themeMode === 'light' && lightStyles};
 
   width: 100%;
-  margin-left: 0.5rem;
+  margin-left: ${({ theme }) => theme.space.xxs};
   -webkit-appearance: none;
   height: 5px;
   border-radius: 5px;
-  background: #d3d3d3;
   outline: none;
-  opacity: 0.9;
-
+  opacity: 0.95;
   transition: opacity 0.2s ease-in;
 
   background: ${({ progress }) => `linear-gradient(
@@ -60,6 +60,7 @@ export const Input = styled.input<Props>`
     border: 4px solid var(--slider-thumb);
     background: var(--slider-color);
     cursor: pointer;
+    box-shadow: ${({ theme }) => theme.boxShadow.appBtn};
   }
 
   ::-moz-range-thumb {
@@ -68,5 +69,6 @@ export const Input = styled.input<Props>`
     border-radius: 50%;
     background: var(--slider-color);
     cursor: pointer;
+    box-shadow: ${({ theme }) => theme.boxShadow.appBtn};
   }
 `;

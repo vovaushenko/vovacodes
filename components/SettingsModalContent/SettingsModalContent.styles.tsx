@@ -14,15 +14,15 @@ interface Props {
 export const Top = styled.div<Props>`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  ${({ themeMode }) =>
-    themeMode === 'dark' ? darkThemeStyles : lightThemeStyles}
+  gap: ${({ theme }) => theme.space.sm};
+  padding: ${({ theme }) => theme.space.sm};
+  ${({ theme }) =>
+    theme.mode === 'dark' ? darkThemeStyles : lightThemeStyles};
 `;
 
 export const ButtonWrapper = styled.div`
   width: 100%;
-  gap: 0.75rem;
+  gap: ${({ theme }) => theme.space.xs};
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 `;
@@ -30,7 +30,7 @@ export const ButtonWrapper = styled.div`
 export const SlidersWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.space.xxs};
 `;
 
 export const Footer = styled.footer`

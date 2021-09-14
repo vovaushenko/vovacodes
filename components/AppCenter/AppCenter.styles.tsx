@@ -2,17 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-interface Props {
-  themeMode: 'dark' | 'light';
-}
-
-export const AllApps = styled.div<Props>`
-  padding: 1rem 1rem 0 1rem;
-
-  ${({ themeMode }) =>
-    themeMode === 'dark'
-      ? 'background: rgba(28, 33, 39, 0.63)'
-      : 'background: rgba(255, 255, 255, 0.26)'}
+export const AllApps = styled.div`
+  padding: ${({ theme }) =>
+    `${theme.space.sm} ${theme.space.sm} 0 ${theme.space.sm}`};
+  background-color: ${({ theme }) => theme.colors.appCenter.bg};
 `;
 
 interface HeaderProps {
@@ -24,11 +17,11 @@ export const SectionHeader = styled.div<HeaderProps>`
   align-items: center;
   justify-content: space-between;
   margin: ${({ margin }) => margin};
-  padding: 0 1.5rem;
+  padding: ${({ theme }) => `0 ${theme.space.md}`};
 
   h3 {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: ${({ theme }) => theme.fontSize.medium};
+    font-weight: ${({ theme }) => theme.fontWeight.normal};
   }
 `;
 
@@ -36,8 +29,7 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 0.25rem 2rem;
+  padding: ${({ theme }) => `${theme.space.xxxs} ${theme.space.lg}`};
 `;
 
 export const PowerOff = styled.button`
@@ -53,6 +45,6 @@ export const PowerOff = styled.button`
 `;
 
 export const SearchBarForm = styled.form`
-  padding: 0 1rem;
-  margin: 1.25rem 0;
+  padding: ${({ theme }) => `0 ${theme.space.sm}`};
+  margin: ${({ theme }) => `${theme.space.sm} 0`};
 `;

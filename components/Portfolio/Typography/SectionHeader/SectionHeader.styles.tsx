@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Props } from './SectionHeader';
-import { trackingInExpand } from '../../../../styles/reusableCss';
+import { trackingInExpand } from '../../../../design-system/reusableCss';
 
 type HeaderProps = Pick<Props, 'margin' | 'color' | 'variant' | 'withGradient'>;
 

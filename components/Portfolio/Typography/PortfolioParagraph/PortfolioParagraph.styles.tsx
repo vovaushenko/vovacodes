@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Props } from './PortfolioParagraph';
-import { slideTop } from '../../../../styles/reusableCss';
+import { slideTop } from '../../../../design-system/reusableCss';
 
 type ParagraphProps = Pick<
   Props,

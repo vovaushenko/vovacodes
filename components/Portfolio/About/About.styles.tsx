@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { rollInLeft, rollInRight, slideTop } from '../../../styles/reusableCss';
+import {
+  rollInLeft,
+  rollInRight,
+  slideTop,
+} from '../../../design-system/reusableCss';
 
 //https://stackoverflow.com/questions/53416348/css-scroll-snapping-vertical-not-working
 //scrollbar snap

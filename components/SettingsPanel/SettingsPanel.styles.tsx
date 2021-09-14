@@ -21,11 +21,10 @@ export const Settings = styled.button`
   background: transparent;
   cursor: pointer;
   color: inherit;
-  padding: 0.5rem;
-
+  padding: ${({ theme }) => theme.space.xxs};
   border-radius: ${({ theme }) => theme.borderRadius};
 
   :hover {
-    background: ${({ theme }) => theme.systemTrayBackground};
+    background: ${({ theme }) => theme.colors.systemTray.bg};
   }
 `;

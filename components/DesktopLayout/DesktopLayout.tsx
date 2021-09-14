@@ -11,7 +11,7 @@ export interface Props {
 
 /**
  *Renders wrapper for desktop screens with system tray
- *@IMPORTANT: In Container that wraps children, we will "inject" global styles orchestrated in redux, to turn on/off night light mode and increase/decrease brightness.
+ *@IMPORTANT: In Container that wraps children, we will "inject" global design-system orchestrated in redux, to turn on/off night light mode and increase/decrease brightness.
  *@function DesktopLayout
  *@param {string} title - title to be added to meta description
  *@param {ReactNode} children - content of layout

@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
-import { slideBottom, slideOutKeyframes } from '../../../styles/reusableCss';
+import {
+  slideBottom,
+  slideOutKeyframes,
+} from '../../../design-system/reusableCss';
 
 interface Props {
   isHovering: boolean;

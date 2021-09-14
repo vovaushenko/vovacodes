@@ -6,13 +6,16 @@ interface Props {
 
 export const ButtonContainer = styled.div`
   width: 100%;
-  color: ${({ theme }) => theme.primary.text};
   text-align: center;
 `;
 
 const activeStyles = css`
-  background-color: ${({ theme }) => theme.settingButtonIsActive.bg};
-  color: ${({ theme }) => theme.settingButtonIsActive.color};
+  background-color: ${({ theme }) =>
+    theme.colors.buttons.settingsButton.activeBg};
+
+  .icon {
+    color: ${({ theme }) => theme.colors.buttons.settingsButton.activeColor};
+  }
 `;
 
 export const Button = styled.button<Props>`
@@ -23,12 +26,13 @@ export const Button = styled.button<Props>`
   justify-content: space-evenly;
   /* styling */
   color: ${({ theme }) => theme.primary.text};
-  padding: 0.75rem;
+  padding: ${({ theme }) => theme.space.xs};
   border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ theme }) => theme.settingsButtonBg};
+  background-color: ${({ theme }) => theme.colors.buttons.settingsButton.bg};
   cursor: pointer;
   border: 0;
   transition: all 0.2s ease-in-out;
+  box-shadow: ${({ theme }) => theme.boxShadow.appBtn};
   /* if is turned on - apply styles */
   ${({ isTurnedOn }) => isTurnedOn && activeStyles};
 
@@ -37,6 +41,10 @@ export const Button = styled.button<Props>`
   }
 
   :hover {
-    background-color: rgba(255, 255, 255, 0.35);
+    opacity: 0.75;
+  }
+
+  :active {
+    transform: scale(0.9);
   }
 `;

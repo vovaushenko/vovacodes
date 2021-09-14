@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { likeKeyframe } from '../../styles/reusableCss';
+import { likeKeyframe } from '../../design-system/reusableCss';
 
 export const Container = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const LikeCounter = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  background-color: ${({ theme }) => theme.systemTrayBackground};
+  background-color: ${({ theme }) => theme.colors.systemTray.bg};
   padding: 2rem 4rem;
   border-radius: ${({ theme }) => theme.borderRadius};
 `;

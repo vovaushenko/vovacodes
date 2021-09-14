@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rollInRight } from '../../../styles/reusableCss';
+import { rollInRight } from '../../../design-system/reusableCss';
 
 export const Container = styled.a`
   div {

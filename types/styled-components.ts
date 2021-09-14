@@ -1,6 +1,6 @@
 import 'styled-components';
 
-interface media {
+interface Media {
   phone: string;
   tablet: string;
   desktop: string;
@@ -12,23 +12,64 @@ declare module 'styled-components' {
     primary: { background: string; text: string };
     fontSize: { large: string; medium: string; small: string };
     gray: { dark: string; light: string; lightest: string };
-    red: { danger: string; lightDanger: string };
     borderRadius: string;
-    systemTrayBackground: string;
-    media: media;
-    systemTrayIconHoverBg: string;
-    settingsButtonBg: string;
-    settingButtonIsActive: { bg: string; color: string };
-    buttonBg: string;
-    pinnedAppHoverBg: string;
-    activeColor: string;
-    windowBackground: string;
+    colors: {
+      appCenter: { bg: string; searchBarBg: string };
+      systemTray: { bg: string };
+      gray: { dark: string; light: string; lightest: string };
+      red: { danger: string; lightDanger: string };
+      blue: { icon: string; border: string; activeBlue: string };
+      modals: {
+        widgetModalBg: string;
+      };
+      cards: {
+        widgetBg: string;
+      };
+      buttons: {
+        simpleButtonBg: string;
+        settingsButton: { bg: string; activeBg: string; activeColor: string };
+        desktopButton: {
+          hover: string;
+          systemTrayHover: string;
+          pinnedAppHover: string;
+        };
+      };
+    };
+    boxShadow: {
+      appBtn: string;
+    };
+
+    media: Media;
+
     zIndex: {
       highestPriority: number;
       modal: number;
       navigation: number;
       lowPriority: number;
     };
+
+    fontWeight: {
+      light: number;
+      normal: number;
+      medium: number;
+      semibold: number;
+      bold: number;
+      extrabold: number;
+      black: number;
+    };
+
+    space: {
+      none: string;
+      xxxs: string;
+      xxs: string;
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+    };
+
     portfolio: {
       bgColor: string;
       secondaryBg: { purple: string };

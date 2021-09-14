@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { floatKeyframes, slidInCenter } from '../../../styles/reusableCss';
+import {
+  floatKeyframes,
+  slidInCenter,
+} from '../../../design-system/reusableCss';
 
 interface Props {
   slideHeight: string;

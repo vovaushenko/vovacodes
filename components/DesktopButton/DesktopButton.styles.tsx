@@ -5,11 +5,11 @@ interface Props {
 }
 
 const desktopButtonStyles = css`
-  padding: 0.5rem 1.5rem;
+  padding: ${({ theme }) => `${theme.space.xxs} ${theme.space.md}`};
   cursor: context-menu;
 
   :hover {
-    background: rgba(131, 195, 255, 0.24);
+    background: ${({ theme }) => theme.colors.buttons.desktopButton.hover};
   }
 `;
 const systemTrayButtonStyles = css`
@@ -17,14 +17,16 @@ const systemTrayButtonStyles = css`
   cursor: pointer;
 
   :hover {
-    background: ${({ theme }) => theme.systemTrayIconHoverBg};
+    background: ${({ theme }) =>
+      theme.colors.buttons.desktopButton.systemTrayHover};
   }
 `;
 const pinnedAppButtonStyles = css`
   cursor: pointer;
 
   :hover {
-    background: ${({ theme }) => theme.pinnedAppHoverBg};
+    background: ${({ theme }) =>
+      theme.colors.buttons.desktopButton.pinnedAppHover};
   }
 `;
 
@@ -39,7 +41,8 @@ const recommendedAppButtonStyles = css`
   }
 
   :hover {
-    background: ${({ theme }) => theme.pinnedAppHoverBg};
+    background: ${({ theme }) =>
+      theme.colors.buttons.desktopButton.pinnedAppHover};
   }
 `;
 
@@ -63,6 +66,10 @@ export const ButtonContainer = styled.button<Props>`
   border-radius: ${({ theme }) => theme.borderRadius};
 
   transition: 0.3s all ease;
+
+  :active {
+    transform: scale(0.9);
+  }
 `;
 
 export const Figure = styled.figure``;
@@ -80,5 +87,5 @@ export const RecommendedAppDescription = styled.figcaption`
 export const FileName = styled.h4`
   color: ${({ theme }) => theme.primary.text};
   font-size: ${({ theme }) => theme.fontSize.medium};
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.normal};
 `;

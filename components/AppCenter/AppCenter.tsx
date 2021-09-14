@@ -3,10 +3,11 @@ import * as Styled from './AppCenter.styles';
 import Button from '../Button/Button';
 import PinnedApps from '../PinnedApps/PinnedApps';
 import Recommended from '../Recommended/Recommended';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { FiPower } from 'react-icons/fi';
 import Avatar from '../Avatar/Avatar';
 import SearchBar from '../SearchBar/SearchBar';
+import Bing from '../Apps/Bing/Bing';
+import { useActions } from '../../hooks/useActions';
 
 /**
  *Renders AppCenter content for sliding modal with search bar, pinned apps and recommended section
@@ -15,15 +16,29 @@ import SearchBar from '../SearchBar/SearchBar';
  */
 const AppCenter = (): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState('');
-  const { theme } = useTypedSelector((state) => state.ui);
+  const { openWindow } = useActions();
+
+  const handlePerformSearch = (term: string) => {
+    openWindow({
+      windowName: 'Bing',
+      windowContent: <Bing searchQuery={term} />,
+      windowIcon: '/assets/icons/startmenu/icons8-microsoft-edge.svg',
+      size: {
+        width: 0.8 * window.innerWidth,
+        height: 0.8 * window.innerHeight,
+      },
+      isOpen: true,
+    });
+  };
+
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    //TODO:Search
+    handlePerformSearch(searchTerm);
   };
 
   return (
     <Styled.Container>
-      <Styled.AllApps themeMode={theme}>
+      <Styled.AllApps>
         <Styled.SearchBarForm onSubmit={handleSearch}>
           <SearchBar
             name={'search-bar'}

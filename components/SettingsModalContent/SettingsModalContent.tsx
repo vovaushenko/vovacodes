@@ -37,6 +37,7 @@ const SettingsModalContent = (): JSX.Element => {
           <SliderControl variant={'brightnessControl'} withChevron={false} />
         </Styled.SlidersWrapper>
       </Styled.Top>
+
       <Styled.Footer>
         <Styled.Battery>
           <FiBattery className="icon" />

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Props } from './AnimatedRouterLink';
-import { trackingInExpand } from '../../../styles/reusableCss';
+import { trackingInExpand } from '../../../design-system/reusableCss';
 
 type LinkProps = Pick<Props, 'variant'>;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { tiltIn } from '../../styles/reusableCss';
+import { tiltIn } from '../../design-system/reusableCss';
 
 export const Container = styled.div`
   width: 100%;
@@ -7,7 +7,7 @@ export const Container = styled.div`
   backdrop-filter: blur(20.5px);
   overflow-y: auto;
   border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ theme }) => theme.systemTrayBackground};
+  background-color: ${({ theme }) => theme.colors.systemTray.bg};
 
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -23,7 +23,7 @@ export const Navigation = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem 1rem;
-  background-color: ${({ theme }) => theme.systemTrayBackground};
+  background-color: ${({ theme }) => theme.colors.systemTray.bg};
 `;
 
 export const WindowInfo = styled.div`
@@ -69,7 +69,7 @@ export const NavButton = styled.div<ButtonProps>`
 
   :hover {
     background-color: ${({ theme, variant }) =>
-      variant === 'close' ? theme.red.danger : theme.gray.dark};
+      variant === 'close' ? theme.colors.red.lightDanger : theme.gray.dark};
   }
 
   :active {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { IHighlightedProject } from '../../../types/portfolio';
-import { slideTop, trackingInExpand } from '../../../styles/reusableCss';
+import { slideTop, trackingInExpand } from '../../../design-system/reusableCss';
 
 type ContainerProps = Pick<IHighlightedProject, 'slideBgColor' | 'slideHeight'>;
 

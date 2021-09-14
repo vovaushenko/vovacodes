@@ -4,7 +4,7 @@ import { AnyAction, applyMiddleware, createStore, Store } from 'redux';
 import thunk from 'redux-thunk';
 import { ThemeProvider } from 'styled-components';
 import { LocalRootState, rootReducer } from '../store/reducers';
-import { useAppThemes } from '../styles/appThemes';
+import { useSystemDesign } from '../design-system/useSystemDesign';
 import { mockReduxStore } from './mockReduxStore';
 
 /**
@@ -31,7 +31,7 @@ export const storeFactory = (
  *@returns {JSX.Element} - tested element wrapped in redux and styled components providers
  */
 
-const { darkTheme } = useAppThemes();
+const { darkTheme } = useSystemDesign();
 export const withReduxAndStyledProviders = (
   component: JSX.Element
 ): JSX.Element => {

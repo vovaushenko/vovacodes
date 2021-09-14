@@ -20,7 +20,7 @@ export const GenericButton = styled.button<ButtonStyledProps>`
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
   color: ${({ theme }) => theme.primary.text};
-  background-color: ${({ theme }) => theme.buttonBg};
+  background-color: ${({ theme }) => theme.colors.buttons.simpleButtonBg};
   text-transform: capitalize;
   cursor: pointer;
   /* animation */

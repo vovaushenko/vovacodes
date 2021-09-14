@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { slideTop } from '../../../styles/reusableCss';
+import { slideTop } from '../../../design-system/reusableCss';
 
 export const Container = styled.button`
   /* styling */

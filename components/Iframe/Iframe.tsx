@@ -13,7 +13,7 @@ interface Props {
  *@param {string} title - title of iframe
  *@param {string} iframeSrc - url of iframe
  *@param {object} iframeSize - size of iframe window, eg 100% or 100px
- *@param {Record<string, unknown>} style - inline css styles to be applied
+ *@param {Record<string, unknown>} style - inline css design-system to be applied
  *@returns {JSX.Element} - Rendered Iframe component
  */
 const Iframe = ({

@@ -1,3 +1,7 @@
+/**
+* Place to inject globally available classes and custom properties
+*/
+
 @font-face {
     font-family: 'Segoe UI Variable';
     src: url('../public/assets/fonts/SegoeUIVariable.woff2') format('woff2'),

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
@@ -16,10 +16,8 @@ export const Label = styled.label`
   justify-content: center;
   /* transform */
   transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
   /* styling */
-  color: rgb(133, 133, 133);
+  color: ${({ theme }) => theme.colors.gray.lightest};
   cursor: text;
   user-select: none;
   transition: 0.15s ease-in-out;
@@ -27,33 +25,20 @@ export const Label = styled.label`
 
   .search-icon {
     font-size: 1.25rem;
-    color: rgb(3, 132, 192);
+    color: ${({ theme }) => theme.colors.blue.icon};
     margin-right: 0.5rem;
   }
 `;
 
-interface InputProps {
-  themeMode: 'dark' | 'light';
-}
-
-const lightThemeStyles = css`
-  background: rgb(255, 255, 255);
-`;
-const darkThemeStyles = css`
-  background: rgb(24, 34, 61);
-`;
-
-export const Input = styled.input<InputProps>`
-  ${({ themeMode }) =>
-    themeMode === 'dark' ? darkThemeStyles : lightThemeStyles}
-
+export const Input = styled.input`
   display: block;
-  padding: 0.75rem;
+  padding: ${({ theme }) => theme.space.xs};
   width: 100%;
-  background: rgb(24, 34, 61);
+
   border: 0;
-  border-bottom: 2px #4489aa solid;
+  border-bottom: ${({ theme }) => `2px ${theme.colors.blue.icon} solid`};
   color: ${({ theme }) => theme.primary.text};
+  background: ${({ theme }) => theme.colors.appCenter.searchBarBg};
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: 0;
 

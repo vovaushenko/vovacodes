@@ -73,7 +73,9 @@ export const Input = styled.input<InputProps>`
   border: 0;
   border-bottom: 3px solid ${({ theme }) => theme.portfolio.primaryColor.light};
   border-color: ${({ theme, hasError }) =>
-    hasError ? theme.red.lightDanger : theme.portfolio.primaryColor.light};
+    hasError
+      ? theme.colors.red.lightDanger
+      : theme.portfolio.primaryColor.light};
 
   &:focus-visible {
     outline: none;
@@ -92,12 +94,12 @@ export const Error = styled.div<ErrorProps>`
   display: flex;
   align-items: center;
   margin-top: 1px;
-  color: ${({ theme }) => theme.red.lightDanger};
+  color: ${({ theme }) => theme.colors.red.lightDanger};
   font-size: 1rem;
 
   .icon {
     font-size: 1rem;
     margin-right: 5px;
-    color: ${({ theme }) => theme.red.lightDanger};
+    color: ${({ theme }) => theme.colors.red.lightDanger};
   }
 `;

@@ -1,25 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.article`
-  padding: 1rem;
+  padding: ${({ theme }) => theme.space.sm};
   border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? 'rgba(28, 33, 39, 0.63)'
-      : 'rgba(255, 255, 255, 0.26)'};
+  background-color: ${({ theme }) => theme.colors.cards.widgetBg};
 `;
 
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.space.sm};
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.space.xs};
 `;
 
 export const More = styled.div`
@@ -27,11 +24,7 @@ export const More = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 0.25em;
-  background-color: ${({ theme }) =>
-    theme.mode === 'dark'
-      ? 'rgba(28, 33, 39, 0.63)'
-      : 'rgba(255, 255, 255, 0.26)'};
-
+  padding: ${({ theme }) => theme.space.xxxs};
+  background-color: ${({ theme }) => theme.colors.buttons.simpleButtonBg};
   cursor: context-menu;
 `;

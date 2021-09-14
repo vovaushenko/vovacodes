@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import * as Styled from './SearchBar.styles';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { FiSearch } from 'react-icons/fi';
 
 export interface Props {
@@ -24,7 +23,6 @@ export interface Props {
  *@returns {JSX.Element} - Rendered Form text control element
  */
 const SearchBar: FC<Props> = ({ name, type, placeholder, value, setValue }) => {
-  const { theme } = useTypedSelector((state) => state.ui);
   return (
     <Styled.Container>
       <Styled.Input
@@ -32,7 +30,6 @@ const SearchBar: FC<Props> = ({ name, type, placeholder, value, setValue }) => {
         name={name}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        themeMode={theme}
         required
       />
       <Styled.Label htmlFor={name}>

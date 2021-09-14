@@ -3,7 +3,7 @@ import {
   floatingMobileKeyframes,
   floatingWatchKeyframes,
   floatKeyframes,
-} from '../../../styles/reusableCss';
+} from '../../../design-system/reusableCss';
 
 export const Container = styled.section`
   height: 100vh;

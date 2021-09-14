@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const activeStyles = css`
-  background: ${({ theme }) => theme.buttonBg};
+  background: ${({ theme }) => theme.colors.buttons.simpleButtonBg};
 
   &::before {
     content: '';
@@ -43,7 +43,8 @@ export const sharedStyles = css`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: ${({ theme }) => theme.pinnedAppHoverBg};
+  background: ${({ theme }) =>
+    theme.colors.buttons.desktopButton.pinnedAppHover};
 `;
 
 export const Image = styled.img`
@@ -70,8 +71,9 @@ export const Badge = styled.span`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 4px solid ${({ theme }) => theme.systemTrayBackground};
-  background: ${({ theme }) => theme.pinnedAppHoverBg};
+  border: 4px solid ${({ theme }) => theme.colors.systemTray.bg};
+  background: ${({ theme }) =>
+    theme.colors.buttons.desktopButton.pinnedAppHover};
 
   @media ${({ theme }) => theme.media.phone} {
   }
