@@ -43,7 +43,7 @@ export const Photo = styled.div<Props>`
 
   background: ${({
     photo,
-  }) => `linear-gradient(to top, #010606, transparent 150%),
+  }) => `linear-gradient(to top, #010606, transparent 200%),
     url(${photo}) center/cover`};
   /**
    * ----------------------------------------

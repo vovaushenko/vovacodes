@@ -32,7 +32,7 @@ const PortfolioLanding = (): JSX.Element => {
           />
         </Styled.LinkWrapper>
       </Styled.Navigation>
-      <Styled.Photo photo={'/assets/portfolio/avatar-black-white.png'} />
+      <Styled.Photo photo={'/assets/portfolio/processed-avatar.png'} />
     </Styled.Container>
   );
 };

@@ -6,6 +6,7 @@ import Likes from '../Likes/Likes';
 import { useRouter } from 'next/router';
 import Resume from '../Portfolio/Resume/Resume';
 import TrashBin from '../Folders/TrashBin/TrashBin';
+import CommentsForm from '../CommentsForm/CommentsForm';
 
 export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
   const router = useRouter();
@@ -80,6 +81,15 @@ export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
       willOpenWindowWith: <TrashBin />,
       variant: 'desktop',
       iconSrc: '/assets/icons/Desktop/recyclebin.webp',
+      iconSize: { width: 40, height: 40 },
+      action: null,
+    },
+    {
+      id: 9,
+      text: 'Comment',
+      willOpenWindowWith: <CommentsForm />,
+      variant: 'desktop',
+      iconSrc: '/assets/icons/Desktop/comment.png',
       iconSize: { width: 40, height: 40 },
       action: null,
     },
