@@ -4,6 +4,7 @@ import * as WindowsActionCreators from './windows-action-creators';
 import * as LikeActionCreators from './like-action-creators';
 import * as ContactActionCreators from './contact-action-creators';
 import * as NewsActionCreators from './news-action-creators';
+import * as CommentActionCreators from './comments-action-creators';
 
 /**
  * This object combines all available redux action creators
@@ -16,6 +17,7 @@ export const CombinedActionCreators = {
   ...LikeActionCreators,
   ...ContactActionCreators,
   ...NewsActionCreators,
+  ...CommentActionCreators,
 };
 
 export type CombinedActionsType = typeof CombinedActionCreators;

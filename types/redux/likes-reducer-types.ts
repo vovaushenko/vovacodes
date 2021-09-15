@@ -1,5 +1,5 @@
 /**
- * Products Reducer state interface
+ * Likes Reducer state interface
  */
 export interface LikesState {
   likesCount: number;
@@ -9,7 +9,7 @@ export interface LikesState {
 }
 
 /**
- * Reviews Reducer action types
+ * Likes Reducer action types
  */
 
 export enum LikesActionTypes {
