@@ -6,6 +6,7 @@ import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import TodoWidget from '../TodoWidget/TodoWidget';
 import NewsWidget from '../NewsWidget/NewsWidget';
 import { store } from '../../store/index';
+import TechWidget from '../TechWidget/TechWidget';
 
 /**
  * Setup function for the component
@@ -23,9 +24,13 @@ describe('WidgetsModalContent', () => {
     expect(wrap.length).toBe(1);
   });
 
-  it('should render weather widget cards', () => {
+  it('should render weather widget card', () => {
     const weatherCard = wrap.find(WeatherWidget);
-    expect(weatherCard.length).toBe(2);
+    expect(weatherCard.length).toBe(1);
+  });
+  it('should render tech widget card', () => {
+    const techCard = wrap.find(TechWidget);
+    expect(techCard.length).toBe(1);
   });
 
   it('should render todo widget', () => {

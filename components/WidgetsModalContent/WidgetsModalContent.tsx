@@ -5,6 +5,7 @@ import WeatherWidget from '../WeatherWidget/WeatherWidget';
 import NewsWidget from '../NewsWidget/NewsWidget';
 import TodoWidget from '../TodoWidget/TodoWidget';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import TechWidget from '../TechWidget/TechWidget';
 
 /**
  *Renders content for sliding widget modal, namely weather and to-do widgets. Additionally, renders news widgets that are pre-fetched, pre-generated on server.
@@ -17,17 +18,11 @@ const WidgetsModalContent = (): JSX.Element => {
   return (
     <Styled.Container>
       <WidgetCard
-        cardHeader={'Weather'}
-        headerIcon={'/assets/icons/widget/weather.svg'}
-        iconSize={{ width: 20, height: 20 }}
+        cardHeader={'Powered by'}
+        headerIcon={'/assets/portfolio/skills/typescript-original.svg'}
+        iconSize={{ width: 15, height: 15 }}
       >
-        <WeatherWidget
-          location={'Toronto, Ontario'}
-          temperature={72}
-          forecastDetails={'Strong UV Today'}
-          humidity={0}
-          iconSrc={'/assets/icons/widget/sun.svg'}
-        />
+        <TechWidget />
       </WidgetCard>
       <WidgetCard
         cardHeader={'Weather'}
