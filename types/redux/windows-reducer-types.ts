@@ -15,6 +15,7 @@ export interface WindowsState {
 export enum WindowsActionTypes {
   OPEN_WINDOW = 'OPEN_WINDOW',
   CLOSE_WINDOW = 'CLOSE_WINDOW',
+  CLEAR_CLOSED_WINDOWS = 'CLEAR_CLOSED_WINDOWS',
 }
 
 export type WindowsAction =
@@ -24,5 +25,9 @@ export type WindowsAction =
     }
   | {
       type: WindowsActionTypes.CLOSE_WINDOW;
+      payload: string;
+    }
+  | {
+      type: WindowsActionTypes.CLEAR_CLOSED_WINDOWS;
       payload: string;
     };

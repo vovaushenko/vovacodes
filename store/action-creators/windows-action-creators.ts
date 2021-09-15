@@ -19,13 +19,27 @@ export const openWindow = (windowParams: IWindow) => {
 };
 
 /**
- *@Action creator, will dispatch action to remove window from the list of opened windows, thereby removing it from the screen
+ *@Action creator, will sequentially dispatch actions to close a window and to remove a window from the list of opened windows, thereby removing it from the screen
+ * We firstly dispatch CLOSE_WINDOW - to set isClosed window param to false and trigger un-mount animation
+ * Next CLEAR_CLOSED_WINDOWS will be dispatched after delay to delete unmounted window from the global list of opened windows
  *@function closeOpenedWindow
  *@param {string} windowName - name of window to be closed
  *@returns {function} - Redux thunk function
  */
 export const closeOpenedWindow = (windowName: string) => {
   return async (dispatch: Dispatch<WindowsAction>): Promise<void> => {
-    dispatch({ type: WindowsActionTypes.CLOSE_WINDOW, payload: windowName });
+    dispatch({
+      type: WindowsActionTypes.CLOSE_WINDOW,
+      payload: windowName,
+    });
+
+    setTimeout(
+      () =>
+        dispatch({
+          type: WindowsActionTypes.CLEAR_CLOSED_WINDOWS,
+          payload: windowName,
+        }),
+      1000
+    );
   };
 };

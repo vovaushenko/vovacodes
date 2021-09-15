@@ -31,10 +31,22 @@ export const windowsReducer = (
       };
 
     case WindowsActionTypes.CLOSE_WINDOW:
-      const withoutClosedWindow = state.openedWindows.filter(
-        (window) => window.windowName !== action.payload
+      const withoutClosedWindow = state.openedWindows.map((window) =>
+        window.windowName === action.payload
+          ? {
+              ...window,
+              isOpen: false,
+            }
+          : window
       );
       return { ...state, openedWindows: withoutClosedWindow };
+
+    case WindowsActionTypes.CLEAR_CLOSED_WINDOWS:
+      const withoutRemovedWindows = state.openedWindows.filter(
+        (window) => window.windowName !== action.payload
+      );
+
+      return { ...state, openedWindows: withoutRemovedWindows };
 
     default:
       return state;

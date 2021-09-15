@@ -1,21 +1,43 @@
-import styled from 'styled-components';
-import { tiltIn } from '../../design-system/reusableCss';
+import styled, { css } from 'styled-components';
+import {
+  tiltIn,
+  windowsSlitOutKeyframes,
+} from '../../design-system/reusableCss';
 
-export const Container = styled.div`
+const unmountAnimation = css`
+  animation: ${windowsSlitOutKeyframes} 0.4s ease-in both;
+`;
+
+const isOpenStyle = css`
+  visibility: visible;
+  opacity: 1;
+`;
+
+const isClosedStyle = css`
+  visibility: hidden;
+  transition: visibility 0.4s,
+    opacity 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  opacity: 0;
+`;
+
+interface Props {
+  isOpen: boolean;
+}
+
+export const Container = styled.div<Props>`
+  ${({ isOpen }) => (isOpen ? isOpenStyle : isClosedStyle)};
   width: 100%;
   height: 100%;
   backdrop-filter: blur(20.5px);
   overflow-y: auto;
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme }) => theme.colors.systemTray.bg};
-
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: ${({ theme }) => theme.boxShadow.window};
 
   /* animation */
-  animation: ${tiltIn} 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: ${tiltIn} 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  /* if window will be closed (controlled through redux) unmount animation will be added*/
+  ${({ isOpen }) => isOpen === false && unmountAnimation};
 `;
 
 export const Navigation = styled.div`
@@ -40,7 +62,7 @@ export const WindowInfo = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.space.xxs};
 `;
 
 interface ButtonProps {

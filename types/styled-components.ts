@@ -37,6 +37,7 @@ declare module 'styled-components' {
     };
     boxShadow: {
       appBtn: string;
+      window: string;
     };
 
     media: Media;

@@ -204,3 +204,23 @@ export const likeKeyframe = keyframes`
     opacity: 1;
   }
 `;
+
+/**
+ * @keyframes windowsSlitOutKeyframes
+ * @returns {keyframes} - keyframes for windows unmounting
+ * @example  animation: ${windowsSlitOutKeyframes} 0.4s ease-in both;
+ */
+export const windowsSlitOutKeyframes = keyframes`
+  0% {
+    transform: translateZ(0) rotateX(0);
+    opacity: 1;
+  }
+  54% {
+    transform: translateZ(-150px) rotateX(87deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(-800px) rotateX(90deg);
+    opacity: 0;
+  }
+`;
