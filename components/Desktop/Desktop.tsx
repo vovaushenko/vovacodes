@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as Styled from './Desktop.styles';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import DesktopApps from '../DesktopApps/DesktopApps';
 import DesktopWidgets from '../DesktopWidgets/DesktopWidgets';
-import { useActions } from '../../hooks/useActions';
 
 /**
  *Renders main hero screen
@@ -12,16 +11,11 @@ import { useActions } from '../../hooks/useActions';
  */
 const Desktop = (): JSX.Element => {
   const { theme } = useTypedSelector((state) => state.ui);
-  const { loadAllApprovedComments } = useActions();
 
   const backgroundWallpaper =
     theme === 'dark'
       ? 'assets/wallpapers/default_dark_compressed.jpg'
       : 'assets/wallpapers/default_light_compressed.jpg';
-
-  useEffect(() => {
-    loadAllApprovedComments();
-  }, []);
 
   return (
     <Styled.Container bgWallpaper={backgroundWallpaper}>
