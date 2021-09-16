@@ -11,11 +11,13 @@ const likeButtonStyles = css`
 
 export const GenericButton = styled.button<ButtonStyledProps>`
   /* display */
-  display: flex;
+  display: inline-flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-evenly;
+  text-align: center;
+  gap: 0.25rem;
   /* styling */
-  padding: 5px 9px;
+  padding: 5px 10px;
   border: 0;
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -31,5 +33,10 @@ export const GenericButton = styled.button<ButtonStyledProps>`
 
   :active {
     transform: scale(0.9);
+  }
+
+  .icon {
+    margin-top: 2px;
+    font-size: 0.75rem;
   }
 `;

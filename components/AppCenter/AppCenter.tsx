@@ -8,14 +8,17 @@ import Avatar from '../Avatar/Avatar';
 import SearchBar from '../SearchBar/SearchBar';
 import Bing from '../Apps/Bing/Bing';
 import { useActions } from '../../hooks/useActions';
+import AllAppsModal from '../AllAppsModal/AllAppsModal';
 
 /**
- *Renders AppCenter content for sliding modal with search bar, pinned apps and recommended section
+ *Renders AppCenter content with search bar, pinned apps and recommended section
+ *Has two sections. Initial screen and expanded list of all apps that are controlled through "isAllAppsOnScreen" flag
  *@function AppCenter
  *@returns {JSX.Element} - Rendered AppCenter component
  */
 const AppCenter = (): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [isAllAppsOnScreen, setIsAllAppsOnScreen] = useState(true);
   const { openWindow } = useActions();
 
   const handlePerformSearch = (term: string) => {
@@ -38,49 +41,80 @@ const AppCenter = (): JSX.Element => {
 
   return (
     <Styled.Container>
-      <Styled.AllApps>
-        <Styled.SearchBarForm onSubmit={handleSearch}>
-          <SearchBar
-            name={'search-bar'}
-            type={'text'}
-            placeholder={'Type here to search'}
-            value={searchTerm}
-            setValue={setSearchTerm}
-          />
-        </Styled.SearchBarForm>
-        <Styled.SectionHeader margin={'0 0 1rem 0'}>
-          <h3>Pinned</h3>
-          <Button withChevron={true} variant={'standardBtn'}>
-            All Apps
-          </Button>
-        </Styled.SectionHeader>
+      {isAllAppsOnScreen ? (
+        <Styled.InitialScreen>
+          <Styled.AllApps>
+            <Styled.SearchBarForm onSubmit={handleSearch}>
+              <SearchBar
+                name={'search-bar'}
+                type={'text'}
+                placeholder={'Type here to search'}
+                value={searchTerm}
+                setValue={setSearchTerm}
+              />
+            </Styled.SearchBarForm>
+            <Styled.SectionHeader margin={'0 0 1rem 0'}>
+              <h3>Pinned</h3>
+              <Button
+                withChevron={true}
+                variant={'standardBtn'}
+                onClick={() => setIsAllAppsOnScreen((p) => !p)}
+              >
+                All Apps
+              </Button>
+            </Styled.SectionHeader>
 
-        <PinnedApps />
+            <PinnedApps />
 
-        <Styled.SectionHeader margin={'2rem 0 0 0'}>
-          <h3>Recommended</h3>
-          <Button withChevron={true} variant={'standardBtn'}>
-            More
-          </Button>
-        </Styled.SectionHeader>
+            <Styled.SectionHeader margin={'2rem 0 0 0'}>
+              <h3>Recommended</h3>
+              <Button withChevron={true} variant={'standardBtn'}>
+                More
+              </Button>
+            </Styled.SectionHeader>
 
-        <Recommended />
-      </Styled.AllApps>
-      <Styled.Footer>
-        <Avatar
-          src={'/assets/avatar.jpeg'}
-          firstName={'vova'}
-          lastName={'ushenko'}
-          isActive={false}
-          hasBadge={false}
-          width={'45px'}
-        />
-        <Styled.PowerOff>
-          <FiPower className={'power-off'} />
-        </Styled.PowerOff>
-      </Styled.Footer>
+            <Recommended />
+          </Styled.AllApps>
+          <Styled.Footer>
+            <Avatar
+              src={'/assets/avatar.jpeg'}
+              firstName={'vova'}
+              lastName={'ushenko'}
+              isActive={false}
+              hasBadge={false}
+              width={'45px'}
+            />
+            <Styled.PowerOff>
+              <FiPower className={'power-off'} />
+            </Styled.PowerOff>
+          </Styled.Footer>
+        </Styled.InitialScreen>
+      ) : (
+        <Styled.AllAppsList>
+          <Styled.SearchBarForm onSubmit={handleSearch}>
+            <SearchBar
+              name={'search-bar'}
+              type={'text'}
+              placeholder={'Type here to search'}
+              value={searchTerm}
+              setValue={setSearchTerm}
+            />
+          </Styled.SearchBarForm>
+          <Styled.SectionHeader margin={'0 0 1rem 0'}>
+            <h3>All Apps</h3>
+            <Button
+              withChevron={false}
+              withLeftChevron
+              variant={'standardBtn'}
+              onClick={() => setIsAllAppsOnScreen((p) => !p)}
+            >
+              Back
+            </Button>
+          </Styled.SectionHeader>
+          <AllAppsModal />
+        </Styled.AllAppsList>
+      )}
     </Styled.Container>
   );
 };
-
 export default AppCenter;

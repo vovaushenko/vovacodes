@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { css, keyframes } from 'styled-components';
 
 /**
  * @keyframes slidInCenter
@@ -222,5 +222,27 @@ export const windowsSlitOutKeyframes = keyframes`
   100% {
     transform: translateZ(-800px) rotateX(90deg);
     opacity: 0;
+  }
+`;
+
+/**
+ * portion of styles to make scrollbar visible with unified app style
+ * @css showScrollbarStyles
+ * @returns {keyframes} - keyframes for windows unmounting
+ */
+
+export const showScrollbarStyles = css`
+  ::-webkit-scrollbar {
+    display: block;
+    width: 2px;
+    height: 1px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.blue.icon};
   }
 `;

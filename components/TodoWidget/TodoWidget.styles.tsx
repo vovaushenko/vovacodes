@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
-import { slidInCenter } from '../../design-system/reusableCss';
+import {
+  showScrollbarStyles,
+  slidInCenter,
+} from '../../design-system/reusableCss';
 
 export const Container = styled.div`
   /* make widget scrollable*/
@@ -7,19 +10,7 @@ export const Container = styled.div`
   overflow-y: auto;
   /* show scrollbar */
 
-  ::-webkit-scrollbar {
-    display: block;
-    width: 2px;
-    height: 1px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.blue.icon};
-  }
+  ${showScrollbarStyles}
 `;
 
 export const AddTodo = styled.div``;

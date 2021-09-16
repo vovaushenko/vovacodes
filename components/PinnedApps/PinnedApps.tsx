@@ -4,6 +4,7 @@ import { usePinnedAppsConfig } from './PinnedApps.config';
 import DesktopButton from '../DesktopButton/DesktopButton';
 
 /**
+ *Renders list of all pinned apps in App Center sliding modal
  *@function PinnedApps
  *@returns {JSX.Element} - Rendered CardContent component
  */
