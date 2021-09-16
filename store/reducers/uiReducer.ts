@@ -12,6 +12,7 @@ const initialUIstate: UIstate = {
   areSettingsOpen: false,
   isSearchOpen: false,
   isInNightLightMode: false,
+  shouldIntroBeShown: true,
 };
 
 /**
@@ -26,6 +27,9 @@ export const uiReducer = (
   action: UIaction
 ): UIstate => {
   switch (action.type) {
+    case UIactionTypes.INTRO_WAS_SHOWN:
+      return { ...state, shouldIntroBeShown: false };
+
     case UIactionTypes.CHANGE_THEME:
       const newTheme = state.theme === 'dark' ? 'light' : 'dark';
       return { ...state, theme: newTheme };

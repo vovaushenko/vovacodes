@@ -4,7 +4,6 @@ import { Props } from './Loader';
 export const Container = styled.section<Props>`
   width: 100vw;
   height: 100vh;
-  background-color: ${({ theme }) => theme.portfolio.bgColor};
   display: flex;
   align-items: center;
   justify-content: center;

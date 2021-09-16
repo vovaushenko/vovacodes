@@ -13,6 +13,7 @@ const initialState: UIstate = {
   areSettingsOpen: false,
   isSearchOpen: false,
   isInNightLightMode: false,
+  shouldIntroBeShown: true,
 };
 
 test('when previous state is undefined, returns initial state', () => {

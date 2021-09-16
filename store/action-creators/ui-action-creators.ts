@@ -128,3 +128,13 @@ export const changeScreenBrightness = (brightness: string) => {
     dispatch({ type: UIactionTypes.CHANGE_BRIGHTNESS, payload: brightness });
   };
 };
+
+/**
+ *@UI  action creator, will dispatch action to turn flag "shouldIntroBeShown" to false. By so doing, visiting animation will be shown only once to user (in the case of no hard refreshes).
+ *@function changeScreenBrightness
+ *@returns {function} - Redux thunk function
+ */
+
+export const notShowIntroAgain = (): UIaction => ({
+  type: UIactionTypes.INTRO_WAS_SHOWN,
+});
