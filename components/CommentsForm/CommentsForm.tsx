@@ -25,13 +25,21 @@ const CommentsForm = (): JSX.Element => {
   const { uploadNewComment } = useActions();
 
   return (
-    <Styled.Container>
+    <Styled.Container isCommentPersisted={isCommentPersisted}>
       <Styled.TextWrapper>
-        <Styled.Message>👋 Hey! I hope you liked the project 😉</Styled.Message>
+        <Styled.Message>
+          {isCommentPersisted
+            ? '🎉 Thanks! 🎉'
+            : '👋 Hey! I hope you liked the project 😉'}
+        </Styled.Message>
         <Styled.Text>
-          If you really enjoyed this experience. Consider leaving a comment!
+          {isCommentPersisted
+            ? `Your comment will be added to the list in no time 🙌`
+            : 'If you really enjoyed this experience. Consider leaving a comment!'}
         </Styled.Text>
-        <Styled.Text>🙌 I would love to hear from you!</Styled.Text>
+        <Styled.Text>
+          {isCommentPersisted ? '' : `🙌 I would love to hear from you!`}
+        </Styled.Text>
       </Styled.TextWrapper>
 
       <Formik
@@ -49,6 +57,7 @@ const CommentsForm = (): JSX.Element => {
             buttonText={isCommentPersisted ? '🙌 Thanks 💫' : 'Shoot'}
             icon={<FiSend className={'action-icon'} />}
             isLoading={isLoading}
+            disabled={isCommentPersisted}
             type="submit"
           />
         </Form>

@@ -35,6 +35,9 @@ declare module 'styled-components' {
         };
       };
     };
+
+    gradients: { portfolioGreen: string; rainbow: string };
+
     boxShadow: {
       appBtn: string;
       window: string;

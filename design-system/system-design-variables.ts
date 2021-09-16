@@ -10,6 +10,9 @@
  * Gray colors.................These are gray palette used in the app
  * Utility Colors.................Other colors used in particular components of the app
  *
+ * GRADIENTS
+ * ..................These are main gradients used in the app
+ *
  * TYPOGRAPHY
  * Font weights...................Font weights
  * Sizes..........................Font sizing for body text, paragraphs, inputs
@@ -132,6 +135,30 @@ export const lightUtilityColors = {
 };
 
 /*=====  End of Colors  ======*/
+
+/*=============================================
+=                  Gradients                  =
+=============================================*/
+export const allGradients = {
+  portfolioGreen: `linear-gradient(
+      45deg,
+      #01bf71 0%,
+      #2bd2ff 52%,
+      #2bff88 90%
+    );`,
+  rainbow: `linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );`,
+};
 
 /*=============================================
 =                Typography                   =

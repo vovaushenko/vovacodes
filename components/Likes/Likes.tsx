@@ -29,8 +29,10 @@ const Likes = (): JSX.Element => {
 
   return (
     <Styled.Container>
-      <Styled.Message>👋 Hey! Let&lsquo;s count us.</Styled.Message>
-      <Styled.LikeCounter>
+      <Styled.Message>
+        {isLikePersisted ? '🎉 Thank you 🎉' : `👋 Hey! Let's count us.`}
+      </Styled.Message>
+      <Styled.LikeCounter isLikePersisted={isLikePersisted}>
         👍
         {digits.map((digit, id) => (
           <Styled.Digit key={id * Number(digit)}>{digit}</Styled.Digit>

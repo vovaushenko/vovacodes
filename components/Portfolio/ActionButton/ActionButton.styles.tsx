@@ -62,6 +62,12 @@ const hoveredButton = css`
   }
 `;
 
+const disabledButton = css`
+  background-image: ${({ theme }) => theme.gradients.portfolioGreen};
+  color: ${({ theme }) => theme.primary.text};
+  cursor: not-allowed;
+`;
+
 export const BTN = styled.button<Props>`
   position: relative;
   z-index: 1;
@@ -143,6 +149,10 @@ export const BTN = styled.button<Props>`
   }
 
   ${(p) => p.isLoading && loadingButton};
+
+  &:disabled {
+    ${disabledButton};
+  }
 
   @media ${({ theme }) => theme.media.phone} {
     padding: 1rem 2rem;

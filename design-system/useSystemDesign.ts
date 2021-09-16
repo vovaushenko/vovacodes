@@ -1,5 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 import {
+  allGradients,
   borderRadii,
   boxShadows,
   darkGrayColors,
@@ -32,6 +33,7 @@ export const useSystemDesign = (): {
     primary: darkPrimaryColors,
     gray: darkGrayColors,
     colors: darkUtilityColors,
+    gradients: allGradients,
     boxShadow: boxShadows,
     borderRadius: borderRadii.main,
     zIndex: zIndexes,
@@ -48,6 +50,7 @@ export const useSystemDesign = (): {
     primary: lightPrimaryColors,
     gray: lightGrayColors,
     colors: lightUtilityColors,
+    gradients: allGradients,
     boxShadow: boxShadows,
     borderRadius: borderRadii.main,
     zIndex: zIndexes,

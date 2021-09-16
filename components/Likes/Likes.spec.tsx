@@ -22,7 +22,7 @@ describe('Likes', () => {
 
   it('should render greeting message', () => {
     const msg = wrap.find(Styled.Message);
-    expect(msg.text()).toBe(`👋 Hey! Let‘s count us.`);
+    expect(msg.text()).toBe(`👋 Hey! Let's count us.`);
   });
   it('should render like counter', () => {
     const likeCount = wrap.find(Styled.LikeCounter);
