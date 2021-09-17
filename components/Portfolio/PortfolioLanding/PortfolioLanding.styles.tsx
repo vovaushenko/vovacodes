@@ -61,6 +61,7 @@ export const Photo = styled.div<Props>`
     }
   }
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 500ms;
 
   @media ${({ theme }) => theme.media.tablet} {
     width: 100%;

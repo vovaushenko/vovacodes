@@ -32,15 +32,12 @@ const Slide: FC<Props> = ({
     if (isElementVisible && !isOnScreen) setIsOnScreen(true);
   }, [isElementVisible, isOnScreen]);
 
-  const randomKey = `${~~Math.random() * 10000}${isOnScreen}`;
-
   return (
     <Styled.Container
       id={anchorID}
       ref={containerRef}
       bgColor={bgColor}
       height={height}
-      key={randomKey}
     >
       {isOnScreen ? children : ''}
     </Styled.Container>

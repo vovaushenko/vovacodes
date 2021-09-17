@@ -3,6 +3,7 @@ import * as Styled from './NavigationMenu.styles';
 import Link from 'next/link';
 import { useContactConfig } from '../Contact/Contact.config';
 import SocialMediaContact from '../SocialMediaContact/SocialMediaContact';
+import { navMenuLinks } from './NavigationMenu.config';
 
 /**
  *Renders NavigationMenu component for routing and external navigation in portfolio screens
@@ -25,26 +26,13 @@ const NavigationMenu = (): JSX.Element => {
 
       <Styled.Menu isOpen={isActive}>
         <Styled.RouterLinksList className={'router-list'} key={reRenderKey}>
-          <li>
-            <Link href={'/portfolio/projects'} passHref>
-              <Styled.NavLink>My Projects</Styled.NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href={'/portfolio/about'} passHref>
-              <Styled.NavLink>About Me</Styled.NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href={'/portfolio/contact'} passHref>
-              <Styled.NavLink>Contact Me</Styled.NavLink>
-            </Link>
-          </li>
-          <li>
-            <Link href={'/portfolio/resume'} passHref>
-              <Styled.NavLink>My Résumé</Styled.NavLink>
-            </Link>
-          </li>
+          {navMenuLinks.map((link) => (
+            <li key={link.id}>
+              <Link href={link.href} passHref>
+                <Styled.NavLink>{link.linkText}</Styled.NavLink>
+              </Link>
+            </li>
+          ))}
         </Styled.RouterLinksList>
 
         <Styled.SocialMediaWrapper

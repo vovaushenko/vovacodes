@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import Resume from '../Portfolio/Resume/Resume';
 import TrashBin from '../Folders/TrashBin/TrashBin';
 import CommentsForm from '../CommentsForm/CommentsForm';
+import PortfolioLanding from '../Portfolio/PortfolioLanding/PortfolioLanding';
+import PortfolioLayout from '../Portfolio/PortfolioLayout/PortfolioLayout';
 
 export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
   const router = useRouter();
@@ -33,7 +35,11 @@ export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
     {
       id: 3,
       text: 'This PC',
-      willOpenWindowWith: null,
+      willOpenWindowWith: (
+        <PortfolioLayout title={'Vova Ushenko | Full-Stack Web Developer'}>
+          <PortfolioLanding />
+        </PortfolioLayout>
+      ),
       variant: 'desktop',
       iconSrc: '/assets/icons/Desktop/this_pc.webp',
       iconSize: { width: 40, height: 40 },
