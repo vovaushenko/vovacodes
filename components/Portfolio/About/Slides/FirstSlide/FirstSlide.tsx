@@ -15,20 +15,20 @@ const FirstSlide = (): JSX.Element => {
     <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>
       <Styled.FirstSlide id={'first-slide'} className="page first-page">
         <SectionHeader
-          variant={'large'}
-          headerText={'Full-stack Developer'}
+          variant={'medium'}
+          headerText={'Creative Web Developer'}
           margin={'0'}
           color={'#2bff88'}
         />
+
         <PortfolioParagraph
           margin={'1rem 0'}
-          paragraphText={
-            'I like to craft solid and scalable web products with great user experiences.'
-          }
+          paragraphText={`Designing, creating and coding of simple, intuitive and scalable web products is my calling.`}
           withDarkColor={false}
           variant={'large'}
           withAnimatedPresence={true}
         />
+
         <ScrollHint />
       </Styled.FirstSlide>
     </Slide>

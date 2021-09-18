@@ -49,15 +49,83 @@ const FourthSlide = (): JSX.Element => {
             withAnimatedPresence={true}
           />
         </div>
-
+        {/*  PERSON */}
         <div className="right-column">
-          <Image
-            src={'/assets/portfolio/work-from-home.svg'}
-            alt={'Vova is working from home'}
-            height={500}
-            width={500}
-            objectFit={'contain'}
-          />
+          <Styled.ImageContainer
+            position={{ left: '0', right: '0' }}
+            className={'person-wrapper'}
+          >
+            <Styled.ScrollTextWrapper>
+              <div className="scroll-text">
+                <p>☕ Working from home ☕ </p>
+              </div>
+            </Styled.ScrollTextWrapper>
+            <Styled.FloatingImgContainer variant={'person'}>
+              <Image
+                src={'/assets/portfolio/work-from-home.svg'}
+                alt={'Vova is working from home'}
+                height={500}
+                width={500}
+                objectFit={'contain'}
+                className={'person'}
+                priority
+              />
+            </Styled.FloatingImgContainer>
+          </Styled.ImageContainer>
+          {/* REACT */}
+          <Styled.ImageContainer
+            position={{ top: '30%', right: '4rem' }}
+            className={'react-wrapper'}
+          >
+            <Styled.FloatingImgContainer variant={'tech'}>
+              <Image
+                src={'/assets/portfolio/skills/React.svg'}
+                alt={'React'}
+                height={150}
+                width={150}
+                quality={90}
+                objectFit={'contain'}
+                className={'react'}
+                priority
+              />
+            </Styled.FloatingImgContainer>
+            {/* REDUX */}
+          </Styled.ImageContainer>
+          <Styled.ImageContainer
+            position={{ bottom: '3rem', right: '6rem' }}
+            className={'redux-wrapper'}
+          >
+            <Styled.FloatingImgContainer variant={'tech'}>
+              <Image
+                src={'/assets/portfolio/skills/Redux.svg'}
+                alt={'React'}
+                height={150}
+                width={150}
+                quality={90}
+                objectFit={'contain'}
+                className={'redux'}
+                priority
+              />
+            </Styled.FloatingImgContainer>
+          </Styled.ImageContainer>
+          {/* NODE */}
+          <Styled.ImageContainer
+            position={{ bottom: '6rem', left: '5rem' }}
+            className={'node-wrapper'}
+          >
+            <Styled.FloatingImgContainer variant={'tech'}>
+              <Image
+                src={'/assets/portfolio/skills/Node.svg'}
+                alt={'React'}
+                height={150}
+                width={150}
+                quality={90}
+                objectFit={'contain'}
+                className={'node'}
+                priority
+              />
+            </Styled.FloatingImgContainer>
+          </Styled.ImageContainer>
         </div>
       </Styled.FourthSlide>
     </Slide>

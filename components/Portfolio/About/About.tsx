@@ -3,12 +3,12 @@ import * as Styled from './About.styles';
 import WaveDivider from '../WaveDivider/WaveDivider';
 import Navbar from '../Navbar/Navbar';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
-import FirstSlide from './Slides/FirstSlide/FirstSlide';
 import SecondSlide from './Slides/SecondSlide/SecondSlide';
 import ThirdSlide from './Slides/ThirdSlide/ThirdSlide';
 import FourthSlide from './Slides/FourthSlide/FourthSlide';
 import FifthSlide from './Slides/FifthSlide/FifthSlide';
 import SixthSlide from './Slides/SixthSlide/SixthSlide';
+import FirstSlide from './Slides/FirstSlide/FirstSlide';
 
 /**
  *Renders About section in resume

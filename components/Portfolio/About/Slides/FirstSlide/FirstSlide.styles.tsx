@@ -9,3 +9,7 @@ export const FirstSlide = styled.div`
   padding: 2rem;
   height: 100vh;
 `;
+
+export const Message = styled.div`
+  padding: 0 10rem;
+`;

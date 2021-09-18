@@ -24,7 +24,7 @@ const SecondSlide = (): JSX.Element => {
           <PortfolioParagraph
             margin={'0'}
             paragraphText={
-              'I am a developer driven by quality of code and software. I continuously strive to improve myself and for opportunities to help my team grow.\n' +
+              'I am a developer driven by quality of code and software. I continuously strive to improve myself and for opportunities to help my team to grow.\n' +
               "I've created full-stack projects with React & Node.js. I Have excellent knowledge of modern JS stack for building complex user interfaces for the web platform."
             }
             withDarkColor={false}
@@ -36,7 +36,7 @@ const SecondSlide = (): JSX.Element => {
           <PortfolioParagraph
             margin={'0'}
             paragraphText={
-              'In building JavaScript applications, I have a strong passion to build elegant, performant and user-friendly experiences. For the last 2 years I mostly worked with the React stack and building products from the ground up, including collecting business requirements, composing full-featured UX designs and architecting frontends.'
+              'In crafting JavaScript applications, I have a strong passion to build elegant, performant, scalable and user-friendly experiences. For the last 2 years I mostly worked with the React stack and building products from the ground up 🚀.'
             }
             withDarkColor={false}
             variant={'large'}

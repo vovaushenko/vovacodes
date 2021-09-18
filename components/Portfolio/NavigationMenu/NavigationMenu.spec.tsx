@@ -22,7 +22,7 @@ describe('NavigationMenu', () => {
 
   it('should render all router links(currently 4)', () => {
     const routerLink = wrap.find(Styled.NavLink);
-    expect(routerLink.length).toBe(4);
+    expect(routerLink.length).toBe(5);
   });
   it('should render all social media links', () => {
     const socialMediaLink = wrap.find(SocialMediaContact);
