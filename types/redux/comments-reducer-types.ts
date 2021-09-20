@@ -3,7 +3,7 @@
  *@describe comment api response
  */
 export interface IComment {
-  id: 'string';
+  id: string;
   comment: string;
   author: string;
   isApproved: boolean;
