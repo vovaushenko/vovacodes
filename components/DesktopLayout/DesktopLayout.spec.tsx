@@ -9,7 +9,7 @@ import { withReduxAndStyledProviders } from '../../test/testUtils';
 describe('DesktopLayout wrapper component', () => {
   const wrapper = mount(
     withReduxAndStyledProviders(
-      <DesktopLayout title="Some Title">
+      <DesktopLayout title="Some Title" entranceAnimationDelay={777}>
         <h1>🍏Apples are nutritious🍏</h1>
       </DesktopLayout>
     )

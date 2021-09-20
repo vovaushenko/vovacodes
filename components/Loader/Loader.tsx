@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Styled from './Loader.styles';
 import Logo from '../Portfolio/Logo/Logo';
 
@@ -15,9 +15,15 @@ export interface Props {
  *@returns {JSX.Element} - Rendered CardContent component
  */
 const Loader = ({ isOnScreen, loadingDuration }: Props): JSX.Element => {
+  const [isLogoExpanded, setIsLogoExpanded] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLogoExpanded(false);
+    }, loadingDuration - 1000);
+  }, [loadingDuration]);
   return (
     <Styled.Container isOnScreen={isOnScreen} loadingDuration={loadingDuration}>
-      <Logo isExpanded />
+      <Logo isExpanded={isLogoExpanded} />
       <Styled.TextContainer>
         <Styled.ScrollText>
           JavaScript <br />
@@ -25,7 +31,7 @@ const Loader = ({ isOnScreen, loadingDuration }: Props): JSX.Element => {
           React <br />
           Next.js <br />
           Node.js <br />
-          Redux
+          Coffee ☕
         </Styled.ScrollText>
       </Styled.TextContainer>
     </Styled.Container>
