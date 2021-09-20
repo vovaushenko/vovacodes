@@ -14,6 +14,14 @@ interface ServerProps {
   title: string;
 }
 
+/**
+ *Renders main index page with Windows OS Desktop
+ *@important this page does have statically pre-generated data on server. "loadLatestNews" is dispatched on server to get latest news, and provide them in form of redux props.
+ *Page has LOADING_INTRO_DURATION param which specifies the duration of initial loading animation.
+ *@function Home
+ *@param {string} title - title of page
+ *@returns {JSX.Element} - Rendered Clock component
+ */
 const Home: NextPage<ServerProps> = ({ title }) => {
   const { shouldIntroBeShown } = useTypedSelector((state) => state.ui);
   const [isLoading, setIsLoading] = useState(shouldIntroBeShown);
@@ -29,16 +37,13 @@ const Home: NextPage<ServerProps> = ({ title }) => {
 
   return (
     <>
-      {isLoading ? (
-        <Loader
-          isOnScreen={isLoading}
-          loadingDuration={LOADING_INTRO_DURATION}
-        />
-      ) : (
-        <DesktopLayout title={title}>
-          <Desktop />
-        </DesktopLayout>
-      )}
+      <Loader isOnScreen={isLoading} loadingDuration={LOADING_INTRO_DURATION} />
+      <DesktopLayout
+        title={title}
+        entranceAnimationDelay={LOADING_INTRO_DURATION + 200}
+      >
+        <Desktop />
+      </DesktopLayout>
     </>
   );
 };

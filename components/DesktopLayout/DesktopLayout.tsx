@@ -7,6 +7,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 export interface Props {
   title: string;
+  entranceAnimationDelay: number;
 }
 
 /**
@@ -17,7 +18,11 @@ export interface Props {
  *@param {ReactNode} children - content of layout
  *@returns {JSX.Element} - Rendered DesktopLayout component
  */
-const DesktopLayout: FC<Props> = ({ children, title }): JSX.Element => {
+const DesktopLayout: FC<Props> = ({
+  children,
+  title,
+  entranceAnimationDelay,
+}): JSX.Element => {
   const { isInNightLightMode, screenBrightness } = useTypedSelector(
     (state) => state.ui
   );
@@ -37,6 +42,7 @@ const DesktopLayout: FC<Props> = ({ children, title }): JSX.Element => {
       <Styled.Container
         isInNightLightMode={isInNightLightMode}
         screenBrightness={screenBrightness}
+        animationDelay={entranceAnimationDelay}
       >
         {children}
         <OpenedWindows />

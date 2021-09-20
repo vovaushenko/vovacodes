@@ -3,6 +3,7 @@ import styled from 'styled-components';
 interface Props {
   isInNightLightMode: boolean;
   screenBrightness: string;
+  animationDelay: number;
 }
 
 export const Container = styled.section<Props>`
@@ -19,10 +20,11 @@ export const Container = styled.section<Props>`
       isInNightLightMode ? `sepia(70%)` : ''
     }`};
 
-  animation: slide-in-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  @keyframes slide-in-top {
+  animation: slide-in-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: ${({ animationDelay }) => `${animationDelay}ms` || '6100ms'};
+  @keyframes slide-in-bottom {
     0% {
-      transform: translateY(-1000px);
+      transform: translateY(1000px);
       opacity: 0;
     }
     100% {

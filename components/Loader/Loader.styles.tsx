@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import { Props } from './Loader';
 
 export const Container = styled.section<Props>`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 333;
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: ${(p) => (p.isOnScreen ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
+  background-color: ${({ theme }) => theme.portfolio.bgColor};
   gap: ${({ theme }) => theme.space.lg};
   font-family: 'Poppins', sans-serif;
 
