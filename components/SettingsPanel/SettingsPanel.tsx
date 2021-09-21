@@ -10,10 +10,12 @@ import { useActions } from '../../hooks/useActions';
  */
 const SettingsPanel = (): JSX.Element => {
   const { toggleSettingsModal } = useActions();
-
+  const handleToggleSettingsModal = () => {
+    toggleSettingsModal();
+  };
   return (
     <>
-      <Styled.Container onClick={() => toggleSettingsModal()}>
+      <Styled.Container onClick={handleToggleSettingsModal}>
         <Styled.Tray>
           <FiChevronUp className="icon" />
         </Styled.Tray>

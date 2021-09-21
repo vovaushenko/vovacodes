@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import * as Styled from './SearchModalContent.styles';
 import SearchBar from '../SearchBar/SearchBar';
 import DesktopButton from '../DesktopButton/DesktopButton';
@@ -6,6 +6,8 @@ import { useSearchModalConfig } from './SearchModalContent.config';
 import Paragraph from '../Typography/Paragraph/Paragraph';
 import { useActions } from '../../hooks/useActions';
 import Bing from '../Apps/Bing/Bing';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOutside';
 
 /**
  *Renders content for Search Modal with top apps, recent searches and search bar where user can perform live online search
@@ -13,9 +15,11 @@ import Bing from '../Apps/Bing/Bing';
  *@returns {JSX.Element} - Rendered SearchModalContent component
  */
 const SearchModalContent = (): JSX.Element => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const { topApps, quickSearches } = useSearchModalConfig();
-  const { openWindow } = useActions();
+  const { openWindow, toggleSearchModal } = useActions();
+  const { isSearchOpen } = useTypedSelector((state) => state.ui);
 
   const handlePerformSearch = (term: string) => {
     openWindow({
@@ -35,8 +39,14 @@ const SearchModalContent = (): JSX.Element => {
     handlePerformSearch(searchTerm);
   };
 
+  useCloseModalIfClickedOutside({
+    modalRef: containerRef,
+    isModalOpen: isSearchOpen,
+    closeModalFunction: toggleSearchModal,
+  });
+
   return (
-    <Styled.Container>
+    <Styled.Container ref={containerRef}>
       <Styled.SearchForm onSubmit={handleOnlineSearch}>
         <SearchBar
           name={'search-bar'}

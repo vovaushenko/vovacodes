@@ -11,6 +11,8 @@ interface Props {
   themeMode: 'dark' | 'light';
 }
 
+export const Container = styled.div``;
+
 export const Top = styled.div<Props>`
   display: flex;
   flex-direction: column;

@@ -82,6 +82,10 @@ export const darkUtilityColors = {
   cards: {
     widgetBg: 'rgba(28, 33, 39, 0.8)',
   },
+  windows: {
+    bg: 'rgba(30,144,255,0.15)',
+    navBg: 'rgba(3, 21, 41, 0.95)',
+  },
 
   buttons: {
     simpleButtonBg: 'rgba(46,61,83,.692)',
@@ -118,6 +122,10 @@ export const lightUtilityColors = {
   modals: { widgetModalBg: 'rgba(255, 255, 255, 0.25)' },
   cards: {
     widgetBg: 'rgba(244, 233, 244, 0.4)',
+  },
+  windows: {
+    bg: 'rgba(255,255,255,.658)',
+    navBg: 'rgba(255,255,255,.88)',
   },
   buttons: {
     simpleButtonBg: 'rgba(255, 255, 255, 0.815)',

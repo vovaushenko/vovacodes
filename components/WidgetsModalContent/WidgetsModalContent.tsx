@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import * as Styled from './WidgetsModalContent.styles';
 import WidgetCard from '../WidgetCard/WidgetCard';
 import WeatherWidget from '../WeatherWidget/WeatherWidget';
@@ -6,6 +6,8 @@ import NewsWidget from '../NewsWidget/NewsWidget';
 import TodoWidget from '../TodoWidget/TodoWidget';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import TechWidget from '../TechWidget/TechWidget';
+import { useActions } from '../../hooks/useActions';
+import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOutside';
 
 /**
  *Renders content for sliding widget modal, namely weather and to-do widgets. Additionally, renders news widgets that are pre-fetched, pre-generated on server.
@@ -13,10 +15,19 @@ import TechWidget from '../TechWidget/TechWidget';
  *@returns {JSX.Element} - Rendered WidgetsModalContent component
  */
 const WidgetsModalContent = (): JSX.Element => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const { newsArticles } = useTypedSelector((state) => state.news);
+  const { isWidgetOpen } = useTypedSelector((state) => state.ui);
+  const { toggleWidgetsModal } = useActions();
+
+  useCloseModalIfClickedOutside({
+    modalRef: containerRef,
+    closeModalFunction: toggleWidgetsModal,
+    isModalOpen: isWidgetOpen,
+  });
 
   return (
-    <Styled.Container>
+    <Styled.Container ref={containerRef}>
       <WidgetCard
         cardHeader={'Powered by'}
         headerIcon={'/assets/portfolio/skills/typescript-original.svg'}

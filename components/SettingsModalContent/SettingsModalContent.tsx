@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import * as Styled from './SettingsModalContent.styles';
 import { useSettingsModalConfig } from './SettingsModalContent.config';
 import SettingsButton from '../SettingsButton/SettingsButton';
 import SliderControl from '../SliderControl/SliderControl';
 import { FiBattery, FiSettings } from 'react-icons/fi';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOutside';
+import { useActions } from '../../hooks/useActions';
 
 /**
  *Renders settings panel content for sliding modal
@@ -12,11 +14,19 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
  *@returns {JSX.Element} - Rendered SettingsModalContent component
  */
 const SettingsModalContent = (): JSX.Element => {
-  const { theme } = useTypedSelector((state) => state.ui);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { theme, areSettingsOpen } = useTypedSelector((state) => state.ui);
   const { settingsButtons } = useSettingsModalConfig();
+  const { toggleSettingsModal } = useActions();
+
+  useCloseModalIfClickedOutside({
+    modalRef: containerRef,
+    isModalOpen: areSettingsOpen,
+    closeModalFunction: toggleSettingsModal,
+  });
 
   return (
-    <>
+    <Styled.Container ref={containerRef}>
       <Styled.Top themeMode={theme}>
         <Styled.ButtonWrapper>
           {settingsButtons.map((btn) => (
@@ -47,7 +57,7 @@ const SettingsModalContent = (): JSX.Element => {
           <FiSettings className="icon" />
         </Styled.Settings>
       </Styled.Footer>
-    </>
+    </Styled.Container>
   );
 };
 

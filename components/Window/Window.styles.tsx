@@ -28,11 +28,12 @@ export const Container = styled.div<Props>`
   ${({ isOpen }) => (isOpen ? isOpenStyle : isClosedStyle)};
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(20.5px);
+  backdrop-filter: blur(40.5px);
   overflow-y: auto;
   border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ theme }) => theme.colors.systemTray.bg};
+  background-color: ${({ theme }) => theme.colors.windows.bg};
   box-shadow: ${({ theme }) => theme.boxShadow.window};
+  position: relative;
 
   /* animation */
   animation: ${tiltIn} 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -41,11 +42,19 @@ export const Container = styled.div<Props>`
 `;
 
 export const Navigation = styled.div`
+  position: sticky;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: ${({ theme }) => theme.zIndex.navigation};
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem 1rem;
-  background-color: ${({ theme }) => theme.colors.systemTray.bg};
+
+  background-color: ${({ theme }) => theme.colors.windows.navBg};
+  backdrop-filter: blur(40.5px);
 `;
 
 export const WindowInfo = styled.div`

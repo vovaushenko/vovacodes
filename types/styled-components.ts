@@ -25,6 +25,10 @@ declare module 'styled-components' {
       cards: {
         widgetBg: string;
       };
+      windows: {
+        bg: string;
+        navBg: string;
+      };
       buttons: {
         simpleButtonBg: string;
         settingsButton: { bg: string; activeBg: string; activeColor: string };
