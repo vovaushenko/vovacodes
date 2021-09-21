@@ -5,6 +5,7 @@ export interface UIstate {
   areSettingsOpen: boolean;
   isSearchOpen: boolean;
   isInNightLightMode: boolean;
+  isCalendarOpen: boolean;
   screenBrightness: string;
   shouldIntroBeShown: boolean;
 }
@@ -24,6 +25,9 @@ export enum UIactionTypes {
 
   OPEN_SEARCH_MODAL = 'OPEN_SEARCH_MODAL',
   CLOSE_SEARCH_MODAL = 'CLOSE_SEARCH_MODAL',
+
+  OPEN_CALENDAR_MODAL = 'OPEN_CALENDAR_MODAL',
+  CLOSE_CALENDAR_MODAL = 'CLOSE_CALENDAR_MODAL',
 
   TURN_ON_NIGHT_MODE = 'TURN_ON_NIGHT_MODE',
   TURN_OFF_NIGHT_MODE = 'TURN_OFF_NIGHT_MODE',
@@ -47,4 +51,6 @@ export type UIaction =
   | { type: UIactionTypes.TURN_ON_NIGHT_MODE }
   | { type: UIactionTypes.TURN_OFF_NIGHT_MODE }
   | { type: UIactionTypes.CHANGE_BRIGHTNESS; payload: string }
-  | { type: UIactionTypes.INTRO_WAS_SHOWN };
+  | { type: UIactionTypes.INTRO_WAS_SHOWN }
+  | { type: UIactionTypes.OPEN_CALENDAR_MODAL }
+  | { type: UIactionTypes.CLOSE_CALENDAR_MODAL };

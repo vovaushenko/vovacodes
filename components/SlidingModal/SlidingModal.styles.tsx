@@ -6,6 +6,7 @@ interface ContainerProps extends SliderProps {
   isAppCenterOpen: boolean;
   areSettingsOpen: boolean;
   isSearchOpen: boolean;
+  isCalendarOpen: boolean;
 }
 
 const widgetModalStyles = css<ContainerProps>`
@@ -34,9 +35,17 @@ const searchModalStyles = css<ContainerProps>`
 `;
 
 const settingsModalStyles = css<ContainerProps>`
-  background-color: ${({ theme }) => theme.colors.systemTray.bg};
+  padding: ${({ theme }) => theme.space.sm};
+  background-color: ${({ theme }) => theme.colors.appCenter.bg};
+  height: calc(100vh - 5rem);
   transform: ${({ areSettingsOpen, width }) =>
-    areSettingsOpen ? `translateY(-4rem)` : `translateY(${width})`};
+    areSettingsOpen ? `translateX(-1rem)` : `translateX(${width})`};
+`;
+
+const calendarModalStyles = css<ContainerProps>`
+  background-color: ${({ theme }) => theme.colors.systemTray.bg};
+  transform: ${({ isCalendarOpen, width }) =>
+    isCalendarOpen ? `translateY(-4rem)` : `translateY(${width})`};
 `;
 
 export const Container = styled.div<ContainerProps>`
@@ -57,6 +66,7 @@ export const Container = styled.div<ContainerProps>`
   ${({ variant }) => variant === 'systemTrayModal' && systemTrayModalStyles}
   ${({ variant }) => variant === 'settingsModal' && settingsModalStyles}
   ${({ variant }) => variant === 'searchModal' && searchModalStyles}
+  ${({ variant }) => variant === 'calendarModal' && calendarModalStyles}
 
   /* styling */
   width: ${({ width }) => width};

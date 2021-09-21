@@ -10,6 +10,7 @@ export const mockReduxStore: LocalRootState = {
     isInNightLightMode: false,
     screenBrightness: '100',
     shouldIntroBeShown: true,
+    isCalendarOpen: false,
   },
 
   todos: {

@@ -3,7 +3,12 @@ import * as Styled from './SlidingModal.styles';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 export interface SliderProps {
-  variant: 'widgetsModal' | 'systemTrayModal' | 'settingsModal' | 'searchModal';
+  variant:
+    | 'widgetsModal'
+    | 'systemTrayModal'
+    | 'settingsModal'
+    | 'searchModal'
+    | 'calendarModal';
   width: string;
   position: { top?: string; bottom?: string; right?: string; left?: string };
 }
@@ -19,8 +24,13 @@ const SlidingModal: FC<SliderProps> = ({
   position,
   children,
 }): JSX.Element => {
-  const { isWidgetOpen, isAppCenterOpen, areSettingsOpen, isSearchOpen } =
-    useTypedSelector((state) => state.ui);
+  const {
+    isWidgetOpen,
+    isAppCenterOpen,
+    areSettingsOpen,
+    isSearchOpen,
+    isCalendarOpen,
+  } = useTypedSelector((state) => state.ui);
 
   return (
     <Styled.Container
@@ -31,6 +41,7 @@ const SlidingModal: FC<SliderProps> = ({
       isAppCenterOpen={isAppCenterOpen}
       areSettingsOpen={areSettingsOpen}
       isSearchOpen={isSearchOpen}
+      isCalendarOpen={isCalendarOpen}
     >
       {children}
     </Styled.Container>

@@ -7,6 +7,7 @@ import { FiBattery, FiSettings } from 'react-icons/fi';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOutside';
 import { useActions } from '../../hooks/useActions';
+import TextHeader from '../Typography/Header/TextHeader';
 
 /**
  *Renders settings panel content for sliding modal
@@ -27,36 +28,44 @@ const SettingsModalContent = (): JSX.Element => {
 
   return (
     <Styled.Container ref={containerRef}>
-      <Styled.Top themeMode={theme}>
-        <Styled.ButtonWrapper>
-          {settingsButtons.map((btn) => (
-            <SettingsButton
-              key={btn.id}
-              variant={btn.variant}
-              isTurnedOn={false}
-              text={btn.text}
-              btnAction={btn.btnAction}
-            >
-              {btn.icon}
-            </SettingsButton>
-          ))}
-        </Styled.ButtonWrapper>
+      <Styled.NotificationsArea>
+        <TextHeader margin={'0'} isBold={false}>
+          No new notifications
+        </TextHeader>
+      </Styled.NotificationsArea>
 
-        <Styled.SlidersWrapper>
-          <SliderControl variant={'voiceControl'} withChevron={false} />
-          <SliderControl variant={'brightnessControl'} withChevron={false} />
-        </Styled.SlidersWrapper>
-      </Styled.Top>
+      <Styled.SettingsArea>
+        <Styled.Top themeMode={theme}>
+          <Styled.ButtonWrapper>
+            {settingsButtons.map((btn) => (
+              <SettingsButton
+                key={btn.id}
+                variant={btn.variant}
+                isTurnedOn={false}
+                text={btn.text}
+                btnAction={btn.btnAction}
+              >
+                {btn.icon}
+              </SettingsButton>
+            ))}
+          </Styled.ButtonWrapper>
 
-      <Styled.Footer>
-        <Styled.Battery>
-          <FiBattery className="icon" />
-          <span>77%</span>
-        </Styled.Battery>
-        <Styled.Settings>
-          <FiSettings className="icon" />
-        </Styled.Settings>
-      </Styled.Footer>
+          <Styled.SlidersWrapper>
+            <SliderControl variant={'voiceControl'} withChevron={false} />
+            <SliderControl variant={'brightnessControl'} withChevron={false} />
+          </Styled.SlidersWrapper>
+        </Styled.Top>
+
+        <Styled.Footer>
+          <Styled.Battery>
+            <FiBattery className="icon" />
+            <span>77%</span>
+          </Styled.Battery>
+          <Styled.SettingsIcon>
+            <FiSettings className="icon" />
+          </Styled.SettingsIcon>
+        </Styled.Footer>
+      </Styled.SettingsArea>
     </Styled.Container>
   );
 };

@@ -1,5 +1,16 @@
-import { FiBatteryCharging, FiBluetooth, FiMoon, FiWifi } from 'react-icons/fi';
-import { MdAccessibility, MdAirplanemodeActive } from 'react-icons/md';
+import {
+  FiBatteryCharging,
+  FiBluetooth,
+  FiMoon,
+  FiShield,
+  FiWifi,
+} from 'react-icons/fi';
+import {
+  MdAccessibility,
+  MdAirplanemodeActive,
+  MdCast,
+  MdMyLocation,
+} from 'react-icons/md';
 import React, { ReactNode } from 'react';
 import { useActions } from '../../hooks/useActions';
 
@@ -56,7 +67,28 @@ export const useSettingsModalConfig = (): {
       id: 6,
       text: 'Accessibility',
       icon: <MdAccessibility className={'icon'} />,
-      variant: 'action',
+      variant: 'icon',
+      btnAction: null,
+    },
+    {
+      id: 7,
+      text: 'Location',
+      icon: <MdMyLocation className={'icon'} />,
+      variant: 'icon',
+      btnAction: null,
+    },
+    {
+      id: 8,
+      text: 'Security',
+      icon: <FiShield className={'icon'} />,
+      variant: 'icon',
+      btnAction: null,
+    },
+    {
+      id: 9,
+      text: 'Sharing',
+      icon: <MdCast className={'icon'} />,
+      variant: 'icon',
       btnAction: null,
     },
   ];

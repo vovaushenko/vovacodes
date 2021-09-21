@@ -14,6 +14,7 @@ const initialState: UIstate = {
   isSearchOpen: false,
   isInNightLightMode: false,
   shouldIntroBeShown: true,
+  isCalendarOpen: false,
 };
 
 test('when previous state is undefined, returns initial state', () => {

@@ -19,8 +19,8 @@ export const useSystemTrayConfig = (): {
 
   const themeToggleIcon =
     theme === 'dark'
-      ? '/assets/icons/taskbar/light_mode.png'
-      : '/assets/icons/taskbar/dark_mode.png';
+      ? '/assets/icons/taskbar/day.png'
+      : '/assets/icons/taskbar/night.png';
 
   const searchIcon =
     theme === 'dark'
@@ -95,7 +95,7 @@ export const useSystemTrayConfig = (): {
     {
       id: 9,
       src: themeToggleIcon,
-      size: { width: 30, height: 30 },
+      size: { width: 33, height: 33 },
       action: () => changeTheme(),
       alt: 'Toggle theme',
       willOpenWindowWith: null,

@@ -24,7 +24,7 @@ describe('SettingsModalContent', () => {
 
   it('should render all control buttons', () => {
     const settingsButton = wrap.find(SettingsButton);
-    expect(settingsButton.length).toBe(6);
+    expect(settingsButton.length).toBe(9);
   });
 
   it('should render slider controls', () => {

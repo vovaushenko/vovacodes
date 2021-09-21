@@ -100,6 +100,26 @@ export const toggleSearchModal = () => {
 };
 
 /**
+ *@UI async action creator, will dispatch action to open/close calendar modal
+ *@function toggleCalendarModal
+ *@returns {function} - Redux thunk function
+ */
+export const toggleCalendarModal = () => {
+  return async (
+    dispatch: Dispatch<UIaction>,
+    getState: () => State
+  ): Promise<void> => {
+    const { isCalendarOpen } = getState().ui;
+
+    if (isCalendarOpen === false) {
+      dispatch({ type: UIactionTypes.OPEN_CALENDAR_MODAL });
+    } else {
+      dispatch({ type: UIactionTypes.CLOSE_CALENDAR_MODAL });
+    }
+  };
+};
+
+/**
  *@UI async action creator, will dispatch action to toggle night light mode
  *@function toggleNightLightMode
  *@returns {function} - Redux thunk function
@@ -118,6 +138,7 @@ export const toggleNightLightMode = () => {
     }
   };
 };
+
 /**
  *@UI async action creator, will dispatch action to change screen brightness
  *@function changeScreenBrightness

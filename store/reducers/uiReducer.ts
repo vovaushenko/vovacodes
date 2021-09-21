@@ -11,6 +11,7 @@ const initialUIstate: UIstate = {
   isAppCenterOpen: false,
   areSettingsOpen: false,
   isSearchOpen: false,
+  isCalendarOpen: false,
   isInNightLightMode: false,
   shouldIntroBeShown: true,
 };
@@ -41,6 +42,7 @@ export const uiReducer = (
         isAppCenterOpen: false,
         areSettingsOpen: false,
         isSearchOpen: false,
+        isCalendarOpen: false,
       };
 
     case UIactionTypes.CLOSE_WIDGETS_MODAL:
@@ -53,6 +55,7 @@ export const uiReducer = (
         isWidgetOpen: false,
         areSettingsOpen: false,
         isSearchOpen: false,
+        isCalendarOpen: false,
       };
 
     case UIactionTypes.CLOSE_APP_CENTER_MODAL:
@@ -65,6 +68,7 @@ export const uiReducer = (
         isAppCenterOpen: false,
         isWidgetOpen: false,
         isSearchOpen: false,
+        isCalendarOpen: false,
       };
 
     case UIactionTypes.CLOSE_SETTINGS_MODAL:
@@ -77,10 +81,24 @@ export const uiReducer = (
         areSettingsOpen: false,
         isAppCenterOpen: false,
         isWidgetOpen: false,
+        isCalendarOpen: false,
       };
 
     case UIactionTypes.CLOSE_SEARCH_MODAL:
       return { ...state, isSearchOpen: false };
+
+    case UIactionTypes.OPEN_CALENDAR_MODAL:
+      return {
+        ...state,
+        isCalendarOpen: true,
+        isSearchOpen: false,
+        areSettingsOpen: false,
+        isAppCenterOpen: false,
+        isWidgetOpen: false,
+      };
+
+    case UIactionTypes.CLOSE_CALENDAR_MODAL:
+      return { ...state, isCalendarOpen: false };
 
     case UIactionTypes.TURN_ON_NIGHT_MODE:
       return { ...state, isInNightLightMode: true };

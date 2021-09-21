@@ -11,7 +11,16 @@ interface Props {
   themeMode: 'dark' | 'light';
 }
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  height: 100%;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+`;
+export const NotificationsArea = styled.div`
+  display: grid;
+  place-items: center;
+`;
+export const SettingsArea = styled.div``;
 
 export const Top = styled.div<Props>`
   display: flex;
@@ -20,6 +29,9 @@ export const Top = styled.div<Props>`
   padding: ${({ theme }) => theme.space.sm};
   ${({ theme }) =>
     theme.mode === 'dark' ? darkThemeStyles : lightThemeStyles};
+
+  border-radius: ${({ theme }) => theme.borderRadius};
+  box-shadow: ${({ theme }) => theme.boxShadow.appBtn};
 `;
 
 export const ButtonWrapper = styled.div`
@@ -57,4 +69,4 @@ export const Battery = styled.div`
     margin-left: 5px;
   }
 `;
-export const Settings = styled.div``;
+export const SettingsIcon = styled.div``;
