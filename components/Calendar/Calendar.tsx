@@ -16,12 +16,12 @@ const CalendarWidget = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [value, onChange] = useState(new Date());
 
-  const { toggleCalendarModal } = useActions();
+  const { closeCalendarModal } = useActions();
   const { isCalendarOpen } = useTypedSelector((state) => state.ui);
 
   useCloseModalIfClickedOutside({
     isModalOpen: isCalendarOpen,
-    closeModalFunction: toggleCalendarModal,
+    closeModalFunction: closeCalendarModal,
     modalRef: containerRef,
   });
 

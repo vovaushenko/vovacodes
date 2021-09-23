@@ -39,6 +39,10 @@ export const toggleWidgetsModal = () => {
   };
 };
 
+export const closeWidgetsModal = (): UIaction => ({
+  type: UIactionTypes.CLOSE_WIDGETS_MODAL,
+});
+
 /**
  *@UI async action creator, will dispatch action to open/close sliding modal
  *@function toggleAppCenterModal
@@ -58,6 +62,9 @@ export const toggleAppCenterModal = () => {
     }
   };
 };
+export const closeAppCenterModal = (): UIaction => ({
+  type: UIactionTypes.CLOSE_APP_CENTER_MODAL,
+});
 
 /**
  *@UI async action creator, will dispatch action to open/close sliding modal
@@ -79,6 +86,10 @@ export const toggleSettingsModal = () => {
   };
 };
 
+export const closeSettingsModal = (): UIaction => ({
+  type: UIactionTypes.CLOSE_SETTINGS_MODAL,
+});
+
 /**
  *@UI async action creator, will dispatch action to open/close sliding modal
  *@function toggleSearchModal
@@ -99,6 +110,10 @@ export const toggleSearchModal = () => {
   };
 };
 
+export const closeSearchModal = (): UIaction => ({
+  type: UIactionTypes.CLOSE_SEARCH_MODAL,
+});
+
 /**
  *@UI async action creator, will dispatch action to open/close calendar modal
  *@function toggleCalendarModal
@@ -118,6 +133,13 @@ export const toggleCalendarModal = () => {
     }
   };
 };
+
+export const openCalendarModal = (): UIaction => ({
+  type: UIactionTypes.OPEN_CALENDAR_MODAL,
+});
+export const closeCalendarModal = (): UIaction => ({
+  type: UIactionTypes.CLOSE_CALENDAR_MODAL,
+});
 
 /**
  *@UI async action creator, will dispatch action to toggle night light mode

@@ -18,12 +18,12 @@ const SettingsModalContent = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { theme, areSettingsOpen } = useTypedSelector((state) => state.ui);
   const { settingsButtons } = useSettingsModalConfig();
-  const { toggleSettingsModal } = useActions();
+  const { closeSettingsModal } = useActions();
 
   useCloseModalIfClickedOutside({
     modalRef: containerRef,
     isModalOpen: areSettingsOpen,
-    closeModalFunction: toggleSettingsModal,
+    closeModalFunction: closeSettingsModal,
   });
 
   return (

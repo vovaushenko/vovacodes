@@ -29,9 +29,9 @@ export const useCloseModalIfClickedOutside = ({
         closeModalFunction();
       }
     };
-    document.addEventListener('mousedown', checkIfClickedOutside);
+    document.body.addEventListener('click', checkIfClickedOutside);
     return () => {
-      document.removeEventListener('mousedown', checkIfClickedOutside);
+      document.body.removeEventListener('click', checkIfClickedOutside);
     };
   }, [isModalOpen, closeModalFunction, modalRef]);
 };

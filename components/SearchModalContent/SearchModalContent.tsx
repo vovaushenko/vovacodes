@@ -18,7 +18,7 @@ const SearchModalContent = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const { topApps, quickSearches } = useSearchModalConfig();
-  const { openWindow, toggleSearchModal } = useActions();
+  const { openWindow, closeSearchModal } = useActions();
   const { isSearchOpen } = useTypedSelector((state) => state.ui);
 
   const handlePerformSearch = (term: string) => {
@@ -42,7 +42,7 @@ const SearchModalContent = (): JSX.Element => {
   useCloseModalIfClickedOutside({
     modalRef: containerRef,
     isModalOpen: isSearchOpen,
-    closeModalFunction: toggleSearchModal,
+    closeModalFunction: closeSearchModal,
   });
 
   return (

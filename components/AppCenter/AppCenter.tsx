@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import * as Styled from './AppCenter.styles';
 import Button from '../Button/Button';
 import PinnedApps from '../PinnedApps/PinnedApps';
@@ -9,8 +9,6 @@ import SearchBar from '../SearchBar/SearchBar';
 import Bing from '../Apps/Bing/Bing';
 import { useActions } from '../../hooks/useActions';
 import AllAppsModal from '../AllAppsModal/AllAppsModal';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOutside';
 
 /**
  *Renders AppCenter content with search bar, pinned apps and recommended section
@@ -21,9 +19,7 @@ import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOuts
 const AppCenter = (): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isAllAppsOnScreen, setIsAllAppsOnScreen] = useState<boolean>(true);
-  const modalRef = useRef<HTMLDivElement>(null);
-  const { openWindow, toggleAppCenterModal } = useActions();
-  const { isAppCenterOpen } = useTypedSelector((state) => state.ui);
+  const { openWindow } = useActions();
 
   const handlePerformSearch = (term: string) => {
     openWindow({
@@ -42,14 +38,8 @@ const AppCenter = (): JSX.Element => {
     handlePerformSearch(searchTerm);
   };
 
-  useCloseModalIfClickedOutside({
-    modalRef: modalRef,
-    isModalOpen: isAppCenterOpen,
-    closeModalFunction: toggleAppCenterModal,
-  });
-
   return (
-    <Styled.Container ref={modalRef}>
+    <Styled.Container>
       {isAllAppsOnScreen ? (
         <Styled.InitialScreen>
           <Styled.AllApps>

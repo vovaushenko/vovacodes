@@ -18,11 +18,11 @@ const WidgetsModalContent = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { newsArticles } = useTypedSelector((state) => state.news);
   const { isWidgetOpen } = useTypedSelector((state) => state.ui);
-  const { toggleWidgetsModal } = useActions();
+  const { closeWidgetsModal } = useActions();
 
   useCloseModalIfClickedOutside({
     modalRef: containerRef,
-    closeModalFunction: toggleWidgetsModal,
+    closeModalFunction: closeWidgetsModal,
     isModalOpen: isWidgetOpen,
   });
 

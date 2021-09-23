@@ -10,9 +10,9 @@ import { useActions } from '../../hooks/useActions';
  *@returns {JSX.Element} - Rendered TimePanel component
  */
 const TimePanel = (): JSX.Element => {
-  const { toggleCalendarModal } = useActions();
+  const { openCalendarModal } = useActions();
 
-  const handleOpenCalendar = () => toggleCalendarModal();
+  const handleOpenCalendar = () => openCalendarModal();
 
   return (
     <Styled.Container onClick={handleOpenCalendar}>
