@@ -23,7 +23,7 @@ const FirstSlide = (): JSX.Element => {
 
         <PortfolioParagraph
           margin={'1rem 0'}
-          paragraphText={`Designing, creating and coding of simple, intuitive and scalable web products is my calling.`}
+          paragraphText={`Designing and building of simple, intuitive and scalable web products is my calling.`}
           withDarkColor={false}
           variant={'large'}
           withAnimatedPresence={true}
