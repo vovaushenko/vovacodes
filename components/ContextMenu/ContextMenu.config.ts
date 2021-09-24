@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
  */
 export const useContextMenuConfig = (): {
   desktopContextMenuContent: IContextMenuItem[];
+  systemTrayContextMenuContent: IContextMenuItem[];
 } => {
   const router = useRouter();
 
@@ -66,5 +67,43 @@ export const useContextMenuConfig = (): {
     },
   ];
 
-  return { desktopContextMenuContent };
+  const systemTrayContextMenuContent: IContextMenuItem[] = [
+    {
+      id: 1,
+      text: 'Align Icons',
+      action: null,
+      hoverMenuItems: [
+        { id: 1, text: 'Left', action: null },
+        { id: 2, text: 'Center', action: null },
+        { id: 3, text: 'Right', action: null },
+      ],
+      withUnderline: true,
+    },
+    {
+      id: 2,
+      text: 'Search',
+      action: null,
+      hoverMenuItems: [
+        { id: 1, text: 'Show', action: null },
+        { id: 2, text: 'Hide', action: null },
+      ],
+    },
+    {
+      id: 3,
+      text: 'Widgets',
+      action: null,
+      hoverMenuItems: [
+        { id: 1, text: 'Show', action: null },
+        { id: 2, text: 'Hide', action: null },
+      ],
+      withUnderline: true,
+    },
+    {
+      id: 4,
+      text: 'Show Desktop',
+      action: null,
+    },
+  ];
+
+  return { desktopContextMenuContent, systemTrayContextMenuContent };
 };

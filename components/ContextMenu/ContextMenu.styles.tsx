@@ -26,6 +26,8 @@ const isOpenStyle = css`
 export const Container = styled.nav<ContainerProps>`
   ${({ isOpen }) => (isOpen ? isOpenStyle : isClosedStyle)};
 
+  z-index: ${({ theme }) => theme.zIndex.modal};
+
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
