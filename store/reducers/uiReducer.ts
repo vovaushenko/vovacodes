@@ -14,6 +14,8 @@ const initialUIstate: UIstate = {
   isCalendarOpen: false,
   isInNightLightMode: false,
   shouldIntroBeShown: true,
+  isContextMenuOpen: false,
+  contextMenuCoords: { x: 0, y: 0 },
 };
 
 /**
@@ -108,6 +110,16 @@ export const uiReducer = (
 
     case UIactionTypes.CHANGE_BRIGHTNESS:
       return { ...state, screenBrightness: action.payload };
+
+    case UIactionTypes.OPEN_CONTEXT_MENU:
+      return {
+        ...state,
+        isContextMenuOpen: true,
+        contextMenuCoords: action.payload,
+      };
+
+    case UIactionTypes.CLOSE_CONTEXT_MENU:
+      return { ...state, isContextMenuOpen: false };
 
     default:
       return state;

@@ -181,3 +181,25 @@ export const changeScreenBrightness = (brightness: string) => {
 export const notShowIntroAgain = (): UIaction => ({
   type: UIactionTypes.INTRO_WAS_SHOWN,
 });
+
+/**
+ *@UI  action creator, will dispatch action to open context menu at specified screen coordinates
+ *@function openContextMenu
+ *@param {object} coords - clientX and clientY location of mouse
+ *@returns {function} - Redux thunk function
+ */
+export const openContextMenu = (coords: {
+  x: number;
+  y: number;
+}): UIaction => ({
+  type: UIactionTypes.OPEN_CONTEXT_MENU,
+  payload: coords,
+});
+/**
+ *@UI  action creator, will dispatch action to close context menu
+ *@function closeContextMenu
+ *@returns {function} - Redux thunk function
+ */
+export const closeContextMenu = (): UIaction => ({
+  type: UIactionTypes.CLOSE_CONTEXT_MENU,
+});

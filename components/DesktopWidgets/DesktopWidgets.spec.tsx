@@ -21,6 +21,6 @@ describe('DesktopWidgets', () => {
 
   it('should render two sliding modals', () => {
     const slidingModal = wrap.find(SlidingModal);
-    expect(slidingModal.length).toBe(2);
+    expect(slidingModal.length).toBe(3);
   });
 });

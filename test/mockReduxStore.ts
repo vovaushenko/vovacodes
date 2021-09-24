@@ -11,6 +11,8 @@ export const mockReduxStore: LocalRootState = {
     screenBrightness: '100',
     shouldIntroBeShown: true,
     isCalendarOpen: false,
+    isContextMenuOpen: false,
+    contextMenuCoords: { x: 0, y: 0 },
   },
 
   todos: {

@@ -71,6 +71,7 @@ export const darkUtilityColors = {
     dark: 'rgba(48,49,51,.774)',
     light: '#383838',
     lightest: 'rgb(133, 133, 133)',
+    invisible: 'rgba(143, 143, 143, 0.1)',
   },
   red: { danger: 'rgba(255,0,0,.562)', lightDanger: 'rgb(232, 53, 53)' },
   blue: {
@@ -112,6 +113,7 @@ export const lightUtilityColors = {
     dark: 'rgba(48,49,51,.774)',
     light: '#383838',
     lightest: 'rgb(133, 133, 133)',
+    invisible: 'rgba(143, 143, 143, 0.1)',
   },
   red: { danger: 'rgba(255,0,0,.562)', lightDanger: 'rgb(232, 53, 53)' },
   blue: {

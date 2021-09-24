@@ -16,7 +16,12 @@ declare module 'styled-components' {
     colors: {
       appCenter: { bg: string; searchBarBg: string };
       systemTray: { bg: string };
-      gray: { dark: string; light: string; lightest: string };
+      gray: {
+        dark: string;
+        light: string;
+        lightest: string;
+        invisible: string;
+      };
       red: { danger: string; lightDanger: string };
       blue: { icon: string; border: string; activeBlue: string };
       modals: {
