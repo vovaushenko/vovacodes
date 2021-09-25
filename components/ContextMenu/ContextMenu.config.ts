@@ -1,5 +1,6 @@
 import { IContextMenuItem } from '../ContextMenuItem/ContextMenuItem';
 import { useRouter } from 'next/router';
+import { useActions } from '../../hooks/useActions';
 
 /**
  * Custom hook that is used to get initial configuration for desktop context menu
@@ -11,8 +12,13 @@ export const useContextMenuConfig = (): {
   systemTrayContextMenuContent: IContextMenuItem[];
 } => {
   const router = useRouter();
+  const { sortDesktopIcons } = useActions();
 
   const reloadPage = () => router.reload();
+
+  const sortIconsByName = () => sortDesktopIcons('name');
+  const sortIconsBySize = () => sortDesktopIcons('size');
+  const sortIconsByDate = () => sortDesktopIcons('date');
 
   const desktopContextMenuContent: IContextMenuItem[] = [
     {
@@ -32,9 +38,9 @@ export const useContextMenuConfig = (): {
       text: 'Sort by',
       action: null,
       hoverMenuItems: [
-        { id: 1, text: 'Name', action: null },
-        { id: 2, text: 'Size', action: null },
-        { id: 3, text: 'Date Modified', action: null },
+        { id: 1, text: 'Name', action: sortIconsByName },
+        { id: 2, text: 'Size', action: sortIconsBySize },
+        { id: 3, text: 'Date Modified', action: sortIconsByDate },
       ],
       withUnderline: true,
     },

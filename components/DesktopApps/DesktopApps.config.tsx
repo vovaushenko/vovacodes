@@ -10,7 +10,16 @@ import CommentsForm from '../CommentsForm/CommentsForm';
 import PortfolioLanding from '../Portfolio/PortfolioLanding/PortfolioLanding';
 import PortfolioLayout from '../Portfolio/PortfolioLayout/PortfolioLayout';
 
-export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
+/**
+ * Custom hook used to get initial configuration for desktop
+ * @function useDesktopApps
+ * @returns {object} - object with array of icon variants with already specified type of sorting
+ * */
+export const useDesktopApps = (): {
+  sortedAlphabetically: IDesktopApp[];
+  sortedByDate: IDesktopApp[];
+  sortedBySize: IDesktopApp[];
+} => {
   const router = useRouter();
 
   const desktopAppsList: IDesktopApp[] = [
@@ -101,7 +110,15 @@ export const useDesktopApps = (): { desktopAppsList: IDesktopApp[] } => {
     },
   ];
 
+  const sortedAlphabetically = [...desktopAppsList].sort((a, b) =>
+    a.text.toLowerCase().localeCompare(b.text.toLowerCase())
+  );
+  const sortedBySize = [...desktopAppsList];
+  const sortedByDate = [...desktopAppsList].sort((a, b) => b.id - a.id);
+
   return {
-    desktopAppsList,
+    sortedAlphabetically,
+    sortedByDate,
+    sortedBySize,
   };
 };

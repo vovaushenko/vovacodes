@@ -1,3 +1,5 @@
+export type IconSortVariant = 'date' | 'name' | 'size';
+
 export interface UIstate {
   theme: 'dark' | 'light';
   isWidgetOpen: boolean;
@@ -10,6 +12,7 @@ export interface UIstate {
   shouldIntroBeShown: boolean;
   isContextMenuOpen: boolean;
   contextMenuCoords: { x: number; y: number };
+  sortDesktopIconsBy: IconSortVariant;
 }
 
 export enum UIactionTypes {
@@ -39,6 +42,8 @@ export enum UIactionTypes {
 
   INTRO_WAS_SHOWN = 'INTRO_WAS_SHOWN',
 
+  SORT_DESKTOP_ICONS = 'SORT_DESKTOP_ICONS',
+
   CHANGE_BRIGHTNESS = 'CHANGE_BRIGHTNESS',
 }
 
@@ -60,4 +65,8 @@ export type UIaction =
   | { type: UIactionTypes.OPEN_CALENDAR_MODAL }
   | { type: UIactionTypes.CLOSE_CALENDAR_MODAL }
   | { type: UIactionTypes.OPEN_CONTEXT_MENU; payload: { x: number; y: number } }
-  | { type: UIactionTypes.CLOSE_CONTEXT_MENU };
+  | { type: UIactionTypes.CLOSE_CONTEXT_MENU }
+  | {
+      type: UIactionTypes.SORT_DESKTOP_ICONS;
+      payload: IconSortVariant;
+    };

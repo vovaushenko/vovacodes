@@ -1,5 +1,9 @@
 import { Dispatch } from 'redux';
-import { UIaction, UIactionTypes } from '../../types/redux/ui-reducer-types';
+import {
+  IconSortVariant,
+  UIaction,
+  UIactionTypes,
+} from '../../types/redux/ui-reducer-types';
 import { State } from '../reducers';
 
 /**
@@ -202,4 +206,15 @@ export const openContextMenu = (coords: {
  */
 export const closeContextMenu = (): UIaction => ({
   type: UIactionTypes.CLOSE_CONTEXT_MENU,
+});
+
+/**
+ *@UI  action creator, will dispatch action to sort desktop icons in specified order
+ *@function sortDesktopIcons
+ *@param {enum} wayOfSorting - specifies how icons should be sorted
+ *@returns {function} - Redux thunk function
+ */
+export const sortDesktopIcons = (wayOfSorting: IconSortVariant): UIaction => ({
+  type: UIactionTypes.SORT_DESKTOP_ICONS,
+  payload: wayOfSorting,
 });

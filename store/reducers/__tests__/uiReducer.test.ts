@@ -17,6 +17,7 @@ const initialState: UIstate = {
   isCalendarOpen: false,
   isContextMenuOpen: false,
   contextMenuCoords: { x: 0, y: 0 },
+  sortDesktopIconsBy: 'size',
 };
 
 test('when previous state is undefined, returns initial state', () => {

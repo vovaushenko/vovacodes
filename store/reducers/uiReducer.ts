@@ -16,6 +16,7 @@ const initialUIstate: UIstate = {
   shouldIntroBeShown: true,
   isContextMenuOpen: false,
   contextMenuCoords: { x: 0, y: 0 },
+  sortDesktopIconsBy: 'size',
 };
 
 /**
@@ -120,6 +121,9 @@ export const uiReducer = (
 
     case UIactionTypes.CLOSE_CONTEXT_MENU:
       return { ...state, isContextMenuOpen: false };
+
+    case UIactionTypes.SORT_DESKTOP_ICONS:
+      return { ...state, sortDesktopIconsBy: action.payload };
 
     default:
       return state;
