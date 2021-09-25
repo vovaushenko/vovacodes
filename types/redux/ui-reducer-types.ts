@@ -1,4 +1,5 @@
 export type IconSortVariant = 'date' | 'name' | 'size';
+export type IconSize = 'small' | 'medium' | 'large';
 
 export interface UIstate {
   theme: 'dark' | 'light';
@@ -12,6 +13,7 @@ export interface UIstate {
   shouldIntroBeShown: boolean;
   isContextMenuOpen: boolean;
   contextMenuCoords: { x: number; y: number };
+  iconsSize: IconSize;
   sortDesktopIconsBy: IconSortVariant;
 }
 
@@ -44,6 +46,8 @@ export enum UIactionTypes {
 
   SORT_DESKTOP_ICONS = 'SORT_DESKTOP_ICONS',
 
+  CHANGE_ICON_SIZE = 'CHANGE_ICON_SIZE',
+
   CHANGE_BRIGHTNESS = 'CHANGE_BRIGHTNESS',
 }
 
@@ -69,4 +73,5 @@ export type UIaction =
   | {
       type: UIactionTypes.SORT_DESKTOP_ICONS;
       payload: IconSortVariant;
-    };
+    }
+  | { type: UIactionTypes.CHANGE_ICON_SIZE; payload: IconSize };

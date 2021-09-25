@@ -1,15 +1,16 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import DesktopApps from './DesktopApps';
 import * as Styled from './DesktopApps.styles';
 import DesktopButton from '../DesktopButton/DesktopButton';
+import { withReduxAndStyledProviders } from '../../test/testUtils';
 
 /**
  * Setup function for the component
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return shallow(<DesktopApps />);
+  return mount(withReduxAndStyledProviders(<DesktopApps />));
 };
 
 describe('DesktopApps', () => {

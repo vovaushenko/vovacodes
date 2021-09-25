@@ -3,6 +3,7 @@ import * as Styled from './DesktopButton.styles';
 import Paragraph from '../Typography/Paragraph/Paragraph';
 import Image from 'next/image';
 import { useActions } from '../../hooks/useActions';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   variant: 'desktop' | 'systemTray' | 'pinnedApp' | 'recommendedApp';
@@ -39,6 +40,8 @@ const DesktopButton = ({
   ...rest
 }: Props): JSX.Element => {
   const { openWindow } = useActions();
+  // size of icons is controlled by user through global state (redux/ui-reducer), this applies only to desktop button variant
+  const { iconsSize } = useTypedSelector((state) => state.ui);
 
   const handleOpenWindow = useCallback(() => {
     openWindow({
@@ -56,6 +59,7 @@ const DesktopButton = ({
   return (
     <Styled.ButtonContainer
       onClick={action !== null ? action : handleOpenWindow}
+      iconSize={iconsSize}
       variant={variant}
       {...rest}
     >

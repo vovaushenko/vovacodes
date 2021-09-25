@@ -13,6 +13,7 @@ export const mockReduxStore: LocalRootState = {
     isCalendarOpen: false,
     isContextMenuOpen: false,
     contextMenuCoords: { x: 0, y: 0 },
+    iconsSize: 'medium',
     sortDesktopIconsBy: 'size',
   },
 

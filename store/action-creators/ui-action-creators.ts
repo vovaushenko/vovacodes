@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux';
 import {
+  IconSize,
   IconSortVariant,
   UIaction,
   UIactionTypes,
@@ -217,4 +218,15 @@ export const closeContextMenu = (): UIaction => ({
 export const sortDesktopIcons = (wayOfSorting: IconSortVariant): UIaction => ({
   type: UIactionTypes.SORT_DESKTOP_ICONS,
   payload: wayOfSorting,
+});
+
+/**
+ *@UI  action creator, will dispatch action to change size of desktop icons using specified variant  'normal' | 'medium' | 'large'
+ *@function sortDesktopIcons
+ *@param {enum} iconSize - specifies size of icons
+ *@returns {function} - Redux thunk function
+ */
+export const changeDesktopIconSize = (iconSize: IconSize): UIaction => ({
+  type: UIactionTypes.CHANGE_ICON_SIZE,
+  payload: iconSize,
 });

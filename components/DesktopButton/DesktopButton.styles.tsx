@@ -1,16 +1,30 @@
 import styled, { css } from 'styled-components';
+import { IconSize } from '../../types/redux/ui-reducer-types';
 
 interface Props {
   variant: 'desktop' | 'systemTray' | 'pinnedApp' | 'recommendedApp';
+  iconSize: IconSize;
 }
 
-const desktopButtonStyles = css`
+interface DesktopBtnProps {
+  iconSize: IconSize;
+}
+
+const desktopButtonStyles = css<DesktopBtnProps>`
   padding: ${({ theme }) => `${theme.space.xxs} ${theme.space.md}`};
   cursor: context-menu;
 
   :hover {
     background: ${({ theme }) => theme.colors.buttons.desktopButton.hover};
   }
+
+  transform: scale(1);
+  transform: ${({ iconSize }) =>
+    iconSize === 'small'
+      ? 'scale(0.8)'
+      : iconSize === 'medium'
+      ? 'scale(1.0)'
+      : 'scale(1.2)'};
 `;
 const systemTrayButtonStyles = css`
   padding: 8px;

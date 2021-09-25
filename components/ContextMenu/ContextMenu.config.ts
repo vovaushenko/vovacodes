@@ -1,6 +1,7 @@
 import { IContextMenuItem } from '../ContextMenuItem/ContextMenuItem';
 import { useRouter } from 'next/router';
 import { useActions } from '../../hooks/useActions';
+import { IconSize, IconSortVariant } from '../../types/redux/ui-reducer-types';
 
 /**
  * Custom hook that is used to get initial configuration for desktop context menu
@@ -12,13 +13,13 @@ export const useContextMenuConfig = (): {
   systemTrayContextMenuContent: IContextMenuItem[];
 } => {
   const router = useRouter();
-  const { sortDesktopIcons } = useActions();
+  const { sortDesktopIcons, changeDesktopIconSize } = useActions();
 
   const reloadPage = () => router.reload();
 
-  const sortIconsByName = () => sortDesktopIcons('name');
-  const sortIconsBySize = () => sortDesktopIcons('size');
-  const sortIconsByDate = () => sortDesktopIcons('date');
+  const sortIconsBy = (way: IconSortVariant) => sortDesktopIcons(way);
+
+  const changeSizeTo = (variant: IconSize) => changeDesktopIconSize(variant);
 
   const desktopContextMenuContent: IContextMenuItem[] = [
     {
@@ -26,9 +27,14 @@ export const useContextMenuConfig = (): {
       text: 'View',
       action: null,
       hoverMenuItems: [
-        { id: 1, text: 'Large Icons', action: null },
-        { id: 2, text: 'Medium Icons', action: null },
-        { id: 3, text: 'Small Icons', action: null, withUnderline: true },
+        { id: 1, text: 'Large Icons', action: () => changeSizeTo('large') },
+        { id: 2, text: 'Medium Icons', action: () => changeSizeTo('medium') },
+        {
+          id: 3,
+          text: 'Small Icons',
+          action: () => changeSizeTo('small'),
+          withUnderline: true,
+        },
         { id: 4, text: 'Show Desktop Icons', action: null },
       ],
     },
@@ -38,9 +44,9 @@ export const useContextMenuConfig = (): {
       text: 'Sort by',
       action: null,
       hoverMenuItems: [
-        { id: 1, text: 'Name', action: sortIconsByName },
-        { id: 2, text: 'Size', action: sortIconsBySize },
-        { id: 3, text: 'Date Modified', action: sortIconsByDate },
+        { id: 1, text: 'Name', action: () => sortIconsBy('name') },
+        { id: 2, text: 'Size', action: () => sortIconsBy('size') },
+        { id: 3, text: 'Date Modified', action: () => sortIconsBy('date') },
       ],
       withUnderline: true,
     },
