@@ -14,6 +14,7 @@ import {
   FiRotateCw,
   FiTrello,
 } from 'react-icons/fi';
+import About from '../About/About';
 
 /**
  * Custom hook that is used to get initial configuration for desktop context menu
@@ -43,6 +44,19 @@ export const useContextMenuConfig = (): {
         height: 0.7 * window.innerHeight,
       },
       windowContent: <Terminal />,
+    });
+  };
+
+  const openAbout = () => {
+    openWindow({
+      windowName: 'About OS',
+      isOpen: true,
+      windowIcon: '/assets/portfolio/skills/linux-original.svg',
+      size: {
+        width: 0.4 * window.innerWidth,
+        height: 0.6 * window.innerHeight,
+      },
+      windowContent: <About />,
     });
   };
 
@@ -111,7 +125,7 @@ export const useContextMenuConfig = (): {
     {
       id: 8,
       text: 'About',
-      action: null,
+      action: openAbout,
       withIcon: <FiInfo className={'icon'} />,
     },
   ];

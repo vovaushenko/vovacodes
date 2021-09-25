@@ -78,6 +78,7 @@ export const darkUtilityColors = {
     icon: 'rgb(3, 132, 192)',
     border: '#4489aa',
     activeBlue: '#4489aa',
+    brandColor: 'rgb(65,105,225)',
   },
   modals: { widgetModalBg: 'rgba(47, 70, 95, 0.6)' },
   cards: {
@@ -120,6 +121,7 @@ export const lightUtilityColors = {
     icon: 'rgb(3, 132, 192)',
     border: '#4489aa',
     activeBlue: '#0652f7',
+    brandColor: 'rgb(65,105,225)',
   },
   modals: { widgetModalBg: 'rgba(255, 255, 255, 0.25)' },
   cards: {

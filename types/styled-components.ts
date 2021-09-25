@@ -23,7 +23,12 @@ declare module 'styled-components' {
         invisible: string;
       };
       red: { danger: string; lightDanger: string };
-      blue: { icon: string; border: string; activeBlue: string };
+      blue: {
+        icon: string;
+        border: string;
+        activeBlue: string;
+        brandColor: string;
+      };
       modals: {
         widgetModalBg: string;
       };
