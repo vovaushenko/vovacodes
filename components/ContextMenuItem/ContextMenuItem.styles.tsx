@@ -48,3 +48,15 @@ export const ContextMenuWrapper = styled.aside<Props>`
   transition: visibility 300ms;
   backdrop-filter: blur(20.5px);
 `;
+
+export const TextIconWrapper = styled.div`
+  position: relative;
+
+  .icon {
+    position: absolute;
+    left: -1.5rem;
+    margin-left: 0.25rem;
+    top: 2px;
+    font-size: ${({ theme }) => theme.fontSize.small};
+  }
+`;

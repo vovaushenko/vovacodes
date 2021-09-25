@@ -48,6 +48,7 @@ const ContextMenu = ({
             hoverMenuItems={item.hoverMenuItems}
             iconSrc={item.iconSrc}
             withUnderline={item.withUnderline}
+            withIcon={item.withIcon}
           />
         ))}
       </Styled.UL>

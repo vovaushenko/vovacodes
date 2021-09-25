@@ -10,6 +10,7 @@ export interface IContextMenuItem {
   text: string;
   action: null | (() => void);
   iconSrc?: string;
+  withIcon?: JSX.Element;
   hoverMenuItems?: IContextMenuItem[];
   withUnderline?: boolean;
 }
@@ -25,6 +26,7 @@ const ContextMenuItem = ({
   hoverMenuItems,
   action,
   withUnderline,
+  withIcon,
 }: IContextMenuItem): JSX.Element => {
   const containerRef = useRef<HTMLLIElement>(null);
   const { isContextMenuOpen } = useTypedSelector((state) => state.ui);
@@ -42,7 +44,10 @@ const ContextMenuItem = ({
         withUnderline={withUnderline}
         onClick={handleClick}
       >
-        <p>{text}</p>
+        <Styled.TextIconWrapper>
+          {withIcon}
+          <p>{text}</p>
+        </Styled.TextIconWrapper>
 
         {hoverMenuItems !== undefined && <FiChevronRight className={'icon'} />}
 
@@ -63,4 +68,4 @@ const ContextMenuItem = ({
   );
 };
 
-export default ContextMenuItem;
+export default React.memo(ContextMenuItem);

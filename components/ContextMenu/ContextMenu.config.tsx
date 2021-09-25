@@ -1,7 +1,19 @@
+import React from 'react';
 import { IContextMenuItem } from '../ContextMenuItem/ContextMenuItem';
 import { useRouter } from 'next/router';
 import { useActions } from '../../hooks/useActions';
 import { IconSize, IconSortVariant } from '../../types/redux/ui-reducer-types';
+import Terminal from '../Apps/Terminal/Terminal';
+import {
+  FiFilter,
+  FiGrid,
+  FiInfo,
+  FiMonitor,
+  FiPlay,
+  FiRefreshCw,
+  FiRotateCw,
+  FiTrello,
+} from 'react-icons/fi';
 
 /**
  * Custom hook that is used to get initial configuration for desktop context menu
@@ -13,7 +25,7 @@ export const useContextMenuConfig = (): {
   systemTrayContextMenuContent: IContextMenuItem[];
 } => {
   const router = useRouter();
-  const { sortDesktopIcons, changeDesktopIconSize } = useActions();
+  const { sortDesktopIcons, changeDesktopIconSize, openWindow } = useActions();
 
   const reloadPage = () => router.reload();
 
@@ -21,11 +33,25 @@ export const useContextMenuConfig = (): {
 
   const changeSizeTo = (variant: IconSize) => changeDesktopIconSize(variant);
 
+  const openTerminal = () => {
+    openWindow({
+      windowName: 'Terminal',
+      isOpen: true,
+      windowIcon: '/assets/icons/taskbar/bash.png',
+      size: {
+        width: 0.75 * window.innerWidth,
+        height: 0.7 * window.innerHeight,
+      },
+      windowContent: <Terminal />,
+    });
+  };
+
   const desktopContextMenuContent: IContextMenuItem[] = [
     {
       id: 1,
       text: 'View',
       action: null,
+      withIcon: <FiGrid className={'icon'} />,
       hoverMenuItems: [
         { id: 1, text: 'Large Icons', action: () => changeSizeTo('large') },
         { id: 2, text: 'Medium Icons', action: () => changeSizeTo('medium') },
@@ -38,10 +64,16 @@ export const useContextMenuConfig = (): {
         { id: 4, text: 'Show Desktop Icons', action: null },
       ],
     },
-    { id: 2, text: 'Refresh', action: reloadPage },
+    {
+      id: 2,
+      text: 'Refresh',
+      action: reloadPage,
+      withIcon: <FiRefreshCw className={'icon'} />,
+    },
     {
       id: 3,
       text: 'Sort by',
+      withIcon: <FiFilter className={'icon'} />,
       action: null,
       hoverMenuItems: [
         { id: 1, text: 'Name', action: () => sortIconsBy('name') },
@@ -54,28 +86,33 @@ export const useContextMenuConfig = (): {
       id: 4,
       text: 'Next Desktop Background',
       action: null,
+      withIcon: <FiPlay className={'icon'} />,
     },
     {
       id: 5,
       text: 'Undo Delete',
       action: null,
+      withIcon: <FiRotateCw className={'icon'} />,
     },
     {
       id: 6,
       text: 'Open in Windows Terminal',
-      action: null,
+      action: openTerminal,
       withUnderline: true,
+      withIcon: <FiTrello className={'icon'} />,
     },
     {
       id: 7,
       text: 'Personalize',
       action: null,
       withUnderline: true,
+      withIcon: <FiMonitor className={'icon'} />,
     },
     {
       id: 8,
       text: 'About',
       action: null,
+      withIcon: <FiInfo className={'icon'} />,
     },
   ];
 
