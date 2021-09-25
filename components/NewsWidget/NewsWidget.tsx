@@ -11,6 +11,7 @@ export interface Props {
   newsLink: string;
   backgroundImg: string;
   cardGradientColor: string;
+  className: string;
 }
 
 /**
@@ -24,10 +25,12 @@ const NewsWidget = ({
   newsHeader,
   backgroundImg,
   newsLink,
+  className,
   cardGradientColor,
 }: Props): JSX.Element => {
   return (
     <Styled.Container
+      className={className}
       bgImg={backgroundImg}
       cardGradientColor={cardGradientColor}
     >

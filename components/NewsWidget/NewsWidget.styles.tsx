@@ -16,8 +16,7 @@ export const Container = styled.article<Props>`
   }) => `linear-gradient(to top, ${cardGradientColor}, transparent 100%),
     url(${bgImg}) center/cover`};
 
-  min-height: 200px;
-  aspect-ratio: 1/1;
+  width: 100%;
 `;
 export const TextWrapper = styled.div`
   p {

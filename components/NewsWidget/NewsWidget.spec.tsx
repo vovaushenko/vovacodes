@@ -17,6 +17,7 @@ const mockProps: Props = {
   newsLink: 'https://bbc.com',
   backgroundImg: '/banana/banana.img',
   cardGradientColor: 'rgb(7, 7, 7)',
+  className: 'someClass',
 };
 
 const setup = () => {

@@ -28,26 +28,28 @@ const WidgetsModalContent = (): JSX.Element => {
 
   return (
     <Styled.Container ref={containerRef}>
-      <WidgetCard
-        cardHeader={'Powered by'}
-        headerIcon={'/assets/portfolio/skills/typescript-original.svg'}
-        iconSize={{ width: 15, height: 15 }}
-      >
-        <TechWidget />
-      </WidgetCard>
-      <WidgetCard
-        cardHeader={'Weather'}
-        headerIcon={'/assets/icons/widget/weather.svg'}
-        iconSize={{ width: 20, height: 20 }}
-      >
-        <WeatherWidget
-          location={'Toronto, Ontario'}
-          temperature={72}
-          forecastDetails={'Strong UV Today'}
-          humidity={0}
-          iconSrc={'/assets/icons/widget/sun.svg'}
-        />
-      </WidgetCard>
+      <Styled.Header>
+        <WidgetCard
+          cardHeader={'Powered by'}
+          headerIcon={'/assets/portfolio/skills/typescript-original.svg'}
+          iconSize={{ width: 15, height: 15 }}
+        >
+          <TechWidget />
+        </WidgetCard>
+        <WidgetCard
+          cardHeader={'Weather'}
+          headerIcon={'/assets/icons/widget/weather.svg'}
+          iconSize={{ width: 20, height: 20 }}
+        >
+          <WeatherWidget
+            location={'Toronto, Ontario'}
+            temperature={72}
+            forecastDetails={'Strong UV Today'}
+            humidity={0}
+            iconSrc={'/assets/icons/widget/sun.svg'}
+          />
+        </WidgetCard>
+      </Styled.Header>
 
       <WidgetCard
         cardHeader={'To Do'}
@@ -57,23 +59,28 @@ const WidgetsModalContent = (): JSX.Element => {
         <TodoWidget />
       </WidgetCard>
 
-      {newsArticles
-        .filter(
-          (article) =>
-            article.urlToImage !== null &&
-            article.title !== null &&
-            article.urlToImage !== null
-        )
-        .map((article) => (
-          <NewsWidget
-            key={`${article.title}${article.publishedAt}`}
-            newsHeader={article.title!}
-            newsSource={article.source.name}
-            newsLink={article.url!}
-            backgroundImg={article.urlToImage!}
-            cardGradientColor={'rgba(3, 21, 41, 1)'}
-          />
-        ))}
+      <Styled.NewsGridWrapper>
+        {newsArticles
+          .filter(
+            (article) =>
+              article.urlToImage !== null &&
+              article.title !== null &&
+              article.urlToImage !== null &&
+              article.url !== null
+          )
+          .slice(0, 15)
+          .map((article, id) => (
+            <NewsWidget
+              key={`${article.title}${article.publishedAt}`}
+              className={`grid-card-${id + 1}`}
+              newsHeader={article.title!}
+              newsSource={article.source.name}
+              newsLink={article.url!}
+              backgroundImg={article.urlToImage!}
+              cardGradientColor={'rgba(3, 21, 41, 1)'}
+            />
+          ))}
+      </Styled.NewsGridWrapper>
     </Styled.Container>
   );
 };
