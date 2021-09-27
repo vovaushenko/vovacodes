@@ -30,6 +30,7 @@ export const useCloseModalIfClickedOutside = ({
       }
     };
     document.body.addEventListener('click', checkIfClickedOutside);
+
     return () => {
       document.body.removeEventListener('click', checkIfClickedOutside);
     };

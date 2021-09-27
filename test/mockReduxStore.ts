@@ -15,6 +15,8 @@ export const mockReduxStore: LocalRootState = {
     contextMenuCoords: { x: 0, y: 0 },
     iconsSize: 'medium',
     sortDesktopIconsBy: 'size',
+    removedApps: [],
+    compressedApps: [],
   },
 
   todos: {

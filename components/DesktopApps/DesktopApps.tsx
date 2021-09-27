@@ -15,7 +15,9 @@ const DesktopApps = (): JSX.Element => {
     IDesktopApp[]
   >([]);
   const { sortedAlphabetically, sortedByDate, sortedBySize } = useDesktopApps();
-  const { sortDesktopIconsBy } = useTypedSelector((state) => state.ui);
+  const { sortDesktopIconsBy, removedApps, compressedApps } = useTypedSelector(
+    (state) => state.ui
+  );
 
   useEffect(() => {
     if (sortDesktopIconsBy === 'name') {
@@ -28,12 +30,12 @@ const DesktopApps = (): JSX.Element => {
     if (sortDesktopIconsBy === 'size') {
       setDisplayedDesktopApps(sortedBySize);
     }
-  }, [sortDesktopIconsBy]);
+  }, [sortDesktopIconsBy, removedApps.length, compressedApps.length]);
 
   return (
     <Styled.UL>
       {displayedDesktopApps.map((app) => (
-        <Styled.LI key={app.id}>
+        <Styled.LI key={app.id + removedApps.length}>
           <DesktopButton
             variant={app.variant}
             text={app.text}

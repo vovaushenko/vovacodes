@@ -230,3 +230,33 @@ export const changeDesktopIconSize = (iconSize: IconSize): UIaction => ({
   type: UIactionTypes.CHANGE_ICON_SIZE,
   payload: iconSize,
 });
+
+/**
+ *@UI  action creator, will dispatch action to delete desktop app and add it to trash bin
+ *@function deleteDesktopApp
+ *@param {string} appName - name of the app
+ *@returns {function} - Redux thunk function
+ */
+export const deleteDesktopApp = (appName: string): UIaction => ({
+  type: UIactionTypes.DELETE_APP,
+  payload: appName,
+});
+
+/**
+ *@UI  action creator, will dispatch action to undo LAST delete action of desktop app, thereby restoring it on screen
+ *@function undoLastDeleteDesktopApp
+ *@returns {function} - Redux thunk function
+ */
+export const undoLastDeleteDesktopApp = (): UIaction => ({
+  type: UIactionTypes.UNDO_DELETE_APP,
+});
+
+/**
+ *@UI  action creator, will dispatch action to compress(ZIP) a desktop app, thereby rendering its zipped icon
+ *@function compressDesktopApp
+ *@returns {function} - Redux thunk function
+ */
+export const compressDesktopApp = (appName: string): UIaction => ({
+  type: UIactionTypes.COMPRESS_DESKTOP_APP,
+  payload: appName,
+});

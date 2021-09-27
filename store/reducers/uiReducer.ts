@@ -18,6 +18,8 @@ const initialUIstate: UIstate = {
   contextMenuCoords: { x: 0, y: 0 },
   iconsSize: 'medium',
   sortDesktopIconsBy: 'size',
+  removedApps: [],
+  compressedApps: [],
 };
 
 /**
@@ -128,6 +130,18 @@ export const uiReducer = (
 
     case UIactionTypes.SORT_DESKTOP_ICONS:
       return { ...state, sortDesktopIconsBy: action.payload };
+
+    case UIactionTypes.DELETE_APP:
+      return { ...state, removedApps: [...state.removedApps, action.payload] };
+
+    case UIactionTypes.UNDO_DELETE_APP:
+      return { ...state, removedApps: [] };
+
+    case UIactionTypes.COMPRESS_DESKTOP_APP:
+      return {
+        ...state,
+        compressedApps: [...state.compressedApps, action.payload],
+      };
 
     default:
       return state;

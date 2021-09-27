@@ -1,14 +1,15 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import CalendarWidget from './Calendar';
 import Calendar from 'react-calendar';
+import { withReduxAndStyledProviders } from '../../test/testUtils';
 
 /**
  * Setup function for the component
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return shallow(<CalendarWidget />);
+  return mount(withReduxAndStyledProviders(<CalendarWidget />));
 };
 
 describe('Calendar', () => {

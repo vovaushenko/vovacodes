@@ -36,7 +36,7 @@ module.exports = {
   },
 
   transform: {
-    '.(ts|tsx)': 'babel-jest',
+    '.(js|ts|tsx)': 'babel-jest',
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 };

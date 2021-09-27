@@ -1,9 +1,11 @@
-import React, { ReactNode, useCallback } from 'react';
+import React, { ReactNode, useCallback, useRef, useState } from 'react';
 import * as Styled from './DesktopButton.styles';
 import Paragraph from '../Typography/Paragraph/Paragraph';
 import Image from 'next/image';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import AppContextMenu from '../AppContextMenu/AppContextMenu';
+import { useCloseModalIfClickedOutside } from '../../hooks/useCloseIfClickedOutside';
 
 export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   variant: 'desktop' | 'systemTray' | 'pinnedApp' | 'recommendedApp';
@@ -39,9 +41,11 @@ const DesktopButton = ({
   action,
   ...rest
 }: Props): JSX.Element => {
+  const buttonRef = useRef(null);
   const { openWindow } = useActions();
   // size of icons is controlled by user through global state (redux/ui-reducer), this applies only to desktop button variant
   const { iconsSize } = useTypedSelector((state) => state.ui);
+  const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
 
   const handleOpenWindow = useCallback(() => {
     openWindow({
@@ -56,39 +60,64 @@ const DesktopButton = ({
     });
   }, [openWindow, iconSrc, text, willOpenWindowWith]);
 
-  return (
-    <Styled.ButtonContainer
-      onClick={action !== null ? action : handleOpenWindow}
-      iconSize={iconsSize}
-      variant={variant}
-      {...rest}
-    >
-      <Styled.Figure>
-        <div>
-          <Image
-            src={iconSrc}
-            alt={text}
-            height={iconSize.height}
-            width={iconSize.width}
-            objectFit={'contain'}
-            quality={100}
-          />
-        </div>
-        {['pinnedApp', 'desktop'].includes(variant) && (
-          <Styled.Figcaption>
-            <Paragraph margin={'0rem'}>{text}</Paragraph>
-          </Styled.Figcaption>
-        )}
+  const handleOpenContextMenu = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    setIsContextMenuOpen((p) => !p);
+    e.stopPropagation();
+    e.preventDefault();
+  };
 
-        {variant === 'recommendedApp' && (
-          <Styled.RecommendedAppDescription>
-            <Styled.FileName>{text}</Styled.FileName>
-            <Paragraph margin={'0rem'}>{details}</Paragraph>
-          </Styled.RecommendedAppDescription>
-        )}
-      </Styled.Figure>
-    </Styled.ButtonContainer>
+  useCloseModalIfClickedOutside({
+    isModalOpen: isContextMenuOpen,
+    closeModalFunction: () => setIsContextMenuOpen(false),
+    modalRef: buttonRef,
+  });
+
+  return (
+    <Styled.Wrapper>
+      <Styled.ButtonContainer
+        ref={buttonRef}
+        onClick={action !== null ? action : handleOpenWindow}
+        onContextMenu={handleOpenContextMenu}
+        iconSize={iconsSize}
+        variant={variant}
+        {...rest}
+      >
+        <Styled.Figure>
+          <div>
+            <Image
+              src={iconSrc}
+              alt={text}
+              height={iconSize.height}
+              width={iconSize.width}
+              objectFit={'contain'}
+              quality={100}
+            />
+          </div>
+          {['pinnedApp', 'desktop'].includes(variant) && (
+            <Styled.Figcaption>
+              <Paragraph margin={'0rem'}>{text}</Paragraph>
+            </Styled.Figcaption>
+          )}
+
+          {variant === 'recommendedApp' && (
+            <Styled.RecommendedAppDescription>
+              <Styled.FileName>{text}</Styled.FileName>
+              <Paragraph margin={'0rem'}>{details}</Paragraph>
+            </Styled.RecommendedAppDescription>
+          )}
+        </Styled.Figure>
+      </Styled.ButtonContainer>
+
+      {variant === 'desktop' && isContextMenuOpen && (
+        <AppContextMenu
+          appName={text}
+          iconSrc={iconSrc}
+          willOpenWindowWith={willOpenWindowWith}
+        />
+      )}
+    </Styled.Wrapper>
   );
 };
-
 export default DesktopButton;

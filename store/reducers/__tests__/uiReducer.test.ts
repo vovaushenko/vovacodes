@@ -19,6 +19,8 @@ const initialState: UIstate = {
   contextMenuCoords: { x: 0, y: 0 },
   sortDesktopIconsBy: 'size',
   iconsSize: 'medium',
+  removedApps: [],
+  compressedApps: [],
 };
 
 test('when previous state is undefined, returns initial state', () => {

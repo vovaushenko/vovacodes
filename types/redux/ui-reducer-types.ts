@@ -15,6 +15,8 @@ export interface UIstate {
   contextMenuCoords: { x: number; y: number };
   iconsSize: IconSize;
   sortDesktopIconsBy: IconSortVariant;
+  removedApps: string[];
+  compressedApps: string[];
 }
 
 export enum UIactionTypes {
@@ -48,6 +50,11 @@ export enum UIactionTypes {
 
   CHANGE_ICON_SIZE = 'CHANGE_ICON_SIZE',
 
+  DELETE_APP = 'DELETE_APP',
+  UNDO_DELETE_APP = 'UNDO_DELETE_APP',
+
+  COMPRESS_DESKTOP_APP = 'COMPRESS_DESKTOP_APP',
+
   CHANGE_BRIGHTNESS = 'CHANGE_BRIGHTNESS',
 }
 
@@ -74,4 +81,7 @@ export type UIaction =
       type: UIactionTypes.SORT_DESKTOP_ICONS;
       payload: IconSortVariant;
     }
-  | { type: UIactionTypes.CHANGE_ICON_SIZE; payload: IconSize };
+  | { type: UIactionTypes.CHANGE_ICON_SIZE; payload: IconSize }
+  | { type: UIactionTypes.DELETE_APP; payload: string }
+  | { type: UIactionTypes.UNDO_DELETE_APP }
+  | { type: UIactionTypes.COMPRESS_DESKTOP_APP; payload: string };

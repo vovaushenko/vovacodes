@@ -26,7 +26,12 @@ export const useContextMenuConfig = (): {
   systemTrayContextMenuContent: IContextMenuItem[];
 } => {
   const router = useRouter();
-  const { sortDesktopIcons, changeDesktopIconSize, openWindow } = useActions();
+  const {
+    sortDesktopIcons,
+    changeDesktopIconSize,
+    openWindow,
+    undoLastDeleteDesktopApp,
+  } = useActions();
 
   const reloadPage = () => router.reload();
 
@@ -105,7 +110,7 @@ export const useContextMenuConfig = (): {
     {
       id: 5,
       text: 'Undo Delete',
-      action: null,
+      action: undoLastDeleteDesktopApp,
       withIcon: <FiRotateCw className={'icon'} />,
     },
     {

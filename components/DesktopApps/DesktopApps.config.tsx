@@ -9,6 +9,7 @@ import TrashBin from '../Folders/TrashBin/TrashBin';
 import CommentsForm from '../CommentsForm/CommentsForm';
 import PortfolioLanding from '../Portfolio/PortfolioLanding/PortfolioLanding';
 import PortfolioLayout from '../Portfolio/PortfolioLayout/PortfolioLayout';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 /**
  * Custom hook used to get initial configuration for desktop
@@ -19,10 +20,12 @@ export const useDesktopApps = (): {
   sortedAlphabetically: IDesktopApp[];
   sortedByDate: IDesktopApp[];
   sortedBySize: IDesktopApp[];
+  appsInTrashBin: IDesktopApp[];
 } => {
   const router = useRouter();
+  const { removedApps, compressedApps } = useTypedSelector((state) => state.ui);
 
-  const desktopAppsList: IDesktopApp[] = [
+  const initialDesktopAppsList: IDesktopApp[] = [
     {
       id: 1,
       text: 'Figma',
@@ -109,6 +112,29 @@ export const useDesktopApps = (): {
       action: null,
     },
   ];
+  // Here we dynamically create copies of compressed apps. By clicking compress, user adds app to global list of compressed in redux
+  // Then we filter out apps that should be compressed by their name (filter), and next we map over them and change their text, icon and other params
+  const compressedAppsList = [...initialDesktopAppsList]
+    .filter((app) => compressedApps.includes(app.text))
+    .map((compressedApp) => ({
+      ...compressedApp,
+      text: compressedApp.text + '.zip',
+      iconSrc: '/assets/icons/Desktop/zip.png',
+      willOpenWindowWith: null,
+      action: null,
+      id: compressedApp.id + 777,
+    }));
+
+  // Here is apps that are currently on desktop (consist of apps and their compressed copies)
+  // User can delete an app from desktop and we will filter it out by name. Names of removed apps are stored in global store (removedApps here)
+  const desktopAppsList = [
+    ...initialDesktopAppsList,
+    ...compressedAppsList,
+  ].filter((app) => !removedApps.includes(app.text));
+
+  const appsInTrashBin = [...initialDesktopAppsList].filter((app) =>
+    removedApps.includes(app.text)
+  );
 
   const sortedAlphabetically = [...desktopAppsList].sort((a, b) =>
     a.text.toLowerCase().localeCompare(b.text.toLowerCase())
@@ -120,5 +146,6 @@ export const useDesktopApps = (): {
     sortedAlphabetically,
     sortedByDate,
     sortedBySize,
+    appsInTrashBin,
   };
 };

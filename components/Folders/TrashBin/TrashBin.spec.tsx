@@ -1,14 +1,15 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import TrashBin from './TrashBin';
 import DesktopButton from '../../DesktopButton/DesktopButton';
+import { withReduxAndStyledProviders } from '../../../test/testUtils';
 
 /**
  * Setup function for the component
  * @returns {JSX.Element} ShallowWrapper
  */
 const setup = () => {
-  return shallow(<TrashBin />);
+  return mount(withReduxAndStyledProviders(<TrashBin />));
 };
 
 describe('TrashBin', () => {

@@ -18,7 +18,6 @@ const desktopButtonStyles = css<DesktopBtnProps>`
     background: ${({ theme }) => theme.colors.buttons.desktopButton.hover};
   }
 
-  transform: scale(1);
   transform: ${({ iconSize }) =>
     iconSize === 'small'
       ? 'scale(0.8)'
@@ -61,6 +60,8 @@ const recommendedAppButtonStyles = css`
 `;
 
 export const ButtonContainer = styled.button<Props>`
+  width: 100%;
+  position: relative;
   /*  display  */
   display: flex;
   justify-content: center;
@@ -102,4 +103,11 @@ export const FileName = styled.h4`
   color: ${({ theme }) => theme.primary.text};
   font-size: ${({ theme }) => theme.fontSize.medium};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
+`;
+
+export const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

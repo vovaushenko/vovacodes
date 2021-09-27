@@ -8,11 +8,12 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 export interface IContextMenuItem {
   id: number;
   text: string;
-  action: null | (() => void);
+  action: null | (() => void) | ((appName: string) => void);
   iconSrc?: string;
   withIcon?: JSX.Element;
   hoverMenuItems?: IContextMenuItem[];
   withUnderline?: boolean;
+  appName?: string;
 }
 
 /**
@@ -27,6 +28,7 @@ const ContextMenuItem = ({
   action,
   withUnderline,
   withIcon,
+  appName,
 }: IContextMenuItem): JSX.Element => {
   const containerRef = useRef<HTMLLIElement>(null);
   const { isContextMenuOpen } = useTypedSelector((state) => state.ui);
@@ -34,7 +36,7 @@ const ContextMenuItem = ({
   const isHovering = useHover(containerRef);
 
   const handleClick = () => {
-    action && action();
+    action && action(appName ?? '');
   };
 
   return (

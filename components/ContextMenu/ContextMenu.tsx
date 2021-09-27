@@ -27,7 +27,7 @@ const ContextMenu = ({
   const { closeContextMenu } = useActions();
 
   useCloseModalIfClickedOutside({
-    isModalOpen: true,
+    isModalOpen: isOpen,
     modalRef: containerRef,
     closeModalFunction: closeContextMenu,
   });
