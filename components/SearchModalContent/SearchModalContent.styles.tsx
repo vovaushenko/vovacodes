@@ -24,8 +24,9 @@ export const TopApp = styled.li`
   display: grid;
   grid-template-columns: 1fr;
 
-  button {
+  > div {
     width: 100%;
+    border-radius: ${({ theme }) => theme.borderRadius};
     height: auto;
     padding: 0.75rem 1rem;
     background-color: ${({ theme }) =>
@@ -39,7 +40,7 @@ export const TopApp = styled.li`
 export const QuickSearches = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.space.md};
+  gap: ${({ theme }) => theme.space.xxxs};
 `;
 
 export const QuickSearch = styled.button`
@@ -48,6 +49,13 @@ export const QuickSearch = styled.button`
   background: transparent;
   border: 0;
   cursor: pointer;
+  padding: ${({ theme }) => `${theme.space.xxs} ${theme.space.xxxs}`};
+  border-radius: ${({ theme }) => theme.borderRadius};
+
+  :hover {
+    background-color: ${({ theme }) =>
+      theme.colors.buttons.desktopButton.hover};
+  }
 
   .icon {
     font-size: 1.25rem;

@@ -9,6 +9,9 @@ import { bindActionCreators, Dispatch } from 'redux';
 import Loader from '../components/Loader/Loader';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
+import { useMediaQuery } from '@react-hook/media-query';
+import PortfolioLanding from '../components/Portfolio/PortfolioLanding/PortfolioLanding';
+import PortfolioLayout from '../components/Portfolio/PortfolioLayout/PortfolioLayout';
 
 interface ServerProps {
   title: string;
@@ -23,6 +26,7 @@ interface ServerProps {
  *@returns {JSX.Element} - Rendered Clock component
  */
 const Home: NextPage<ServerProps> = ({ title }) => {
+  const isOnMobile = useMediaQuery('only screen and (max-width: 768px)');
   const { shouldIntroBeShown } = useTypedSelector((state) => state.ui);
   const [isLoading, setIsLoading] = useState(shouldIntroBeShown);
   const { notShowIntroAgain } = useActions();
@@ -38,12 +42,18 @@ const Home: NextPage<ServerProps> = ({ title }) => {
   return (
     <>
       <Loader isOnScreen={isLoading} loadingDuration={LOADING_INTRO_DURATION} />
-      <DesktopLayout
-        title={title}
-        entranceAnimationDelay={LOADING_INTRO_DURATION + 200}
-      >
-        <Desktop />
-      </DesktopLayout>
+      {isOnMobile ? (
+        <PortfolioLayout title={'Vova Ushenko | Full-Stack Web Developer'}>
+          <PortfolioLanding />
+        </PortfolioLayout>
+      ) : (
+        <DesktopLayout
+          title={title}
+          entranceAnimationDelay={LOADING_INTRO_DURATION + 200}
+        >
+          <Desktop />
+        </DesktopLayout>
+      )}
     </>
   );
 };

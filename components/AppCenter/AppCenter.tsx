@@ -9,6 +9,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import Bing from '../Apps/Bing/Bing';
 import { useActions } from '../../hooks/useActions';
 import AllAppsModal from '../AllAppsModal/AllAppsModal';
+import { useRouter } from 'next/router';
 
 /**
  *Renders AppCenter content with search bar, pinned apps and recommended section
@@ -17,6 +18,7 @@ import AllAppsModal from '../AllAppsModal/AllAppsModal';
  *@returns {JSX.Element} - Rendered AppCenter component
  */
 const AppCenter = (): JSX.Element => {
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isAllAppsOnScreen, setIsAllAppsOnScreen] = useState<boolean>(true);
   const { openWindow } = useActions();
@@ -67,7 +69,11 @@ const AppCenter = (): JSX.Element => {
 
             <Styled.SectionHeader margin={'2rem 0 0 0'}>
               <h3>Recommended</h3>
-              <Button withChevron={true} variant={'standardBtn'}>
+              <Button
+                withChevron={true}
+                variant={'standardBtn'}
+                onClick={() => setIsAllAppsOnScreen((p) => !p)}
+              >
                 More
               </Button>
             </Styled.SectionHeader>
@@ -82,6 +88,7 @@ const AppCenter = (): JSX.Element => {
               isActive={false}
               hasBadge={false}
               width={'45px'}
+              onClick={() => router.push('/portfolio')}
             />
             <Styled.PowerOff>
               <FiPower className={'power-off'} />

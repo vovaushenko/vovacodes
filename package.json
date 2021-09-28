@@ -21,6 +21,7 @@
     }
   },
   "dependencies": {
+    "@react-hook/media-query": "^1.1.1",
     "@sendgrid/mail": "^7.4.6",
     "@types/react-calendar": "^3.4.3",
     "axios": "^0.21.4",

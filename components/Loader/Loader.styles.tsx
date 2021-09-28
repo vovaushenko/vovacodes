@@ -58,4 +58,8 @@ export const ScrollText = styled.div`
       transform: translateY(-600%);
     }
   }
+
+  @media ${({ theme }) => theme.media.phone} {
+    font-size: 1.5rem;
+  }
 `;

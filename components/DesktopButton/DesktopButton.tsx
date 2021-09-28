@@ -13,8 +13,8 @@ export interface Props extends React.ComponentPropsWithoutRef<'button'> {
   iconSrc: string;
   iconSize: { height: number; width: number };
   text: string;
-  details?: string;
   action: null | (() => void);
+  details?: string;
 }
 
 /**

@@ -39,6 +39,7 @@ export const HeroLeftColumn = styled.div`
 
   @media ${({ theme }) => theme.media.tablet} {
     flex: 1;
+    padding: 1rem 2rem;
     p: {
       font-size: 1.25rem;
     }

@@ -66,7 +66,6 @@ export const ButtonContainer = styled.button<Props>`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   /*  styling  */
   background: transparent;

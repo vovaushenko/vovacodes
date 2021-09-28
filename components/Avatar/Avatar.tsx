@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './Avatar.styles';
 
-export interface Props {
+export interface Props extends React.ComponentPropsWithoutRef<'div'> {
   src: string;
   firstName: string;
   lastName: string;
