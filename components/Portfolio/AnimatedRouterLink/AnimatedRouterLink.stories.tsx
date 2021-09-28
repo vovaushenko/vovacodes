@@ -14,6 +14,7 @@ Standard.args = {
   href: '/hey',
   hoverText: 'Hover Text',
   text: 'Hover over me',
+  animationTimeout: 100,
 };
 export const Highlight = Template.bind({});
 Highlight.args = {
@@ -21,4 +22,5 @@ Highlight.args = {
   href: '/hey',
   hoverText: 'Hover Text',
   text: 'Hover over me',
+  animationTimeout: 200,
 };

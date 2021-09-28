@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  z-index: ${({ theme }) => theme.zIndex.modal};
   position: absolute;
   top: 90%;
   display: flex;
@@ -9,10 +10,7 @@ export const Container = styled.div`
   left: 45%;
 
   animation: 2.35s linear 0s infinite normal none running scrollDown;
-
-  .icon {
-    font-size: 1.25rem;
-  }
+  animation-delay: 1000ms;
 
   @keyframes scrollDown {
     50% {

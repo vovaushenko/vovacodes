@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Props } from './AnimatedRouterLink';
 import { trackingInExpand } from '../../../design-system/reusableCss';
 
-type LinkProps = Pick<Props, 'variant'>;
+type LinkProps = Pick<Props, 'variant' | 'animationTimeout'>;
 
 const standardStyles = css`
   color: rgb(255, 255, 255, 1);
@@ -48,6 +48,8 @@ export const A = styled.a<LinkProps>`
     variant === 'highlight' ? highlightStyles : standardStyles};
 
   animation: ${trackingInExpand} 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+
+  animation-delay: ${({ animationTimeout }) => `${animationTimeout}ms`};
 
   @media ${({ theme }) => theme.media.phone} {
     font-size: 5rem;

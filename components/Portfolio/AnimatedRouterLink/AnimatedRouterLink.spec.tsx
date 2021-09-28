@@ -16,6 +16,7 @@ const setup = () => {
       text={'TOMATO'}
       hoverText={'ASPARAGUS'}
       href={'/CUCUMBER'}
+      animationTimeout={0}
     />
   );
 };

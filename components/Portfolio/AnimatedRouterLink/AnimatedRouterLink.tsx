@@ -8,6 +8,7 @@ export interface Props {
   text: string;
   hoverText: string;
   href: string;
+  animationTimeout: number;
 }
 
 /**
@@ -21,13 +22,18 @@ const AnimatedRouterLink = ({
   href,
   text,
   hoverText,
+  animationTimeout,
 }: Props): JSX.Element => {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const isHovering = useHover(linkRef);
 
   return (
     <Link href={href} passHref>
-      <Styled.A ref={linkRef} variant={variant}>
+      <Styled.A
+        ref={linkRef}
+        variant={variant}
+        animationTimeout={animationTimeout}
+      >
         {isHovering ? hoverText : text}
       </Styled.A>
     </Link>
