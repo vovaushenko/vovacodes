@@ -5,6 +5,7 @@ import * as LikeActionCreators from './like-action-creators';
 import * as ContactActionCreators from './contact-action-creators';
 import * as NewsActionCreators from './news-action-creators';
 import * as CommentActionCreators from './comments-action-creators';
+import * as ArticleActionCreators from './articles-action-creators';
 
 /**
  * This object combines all available redux action creators
@@ -18,6 +19,7 @@ export const CombinedActionCreators = {
   ...ContactActionCreators,
   ...NewsActionCreators,
   ...CommentActionCreators,
+  ...ArticleActionCreators,
 };
 
 export type CombinedActionsType = typeof CombinedActionCreators;

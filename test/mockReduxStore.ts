@@ -49,4 +49,10 @@ export const mockReduxStore: LocalRootState = {
     isCommentPersisted: false,
     isLoading: false,
   },
+
+  articles: {
+    articles: [],
+    areArticlesLoading: false,
+    error: null,
+  },
 };
