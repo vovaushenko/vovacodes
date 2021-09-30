@@ -8,11 +8,12 @@ export interface DevToArticle {
   published_at: string;
   slug: string;
   url: string;
-  comments_count: string;
-  public_reactions_count: string;
-  positive_reactions_count: string;
-  page_views_count: string;
+  comments_count: number;
+  public_reactions_count: number;
+  positive_reactions_count: number;
+  page_views_count: number;
   cover_image: string;
+  tag_list: string[];
 }
 
 /**

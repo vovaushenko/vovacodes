@@ -3,7 +3,7 @@ import * as Styled from './SectionHeader.styles';
 
 export interface Props {
   variant: 'large' | 'medium' | 'small' | 'extraSmall';
-  headerText: string;
+  headerText?: string;
   margin: string;
   color: string;
   withGradient?: boolean;
@@ -19,13 +19,14 @@ export interface Props {
  *@param {boolean} withGradient - specifies whether gradient color should be applied
  *@returns {JSX.Element} - Rendered TextHeader component
  */
-const TextHeader = ({
+const TextHeader: React.FunctionComponent<Props> = ({
   margin,
   headerText,
   color,
   variant,
   withGradient,
-}: Props): JSX.Element => {
+  children,
+}): JSX.Element => {
   return (
     <Styled.H1
       variant={variant}
@@ -33,7 +34,7 @@ const TextHeader = ({
       color={color}
       withGradient={withGradient}
     >
-      {headerText}
+      {headerText ?? children}
     </Styled.H1>
   );
 };

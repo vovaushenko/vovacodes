@@ -6,6 +6,7 @@ import { wrapper } from '../../store';
 import { bindActionCreators, Dispatch } from 'redux';
 import { loadLatestArticles } from '../../store/action-creators/articles-action-creators';
 import { connect } from 'react-redux';
+import AllDevToArticles from '../../components/Portfolio/AllDevToArticles/AllDevToArticles';
 
 interface ServerProps {
   title: string;
@@ -20,7 +21,11 @@ interface ServerProps {
  */
 
 const ArticlesPage: NextPage<ServerProps> = ({ title }) => {
-  return <PortfolioLayout title={title}></PortfolioLayout>;
+  return (
+    <PortfolioLayout title={title}>
+      <AllDevToArticles />
+    </PortfolioLayout>
+  );
 };
 
 export const getStaticProps: GetStaticProps = wrapper.getStaticProps(
