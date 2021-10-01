@@ -7,6 +7,7 @@ import * as Styled from './AllDevToArticles.styles';
 import ScrollHint from '../ScrollHint/ScrollHint';
 import { store } from '../../../store';
 import DevToArticle from '../DevToArticle/DevToArticle';
+import '../../__mocks__/matchMedia';
 
 /**
  * Setup function for the component
