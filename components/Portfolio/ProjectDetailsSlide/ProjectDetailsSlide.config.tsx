@@ -5,24 +5,24 @@ export const projectDetailsQuotes: ICarouselQuote[] = [
     id: 4,
     title: 'Sneaker Maniacs',
     quote:
-      'Founded in 2011, InVision is the digital product design platform powering the world’s best user experiences. InVision gives digital product teams everything they need to effortlessly navigate every stage of their process, from ideation, design, prototyping, and design management.',
+      'This open-source project is heavily-inspired by sneakerhead.com - my favorite online shop. I thought it would be cool to not only build  a modern, similarly-looking web platform from scratch, but also enrich it with a number of unique features.',
   },
   {
     id: 1,
     title: 'The Goal',
     quote:
-      "The primary app idea is to allow users to easily create, share and count down to their moments. Whether it's a wedding, a holiday or just a night out with friends. There are many similar apps already on the market, however most of them provide a very complex, buggy solutions cluttered with ads.",
+      'By using the full power of Next.js, build an inclusive and rich web commerce application that has all important features, namely stunning design, authentication, user screens, admin dashboards etc.',
   },
   {
     id: 2,
     title: 'My role',
     quote:
-      "I have been the lead designer for the iOS app from the very beginning, defining the brand and the frameworks and the core user experience. I designed most of the marketing materials, created promotional videos and designed and coded the app's websites.",
+      'I have been the sole designer, front and back end developer from the very beginning, defining the look and the portfolio of used technologies and frameworks. I designed and built the app from the ground up.',
   },
   {
     id: 3,
     title: 'The Outcome',
     quote:
-      'Inspect has been a large source of growth for the business, especially in the enterprise market and continues to be a point of discussion when talking to customers. The launch was very well received by customers and showed high user retention.',
+      'A rich and appealing web experience that has all the bells and whistles of modern application - dark/light themes, authentication, static and dynamic page pre-generation and more. Consider visiting, registering and trying!',
   },
 ];

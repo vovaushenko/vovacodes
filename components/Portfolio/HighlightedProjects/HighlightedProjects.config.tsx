@@ -18,7 +18,7 @@ export const useHighlightedProjectsData = (): {
       slideNumberImg: '/assets/portfolio/1.svg',
       projectTitle: 'Sneaker Maniacs',
       projectDescription:
-        'Coffee-shop is a custom eCommerce platform built with React, Redux, Node, Express & MongoDB. Front-end is built with React, React-Bootstrap UI library and Redux.',
+        'Sneaker-maniacs is a custom e-commerce platform powered by Next.js, Redux and MongoDB. My main goal was to build a web app that employs the best latest practices and on mobile feels like a rich native application. Try it out!',
       slideHeight: '100vh',
       projectImg: '/assets/portfolio/projectOne/SneakerManiacs.png',
       projectMobileImg: '/assets/portfolio/projectOne/sneakerManiacsPhone.png',

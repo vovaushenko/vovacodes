@@ -31,20 +31,20 @@ const Resume = (): JSX.Element => {
         <Styled.LeftColumn>
           <Styled.ContactInfo>
             <Styled.ContactLink
-              href={'https://vovaushenko.dev/'}
+              href={'https://www.vovacodes.ca/'}
               target="_blank"
               rel="noopener"
             >
               <FiGlobe />
-              vovaushenko.dev
+              vovacodes.ca
             </Styled.ContactLink>
 
             <Styled.ContactLink href="mailto: volodymyr.ushenko@gmail.com">
               <FiMail />
-              volodymyr.ushenko@gmail.com
+              hello@vova.codes.ca
             </Styled.ContactLink>
             <p>Toronto, Canada 🇨🇦</p>
-            <p>1509 14 Avenue Southwest D, Calgary</p>
+            <p>Mississauga, Ontario</p>
           </Styled.ContactInfo>
 
           <TextList

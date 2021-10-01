@@ -75,7 +75,7 @@ export const otherSkills: { text: string; iconUrl: string }[] = [
     iconUrl: '/assets/portfolio/skills/figma-original.svg',
   },
   {
-    text: 'Webpack Parcel ESBuild',
+    text: 'Webpack, Lerna, Parcel',
     iconUrl: '/assets/portfolio/skills/webpack-original.svg',
   },
 ];

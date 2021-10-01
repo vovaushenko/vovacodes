@@ -38,7 +38,7 @@ const TextCarousel = ({ quotes }: Props): JSX.Element => {
   useEffect(() => {
     const interval = setInterval(() => {
       setQuoteID((prev) => (prev + 1 >= quotes.length ? 0 : prev + 1));
-    }, 5000);
+    }, 10000);
 
     setIntervalID(interval);
 

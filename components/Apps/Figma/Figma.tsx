@@ -10,7 +10,7 @@ const Figma = (): JSX.Element => {
   return (
     <Iframe
       iframeSrc={
-        'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FSNxwYaQzNQhgDNT04NTAnt%2Fprototyping-in-figma'
+        'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fltj8pcOoozkTxq8aLWVW51%2FPortfolio-assets'
       }
       iframeSize={{ width: '100%', height: '100%' }}
       title={'Figma'}

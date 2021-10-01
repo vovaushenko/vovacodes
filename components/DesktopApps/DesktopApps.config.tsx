@@ -46,14 +46,14 @@ export const useDesktopApps = (): {
     },
     {
       id: 3,
-      text: 'This PC',
+      text: 'Vova ✨',
       willOpenWindowWith: (
         <PortfolioLayout title={'Vova Ushenko | Full-Stack Web Developer'}>
           <PortfolioLanding />
         </PortfolioLayout>
       ),
       variant: 'desktop',
-      iconSrc: '/assets/icons/Desktop/this_pc.webp',
+      iconSrc: '/assets/icons/Desktop/user-folder.png',
       iconSize: { width: 40, height: 40 },
       action: null,
     },
@@ -98,8 +98,11 @@ export const useDesktopApps = (): {
       text: 'Trash',
       willOpenWindowWith: <TrashBin />,
       variant: 'desktop',
-      iconSrc: '/assets/icons/Desktop/recyclebin.webp',
-      iconSize: { width: 40, height: 40 },
+      iconSrc:
+        removedApps.length > 0
+          ? '/assets/icons/Desktop/recycle-bin-full.png'
+          : '/assets/icons/Desktop/recycle-bin-empty.png',
+      iconSize: { width: 42, height: 42 },
       action: null,
     },
     {
