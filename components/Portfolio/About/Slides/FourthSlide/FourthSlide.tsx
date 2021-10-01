@@ -4,6 +4,7 @@ import SectionHeader from '../../../Typography/SectionHeader/SectionHeader';
 import PortfolioParagraph from '../../../Typography/PortfolioParagraph/PortfolioParagraph';
 import Slide from '../../../Slide/Slide';
 import Image from 'next/image';
+import WithSparkles from '../../../WithSparkles/WithSparkles';
 
 /**
  *Renders fourth slide in About Portfolio presentation
@@ -23,31 +24,39 @@ const FourthSlide = (): JSX.Element => {
           />
           <PortfolioParagraph
             margin={'1rem 0'}
-            paragraphText={
-              "I've built products for companies and businesses around the globe ranging from marketing websites to complex solutions and enterprise apps with focus on fast, elegant and accessible user experiences."
-            }
             withDarkColor={false}
             variant={'large'}
             withAnimatedPresence={true}
-          />
+          >
+            🌠 I’ve worked for several companies and universities around the
+            globe and built products ranging from marketing websites to complex
+            enterprise apps with the focus on elegant, performant and
+            user-friendly experiences.
+          </PortfolioParagraph>
           <PortfolioParagraph
             margin={'1rem 0'}
-            paragraphText={
-              "I've created full-stack projects with React & Node.js. I Have excellent knowledge of modern JS stack for building complex user interfaces for the web platform."
-            }
             withDarkColor={false}
             variant={'large'}
             withAnimatedPresence={true}
-          />
+          >
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            🌠 I've constructed full-stack web-solutions with React, Node and
+            Next.js. Although I’ve worked mainly as a front-end developer, I am{' '}
+            <WithSparkles color={'yellow'}>not a typical one</WithSparkles> .
+            I’ve always been immersed in full-stack development, building api’s
+            and backends for frontends using Node.
+          </PortfolioParagraph>
           <PortfolioParagraph
             margin={'1rem 0'}
-            paragraphText={
-              'Currently, I work at Shopify as a Senior UX Developer and Accessibility advocate crafting thoughtful and inclusive experiences that adhere to web standards for over a million merchants across the world.'
-            }
             withDarkColor={false}
             variant={'large'}
             withAnimatedPresence={true}
-          />
+          >
+            🌠 Currently, I work at Chernivtsi National University as a
+            full-stack web-developer crafting well-thought and elegant
+            educational experiences for almost thirty thousand students and
+            employees.
+          </PortfolioParagraph>
         </div>
         {/*  PERSON */}
         <div className="right-column">
@@ -55,11 +64,6 @@ const FourthSlide = (): JSX.Element => {
             position={{ left: '0', right: '0' }}
             className={'person-wrapper'}
           >
-            <Styled.ScrollTextWrapper>
-              <div className="scroll-text">
-                <p>☕ Working from home ☕ </p>
-              </div>
-            </Styled.ScrollTextWrapper>
             <Styled.FloatingImgContainer variant={'person'}>
               <Image
                 src={'/assets/portfolio/work-from-home.svg'}

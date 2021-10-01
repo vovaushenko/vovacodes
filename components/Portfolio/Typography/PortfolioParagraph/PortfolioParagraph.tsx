@@ -3,7 +3,7 @@ import * as Styled from './PortfolioParagraph.styles';
 
 export interface Props {
   margin: string;
-  paragraphText: string;
+  paragraphText?: string;
   withDarkColor: boolean;
   variant: 'large' | 'medium' | 'small';
   withAnimatedPresence: boolean;
@@ -19,13 +19,14 @@ export interface Props {
  *@param {boolean} withAnimatedPresence - specifies whether paragraph have default animation
  *@returns {JSX.Element} - Rendered PortfolioParagraph component
  */
-const PortfolioParagraph = ({
+const PortfolioParagraph: React.FunctionComponent<Props> = ({
   margin,
   paragraphText,
   withDarkColor,
   variant,
   withAnimatedPresence,
-}: Props): JSX.Element => {
+  children,
+}): JSX.Element => {
   return (
     <Styled.P
       margin={margin}
@@ -33,7 +34,7 @@ const PortfolioParagraph = ({
       variant={variant}
       withAnimatedPresence={withAnimatedPresence}
     >
-      {paragraphText}
+      {paragraphText ?? children}
     </Styled.P>
   );
 };

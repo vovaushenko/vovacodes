@@ -24,15 +24,13 @@ const SixthSlide = (): JSX.Element => {
           <div className="content-wrapper">
             <SectionHeader
               variant={'small'}
-              headerText={'I build & design stuff'}
+              headerText={'I build & create'}
               margin={'0'}
               color={'#2bff88'}
             />
             <PortfolioParagraph
               margin={'2rem 0 4rem 0'}
-              paragraphText={
-                'Open source projects, web apps and experimentals.'
-              }
+              paragraphText={`Web applications, open source projects, tutorials that I'm more than happy to share`}
               withDarkColor={false}
               variant={'large'}
               withAnimatedPresence={true}
@@ -48,13 +46,15 @@ const SixthSlide = (): JSX.Element => {
           <div className="content-wrapper">
             <SectionHeader
               variant={'small'}
-              headerText={'I write, sometimes'}
+              headerText={'I write & advise'}
               margin={'0'}
               color={'#2bff88'}
             />
             <PortfolioParagraph
               margin={'2rem 0 4rem 0'}
-              paragraphText={'About design, frontend dev, learning and life'}
+              paragraphText={
+                'About web-development, frontend, typescript and the importance of balance'
+              }
               withDarkColor={false}
               variant={'large'}
               withAnimatedPresence={true}

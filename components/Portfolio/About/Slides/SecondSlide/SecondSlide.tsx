@@ -3,6 +3,7 @@ import * as Styled from './SecondSlide.styles';
 import SectionHeader from '../../../Typography/SectionHeader/SectionHeader';
 import PortfolioParagraph from '../../../Typography/PortfolioParagraph/PortfolioParagraph';
 import Slide from '../../../Slide/Slide';
+import WithSparkles from '../../../WithSparkles/WithSparkles';
 
 /**
  *Renders second slide in About Portfolio presentation
@@ -23,19 +24,25 @@ const SecondSlide = (): JSX.Element => {
 
           <PortfolioParagraph
             margin={'0'}
-            paragraphText={
-              'I am a multi-talented personality driven by the quality of code and software. You can also call me a frontend, backend or full-stack web developer or by any other market defined title. I am devoted to constructing inclusive, rich web experiences for next-gen web platforms.'
-            }
             withDarkColor={false}
             variant={'large'}
             withAnimatedPresence={true}
-          />
+          >
+            💫 I am a{' '}
+            <WithSparkles color={'yellow'}>
+              multifaceted personality
+            </WithSparkles>{' '}
+            driven by the exploration of unknown. You can also call me a
+            frontend, backend, full-stack web developer or by any other
+            market-defined title. I am devoted to constructing inclusive, rich
+            web experiences for next-gen web platforms.
+          </PortfolioParagraph>
         </div>
         <div className="right-column">
           <PortfolioParagraph
             margin={'0'}
             paragraphText={
-              'I have excellent knowledge of modern JS stack for building complex user interfaces for the web platform. In crafting JavaScript applications, I have a strong passion to build elegant, performant, scalable and user-friendly experiences. For the last 2 years I mostly worked with the React stack and building products from the ground up 🚀.'
+              '🚀 I have excellent knowledge of modern JS stack for building complex user interfaces for the web platform. In crafting JavaScript applications, I have a strong passion to build elegant, performant, scalable and user-friendly experiences.'
             }
             withDarkColor={false}
             variant={'large'}

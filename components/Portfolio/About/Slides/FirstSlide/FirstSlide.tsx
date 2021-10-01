@@ -4,6 +4,7 @@ import PortfolioParagraph from '../../../Typography/PortfolioParagraph/Portfolio
 import ScrollHint from '../../../ScrollHint/ScrollHint';
 import * as Styled from './FirstSlide.styles';
 import Slide from '../../../Slide/Slide';
+import WithSparkles from '../../../WithSparkles/WithSparkles';
 
 /**
  *Renders first slide in About Portfolio presentation
@@ -23,11 +24,13 @@ const FirstSlide = (): JSX.Element => {
 
         <PortfolioParagraph
           margin={'1rem 0'}
-          paragraphText={`Designing and building of simple, intuitive and scalable web products is my calling.`}
           withDarkColor={false}
           variant={'large'}
           withAnimatedPresence={true}
-        />
+        >
+          Designing and building of simple, intuitive and scalable web products
+          is my <WithSparkles color={'yellow'}>calling.</WithSparkles>
+        </PortfolioParagraph>
 
         <ScrollHint />
       </Styled.FirstSlide>

@@ -10,7 +10,7 @@ export const FourthSlide = styled.div`
   min-height: 100vh;
 
   .left-column {
-    flex: 0.4;
+    flex: 0.5;
     padding: 3rem 2rem 3rem 10rem;
 
     h1 {
@@ -20,7 +20,7 @@ export const FourthSlide = styled.div`
   }
 
   .right-column {
-    flex: 0.6;
+    flex: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,37 +120,4 @@ export const FloatingImgContainer = styled.figure<FloatingImgContainerProps>`
   position: relative;
   ${({ variant }) => variant === 'person' && personAnimation};
   ${({ variant }) => variant === 'tech' && reactAnimation};
-`;
-
-export const ScrollTextWrapper = styled.div`
-  overflow: hidden;
-  width: 60%;
-  position: absolute;
-  top: 25%;
-  left: 1rem;
-
-
-  transform: rotate(20deg);
-
-
-  p {
-    font-size: 2rem;
-    color: ${({ theme }) => theme.portfolio.primaryColor.light};
-    font-weight: ${({ theme }) => theme.fontWeight.semibold};
-  }
-
-
-  .scroll-text {
-    translateX(100%);
-    transform: translateX(100%);
-    animation: my-animation 25s linear infinite;
-    @keyframes my-animation {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
-  }
 `;
