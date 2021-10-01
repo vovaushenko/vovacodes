@@ -9,6 +9,10 @@ import ScrollHint from '../ScrollHint/ScrollHint';
 import ProjectDesktopSlide from '../ProjectDesktopSlide/ProjectDesktopSlide';
 import ProjectDetailsSlide from '../ProjectDetailsSlide/ProjectDetailsSlide';
 import WaveDivider from '../WaveDivider/WaveDivider';
+import {
+  opticsProjectDetailQuotes,
+  projectDetailsQuotes,
+} from '../ProjectDetailsSlide/ProjectDetailsSlide.config';
 
 /**
  *Renders sections with some of my projects
@@ -108,6 +112,7 @@ const HighlightedProjects = (): JSX.Element => {
         slideBgColor={'#010606'}
         projectName={projectOne.projectTitle}
         projectMobileImg={projectOne.projectMobileImg}
+        projectQuotes={projectDetailsQuotes}
       />
       <WaveDivider
         waveImg={'/assets/portfolio/blob-1.svg'}
@@ -120,6 +125,7 @@ const HighlightedProjects = (): JSX.Element => {
         slideBgColor={'#4831d4'}
         projectName={projectTwo.projectTitle}
         projectMobileImg={projectTwo.projectMobileImg}
+        projectQuotes={opticsProjectDetailQuotes}
       />
     </Styled.Container>
   );

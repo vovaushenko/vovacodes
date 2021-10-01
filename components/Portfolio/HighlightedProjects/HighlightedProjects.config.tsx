@@ -1,4 +1,3 @@
-import { IHighlightedProject } from '../../../types/portfolio';
 import React from 'react';
 import {
   SiMongodb,
@@ -9,6 +8,7 @@ import {
   SiStorybook,
   SiTypescript,
 } from 'react-icons/si';
+import { IHighlightedProject } from '../../../types/portfolio';
 
 export const useHighlightedProjectsData = (): {
   highlightedProjects: IHighlightedProject[];
@@ -42,11 +42,11 @@ export const useHighlightedProjectsData = (): {
         <SiStorybook key={6} className={'tech-icon'} />,
       ],
     },
+
     {
       slideNumberImg: '/assets/portfolio/2.svg',
-      projectTitle: 'Chernivtsi National University',
-      projectDescription:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. laboriosam perferendis! Sint, odit natus? Asperiores aliquid eveniet ratione repellendus.',
+      projectTitle: 'Department of Optics | Web-portal',
+      projectDescription: `A sneak peak of a project that I'm currently building. This is a full-stack portal with 70+ pages designed and built for the department of Optics (Chernivtsi National University). It is powered by Next.js and Node.js on backend.`,
       slideHeight: '100vh',
       projectImg: '/assets/portfolio/projectTwo/vpsFullHd.png',
       projectMobileImg: '/assets/portfolio/projectTwo/vpsMobile.png',
@@ -65,7 +65,6 @@ export const useHighlightedProjectsData = (): {
       ],
     },
   ];
-
   return {
     highlightedProjects,
   };

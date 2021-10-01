@@ -3,6 +3,28 @@
 =============================================*/
 
 /**
+ *@EXPORTS
+ */
+
+export {
+  darkPrimaryColors,
+  lightPrimaryColors,
+  darkGrayColors,
+  lightGrayColors,
+  darkUtilityColors,
+  lightUtilityColors,
+  fontSizes,
+  allGradients,
+  fontWeights,
+  responsiveBreakPoints,
+  spacing,
+  borderRadii,
+  boxShadows,
+  zIndexes,
+  portfolioStyles,
+};
+
+/**
  * TABLE OF CONTENTS
  *
  * COLORS
@@ -39,29 +61,32 @@
 =                  Colors                     =
 =============================================*/
 
-export const darkPrimaryColors = {
+const darkPrimaryColors = {
   background: '#000000',
   text: 'rgba(255, 255, 255, 0.835)',
 };
 
-export const lightPrimaryColors = {
+const lightPrimaryColors: IPrimaryColors = {
   background: '#ffffff',
   text: '#000000',
 };
 
-export const darkGrayColors = {
+export type IPrimaryColors = typeof darkPrimaryColors;
+
+const darkGrayColors = {
   dark: 'rgba(48,49,51,.774)',
   light: '#383838',
   lightest: '#444444',
 };
 
-export const lightGrayColors = {
+const lightGrayColors: IGrayColors = {
   dark: 'rgba(255,255,255,.658)',
   light: '#383838',
   lightest: '#444444',
 };
+export type IGrayColors = typeof darkGrayColors;
 
-export const darkUtilityColors = {
+const darkUtilityColors = {
   appCenter: {
     bg: 'rgba(28, 33, 39, 0.8)',
     searchBarBg: 'rgb(24, 34, 61)',
@@ -104,7 +129,9 @@ export const darkUtilityColors = {
   },
 };
 
-export const lightUtilityColors = {
+export type IUtilityColors = typeof darkUtilityColors;
+
+const lightUtilityColors: IUtilityColors = {
   appCenter: {
     bg: 'rgba(255, 255, 255, 0.6)',
     searchBarBg: 'rgba(255, 255, 255, 0.9)',
@@ -151,7 +178,7 @@ export const lightUtilityColors = {
 /*=============================================
 =                  Gradients                  =
 =============================================*/
-export const allGradients = {
+const allGradients = {
   portfolioGreen: `linear-gradient(
       45deg,
       #01bf71 0%,
@@ -172,17 +199,21 @@ export const allGradients = {
     );`,
 };
 
+export type IGradients = typeof allGradients;
+
 /*=============================================
 =                Typography                   =
 =============================================*/
 
 /* Font sizes */
 
-export const fontSizes = { large: '16px', medium: '14px', small: '12px' };
+const fontSizes = { large: '16px', medium: '14px', small: '12px' };
+
+export type IFontSizes = typeof fontSizes;
 
 /* Font weights */
 
-export const fontWeights = {
+const fontWeights = {
   light: 300,
   normal: 400,
   medium: 500,
@@ -192,17 +223,21 @@ export const fontWeights = {
   black: 900,
 };
 
+export type IFontWeights = typeof fontWeights;
+
 /*=====  End of Typography  ======*/
 
 /*=============================================
 =            Breakpoints                      =
 =============================================*/
 
-export const responsiveBreakPoints = {
+const responsiveBreakPoints = {
   phone: '(max-width: 500px)',
   tablet: '(max-width: 768px)',
   desktop: '(min-width: 800px)',
 };
+
+export type IMediaBreakpoints = typeof responsiveBreakPoints;
 
 /*=====  End of Breakpoints  ======*/
 
@@ -210,7 +245,7 @@ export const responsiveBreakPoints = {
 =            Spacing                          =
 =============================================*/
 
-export const spacing = {
+const spacing = {
   none: '0rem',
   xxxs: '0.25rem',
   xxs: '0.5rem',
@@ -221,6 +256,9 @@ export const spacing = {
   xl: '3rem',
   xxl: '5rem',
 };
+
+export type ISpacing = typeof spacing;
+
 /*=====  End of Spacing  ======*/
 
 /*=============================================
@@ -228,22 +266,26 @@ export const spacing = {
 =============================================*/
 
 /* Border radius */
-export const borderRadii = { main: '4px' };
+const borderRadii = { main: '4px' };
 
 /* Box Shadows */
-export const boxShadows = {
+const boxShadows = {
   appBtn: '0 1px 1px rgb(0 0 0 / 25%)',
   window:
     '0 2.8px 2.2px rgba(0, 0, 0, 0.02),\n    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),\n    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),\n    0 100px 80px rgba(0, 0, 0, 0.07)',
 };
 
+export type IBoxShadows = typeof boxShadows;
+
 /* Z-indexes */
-export const zIndexes = {
+const zIndexes = {
   highestPriority: 777,
   navigation: 78,
   modal: 77,
   lowPriority: 7,
 };
+
+export type IZindexes = typeof zIndexes;
 
 /*=====  End of Other Styles  ======*/
 
@@ -251,7 +293,7 @@ export const zIndexes = {
 =            Portfolio Styles                 =
 =============================================*/
 
-export const portfolioStyles = {
+const portfolioStyles = {
   bgColor: '#010606',
   secondaryBg: { purple: '#4831d4' },
   primaryColor: { dark: '#01bf71', light: '#2bff88' },
@@ -263,3 +305,5 @@ export const portfolioStyles = {
     lightText: 'rgba(48,49,51,.774)',
   },
 };
+
+export type IPortfolioStyle = typeof portfolioStyles;

@@ -14,6 +14,7 @@ const setup = () => {
       slideHeight={'100vh'}
       projectName={'TOMATO'}
       projectMobileImg={'ASPARAGUS.JPEG'}
+      projectQuotes={[]}
     />
   );
 };

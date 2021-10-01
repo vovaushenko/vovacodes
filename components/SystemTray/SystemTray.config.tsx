@@ -5,6 +5,8 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
 import Terminal from '../Apps/Terminal/Terminal';
 import Bing from '../Apps/Bing/Bing';
+import PortfolioLanding from '../Portfolio/PortfolioLanding/PortfolioLanding';
+import PortfolioLayout from '../Portfolio/PortfolioLayout/PortfolioLayout';
 
 export const useSystemTrayConfig = (): {
   systemTrayButtons: ISystemTrayButton[];
@@ -74,7 +76,11 @@ export const useSystemTrayConfig = (): {
       size: { width: 30, height: 30 },
       action: null,
       alt: 'Explore files',
-      willOpenWindowWith: <Terminal />,
+      willOpenWindowWith: (
+        <PortfolioLayout title={'Vova Ushenko | Full-Stack Web Developer'}>
+          <PortfolioLanding />
+        </PortfolioLayout>
+      ),
     },
     {
       id: 7,

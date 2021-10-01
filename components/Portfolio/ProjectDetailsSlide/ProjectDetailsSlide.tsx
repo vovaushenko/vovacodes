@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as Styled from './ProjectDetailsSlide.styles';
-import { projectDetailsQuotes } from './ProjectDetailsSlide.config';
 import TextCarousel from '../TextCarousel/TextCarousel';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
+import { ICarouselQuote } from '../../../types/portfolio';
 
 export interface Props {
   slideHeight: string;
   slideBgColor: string;
   projectMobileImg: string;
   projectName: string;
+  projectQuotes: ICarouselQuote[];
 }
 
 /**
@@ -23,6 +24,7 @@ const ProjectDetailsSlide = ({
   slideBgColor,
   projectName,
   projectMobileImg,
+  projectQuotes,
 }: Props): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isElementVisible] = useIntersectionObserver(containerRef, {
@@ -45,7 +47,7 @@ const ProjectDetailsSlide = ({
       {isOnScreen && (
         <>
           <Styled.RightColumn>
-            <TextCarousel quotes={projectDetailsQuotes} />
+            <TextCarousel quotes={projectQuotes} />
           </Styled.RightColumn>
 
           <Styled.LeftColumn>
