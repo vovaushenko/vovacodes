@@ -8,5 +8,5 @@ export const Container = styled.span`
 export const ChildWrapper = styled.strong`
   position: relative;
   z-index: 1;
-  font-weight: normal;
+  font-weight: inherit;
 `;
