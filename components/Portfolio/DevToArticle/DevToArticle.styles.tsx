@@ -47,7 +47,6 @@ export const Tag = styled.li`
 export const Title = styled.h2`
   color: ${({ theme }) => theme.portfolio.primaryColor.light};
   font-size: 1.25rem;
-  letter-spacing: -1px;
   background-image: linear-gradient(
     45deg,
     #01bf71 0%,

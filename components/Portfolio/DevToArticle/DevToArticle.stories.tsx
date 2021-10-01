@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 import DevToArticle from './DevToArticle';
-import { DevToArticle as IDevToArticle } from '../../../types/redux/articles-reducer-types';
+import { IDevToArticle } from '../../../types/redux/articles-reducer-types';
 import { mockDevToArticle } from './DevToArticle.spec';
 
 export default {

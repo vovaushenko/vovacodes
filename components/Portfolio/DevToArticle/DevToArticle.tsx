@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from './DevToArticle.styles';
-import { DevToArticle as IDevToArticle } from '../../../types/redux/articles-reducer-types';
+import { IDevToArticle } from '../../../types/redux/articles-reducer-types';
 import Image from 'next/image';
 import { FiEye, FiHeart, FiThumbsUp } from 'react-icons/fi';
 
@@ -38,7 +38,6 @@ const DevToArticle = ({
             width={600}
             alt={title}
             layout={'responsive'}
-            objectFit={'cover'}
           />
           <Styled.Figcaption>
             <Styled.TagWrapper>
@@ -46,8 +45,8 @@ const DevToArticle = ({
                 <Styled.Tag key={tag + id}>
                   <Image
                     src={tagIconsMap[tag]}
-                    height={40}
-                    width={40}
+                    height={35}
+                    width={35}
                     objectFit={'contain'}
                     alt={tag}
                   />

@@ -3,10 +3,10 @@ import React from 'react';
 import DevToArticleCard from './DevToArticle';
 import * as Styled from './DevToArticle.styles';
 
-import { DevToArticle } from '../../../types/redux/articles-reducer-types';
+import { IDevToArticle } from '../../../types/redux/articles-reducer-types';
 import Image from 'next/image';
 
-export const mockDevToArticle: DevToArticle = {
+export const mockDevToArticle: IDevToArticle = {
   id: 1,
   tag_list: ['TOMATO', 'ASPARAGUS'],
   url: 'some.url.com',

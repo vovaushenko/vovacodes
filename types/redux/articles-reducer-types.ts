@@ -1,7 +1,7 @@
 /**
  * Interface of dev.to article
  */
-export interface DevToArticle {
+export interface IDevToArticle {
   id: number;
   title: string;
   description: string;
@@ -19,11 +19,15 @@ export interface DevToArticle {
 /**
  * Interface of dev.to  API Response
  */
-export type DevToApiResponse = Array<DevToArticle>;
+export type DevToApiResponse = Array<IDevToArticle>;
+
+export type ArticleSortingOption = 'date' | 'likes' | 'views';
 
 export interface ArticlesReducerState {
-  articles: DevToArticle[];
+  articles: IDevToArticle[];
   areArticlesLoading: boolean;
+  filterOptions: string[];
+  sortArticlesBy: ArticleSortingOption;
   error: null | string;
 }
 
@@ -32,16 +36,25 @@ export enum ArticlesReducerActionTypes {
   DEV_TO_ARTICLES_DID_LOAD = 'DEV_TO_ARTICLES_DID_LOAD',
   DEV_TO_ARTICLES_LOAD_ERROR = 'DEV_TO_ARTICLES_LOAD_ERROR',
   CLEAR_ARTICLES_STATE = 'CLEAR_ARTICLES_STATE',
+  ADD_FILTER_OPTION = 'ADD_FILTER_OPTION',
+  REMOVE_FILTER_OPTION = 'REMOVE_FILTER_OPTION',
+  APPLY_SORTING_PARAM = 'APPLY_SORTING_PARAM',
 }
 
 export type ArticlesReducerAction =
   | { type: ArticlesReducerActionTypes.LOAD_DEV_TO_ARTICLES }
   | {
       type: ArticlesReducerActionTypes.DEV_TO_ARTICLES_DID_LOAD;
-      payload: DevToArticle[];
+      payload: IDevToArticle[];
     }
   | {
       type: ArticlesReducerActionTypes.DEV_TO_ARTICLES_LOAD_ERROR;
       payload: string;
     }
-  | { type: ArticlesReducerActionTypes.CLEAR_ARTICLES_STATE };
+  | { type: ArticlesReducerActionTypes.CLEAR_ARTICLES_STATE }
+  | { type: ArticlesReducerActionTypes.ADD_FILTER_OPTION; payload: string }
+  | { type: ArticlesReducerActionTypes.REMOVE_FILTER_OPTION; payload: string }
+  | {
+      type: ArticlesReducerActionTypes.APPLY_SORTING_PARAM;
+      payload: ArticleSortingOption;
+    };

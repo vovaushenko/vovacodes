@@ -7,6 +7,8 @@ import {
 const initialNewsState: ArticlesReducerState = {
   articles: [],
   areArticlesLoading: false,
+  filterOptions: [],
+  sortArticlesBy: 'date',
   error: null,
 };
 
@@ -30,6 +32,15 @@ export const articlesReducer = (
 
     case ArticlesReducerActionTypes.DEV_TO_ARTICLES_LOAD_ERROR:
       return { ...state, areArticlesLoading: false, error: action.payload };
+
+    case ArticlesReducerActionTypes.ADD_FILTER_OPTION:
+      return {
+        ...state,
+        filterOptions: [...state.filterOptions, action.payload],
+      };
+
+    case ArticlesReducerActionTypes.APPLY_SORTING_PARAM:
+      return { ...state, sortArticlesBy: action.payload };
 
     case ArticlesReducerActionTypes.CLEAR_ARTICLES_STATE:
       return initialNewsState;
