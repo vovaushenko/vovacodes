@@ -1,10 +1,11 @@
+import axios from 'axios';
 import { Dispatch } from 'redux';
+import { getAllLatestArticles } from '../../frontend-rest-client/rest/articles';
 import {
   ArticleSortingOption,
   ArticlesReducerAction,
   ArticlesReducerActionTypes,
 } from '../../types/redux/articles-reducer-types';
-import { getAllLatestArticles } from '../../frontend-rest-client/rest/articles';
 
 /**
  *@EXPORTS article-reducer action creators and thunks
@@ -32,10 +33,12 @@ const loadLatestArticles = () => {
         payload: data,
       });
     } catch (error) {
-      dispatch({
-        type: ArticlesReducerActionTypes.DEV_TO_ARTICLES_LOAD_ERROR,
-        payload: error.response,
-      });
+      if (axios.isAxiosError(error)) {
+        dispatch({
+          type: ArticlesReducerActionTypes.DEV_TO_ARTICLES_LOAD_ERROR,
+          payload: JSON.stringify(error.response),
+        });
+      }
     }
   };
 };
