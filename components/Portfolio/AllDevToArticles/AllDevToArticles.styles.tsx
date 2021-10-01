@@ -23,7 +23,7 @@ export const FirstSlide = styled.section`
   background-color: ${({ theme }) => theme.portfolio.secondaryBg.purple};
 
   h1 {
-    width: 70%;
+    width: 65%;
     line-height: 1.2;
   }
 
@@ -82,21 +82,58 @@ export const LI = styled.li``;
 export const FiltersToggler = styled.button`
   z-index: ${({ theme }) => theme.zIndex.lowPriority};
   position: absolute;
-  top: 50%;
-  right: 2rem;
+  bottom: 3rem;
+  right: 4rem;
 
   display: grid;
   place-items: center;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  border: 2px solid ${({ theme }) => theme.portfolio.primaryColor.light};
+  border: 3px solid ${({ theme }) => theme.portfolio.primaryColor.light};
   border-radius: 50%;
   padding: 0.5rem;
   cursor: pointer;
 
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  /**
+   * ----------------------------------------
+   * animation shake-horizontal
+   * ----------------------------------------
+   */
+  @keyframes shake-horizontal {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      transform: translateX(10px);
+    }
+    80% {
+      transform: translateX(8px);
+    }
+    90% {
+      transform: translateX(-8px);
+    }
+  }
+
   .filter__icon {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
     color: ${({ theme }) => theme.portfolio.primaryColor.light};
+  }
+
+  &:hover {
+    .filter__icon {
+      transform: rotate(360deg);
+    }
   }
 `;

@@ -4,6 +4,7 @@ import { useArticleFiltersMenuConfig } from './ArticleFiltersMenu.config';
 import { useActions } from '../../../hooks/useActions';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { ArticleSortingOption } from '../../../types/redux/articles-reducer-types';
+import FilterOption from '../FilterOption/FilterOption';
 
 export interface Props {
   isMenuVisible: boolean;
@@ -42,12 +43,14 @@ const ArticleFiltersMenu = ({ isMenuVisible }: Props): JSX.Element => {
       <Styled.TagsWrapper key={String(isMenuVisible) + 1}>
         <Styled.UL>
           {allTags.map((tag, id) => (
-            <Styled.FilterOption
+            <FilterOption
+              variant={'filterOption'}
               key={tag + id}
-              onClick={() => handleApplyFiltering(tag)}
+              action={handleApplyFiltering}
+              filterTag={tag}
             >
               {tag}
-            </Styled.FilterOption>
+            </FilterOption>
           ))}
         </Styled.UL>
         <Styled.Header variant={'vertical'}>Filter By Tag</Styled.Header>
@@ -56,12 +59,14 @@ const ArticleFiltersMenu = ({ isMenuVisible }: Props): JSX.Element => {
         <Styled.Header variant={'horizontal'}>Sort By Tag</Styled.Header>
         <Styled.UL>
           {allSortingOptions.map((sortingTag, id) => (
-            <Styled.FilterOption
+            <FilterOption
               key={sortingTag + id}
-              onClick={() => handleApplySorting(sortingTag)}
+              variant={'sortingOption'}
+              sortingTag={sortingTag}
+              action={() => handleApplySorting(sortingTag)}
             >
               {sortingTag}
-            </Styled.FilterOption>
+            </FilterOption>
           ))}
         </Styled.UL>
       </Styled.SortingTagsWrapper>

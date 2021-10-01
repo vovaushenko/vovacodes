@@ -9,7 +9,7 @@ import WithSparkles from '../WithSparkles/WithSparkles';
 import ScrollHint from '../ScrollHint/ScrollHint';
 import WaveDivider from '../WaveDivider/WaveDivider';
 import ArtcileFiltersMenu from '../ArticleFiltersMenu/ArticleFiltersMenu';
-import { FiFilter } from 'react-icons/fi';
+import { BiCog } from 'react-icons/bi';
 
 /**
  *Renders content for article page that maps dev.to api response (with all published articles) into the list of rendered articles
@@ -48,8 +48,11 @@ const AllDevToArticles = (): JSX.Element => {
       />
 
       <Styled.SecondSlide>
-        <Styled.FiltersToggler onClick={toggleFiltersVisibility}>
-          <FiFilter className={'filter__icon'} />
+        <Styled.FiltersToggler
+          onClick={toggleFiltersVisibility}
+          title="Filter Settings"
+        >
+          <BiCog className={'filter__icon'} />
         </Styled.FiltersToggler>
         <ArtcileFiltersMenu isMenuVisible={showFiltersMenu} />
         <Styled.List>

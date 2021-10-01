@@ -52,15 +52,6 @@ export const UL = styled.ul`
 `;
 export const LI = styled.li``;
 
-export const FilterOption = styled.button`
-  background-color: transparent;
-  padding: 0.5rem 1.25rem;
-  color: ${({ theme }) => theme.portfolio.text.light};
-  border: 2px solid ${({ theme }) => theme.portfolio.text.light};
-  border-radius: 0.75rem;
-  cursor: pointer;
-`;
-
 export const TagsWrapper = styled.div`
   display: flex;
   align-items: center;
