@@ -197,6 +197,11 @@ const allGradients = {
       #ff00c8,
       #ff0000
     );`,
+  lightGrayGradient: `radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(90, 92, 106, 1) 0%,
+    rgba(32, 45, 58, 1) 81.3%
+  )`,
 };
 
 export type IGradients = typeof allGradients;

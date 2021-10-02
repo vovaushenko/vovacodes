@@ -38,6 +38,7 @@
     "react-redux": "^7.2.4",
     "react-rnd": "^10.3.4",
     "react-scroll": "^1.8.4",
+    "react-ticker": "^1.2.2",
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",

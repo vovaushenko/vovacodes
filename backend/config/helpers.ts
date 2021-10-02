@@ -14,7 +14,7 @@ const connectWithDB = (): void => {
     return;
   }
 
-  mongoose.connect(process.env.DB_URI ?? '', {}, (err) => {
+  mongoose.connect(process.env.DB_URI!, {}, (err) => {
     if (err) throw err;
     console.log('Connected to DB');
   });

@@ -11,6 +11,7 @@ import PortfolioLanding from '../Portfolio/PortfolioLanding/PortfolioLanding';
 import PortfolioLayout from '../Portfolio/PortfolioLayout/PortfolioLayout';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Acknowledgments from '../Acknowledgments/Acknowledgments';
+import CommentsList from '../CommentsList/CommentsList';
 
 /**
  * Custom hook used to get initial configuration for desktop
@@ -121,6 +122,15 @@ export const useDesktopApps = (): {
       willOpenWindowWith: <Acknowledgments />,
       variant: 'desktop',
       iconSrc: '/assets/icons/Desktop/acknowledgment.png',
+      iconSize: { width: 40, height: 40 },
+      action: null,
+    },
+    {
+      id: 10,
+      text: 'Comments',
+      willOpenWindowWith: <CommentsList />,
+      variant: 'desktop',
+      iconSrc: '/assets/icons/Desktop/comments.png',
       iconSize: { width: 40, height: 40 },
       action: null,
     },

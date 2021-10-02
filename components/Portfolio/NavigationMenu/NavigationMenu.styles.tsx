@@ -107,11 +107,7 @@ export const Menu = styled.nav<Props>`
   min-width: 350px;
 
   padding: 4rem;
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(90, 92, 106, 1) 0%,
-    rgba(32, 45, 58, 1) 81.3%
-  );
+  background-image: ${({ theme }) => theme.gradients.lightGrayGradient};
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   animation: scale-in-tr 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

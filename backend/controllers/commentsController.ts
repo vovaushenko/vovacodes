@@ -22,7 +22,7 @@ const getAllApprovedComments = async (
   res: NextApiResponse
 ): Promise<void> => {
   const features = new APIfeatures(
-    Comment.find({}),
+    Comment.find({ isApproved: true }),
     req.query as {
       [key: string]: string;
     }

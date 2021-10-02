@@ -15,7 +15,7 @@ const initialState: CommentsState = {
 };
 
 const mockComment: IComment = {
-  id: 'xyz',
+  _id: 'xyz',
   comment: 'some comment',
   author: 'TOMATO',
   createdAt: '2021',

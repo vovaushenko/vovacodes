@@ -20,9 +20,9 @@ describe('NavigationMenu', () => {
     expect(wrap.length).toBe(1);
   });
 
-  it('should render all router links(currently 4)', () => {
+  it('should render all router links(currently 6)', () => {
     const routerLink = wrap.find(Styled.NavLink);
-    expect(routerLink.length).toBe(5);
+    expect(routerLink.length).toBe(6);
   });
   it('should render all social media links', () => {
     const socialMediaLink = wrap.find(SocialMediaContact);

@@ -25,7 +25,7 @@ export const loadAllApprovedComments = () => {
     } catch (error) {
       dispatch({
         type: CommentActionTypes.COMMENTS_LOAD_ERROR,
-        payload: error.response.data.error,
+        payload: error.message,
       });
     }
   };
@@ -51,7 +51,7 @@ export const uploadNewComment = (newComment: {
     } catch (error) {
       dispatch({
         type: CommentActionTypes.COMMENT_PERSIST_ERROR,
-        payload: error.response.data.error,
+        payload: error.message,
       });
     }
   };
