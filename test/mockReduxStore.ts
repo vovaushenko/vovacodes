@@ -28,6 +28,7 @@ export const mockReduxStore: LocalRootState = {
   likes: {
     likesCount: 1,
     isLikePersisted: false,
+    areLikesFetching: false,
     isLoading: false,
     error: null,
   },

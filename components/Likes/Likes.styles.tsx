@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { likeKeyframe, slidInCenter } from '../../design-system/reusableCss';
 
 export const Container = styled.div`
+  height: 100%;
+`;
+
+export const LikesWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

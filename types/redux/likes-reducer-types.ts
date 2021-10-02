@@ -3,6 +3,7 @@
  */
 export interface LikesState {
   likesCount: number;
+  areLikesFetching: boolean;
   isLoading: boolean;
   isLikePersisted: boolean;
   error: string | null;

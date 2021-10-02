@@ -8,6 +8,7 @@ import { likesReducer } from '../likesReducer';
 const initialState: LikesState = {
   likesCount: 0,
   isLoading: false,
+  areLikesFetching: false,
   isLikePersisted: false,
   error: null,
 };
@@ -25,7 +26,7 @@ describe('Likes Reducer', () => {
 
     expect(newState).toStrictEqual({
       ...initialState,
-      isLoading: true,
+      areLikesFetching: true,
     });
   });
 
@@ -37,7 +38,7 @@ describe('Likes Reducer', () => {
 
     expect(newState).toStrictEqual({
       ...initialState,
-      isLoading: false,
+      areLikesFetching: false,
       likesCount: 77,
     });
   });
@@ -50,7 +51,7 @@ describe('Likes Reducer', () => {
 
     expect(newState).toStrictEqual({
       ...initialState,
-      isLoading: false,
+      areLikesFetching: false,
       error: '🔥 HORRIBLE ERROR 🔥 YOUR COMPUTER WILL EXPLODE 🔥',
     });
   });

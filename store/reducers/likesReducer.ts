@@ -7,6 +7,7 @@ import {
 const initialLikesState: LikesState = {
   likesCount: 0,
   isLoading: false,
+  areLikesFetching: false,
   isLikePersisted: false,
   error: null,
 };
@@ -24,11 +25,11 @@ export const likesReducer = (
 ): LikesState => {
   switch (action.type) {
     case LikesActionTypes.LOAD_ALL_LIKES:
-      return { ...state, isLoading: true };
+      return { ...state, areLikesFetching: true };
     case LikesActionTypes.LIKES_DID_LOAD:
-      return { ...state, isLoading: false, likesCount: action.payload };
+      return { ...state, areLikesFetching: false, likesCount: action.payload };
     case LikesActionTypes.LIKES_LOAD_ERROR:
-      return { ...state, isLoading: false, error: action.payload };
+      return { ...state, areLikesFetching: false, error: action.payload };
 
     case LikesActionTypes.PERSIST_LIKE:
       return { ...state, isLoading: true };
