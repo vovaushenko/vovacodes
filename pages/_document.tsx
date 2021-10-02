@@ -46,7 +46,11 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <meta name="theme-color" content="#006340" />
+          <link rel="icon" href="/logo.png" />
+          <link rel="apple-touch-icon" href="/logo.png" />
+
+          <link rel="manifest" href="/manifest.json" />
+
           <meta
             name="description"
             content="Vova Ushenko | Full-stack Web Developer | Portfolio"
@@ -55,7 +59,6 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <div id="modal-root" />
         </body>
       </Html>
     );

@@ -9,6 +9,7 @@ import SocialMediaContact from '../SocialMediaContact/SocialMediaContact';
 import ContactForm from '../ContactForm/ContactForm';
 import WaveDivider from '../WaveDivider/WaveDivider';
 import Navbar from '../Navbar/Navbar';
+import WithSparkles from '../WithSparkles/WithSparkles';
 
 /**
  *Renders contact screen @ portfolio/contact
@@ -26,12 +27,10 @@ const Contact = (): JSX.Element => {
       {/* Slide # 1*/}
       <Slide bgColor={'#010606'} height={`100vh`} anchorID={'first-slide'}>
         <Styled.FirstSlide>
-          <SectionHeader
-            variant={'large'}
-            headerText={`Let's make something great!`}
-            margin={'0'}
-            color={'#fff'}
-          />
+          <SectionHeader variant={'large'} margin={'0'} color={'#fff'}>
+            Let`s build something{' '}
+            <WithSparkles color={'yellow'}>cool!</WithSparkles>
+          </SectionHeader>
           <ScrollHint />
         </Styled.FirstSlide>
       </Slide>

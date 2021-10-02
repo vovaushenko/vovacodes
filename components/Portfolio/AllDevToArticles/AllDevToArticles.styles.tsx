@@ -69,12 +69,15 @@ export const SecondSlide = styled.div`
 export const List = styled.ul`
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 
   animation: ${slideTop} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @media ${({ theme }) => theme.media.tablet} {
+    gap: 1rem;
+    padding: 1rem;
+  }
 `;
 
 export const LI = styled.li``;
@@ -135,5 +138,10 @@ export const FiltersToggler = styled.button`
     .filter__icon {
       transform: rotate(360deg);
     }
+  }
+
+  @media ${({ theme }) => theme.media.tablet} {
+    bottom: 1rem;
+    right: 1rem;
   }
 `;
