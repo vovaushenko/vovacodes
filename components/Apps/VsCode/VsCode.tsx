@@ -9,9 +9,7 @@ import Iframe from '../../Iframe/Iframe';
 const VsCode = (): JSX.Element => {
   return (
     <Iframe
-      iframeSrc={
-        'https://github1s.com/vovaushenko/next-multibrand-store/blob/HEAD/hooks/useDashboardStats.ts'
-      }
+      iframeSrc={'https://github1s.com/vovaushenko/vovacodes'}
       iframeSize={{ width: '100%', height: '100%' }}
       title={'VS Code'}
       style={{
