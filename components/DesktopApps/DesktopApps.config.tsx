@@ -126,7 +126,7 @@ export const useDesktopApps = (): {
       action: null,
     },
     {
-      id: 10,
+      id: 11,
       text: 'Comments',
       willOpenWindowWith: <CommentsList />,
       variant: 'desktop',

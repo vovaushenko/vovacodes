@@ -2,21 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.article`
   position: relative;
-  display: flex;
-  gap: 1.25rem;
-  flex-direction: column;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-rows: 1fr 0.65fr;
 
   border: 2px solid ${({ theme }) => theme.portfolio.primaryColor.light};
   padding: 1.25rem;
   border-radius: ${({ theme }) => theme.borderRadius};
 `;
 
-export const ImageColumn = styled.div`
-  flex: 0.5;
-`;
-export const TextColumn = styled.div`
-  flex: 0.5;
-`;
+export const ImageColumn = styled.div``;
+export const TextColumn = styled.div``;
 
 export const Figure = styled.figure`
   border-radius: ${({ theme }) => theme.borderRadius};

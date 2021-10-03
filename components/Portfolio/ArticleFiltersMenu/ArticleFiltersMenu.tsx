@@ -17,7 +17,7 @@ export interface Props {
  *@returns {JSX.Element} - Rendered ArticleFiltersMenu component
  */
 const ArticleFiltersMenu = ({ isMenuVisible }: Props): JSX.Element => {
-  const ARTICLE_MENU_WIDTH = 300;
+  const ARTICLE_MENU_WIDTH = 320;
   const { addFilterOption, removeFilterOption, applySortingOption } =
     useActions();
   const { allTags, allSortingOptions } = useArticleFiltersMenuConfig();

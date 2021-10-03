@@ -12,10 +12,10 @@ export const Container = styled.aside<ContainerProps>`
   gap: 1.25rem;
 
   position: absolute;
-  top: 20%;
+  top: 15%;
 
   width: ${({ menuWidth }) => `${menuWidth}px`};
-  min-height: ${({ menuWidth }) => `${menuWidth * 1.25}px`};
+  min-height: ${({ menuWidth }) => `${menuWidth * 1.15}px`};
   background-color: ${({ theme }) => theme.portfolio.secondaryBg.purple};
 
   padding: 3rem;
@@ -29,6 +29,10 @@ export const Container = styled.aside<ContainerProps>`
   transition: transform 0.5s ease;
   transform: ${({ isMenuVisible, menuWidth }) =>
     isMenuVisible ? `translateX(10px)` : `translateX(-${menuWidth + 50}px)`};
+
+  @media ${({ theme }) => theme.media.tablet} {
+    top: 50%;
+  }
 `;
 
 interface HeaderProps {

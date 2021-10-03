@@ -24,8 +24,10 @@ const DevToArticle = ({
   const tagIconsMap: Record<string, string> = {
     react: '/assets/portfolio/skills/react-original.svg',
     typescript: '/assets/portfolio/skills/typescript-original.svg',
-    beginners: '/assets/portfolio/skills/storybook.png',
+    beginners: '/assets/portfolio/skills/beginners.png',
     webdev: '/assets/portfolio/skills/responsive.png',
+    javascript: '/assets/portfolio/skills/javascript-original.svg',
+    nextjs: '/assets/portfolio/skills/next-js.svg',
   };
 
   return (
