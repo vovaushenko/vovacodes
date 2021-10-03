@@ -23,7 +23,7 @@ const Comment = ({ comment, createdAt, author }: IComment): JSX.Element => {
         </Styled.Date>
 
         <Image
-          src={`/assets/avatars/${Math.floor(Math.random() * 5 + 1)}.png`}
+          src={`/assets/avatars/${Math.floor(Math.random() * 11 + 1)}.png`}
           width={150}
           height={150}
           objectFit={'contain'}

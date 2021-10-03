@@ -41,7 +41,7 @@ const Resume = (): JSX.Element => {
 
             <Styled.ContactLink href="mailto: volodymyr.ushenko@gmail.com">
               <FiMail />
-              hello@vova.codes.ca
+              hello@vovacodes.ca
             </Styled.ContactLink>
             <p>Toronto, Canada 🇨🇦</p>
             <p>Mississauga, Ontario</p>

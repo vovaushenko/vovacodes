@@ -4,11 +4,13 @@ export const Container = styled.article`
   padding: ${({ theme }) => theme.space.lg};
   background-image: ${({ theme }) => theme.gradients.lightGrayGradient};
   border-radius: ${({ theme }) => theme.borderRadius};
+
+  min-width: 250px;
+  height: 350px;
 `;
 
 export const Figure = styled.figure`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 `;
@@ -29,6 +31,6 @@ export const Text = styled.p`
 
 export const Date = styled.time`
   color: ${({ theme }) => theme.portfolio.primaryColor.light};
-  writing-mode: tb-rl;
   font-size: 1rem;
+  writing-mode: tb-rl;
 `;

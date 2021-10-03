@@ -8,9 +8,6 @@ export const Container = styled.section`
 
 export const UL = styled.ul`
   display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 3rem;
   margin: 0 2rem;
   animation: ${slidInCenter} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

@@ -82,43 +82,61 @@ export const otherSkills: { text: string; iconUrl: string }[] = [
 
 export const professionalExperience: IProfessionalExperience[] = [
   {
-    variant: 'simple',
-    company: 'Chernivtsi National University',
-    companyImg: '/assets/portfolio/uchnu.png',
-    role: 'Frontend Developer',
-    shortSummary:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni architecto, ipsum itaque recusandae dolorum non!',
-    timeFrame: '2019-Present',
-  },
-  {
     variant: 'withResponsibilities',
     company: 'Chernivtsi National University',
     companyImg: '/assets/portfolio/uchnu.png',
-    role: 'Frontend Developer',
+    role: 'Full-stack Developer (Contractor)',
     shortSummary:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni architecto, ipsum itaque recusandae dolorum non!',
+      'Currently, I work at Chernivtsi National University on a number of educational and Web projects as a front and back end developer. I architect and construct solutions daily used by tens of thousands of students and thousands of employees.',
     timeFrame: '2019-Present',
     responsibilities: [
       {
-        text: 'Crafted a scalable component library that enforced accessibility and fluency across the application.',
+        text: 'Use bleeding-edge JavaScript solutions to deliver the best imaginable user experience',
         iconUrl: '/assets/portfolio/skills/check.svg',
       },
       {
-        text: 'Built a multi-role user authentication system from the ground up with JavaScript.',
+        text: 'Construct scalable, performant and inclusive Web solutions for customers.',
         iconUrl: '/assets/portfolio/skills/check.svg',
       },
       {
-        text: 'Implemented a client-side localization system for the entire app.',
+        text: 'Employ the best practices in developing and testing software',
         iconUrl: '/assets/portfolio/skills/check.svg',
       },
       {
-        text: 'Built a client-side multilingual routing system with solid navigation guards.',
+        text: 'Supervise, mentor and advise junior colleagues.',
         iconUrl: '/assets/portfolio/skills/check.svg',
       },
     ],
   },
   {
     variant: 'withResponsibilities',
+    company: 'Chernivtsi National University',
+    companyImg: '/assets/portfolio/uchnu.png',
+    role: 'Frontend Developer',
+    shortSummary:
+      'Learning and expanding my skills in Web development, I have supervised several internal web projects and educational platforms(Moodle) for the University. Played a crucial role in managing, maintaining and upgrading several internal IT projects.',
+    timeFrame: '2019-Present',
+    responsibilities: [
+      {
+        text: 'Crafted a scalable component library during migration of legacy Web application.',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Migrated existing code base from legacy React Class Components to new Hook-based ones',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Built a client-side multilingual routing system for 3 language locales.',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Migrated the existing state management to Redux.',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+    ],
+  },
+  {
+    variant: 'simple',
     company: 'University of Oulu, Finland',
     companyImg: '/assets/portfolio/uoulu.png',
     role: 'Postdoc Research Scientist',
@@ -126,52 +144,14 @@ export const professionalExperience: IProfessionalExperience[] = [
       'Participated in projects centered on the development of non-invasive cancer-detection algorithms. During the projects, I\n' +
       'expanded my horizons in machine learning and learned various image processing algorithms and methods.',
     timeFrame: '2017 - 2019',
-    responsibilities: [
-      {
-        text: 'Crafted a scalable component library that enforced accessibility and fluency across the application.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Built a multi-role user authentication system from the ground up with JavaScript.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Implemented a client-side localization system for the entire app.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Built a client-side multilingual routing system with solid navigation guards.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-    ],
   },
   {
-    variant: 'withResponsibilities',
+    variant: 'simple',
     company: 'CNRS, Ecole Polytechnique, France',
     companyImg: '/assets/portfolio/uecole.png',
     role: 'Postdoc Research Scientist',
-    shortSummary:
-      'Participated in projects centered on the development of non-invasive cancer-detection algorithms. During the projects, I\n' +
-      'expanded my horizons in machine learning and learned various image processing algorithms and methods.',
+    shortSummary: `This project was supported by the European Union's Horizon research and innovation programme under the Marie Skłodowska-Curie grant agreement and was aimed on the development of cutting-edge medical image processing techniques`,
     timeFrame: '2016 - 2017',
-    responsibilities: [
-      {
-        text: 'Crafted a scalable component library that enforced accessibility and fluency across the application.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Built a multi-role user authentication system from the ground up with JavaScript.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Implemented a client-side localization system for the entire app.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Built a client-side multilingual routing system with solid navigation guards.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-    ],
   },
 ];
 

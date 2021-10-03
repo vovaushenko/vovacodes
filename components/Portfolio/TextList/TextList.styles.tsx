@@ -15,7 +15,7 @@ interface Props {
 export const LI = styled.li<Props>`
   display: flex;
   align-items: center;
-  text-transform: capitalize;
+  text-transform: initial;
   font-size: 1rem;
 
   &:before {
