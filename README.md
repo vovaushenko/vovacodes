@@ -1,8 +1,8 @@
 # ✨ Vovacodes | Portfolio ✨
 
-#### Try it online: [https://www.vovacodes.ca/](https://https://www.vovacodes.ca/)
+#### 🔥 Try it online: [https://www.vovacodes.ca/](https://www.vovacodes.ca/)
 
-#### If you really liked the project, consider giving it a star ⭐
+#### 🔥 If you really liked the project, consider giving it a star ⭐
 
 [![Follow Github](https://img.shields.io/github/followers/vovaushenko.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/vovaushenko)
 
