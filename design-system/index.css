@@ -52,3 +52,15 @@ img {
     display: block;
 }
 
+/**
+* Reduce animations for for users who requested that the OS minimize the amount of non-essential motion it uses.
+*/
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
