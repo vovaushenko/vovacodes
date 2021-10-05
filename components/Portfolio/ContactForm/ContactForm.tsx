@@ -44,6 +44,7 @@ const ContactForm = (): JSX.Element => {
             buttonText={isEmailSent ? 'Sent 👍' : 'Shoot'}
             icon={<FiSend className={'action-icon'} />}
             isLoading={isEmailSending}
+            disabled={isEmailSent}
             type="submit"
           />
         </Form>

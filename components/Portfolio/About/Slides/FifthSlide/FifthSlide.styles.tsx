@@ -1,5 +1,8 @@
-import styled from 'styled-components';
-import { slideTop } from '../../../../../design-system/reusableCss';
+import styled, { css } from 'styled-components';
+import {
+  slideInLeft,
+  slideInRight,
+} from '../../../../../design-system/reusableCss';
 
 export const FifthSlide = styled.div`
   display: flex;
@@ -7,55 +10,44 @@ export const FifthSlide = styled.div`
   gap: 1rem;
   padding: 0 1rem;
   min-height: 100vh;
+  overflow: hidden;
 
-  :before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 0;
-    width: 900px;
-    height: 900px;
-    background: #383838;
-    background: linear-gradient(40deg, #000000 33%, #383838 69%);
-    border-radius: 50%;
 
-    animation-name: spin;
-    animation-duration: 25s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+}
 
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
+@media ${({ theme }) => theme.media.tablet} {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1;
   }
 
-  @media ${({ theme }) => theme.media.tablet} {
-    h1 {
-      font-size: 2.5rem;
-      line-height: 1;
-    }
-
-    :before {
-      width: 400px;
-      height: 400px;
-    }
-  }
+}
 `;
 
-export const Milestone = styled.article`
-  z-index: 5;
+const firstMilestoneAnimation = css`
+  animation: ${slideInRight} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+`;
+const secondMilestoneAnimation = css`
+  animation: ${slideInLeft} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 500ms;
+`;
+const thirdMilestoneAnimation = css`
+  animation: ${slideInRight} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1000ms;
+`;
+
+interface Props {
+  variant: 'first' | 'second' | 'third';
+}
+
+export const Milestone = styled.article<Props>`
   flex-direction: column;
+  background-color: ${({ theme }) => theme.portfolio.secondaryBg.purple};
   border-radius: ${({ theme }) => theme.borderRadius};
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(22px);
-  animation: ${slideTop} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  ${({ variant }) => variant === 'first' && firstMilestoneAnimation};
+  ${({ variant }) => variant === 'second' && secondMilestoneAnimation};
+  ${({ variant }) => variant === 'third' && thirdMilestoneAnimation};
 `;
 
 export const MilestoneHeader = styled.div`

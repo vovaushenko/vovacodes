@@ -19,16 +19,16 @@ const FifthSlide = (): JSX.Element => {
           margin={'0'}
           color={'#2bff88'}
         />
-        <Styled.Milestone>
+        <Styled.Milestone variant={'first'}>
           <Styled.MilestoneHeader>
             <h3>Full-Stack Developer</h3>
-            <time>2017-2021</time>
+            <time>2019-Present</time>
           </Styled.MilestoneHeader>
-          <h4>Chernivtsi National University, Ukraine</h4>
+          <h4>Chernivtsi National University</h4>
           <PortfolioParagraph
             margin={'1rem 0'}
             paragraphText={
-              'Learning and expanding my skills in web development, I have done several projects and designed websites for the University. I was responsible for the Web presence of our department. I was working on internal web applications, specializing in design and front-end development with React. My most noticeable project was a full-stack testing application that I created using React.js, Node.js, and MongoDB for internal testing assesments.'
+              'Currently, I work at Chernivtsi National University on a number of educational and Web projects as a front and back end developer. I architect and construct solutions daily used by tens of thousands of students and thousands of employees.'
             }
             withDarkColor={false}
             variant={'medium'}
@@ -36,33 +36,33 @@ const FifthSlide = (): JSX.Element => {
           />
         </Styled.Milestone>
 
-        <Styled.Milestone>
+        <Styled.Milestone variant={'second'}>
+          <Styled.MilestoneHeader>
+            <h3>FRONT-END DEVELOPER</h3>
+            <time>2018-2019</time>
+          </Styled.MilestoneHeader>
+          <h4>Chernivtsi National University</h4>
+          <PortfolioParagraph
+            margin={'1rem 0'}
+            paragraphText={
+              'Learning and expanding my skills in Web development, I worked on and supervised several internal web projects and educational platforms for the University. Played a crucial role in managing, maintaining and upgrading several internal IT projects.'
+            }
+            withDarkColor={false}
+            variant={'medium'}
+            withAnimatedPresence={true}
+          />
+        </Styled.Milestone>
+
+        <Styled.Milestone variant={'third'}>
           <Styled.MilestoneHeader>
             <h3>POSTDOC RESEARCH SCIENTIST</h3>
-            <time>2017-2019</time>
+            <time>2017-2018</time>
           </Styled.MilestoneHeader>
-          <h4>University of Oulu, Finland</h4>
+          <h4>University of Oulu</h4>
           <PortfolioParagraph
             margin={'1rem 0'}
             paragraphText={
-              'The main aim of the project was to develop cutting-edge methods of 2-D and 3-D polarization tomography for various medical tasks such as early diagnosis of cancer. I was responsible for digital image processing with the use of Matlab and Python OpenCV.'
-            }
-            withDarkColor={false}
-            variant={'medium'}
-            withAnimatedPresence={true}
-          />
-        </Styled.Milestone>
-
-        <Styled.Milestone>
-          <Styled.MilestoneHeader>
-            <h3>LECTURER/ASSISTANT PROFESSOR</h3>
-            <time>2014-2017</time>
-          </Styled.MilestoneHeader>
-          <h4>Chernivtsi National University, Ukraine</h4>
-          <PortfolioParagraph
-            margin={'1rem 0'}
-            paragraphText={
-              'I taught Photonics, Digital Image Processing and Hands-on lab-based courses at a the university in Chernivtsi where I helped students to gain not only theoretical knowledge, but also practical experience in optics & computer science.'
+              'Participated in projects centered on the development of non-invasive cancer-detection algorithms. During the projects, I expanded my horizons in machine learning and learned a lot about digital image processing.'
             }
             withDarkColor={false}
             variant={'medium'}
