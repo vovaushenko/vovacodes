@@ -95,7 +95,10 @@ const Resume = (): JSX.Element => {
                 +1 437 886 1335
               </Styled.SocialMediaLink>
 
-              <Styled.SocialMediaLink href="tel:+14378861335 ">
+              <Styled.SocialMediaLink
+                href={'/assets/vova-ushenko-cv.pdf'}
+                download="vova-ushenko-cv.pdf"
+              >
                 <FiDownload className={'social-media-icon'} />
                 Download CV
               </Styled.SocialMediaLink>

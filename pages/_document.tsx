@@ -48,14 +48,24 @@ export default class MyDocument extends Document {
 
           <link rel="icon" href="/logo.png" />
           <link rel="apple-touch-icon" href="/logo.png" />
-
           <link rel="manifest" href="/manifest.json" />
 
+          <meta property="og:title" content="Vova Ushenko" />
+          <meta name="author" content="Vova Ushenko" />
+          <meta property="og:locale" content="en_US" />
           <meta
             name="description"
             content="Vova Ushenko | Full-stack Web Developer | Portfolio"
           />
+          <meta
+            property="og:description"
+            content="Vova Ushenko | Full-stack Web Developer | Portfolio"
+          />
+
+          <meta property="og:url" content="https://www.vovacodes.ca/" />
+          <meta property="og:site_name" content="vovacodes" />
         </Head>
+
         <body>
           <Main />
           <NextScript />
