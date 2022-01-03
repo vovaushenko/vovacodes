@@ -7,6 +7,7 @@ import {
   getAllApprovedCommentsFromDB,
   persistNewCommentToDB,
 } from '../../frontend-rest-client/rest/comments';
+import { getErrorMessage } from '../../utils/getErrorMessage';
 
 /**
  *@Action creator, will dispatch action to load all submitted comments from DB, also will dispatch error action if async operation fails
@@ -23,10 +24,12 @@ export const loadAllApprovedComments = () => {
         payload: { total: data.total, comments: data.comments },
       });
     } catch (error) {
-      dispatch({
-        type: CommentActionTypes.COMMENTS_LOAD_ERROR,
-        payload: error.message,
-      });
+      if (error instanceof Error) {
+        dispatch({
+          type: CommentActionTypes.COMMENTS_LOAD_ERROR,
+          payload: error.message,
+        });
+      }
     }
   };
 };
@@ -51,7 +54,7 @@ export const uploadNewComment = (newComment: {
     } catch (error) {
       dispatch({
         type: CommentActionTypes.COMMENT_PERSIST_ERROR,
-        payload: error.message,
+        payload: getErrorMessage(error),
       });
     }
   };

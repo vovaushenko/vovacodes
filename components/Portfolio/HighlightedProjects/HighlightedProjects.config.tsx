@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   SiMongodb,
-  SiNextDotJs,
-  SiNodeDotJs,
+  SiNextdotjs,
+  SiNodedotjs,
   SiReact,
   SiRedux,
   SiStorybook,
@@ -36,7 +36,7 @@ export const useHighlightedProjectsData = (): {
       technologyIcons: [
         <SiTypescript key={1} className={'tech-icon'} />,
         <SiReact key={2} className={'tech-icon'} />,
-        <SiNextDotJs key={3} className={'tech-icon'} />,
+        <SiNextdotjs key={3} className={'tech-icon'} />,
         <SiRedux key={4} className={'tech-icon'} />,
         <SiMongodb key={5} className={'tech-icon'} />,
         <SiStorybook key={6} className={'tech-icon'} />,
@@ -58,9 +58,9 @@ export const useHighlightedProjectsData = (): {
       technologyIcons: [
         <SiTypescript key={1} className={'tech-icon'} />,
         <SiReact key={2} className={'tech-icon'} />,
-        <SiNextDotJs key={3} className={'tech-icon'} />,
+        <SiNextdotjs key={3} className={'tech-icon'} />,
         <SiRedux key={4} className={'tech-icon'} />,
-        <SiNodeDotJs key={5} className={'tech-icon'} />,
+        <SiNodedotjs key={5} className={'tech-icon'} />,
         <SiMongodb key={6} className={'tech-icon'} />,
       ],
     },

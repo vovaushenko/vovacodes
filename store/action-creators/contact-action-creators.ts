@@ -5,6 +5,7 @@ import {
 } from '../../types/redux/contact-reducer-types';
 import { Dispatch } from 'redux';
 import { sendEmailWith } from '../../frontend-rest-client/rest/contact';
+import { getErrorMessage } from '../../utils/getErrorMessage';
 
 /**
  *@Action creator, will dispatch action to send email via sendgrid, also will dispatch error action if async operation fails
@@ -23,7 +24,7 @@ export const sendEmailViaSendgrid = (contactFormData: ContactFormData) => {
     } catch (error) {
       dispatch({
         type: ContactActionTypes.EMAIL_SEND_ERROR,
-        payload: error.response.data.error,
+        payload: getErrorMessage(error),
       });
     }
   };

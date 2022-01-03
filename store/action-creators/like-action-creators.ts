@@ -7,6 +7,7 @@ import {
   getAllLikesFromDB,
   persistNewLikeToDB,
 } from '../../frontend-rest-client/rest/likes';
+import { getErrorMessage } from '../../utils/getErrorMessage';
 
 /**
  *@Action creator, will dispatch action to load all submitted likes from DB, also will dispatch error action if async operation fails
@@ -25,7 +26,7 @@ export const getAllLikes = () => {
     } catch (error) {
       dispatch({
         type: LikesActionTypes.LIKES_LOAD_ERROR,
-        payload: error.response.data.error,
+        payload: getErrorMessage(error),
       });
     }
   };
@@ -48,7 +49,7 @@ export const postLike = () => {
     } catch (error) {
       dispatch({
         type: LikesActionTypes.LIKE_PERSIST_ERROR,
-        payload: error.response.data.error,
+        payload: getErrorMessage(error),
       });
     }
   };

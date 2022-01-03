@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
-import VsCode from '../Apps/VsCode/VsCode';
-import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
-import Figma from '../Apps/Figma/Figma';
-import Terminal from '../Apps/Terminal/Terminal';
 import { FiCloud, FiInfo } from 'react-icons/fi';
-import { SiNextDotJs, SiReact } from 'react-icons/si';
+import { SiNextdotjs, SiReact } from 'react-icons/si';
+import Figma from '../Apps/Figma/Figma';
+import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
+import Terminal from '../Apps/Terminal/Terminal';
+import VsCode from '../Apps/VsCode/VsCode';
 
 /**
  * Custom hook to get search modal data, namely top apps and quick searches
@@ -65,7 +65,7 @@ export const useSearchModalConfig = (): {
     { id: 1, text: 'Weather', icon: <FiCloud className={'icon'} /> },
     { id: 2, text: 'Today in history', icon: <FiInfo className={'icon'} /> },
     { id: 3, text: 'Latest React reads', icon: <SiReact className={'icon'} /> },
-    { id: 4, text: 'Next.js rocks!', icon: <SiNextDotJs className={'icon'} /> },
+    { id: 4, text: 'Next.js rocks!', icon: <SiNextdotjs className={'icon'} /> },
   ];
 
   return {

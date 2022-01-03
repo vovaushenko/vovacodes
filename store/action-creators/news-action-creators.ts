@@ -4,6 +4,7 @@ import {
   NewsReducerActionTypes,
 } from '../../types/redux/news-reducer-types';
 import { getLatestNews } from '../../frontend-rest-client/rest/news';
+import { getErrorMessage } from '../../utils/getErrorMessage';
 
 /**
  *@Action creator, will dispatch action to fetch latest news from NEWS_API https://newsapi.org/v2/, also will dispatch error action if async operation fails
@@ -22,7 +23,7 @@ export const loadLatestNews = () => {
     } catch (error) {
       dispatch({
         type: NewsReducerActionTypes.NEWS_ARTICLES_LOAD_ERROR,
-        payload: error.response,
+        payload: getErrorMessage(error),
       });
     }
   };
