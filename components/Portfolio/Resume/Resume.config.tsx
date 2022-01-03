@@ -82,13 +82,22 @@ export const otherSkills: { text: string; iconUrl: string }[] = [
 
 export const professionalExperience: IProfessionalExperience[] = [
   {
+    variant: 'simple',
+    company: 'Oracle',
+    companyImg: '/assets/portfolio/oracle-logo.png',
+    role: 'Senior Application Developer',
+    shortSummary:
+      'I currently work at Oracle CX as a Senior Application Developer.',
+    timeFrame: '2021-Present',
+  },
+  {
     variant: 'withResponsibilities',
     company: 'Chernivtsi National University',
     companyImg: '/assets/portfolio/uchnu.png',
     role: 'Full-stack Developer (Contractor)',
     shortSummary:
-      'Currently, I work at Chernivtsi National University on a number of educational and Web projects as a front and back end developer. I architect and construct solutions daily used by tens of thousands of students and thousands of employees.',
-    timeFrame: '2019-Present',
+      'I worked at Chernivtsi National University on a number of educational and Web projects as a front and back end developer. I architected and constructed solutions daily used by tens of thousands of students and thousands of employees.',
+    timeFrame: '2019-2021',
     responsibilities: [
       {
         text: 'Use bleeding-edge JavaScript solutions to deliver the best imaginable user experience',

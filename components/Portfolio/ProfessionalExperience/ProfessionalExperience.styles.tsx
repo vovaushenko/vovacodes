@@ -19,7 +19,7 @@ export const Company = styled.h4<Props>`
 
   &:before {
     content: '';
-    display: inline-block;
+    display: block;
     height: 1.5rem;
     width: 1.5rem;
     background-image: ${({ companyImg }) => `url(${companyImg})`};
