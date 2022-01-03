@@ -52,10 +52,8 @@ const FourthSlide = (): JSX.Element => {
             variant={'large'}
             withAnimatedPresence={true}
           >
-            🌠 Currently, I work at Chernivtsi National University as a
-            full-stack web-developer crafting well-thought and elegant
-            educational experiences for almost thirty thousand students and
-            employees.
+            🌠 Currently, I work at Oracle as a Senior Application Developer
+            crafting well-thought and elegant experiences for Oracle CX clients.
           </PortfolioParagraph>
         </div>
         {/*  PERSON */}

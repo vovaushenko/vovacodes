@@ -17,6 +17,9 @@ const SixthSlide = (): JSX.Element => {
   const redirectToProjects = () => {
     router.push('/portfolio/projects');
   };
+  const redirectToArticles = () => {
+    router.push('/articles');
+  };
   return (
     <Slide bgColor={'#010606'} height={'100vh'} anchorID={'sixth-slide'}>
       <Styled.SixthSlide>
@@ -62,7 +65,7 @@ const SixthSlide = (): JSX.Element => {
             <ActionButton
               buttonText={'Read my articles'}
               icon={<FiBookOpen className="action-icon" />}
-              onClick={redirectToProjects}
+              onClick={redirectToArticles}
             />
           </div>
         </div>
