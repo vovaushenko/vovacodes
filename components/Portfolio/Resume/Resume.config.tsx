@@ -3,6 +3,15 @@ export const keyTechSkills: { text: string; iconUrl: string }[] = [
     text: 'JavaScript',
     iconUrl: '/assets/portfolio/skills/javascript-original.svg',
   },
+
+  {
+    text: 'Node.js',
+    iconUrl: '/assets/portfolio/skills/nodejs-original.svg',
+  },
+  {
+    text: 'Core Web Vitals',
+    iconUrl: '/assets/portfolio/skills/vitals.webp',
+  },
   {
     text: 'TypeScript',
     iconUrl: '/assets/portfolio/skills/typescript-original.svg',
@@ -16,32 +25,8 @@ export const keyTechSkills: { text: string; iconUrl: string }[] = [
     iconUrl: '/assets/portfolio/skills/nextjs-original.svg',
   },
   {
-    text: 'CSS-in-JS',
-    iconUrl: '/assets/portfolio/skills/css3-original.svg',
-  },
-  {
-    text: 'Sass',
-    iconUrl: '/assets/portfolio/skills/sass-original.svg',
-  },
-  {
-    text: 'Redux',
-    iconUrl: '/assets/portfolio/skills/redux-original.svg',
-  },
-  {
-    text: 'Storybook',
-    iconUrl: '/assets/portfolio/skills/storybook.png',
-  },
-  {
-    text: 'Jest',
-    iconUrl: '/assets/portfolio/skills/jest-plain.svg',
-  },
-  {
-    text: 'Node.js',
-    iconUrl: '/assets/portfolio/skills/nodejs-original.svg',
-  },
-  {
-    text: 'Express',
-    iconUrl: '/assets/portfolio/skills/express-original.svg',
+    text: 'Rust',
+    iconUrl: '/assets/portfolio/skills/rust-original.svg',
   },
 ];
 
@@ -53,6 +38,10 @@ export const otherSkills: { text: string; iconUrl: string }[] = [
   {
     text: 'GitHub',
     iconUrl: '/assets/portfolio/skills/github-original.svg',
+  },
+  {
+    text: 'AWS',
+    iconUrl: '/assets/portfolio/skills/aws.svg',
   },
   {
     text: 'Performance Optimization',
@@ -75,20 +64,97 @@ export const otherSkills: { text: string; iconUrl: string }[] = [
     iconUrl: '/assets/portfolio/skills/figma-original.svg',
   },
   {
+    text: 'Vite',
+    iconUrl: '/assets/portfolio/skills/vitejs-original.svg',
+  },
+  {
     text: 'Webpack, Lerna, Parcel',
     iconUrl: '/assets/portfolio/skills/webpack-original.svg',
+  },
+  {
+    text: 'CSS-in-JS',
+    iconUrl: '/assets/portfolio/skills/css3-original.svg',
+  },
+  {
+    text: 'Sass',
+    iconUrl: '/assets/portfolio/skills/sass-original.svg',
+  },
+  {
+    text: 'Redux',
+    iconUrl: '/assets/portfolio/skills/redux-original.svg',
+  },
+  {
+    text: 'Storybook',
+    iconUrl: '/assets/portfolio/skills/storybook.png',
+  },
+  {
+    text: 'Jest',
+    iconUrl: '/assets/portfolio/skills/jest-plain.svg',
+  },
+  {
+    text: 'NestJS',
+    iconUrl: '/assets/portfolio/skills/nestjs-original.svg',
+  },
+  {
+    text: 'Express',
+    iconUrl: '/assets/portfolio/skills/express-original.svg',
   },
 ];
 
 export const professionalExperience: IProfessionalExperience[] = [
   {
-    variant: 'simple',
+    variant: 'withResponsibilities',
     company: 'Oracle',
     companyImg: '/assets/portfolio/oracle-logo.png',
-    role: 'Senior Application Developer',
+    role: 'Software Development Project Lead',
     shortSummary:
-      'I currently work at Oracle CX as a Senior Application Developer.',
-    timeFrame: '2021-Present',
+      'I currently lead the development of a modernized version of Oracle CPQ (Configure, Price, Quote). A dynamic application that helps over 500 large customers to configure complex products and services, price them according to the rules and constraints, and generate quotes and proposals.',
+    timeFrame: '2023-Present',
+    responsibilities: [
+      {
+        text: '"Outstanding Contribution" award for the successful delivery of the CPQ Quote configuration project',
+        iconUrl: '/assets/portfolio/skills/award.png',
+      },
+      {
+        text: 'Architcted highly customizable and performant CPQ application',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Improved peformance and load time of the application by over 50% targeting Core Web Vitals',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Employed great practices in developing and testing software: Web Components, CQRS for state management, test-driven development approach',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+    ],
+  },
+  {
+    variant: 'withResponsibilities',
+    company: 'Oracle',
+    companyImg: '/assets/portfolio/oracle-logo.png',
+    role: 'Senior Software Engineer',
+    shortSummary:
+      'As a senior engineer, I contributed to the biggest customer facing application and services of Oracle CX. I prototyped, designed and helped my team to build a Zoom application integration for Oracle CX Sales (CRM Selling System) from scratch.',
+    timeFrame: '2021-2023',
+    responsibilities: [
+      {
+        text: 'Architeched and built a dynamic application in embedded Zoom environment for Oracle CX Sales',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Contiributed to the modernization of the biggest Oracle CRM - CX Sales',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Helped to identify and fix performance bottlenecks in the modernized application',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+      {
+        text: 'Prototyped and build a number of POC applications for R&D at Oracle',
+        iconUrl: '/assets/portfolio/skills/check.svg',
+      },
+    ],
   },
   {
     variant: 'withResponsibilities',

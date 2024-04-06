@@ -43,8 +43,7 @@ const Resume = (): JSX.Element => {
               <FiMail />
               hello@vovacodes.ca
             </Styled.ContactLink>
-            <p>Toronto, Canada 🇨🇦</p>
-            <p>Mississauga, Ontario</p>
+            <p>Vancouver, BC, Canada 🇨🇦</p>
           </Styled.ContactInfo>
 
           <TextList
@@ -92,7 +91,7 @@ const Resume = (): JSX.Element => {
               </Styled.SocialMediaLink>
               <Styled.SocialMediaLink href="tel:+14378861335 ">
                 <FiPhoneOutgoing className={'social-media-icon'} />
-                +1 437 886 1335
+                +1 604 834 3600
               </Styled.SocialMediaLink>
 
               <Styled.SocialMediaLink
@@ -110,9 +109,9 @@ const Resume = (): JSX.Element => {
               <Styled.ResumeHeader>Summary</Styled.ResumeHeader>
               <PortfolioParagraph
                 margin={'0'}
-                paragraphText={`Accomplished, highly-qualified, and results-driven Web Developer
-              with 3+ years of proven hands-on experience in designing,
-              building, debugging, and implementing performant and responsive
+                paragraphText={`Accomplished, highly-qualified, and results-driven Software Engineer
+              with over 5 years of proven hands-on experience in designing,
+              building, debugging, and implementing performant and scalable
               web applications. Can function well under time-critical conditions
               in fast-paced environments. Equipped with excellent work ethics
               and possesses a strong sense of leadership with a commendable
@@ -131,7 +130,7 @@ const Resume = (): JSX.Element => {
           <PortfolioParagraph
             margin={'0'}
             paragraphText={
-              'I’ve worked on a handful of web projects over the past five years, some of which were for the following organizations:'
+              'I’ve worked on a handful of large-scale enterprise projects over the past five years, some of which were for the following organizations:'
             }
             withDarkColor={true}
             variant={'medium'}
