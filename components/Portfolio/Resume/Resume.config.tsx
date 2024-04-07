@@ -32,13 +32,10 @@ export const keyTechSkills: { text: string; iconUrl: string }[] = [
 
 export const otherSkills: { text: string; iconUrl: string }[] = [
   {
-    text: 'Git',
-    iconUrl: '/assets/portfolio/skills/git-original.svg',
+    text: 'Web Assembly',
+    iconUrl: '/assets/portfolio/skills/wasm.svg',
   },
-  {
-    text: 'GitHub',
-    iconUrl: '/assets/portfolio/skills/github-original.svg',
-  },
+
   {
     text: 'AWS',
     iconUrl: '/assets/portfolio/skills/aws.svg',
@@ -56,8 +53,16 @@ export const otherSkills: { text: string; iconUrl: string }[] = [
     iconUrl: '/assets/portfolio/skills/responsive.png',
   },
   {
+    text: 'GitHub',
+    iconUrl: '/assets/portfolio/skills/github-original.svg',
+  },
+  {
     text: 'SE Optimization',
     iconUrl: '/assets/portfolio/skills/seo.png',
+  },
+  {
+    text: 'Git',
+    iconUrl: '/assets/portfolio/skills/git-original.svg',
   },
   {
     text: 'Figma',
@@ -113,19 +118,21 @@ export const professionalExperience: IProfessionalExperience[] = [
     responsibilities: [
       {
         text: '"Outstanding Contribution" award for the successful delivery of the CPQ Quote configuration project',
-        iconUrl: '/assets/portfolio/skills/award.png',
+        iconUrl: '/assets/portfolio/star.svg',
+        url: '/assets/portfolio/oracle-award.pdf',
       },
       {
-        text: 'Architcted highly customizable and performant CPQ application',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        text: 'Key role in re-implementation of Oracle CPQ',
+        iconUrl: '/assets/portfolio/check.svg',
+        url: 'https://www.oracle.com/ca-en/cx/sales/cpq/',
       },
       {
         text: 'Improved peformance and load time of the application by over 50% targeting Core Web Vitals',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
-        text: 'Employed great practices in developing and testing software: Web Components, CQRS for state management, test-driven development approach',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        text: 'Built migration tools for helping customers to migrate from legacy CPQ to the new version',
+        iconUrl: '/assets/portfolio/check.svg',
       },
     ],
   },
@@ -134,25 +141,25 @@ export const professionalExperience: IProfessionalExperience[] = [
     company: 'Oracle',
     companyImg: '/assets/portfolio/oracle-logo.png',
     role: 'Senior Software Engineer',
-    shortSummary:
-      'As a senior engineer, I contributed to the biggest customer facing application and services of Oracle CX. I prototyped, designed and helped my team to build a Zoom application integration for Oracle CX Sales (CRM Selling System) from scratch.',
+    shortSummary: `As a senior engineer, I contributed to the biggest customer facing application and services of Oracle CX. I prototyped, designed and helped my team to build a Zoom application integration for Oracle CX Sales (CRM Selling System) from scratch. Played a key role in the modernization and re-implementation biggest Oracle's CRM - CX Sales.`,
     timeFrame: '2021-2023',
     responsibilities: [
       {
-        text: 'Architeched and built a dynamic application in embedded Zoom environment for Oracle CX Sales',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        text: 'Contiributed to the modernization of the biggest Oracle CRM - CX Sales',
+        iconUrl: '/assets/portfolio/check.svg',
+        url: 'https://www.oracle.com/ca-en/cx/sales/',
       },
       {
-        text: 'Contiributed to the modernization of the biggest Oracle CRM - CX Sales',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        text: 'Architeched and built a dynamic application in embedded Zoom environment for Oracle CX Sales CRM',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
         text: 'Helped to identify and fix performance bottlenecks in the modernized application',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
         text: 'Prototyped and build a number of POC applications for R&D at Oracle',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
     ],
   },
@@ -167,19 +174,19 @@ export const professionalExperience: IProfessionalExperience[] = [
     responsibilities: [
       {
         text: 'Use bleeding-edge JavaScript solutions to deliver the best imaginable user experience',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
         text: 'Construct scalable, performant and inclusive Web solutions for customers.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
         text: 'Employ the best practices in developing and testing software',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
         text: 'Supervise, mentor and advise junior colleagues.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
     ],
   },
@@ -194,7 +201,7 @@ export const professionalExperience: IProfessionalExperience[] = [
     responsibilities: [
       {
         text: 'Crafted a scalable component library during migration of legacy Web application.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        iconUrl: '/assets/portfolio/check.svg',
       },
       {
         text: 'Migrated existing code base from legacy React Class Components to new Hook-based ones',
@@ -238,7 +245,7 @@ export type IProfessionalExperience =
       role: string;
       timeFrame: string;
       shortSummary: string;
-      responsibilities: { text: string; iconUrl: string }[];
+      responsibilities: { text: string; iconUrl: string; url?: string }[];
     }
   | {
       variant: 'simple';

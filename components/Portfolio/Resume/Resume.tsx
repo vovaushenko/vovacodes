@@ -65,7 +65,9 @@ const Resume = (): JSX.Element => {
             <Styled.Name>
               Vova <span>Ushenko</span>
             </Styled.Name>
-            <Styled.Title>Full-stack Web Developer</Styled.Title>
+            <Styled.Title>
+              Senior Full-Stack Software Engineer | Project Lead
+            </Styled.Title>
 
             {/*SOCIAL MEDIA LINKS*/}
             <Styled.SocialLinksWrapper>
