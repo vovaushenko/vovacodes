@@ -63,7 +63,7 @@ const Resume = (): JSX.Element => {
           {/*HEADER WITH NAME*/}
           <Styled.SummaryHeader>
             <Styled.Name>
-              Vova <span>Ushenko</span>
+              Vova <span>Ushenko</span>, PhD
             </Styled.Name>
             <Styled.Title>
               Senior Full-Stack Software Engineer | Project Lead
@@ -158,6 +158,16 @@ const Resume = (): JSX.Element => {
 
           {/* EDUCATION */}
           <Styled.ResumeHeader>Education</Styled.ResumeHeader>
+
+          <Styled.EducationDetails>
+            <h4>
+              PhD
+              <span>Bioinformatics | Biomedical Engineering</span>
+            </h4>
+            <Styled.University>
+              Taras Shevchenko National University of Kyiv
+            </Styled.University>
+          </Styled.EducationDetails>
 
           <Styled.EducationDetails>
             <h4>

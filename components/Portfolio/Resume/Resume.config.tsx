@@ -113,11 +113,11 @@ export const professionalExperience: IProfessionalExperience[] = [
     companyImg: '/assets/portfolio/oracle-logo.png',
     role: 'Software Development Project Lead',
     shortSummary:
-      'I currently lead the development of a modernized version of Oracle CPQ (Configure, Price, Quote). A dynamic application that helps over 500 large customers to configure complex products and services, price them according to the rules and constraints, and generate quotes and proposals.',
+      'I currently lead the frontend development of a modernized version of Oracle CPQ (Configure, Price, Quote). A dynamic application that helps over 500 large customers to configure complex products and services, price them according to the rules and constraints, and generate quotes and proposals.',
     timeFrame: '2023-Present',
     responsibilities: [
       {
-        text: '"Outstanding Contribution" award for the successful delivery of the CPQ Quote configuration project',
+        text: '"Outstanding Contribution" award for the contribution to the Oracle CPQ project',
         iconUrl: '/assets/portfolio/star.svg',
         url: '/assets/portfolio/oracle-award.pdf',
       },
@@ -131,7 +131,7 @@ export const professionalExperience: IProfessionalExperience[] = [
         iconUrl: '/assets/portfolio/check.svg',
       },
       {
-        text: 'Built migration tools for helping customers to migrate from legacy CPQ to the new version',
+        text: 'Built migration tools for helping customers to seamlessly migrate from legacy CPQ to the new version',
         iconUrl: '/assets/portfolio/check.svg',
       },
     ],
@@ -141,11 +141,11 @@ export const professionalExperience: IProfessionalExperience[] = [
     company: 'Oracle',
     companyImg: '/assets/portfolio/oracle-logo.png',
     role: 'Senior Software Engineer',
-    shortSummary: `As a senior engineer, I contributed to the biggest customer facing application and services of Oracle CX. I prototyped, designed and helped my team to build a Zoom application integration for Oracle CX Sales (CRM Selling System) from scratch. Played a key role in the modernization and re-implementation biggest Oracle's CRM - CX Sales.`,
+    shortSummary: `As a senior engineer, I have contributed to the biggest customer facing applications and services of Oracle CX. I prototyped, designed and helped my team to build a Zoom application integration for Oracle CX Sales (CRM Selling System) from scratch. Played a key role in the modernization and re-implementation of biggest Oracle's CRM - CX Sales.`,
     timeFrame: '2021-2023',
     responsibilities: [
       {
-        text: 'Contiributed to the modernization of the biggest Oracle CRM - CX Sales',
+        text: 'Key contribution to the modernization of the biggest Oracle CRM - CX Sales',
         iconUrl: '/assets/portfolio/check.svg',
         url: 'https://www.oracle.com/ca-en/cx/sales/',
       },
@@ -194,31 +194,25 @@ export const professionalExperience: IProfessionalExperience[] = [
     variant: 'withResponsibilities',
     company: 'Chernivtsi National University',
     companyImg: '/assets/portfolio/uchnu.png',
-    role: 'Frontend Developer',
+    role: 'Applied Scientist',
     shortSummary:
-      'Learning and expanding my skills in Web development, I have supervised several internal web projects and educational platforms(Moodle) for the University. Played a crucial role in managing, maintaining and upgrading several internal IT projects.',
-    timeFrame: '2019-Present',
+      'I worked in an interdisplinary international research team on the development of cutting-edge medical image processing techniques. I have published a number of papers in high-impact journals and conferences.',
+    timeFrame: '2016-2019',
     responsibilities: [
       {
-        text: 'Crafted a scalable component library during migration of legacy Web application.',
+        text: 'Google Scholar Profile',
         iconUrl: '/assets/portfolio/check.svg',
+        url: 'https://scholar.google.ca/citations?user=Wu7U4yoAAAAJ&hl=en&oi=ao',
       },
       {
-        text: 'Migrated existing code base from legacy React Class Components to new Hook-based ones',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Built a client-side multilingual routing system for 3 language locales.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
-      },
-      {
-        text: 'Migrated the existing state management to Redux.',
-        iconUrl: '/assets/portfolio/skills/check.svg',
+        text: 'Publication in Nature | Scientific Reports',
+        iconUrl: '/assets/portfolio/quote.svg',
+        url: 'https://www.nature.com/articles/s41598-021-83986-4',
       },
     ],
   },
   {
-    variant: 'simple',
+    variant: 'withResponsibilities',
     company: 'University of Oulu, Finland',
     companyImg: '/assets/portfolio/uoulu.png',
     role: 'Postdoc Research Scientist',
@@ -226,6 +220,13 @@ export const professionalExperience: IProfessionalExperience[] = [
       'Participated in projects centered on the development of non-invasive cancer-detection algorithms. During the projects, I\n' +
       'expanded my horizons in machine learning and learned various image processing algorithms and methods.',
     timeFrame: '2017 - 2019',
+    responsibilities: [
+      {
+        text: 'Publication in Nature | Scientific Reports',
+        iconUrl: '/assets/portfolio/quote.svg',
+        url: 'https://www.nature.com/articles/s41598-021-83986-4',
+      },
+    ],
   },
   {
     variant: 'simple',
