@@ -1,12 +1,16 @@
 import React from 'react';
 import * as Styled from './TextList.styles';
+import { FiExternalLink } from 'react-icons/fi';
 
 export type ListProps =
-  | { variant: 'simple'; textBulletPoints: { text: string; iconUrl: string }[] }
+  | {
+      variant: 'simple';
+      textBulletPoints: { text: string; iconUrl: string; url?: string }[];
+    }
   | {
       variant: 'withHeader';
       headerText: string;
-      textBulletPoints: { text: string; iconUrl: string }[];
+      textBulletPoints: { text: string; iconUrl: string; url?: string }[];
     };
 
 /**
@@ -23,7 +27,16 @@ const TextList = (props: ListProps): JSX.Element => {
       )}
       {props.textBulletPoints.map((textBulletPoint, id) => (
         <Styled.LI key={id} iconUrl={textBulletPoint.iconUrl}>
-          {textBulletPoint.text}
+          <p>{textBulletPoint.text}</p>
+          {textBulletPoint.url && (
+            <Styled.ExternalLink
+              href={textBulletPoint.url}
+              target="_blank"
+              rel="noopener"
+            >
+              <FiExternalLink />
+            </Styled.ExternalLink>
+          )}
         </Styled.LI>
       ))}
     </Styled.UL>
