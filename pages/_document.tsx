@@ -48,7 +48,7 @@ export default class MyDocument extends Document {
 
           <link rel="icon" href="/logo.png" />
           <link rel="apple-touch-icon" href="/logo.png" />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="manifest" href="/app.webmanifest" />
 
           <meta property="og:title" content="Vova Ushenko" />
           <meta name="author" content="Vova Ushenko" />
@@ -64,6 +64,7 @@ export default class MyDocument extends Document {
 
           <meta property="og:url" content="https://www.vovacodes.ca/" />
           <meta property="og:site_name" content="vovacodes" />
+          <script src="/init-sw.js" defer></script>
         </Head>
 
         <body>

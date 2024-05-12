@@ -1,0 +1,33 @@
+{
+  "name": "vovacodes | portfolio",
+  "short_name": "vovacodes | portfolio",
+  "start_url": "./",
+  "theme_color": "rgb(165,203,146)",
+  "scope": "./",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "description": "This is a portfolio website for Vova Ushenko, a full-stack software engineer and content creator.",
+  "screenshots": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

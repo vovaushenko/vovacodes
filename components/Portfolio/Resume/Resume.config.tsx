@@ -9,6 +9,10 @@ export const keyTechSkills: { text: string; iconUrl: string }[] = [
     iconUrl: '/assets/portfolio/skills/nodejs-original.svg',
   },
   {
+    text: 'PWA',
+    iconUrl: '/assets/portfolio/skills/pwa.png',
+  },
+  {
     text: 'Core Web Vitals',
     iconUrl: '/assets/portfolio/skills/vitals.webp',
   },
