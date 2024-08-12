@@ -49,14 +49,16 @@ const ProjectDesktopSlide = ({
           <Styled.LeftColumn>
             <Styled.Figure>
               <Styled.SlideNumber>
-                <Image
-                  src={slideNumberImg}
-                  height={200}
-                  width={200}
-                  quality={90}
-                  objectFit={'contain'}
-                  alt={`This image indicates the number of current slide`}
-                />
+                {slideNumberImg && (
+                  <Image
+                    src={slideNumberImg}
+                    height={200}
+                    width={200}
+                    quality={90}
+                    objectFit={'contain'}
+                    alt={`This image indicates the number of current slide`}
+                  />
+                )}
               </Styled.SlideNumber>
               <Styled.Figcaption>
                 <h3>{projectTechnologies.join(` ● `)}</h3>
@@ -99,15 +101,17 @@ const ProjectDesktopSlide = ({
               <ActionButton
                 renderAsLink
                 href={liveLink}
-                buttonText={'Live'}
+                buttonText={'Explore'}
                 icon={<FiCast className={'action-icon'} />}
               />
-              <ActionButton
-                renderAsLink
-                href={githubLink}
-                buttonText={'GitHub'}
-                icon={<FiGithub className={'action-icon'} />}
-              />
+              {githubLink && (
+                <ActionButton
+                  renderAsLink
+                  href={githubLink}
+                  buttonText={'GitHub'}
+                  icon={<FiGithub className={'action-icon'} />}
+                />
+              )}
             </Styled.ButtonsWrapper>
           </Styled.RightColumn>
         </>

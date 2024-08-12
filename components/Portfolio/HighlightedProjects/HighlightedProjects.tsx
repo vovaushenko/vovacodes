@@ -23,6 +23,8 @@ const HighlightedProjects = (): JSX.Element => {
   const { highlightedProjects } = useHighlightedProjectsData();
   const projectOne = highlightedProjects[0];
   const projectTwo = highlightedProjects[1];
+  const projectThree = highlightedProjects[2];
+  const projectFour = highlightedProjects[3];
 
   return (
     <Styled.Container>
@@ -107,24 +109,31 @@ const HighlightedProjects = (): JSX.Element => {
 
       {/* PROJECT1 */}
       <ProjectDesktopSlide {...projectOne} />
+
+      {/* PROJECT2 */}
+      <ProjectDesktopSlide {...projectTwo} />
+
+      {/* PROJECT 2*/}
+      <ProjectDesktopSlide {...projectThree} />
+
       <ProjectDetailsSlide
         slideHeight={'100vh'}
         slideBgColor={'#010606'}
-        projectName={projectOne.projectTitle}
-        projectMobileImg={projectOne.projectMobileImg}
+        projectName={projectThree.projectTitle}
+        projectMobileImg={projectThree.projectMobileImg}
         projectQuotes={projectDetailsQuotes}
       />
       <WaveDivider
         waveImg={'/assets/portfolio/blob-1.svg'}
         dividerHeight={'150px'}
       />
-      {/* PROJECT 2*/}
-      <ProjectDesktopSlide {...projectTwo} />
+      {/* Project Three */}
+      <ProjectDesktopSlide {...projectFour} />
       <ProjectDetailsSlide
         slideHeight={'100vh'}
         slideBgColor={'#4831d4'}
-        projectName={projectTwo.projectTitle}
-        projectMobileImg={projectTwo.projectMobileImg}
+        projectName={projectFour.projectTitle}
+        projectMobileImg={projectFour.projectMobileImg}
         projectQuotes={opticsProjectDetailQuotes}
       />
     </Styled.Container>

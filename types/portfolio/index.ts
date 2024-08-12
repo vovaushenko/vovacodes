@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface IHighlightedProject {
-  slideNumberImg: string;
+  slideNumberImg?: string;
   projectTitle: string;
   projectDescription: string;
   projectImg: string;
@@ -10,7 +10,7 @@ export interface IHighlightedProject {
   technologyIcons: ReactNode[];
   slideBgColor: string;
   slideHeight: string;
-  githubLink: string;
+  githubLink?: string;
   liveLink: string;
 }
 
