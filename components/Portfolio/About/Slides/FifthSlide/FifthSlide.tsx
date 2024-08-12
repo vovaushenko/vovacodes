@@ -21,14 +21,14 @@ const FifthSlide = (): JSX.Element => {
         />
         <Styled.Milestone variant={'first'}>
           <Styled.MilestoneHeader>
-            <h3>Senior Application Developer</h3>
-            <time>2021-Present</time>
+            <h3>Software Development Project Lead</h3>
+            <time>2023-Present</time>
           </Styled.MilestoneHeader>
           <h4>Oracle</h4>
           <PortfolioParagraph
             margin={'1rem 0'}
             paragraphText={
-              'Currently, I work at Oracle CX team constructing inclusive performant solutions that encompass not only Web, but also native devices.'
+              'I currently lead the frontend development of a modernized version of Oracle CPQ (Configure, Price, Quote). A dynamic application that helps over 500 large customers to configure complex products and services, price them according to the rules and constraints, and generate quotes and proposals.'
             }
             withDarkColor={false}
             variant={'medium'}
@@ -37,6 +37,21 @@ const FifthSlide = (): JSX.Element => {
         </Styled.Milestone>
 
         <Styled.Milestone variant={'second'}>
+          <Styled.MilestoneHeader>
+            <h3>Senior Software Engineer</h3>
+            <time>2021-2023</time>
+          </Styled.MilestoneHeader>
+          <h4>Oracle</h4>
+          <PortfolioParagraph
+            margin={'1rem 0'}
+            paragraphText={`As a senior engineer, I have contributed to the biggest customer facing applications and services of Oracle CX. I prototyped, designed and helped my team to build a Zoom application integration for Oracle CX Sales (CRM Selling System) from scratch. Played a key role in the modernization and re-implementation of biggest Oracle's CRM - CX Sales.`}
+            withDarkColor={false}
+            variant={'medium'}
+            withAnimatedPresence={true}
+          />
+        </Styled.Milestone>
+
+        <Styled.Milestone variant={'third'}>
           <Styled.MilestoneHeader>
             <h3>Full-Stack Developer</h3>
             <time>2019-2021</time>
@@ -53,16 +68,18 @@ const FifthSlide = (): JSX.Element => {
           />
         </Styled.Milestone>
 
-        <Styled.Milestone variant={'third'}>
+        <Styled.Milestone variant={'fourth'}>
           <Styled.MilestoneHeader>
-            <h3>FRONT-END DEVELOPER</h3>
-            <time>2018-2019</time>
+            <h3>PhD Student | Applied Scientist</h3>
+            <time>2015-2019</time>
           </Styled.MilestoneHeader>
-          <h4>University of Oulu</h4>
+          <h4>
+            University of Oulu | Taras Shevchenko National University of Kyiv
+          </h4>
           <PortfolioParagraph
             margin={'1rem 0'}
             paragraphText={
-              'Learning and expanding my skills in Web development, I worked on and supervised several internal web projects and educational platforms for the University. Played a crucial role in managing, maintaining and upgrading several internal IT projects.'
+              'I worked in an interdisplinary international research team on the development of cutting-edge medical image processing techniques. I have published a number of papers in high-impact journals and conferences.'
             }
             withDarkColor={false}
             variant={'medium'}

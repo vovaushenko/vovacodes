@@ -35,9 +35,18 @@ const thirdMilestoneAnimation = css`
   animation: ${slideInRight} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation-delay: 1000ms;
 `;
+const fourthMilestoneAnimation = css`
+  animation: ${slideInLeft} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1500ms;
+`;
+
+const fifthMilestoneAnimation = css`
+  animation: ${slideInRight} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 2000ms;
+`;
 
 interface Props {
-  variant: 'first' | 'second' | 'third';
+  variant: 'first' | 'second' | 'third' | 'fourth' | 'fifth';
 }
 
 export const Milestone = styled.article<Props>`
@@ -48,6 +57,9 @@ export const Milestone = styled.article<Props>`
   ${({ variant }) => variant === 'first' && firstMilestoneAnimation};
   ${({ variant }) => variant === 'second' && secondMilestoneAnimation};
   ${({ variant }) => variant === 'third' && thirdMilestoneAnimation};
+  ${({ variant }) => variant === 'third' && thirdMilestoneAnimation};
+  ${({ variant }) => variant === 'fourth' && fourthMilestoneAnimation};
+  ${({ variant }) => variant === 'fifth' && fifthMilestoneAnimation};
 `;
 
 export const MilestoneHeader = styled.div`
