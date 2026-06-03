@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import VsCode from '../Apps/VsCode/VsCode';
 import GoogleSearch from '../Apps/GoogleSearch/GoogleSearch';
 import Figma from '../Apps/Figma/Figma';
+import Bing from '../Apps/Bing/Bing';
 
 export const usePinnedAppsConfig = (): { pinnedApps: IPinnedApp[] } => {
   const pinnedApps: IPinnedApp[] = [
@@ -131,7 +132,7 @@ export const usePinnedAppsConfig = (): { pinnedApps: IPinnedApp[] } => {
       icon: '/assets/icons/startmenu/icons8-microsoft-edge.svg',
       action: null,
       iconSize: { height: 40, width: 40 },
-      willOpenWindowWith: <GoogleSearch />,
+      willOpenWindowWith: <Bing searchQuery={'Hello There'} />,
     },
     {
       id: 17,

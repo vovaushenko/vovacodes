@@ -68,7 +68,7 @@ export const useSystemTrayConfig = (): {
       size: { width: 32, height: 32 },
       action: null,
       alt: 'Edge',
-      willOpenWindowWith: <Bing searchQuery={''} />,
+      willOpenWindowWith: <Bing searchQuery={'Hello There'} />,
     },
     {
       id: 6,
