@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import Resume from './Resume';
 import * as Styled from './Resume.styles';
-import { FiGlobe, FiMail } from 'react-icons/fi';
+import { FiGlobe, FiMail, FiPhoneOutgoing } from 'react-icons/fi';
 import TextList from '../TextList/TextList';
 import ProfessionalExperience from '../ProfessionalExperience/ProfessionalExperience';
 
@@ -35,6 +35,8 @@ describe('Resume', () => {
       expect(globe.length).toBe(1);
       const mail = wrap.find(FiMail);
       expect(mail.length).toBe(2);
+      const phone = wrap.find(FiPhoneOutgoing);
+      expect(phone.length).toBe(2);
     });
 
     it('should render two skill lists', () => {
@@ -55,7 +57,7 @@ describe('Resume', () => {
 
     it('should render correct title', () => {
       const title = wrap.find(Styled.Title);
-      expect(title.text()).toEqual('Full-stack Web Developer');
+      expect(title.text()).toEqual('Principal Software Engineer');
     });
 
     it('should render all social links(currently 5)', () => {
@@ -68,13 +70,13 @@ describe('Resume', () => {
       expect(professionalExperience.length).toBe(4);
     });
 
-    it('should render projects section', () => {
+    it('should render product highlights and awards sections', () => {
       const projects = wrap.find(Styled.Projects);
-      expect(projects.length).toBe(1);
+      expect(projects.length).toBe(2);
     });
     it('should render education details', () => {
       const edDetails = wrap.find(Styled.EducationDetails);
-      expect(edDetails.length).toBe(2);
+      expect(edDetails.length).toBe(3);
     });
   });
 });

@@ -41,7 +41,12 @@ const Resume = (): JSX.Element => {
 
             <Styled.ContactLink href="mailto: volodymyr.ushenko@gmail.com">
               <FiMail />
-              hello@vovacodes.ca
+              volodymyr.ushenko@gmail.com
+            </Styled.ContactLink>
+
+            <Styled.ContactLink href="tel:+16048343600">
+              <FiPhoneOutgoing />
+              604-834-3600
             </Styled.ContactLink>
             <p>Vancouver, BC, Canada 🇨🇦</p>
           </Styled.ContactInfo>
@@ -65,9 +70,7 @@ const Resume = (): JSX.Element => {
             <Styled.Name>
               Vova <span>Ushenko</span>, PhD
             </Styled.Name>
-            <Styled.Title>
-              Senior Full-Stack Software Engineer | Project Lead
-            </Styled.Title>
+            <Styled.Title>Principal Software Engineer</Styled.Title>
 
             {/*SOCIAL MEDIA LINKS*/}
             <Styled.SocialLinksWrapper>
@@ -97,8 +100,8 @@ const Resume = (): JSX.Element => {
               </Styled.SocialMediaLink>
 
               <Styled.SocialMediaLink
-                href={'/assets/vova-ushenko-cv.pdf'}
-                download="vova-ushenko-cv.pdf"
+                href={'/assets/vushenko2026.pdf'}
+                download="vushenko2026.pdf"
               >
                 <FiDownload className={'social-media-icon'} />
                 Download CV
@@ -111,14 +114,7 @@ const Resume = (): JSX.Element => {
               <Styled.ResumeHeader>Summary</Styled.ResumeHeader>
               <PortfolioParagraph
                 margin={'0'}
-                paragraphText={`Accomplished, highly-qualified, and results-driven Software Engineer
-              with over 5 years of proven hands-on experience in designing,
-              building, debugging, and implementing performant and scalable
-              web applications. Can function well under time-critical conditions
-              in fast-paced environments. Equipped with excellent work ethics
-              and possesses a strong sense of leadership with a commendable
-              record of accomplishment and dependability, combined with
-              integrity.`}
+                paragraphText={`Innovative Principal Software Engineer with deep expertise in AI-integrated enterprise solutions, cloud architecture, and scalable web systems. Holder of multiple patents and Oracle Stand Out awards, with a proven record of transforming Oracle's leading Configure, Price, Quote (CPQ) platform through AI agents, natural-language configuration, and next-gen 3D visualization. Trusted for technical leadership, cross-team mentoring, and driving innovations that accelerate business impact and adoption.`}
                 withDarkColor={true}
                 variant={'medium'}
                 withAnimatedPresence={false}
@@ -132,7 +128,7 @@ const Resume = (): JSX.Element => {
           <PortfolioParagraph
             margin={'0'}
             paragraphText={
-              'I’ve worked on a handful of large-scale enterprise projects over the past five years, some of which were for the following organizations:'
+              "I've led and contributed to enterprise SaaS, AI, CRM, CPQ, and research software initiatives across Oracle and academia."
             }
             withDarkColor={true}
             variant={'medium'}
@@ -143,16 +139,68 @@ const Resume = (): JSX.Element => {
             <ProfessionalExperience key={id} {...experience} />
           ))}
           {/*PROJECTS*/}
-          <Styled.ResumeHeader>Highlighted Projects</Styled.ResumeHeader>
+          <Styled.ResumeHeader>Key Product Highlights</Styled.ResumeHeader>
 
           <Styled.Projects>
             <p>
-              Links to some of my projects and work can be found on{' '}
-              <Link href={'/portfolio/projects'}>
-                vovaushenko.dev/portfolio/projects
-              </Link>{' '}
-              and details can be provided upon request via a scheduled demo
-              call.
+              <strong>
+                Oracle Configure, Price, Quote (CPQ) - Quote Designer / Runtime:
+              </strong>{' '}
+              Developed and patented a dynamic configuration and quoting engine,
+              enabling rapid creation of complex quotes for top enterprise
+              clients.
+            </p>
+            <p>
+              <strong>Oracle CPQ - AI-Powered 3D Product Configurator:</strong>{' '}
+              Built a browser-based 3D visualizer integrated with Oracle CPQ,
+              leveraging AI agents to automate interactive product configuration
+              and visualization.
+            </p>
+            <p>
+              <strong>Migration Tools for Legacy CPQ:</strong> Engineered
+              one-click migration tools for customers transitioning from legacy
+              CPQ systems, reducing implementation time and accelerating
+              adoption.
+            </p>
+            <p>
+              <strong>Oracle Sales Cloud:</strong> Played a key role in the
+              reimplementation of Oracle Sales Cloud across web, mobile, Zoom,
+              and Outlook embedded environments.
+            </p>
+            <p>
+              More selected work can be found on{' '}
+              <Link href={'/portfolio/projects'}>vovacodes.ca/projects</Link>.
+            </p>
+          </Styled.Projects>
+
+          <Styled.ResumeHeader>Awards and Patents</Styled.ResumeHeader>
+          <Styled.Projects>
+            <p>
+              <strong>Oracle CX - Outstanding Contribution 2024:</strong>{' '}
+              Recognized for leading the successful launch of the CPQ
+              project&apos;s quoting flow for Oracle&apos;s largest customers.{' '}
+              <a
+                href="/assets/portfolio/oracle-award.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Award
+              </a>
+            </p>
+            <p>
+              <strong>Oracle CX - Stand Outs 2025:</strong> Honored for
+              exceptional contributions and consistent high-impact performance
+              across Oracle CX initiatives.
+            </p>
+            <p>
+              <strong>2025 US Patent:</strong> Method and System to Define a
+              Real-time Customization Model for Configuring an Enterprise Web
+              Application.
+            </p>
+            <p>
+              <strong>2026 Pending Patent:</strong> Agentic Interface System for
+              Managing Enterprise Configurations with Dynamic Transition and
+              Updates to Non-Agentic Operations.
             </p>
           </Styled.Projects>
 

@@ -140,6 +140,14 @@ export const EducationDetails = styled.div`
 `;
 
 export const Projects = styled.div`
+  p {
+    margin-bottom: 0.75rem;
+  }
+
+  strong {
+    color: ${({ theme }) => theme.portfolio.resumeColors.accentColor};
+  }
+
   a {
     color: ${({ theme }) => theme.portfolio.resumeColors.accentColor};
     font-weight: bold;
